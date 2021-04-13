@@ -59,7 +59,12 @@ body {
 
 .item1 { 
   grid-area: header;
-  height: 3.5em;  
+  height: 3.5em; 
+  /*height: 60px;*/
+  /*
+  position: fixed;
+  top: 0;  
+  */
 }
 /*
 .item2 { 
@@ -93,9 +98,223 @@ body {
    background-color: transparent;
 }
 .item {
-  border-bottom: 2px solid whitesmoke;
-  border-collapse: collapse;
+  /*border-bottom: 2px solid whitesmoke;
+  border-collapse: collapse;*/
   padding: .5em;
   margin: 0;
 }
+
+
+/* header css starts */
+.header {  
+  background-color: transparent; 
+  color: whitesmoke;
+
+}
+
+.header .headernav {
+  display: flex; 
+  position: absolute;
+  top: 1em;
+  right: 1.2em;
+  font-size: 1.25em;
+}
+.header .headernav ul {
+  display: flex; 
+  
+}
+.header .headernav ul li {
+   list-style: none;  
+}
+
+.header .headernav ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.25;
+  padding: .7em;
+  text-align: center;
+}
+.header .headernav ul li a:hover {
+  color: whitesmoke;  
+}
+/* dropdown menu css */
+.header .headernav ul li ul {
+  position: absolute;
+  background-color: transparent;  
+  border-radius: 5px;
+  overflow: auto;
+  display: none;
+  z-index: 1;
+}
+
+.header .headernav ul li ul li{
+  border: 1px solid whitesmoke;  
+}
+
+.header .headernav ul li:hover ul {
+  display: block;  
+  overflow: hidden;
+  
+}
+@media only screen and (min-width: 280px) and (max-width: 768px) { 
+  .header .headernav ul {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+  .header .headernav ul:not(:last-child) {
+    display: none;
+  }
+}
+
+
+/*
+@media screen and (max-width: 800px) {
+  .header .headernav ul:not(:last-child) {
+    display: none;
+  }
+}
+*/
+/* header css ends */
+/*iconbar css starts*/
+.item1 .iconbar {
+  position: absolute;
+  top: .9em;
+  left: .9em;
+  font-size: 1.25em;
+  color: whitesmoke;
+} 
+.item1 .iconbar:hover {
+  cursor: pointer;
+  color: rgb(190, 184, 184);
+}
+/*iconbar css ends*/
+/* brand-title css starts*/
+.item1 .brand-title {
+  position: absolute;
+  top: .7em;
+  left: 3.5em;
+  font-size: 25px;  
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 768px) { 
+  .item1 .brand-title {
+    position: absolute;
+    top: 1em;
+    right: 3.2em;
+    font-size: 25px;  
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 768px) { 
+  .item1 .brand-title {
+    position: absolute;
+    top: 1em;
+    left: 5.3em;
+    font-size: 25px;  
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bolder;
+  }
+}
+/* brand title css ends */
+/* sidenav css starts */
+.item1 .sidenav-parent {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: transparent;
+  
+  
+}
+.item1 .sidenav-parent .sidenav {
+  width: 0;
+  height: 100vh;
+  display: block;
+  background-color: transparent;
+  color: whitesmoke;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 0.4s;
+  padding-top: 2em;
+  
+}
+.item1 .sidenav-parent .sidenav ul {
+  display: block;
+  width: 100%;  
+  
+}
+.item1 .sidenav-parent .sidenav ul li {
+  list-style: none; 
+  overflow: hidden; 
+  
+}
+.item1 .sidenav-parent .sidenav ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.25em;
+  padding: 1.25em;
+  text-align: left;
+  
+}
+.item1 .sidenav-parent .sidenav ul li .signoutBtn {
+  padding-left: 1.25em;
+}
+.item1 .sidenav-parent .sidenav ul li a:hover {
+  color: whitesmoke;
+}
+.item1 .sidenav-parent .sidenav ul li .closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.9em;
+  font-weight: bolder;
+}
+.item1 .sidenav-parent .sidenav ul li .closeBtn:hover {
+  color: whitesmoke;
+}
+
+/* dropdown css for sidenav */
+.item1 .sidenav-parent .sidenav ul li ul {
+  
+  background-color: transparent;
+  overflow: auto;
+  display: none;
+  
+}
+.item1 .sidenav-parent .sidenav ul li ul li {
+  border: 1px solid whitesmoke;
+}
+.item1 .sidenav-parent .sidenav ul li ul li a {
+  font-size: 1.25em;
+}
+.item1 .sidenav-parent .sidenav ul li:hover ul {
+  display: block;
+}
+.signoutBtn {
+  background-color: transparent;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  font-size: 1.25em;
+}
+.signoutBtn:hover {
+  color: whitesmoke;
+}
+
+
+/* sidenav css ends */
 
