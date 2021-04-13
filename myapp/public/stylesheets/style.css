@@ -1,8 +1,94 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  
 }
 
-a {
-  color: #00B7FF;
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url(/images/pexels-cristian-rojas-7260637.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: whitesmoke;
+  
 }
+@media only screen and (min-width: 280px) {
+  body {
+    
+    font-size: 1.5em;
+    /*max-width: 480px;*/
+  }
+}
+@media only screen and (min-width: 480px) {
+  body {
+    
+    font-size: 2.5em;
+    /*max-width: 480px;*/
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    
+    font-size: 2em;
+    
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+   
+    font-size: 1.5em;
+    
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    
+    font-size: 1.2em;
+    
+  }
+}
+
+
+.item1 { 
+  grid-area: header;
+  height: 3.5em;
+  
+}
+.item2 { 
+  grid-area: menu;
+  height: 100vh;
+  
+ }
+.item3 { 
+  grid-area: main;
+  height: auto;
+}
+.item4 { 
+  grid-area: right;
+  height: auto;
+}
+.item5 { 
+  grid-area: footer;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main right'
+    'footer footer footer footer footer footer';
+  /*grid-gap: 10px;*/  
+   background-color: transparent;
+}
+.item {
+  border-bottom: 2px solid whitesmoke;
+  border-collapse: collapse;
+  padding: .5em;
+}
+
