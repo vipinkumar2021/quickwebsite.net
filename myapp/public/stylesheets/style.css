@@ -351,3 +351,64 @@ body {
 
 /* sidenav css ends */
 
+/* footer css starts*/
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: rgba(238, 135, 97, .6);  
+  margin-top: 3.8em;
+  margin-bottom: 0;  
+  padding: 1.9em;  
+}
+.footer #taptotopButton {
+  width: 100%;
+  height: auto;
+  font-size: 1.25em;
+  padding-bottom: .65em;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: aliceblue;
+}
+.footer .row {
+  display: flex;  
+}
+
+.footer .row .column {
+  width: 25%;  
+  color: whitesmoke;
+  font-size: 1.1em;
+  text-align: center;
+}
+.footer .row .column ul {
+  
+  text-align: left;
+  font-size: 1.1em;
+  padding-left: 30%;
+}
+.footer .row .column ul li {
+  list-style: none;
+}
+.footer .row .column ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  
+}
+.footer .row .column-4 a {
+  padding: 5%;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 700px) {
+  .footer .row {
+    display: block;
+     
+  }
+  .footer .row .column {    
+    width: 100%; 
+    
+  }
+  
+}
+/* footer css ends */
