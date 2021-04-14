@@ -56,15 +56,22 @@ body {
   }
 }
 
+.item {
+  /*border-bottom: 2px solid whitesmoke;
+  border-collapse: collapse;*/
+  padding: .5em;
+  margin: 0;
+}
 
 .item1 { 
   grid-area: header;
-  height: 3.5em; 
-  /*height: 60px;*/
-  /*
+  height: 4.5em; 
+  /*height: 60px;*/  
   position: fixed;
   top: 0;  
-  */
+  width: 100%;
+  /*border-bottom: 3px solid whitesmoke;*/
+  z-index: 1;
 }
 /*
 .item2 { 
@@ -74,8 +81,11 @@ body {
  }
  */
 .item3 { 
-  grid-area: main;
-  height: 100vh;
+  grid-area: main;  
+  height: 100vh;  
+  padding-top: 3.5em;
+  
+  
 }
 /*
 .item4 { 
@@ -96,12 +106,6 @@ body {
     'footer footer footer footer footer footer';
   /*grid-gap: 10px;*/  
    background-color: transparent;
-}
-.item {
-  /*border-bottom: 2px solid whitesmoke;
-  border-collapse: collapse;*/
-  padding: .5em;
-  margin: 0;
 }
 
 
@@ -135,6 +139,7 @@ body {
   text-align: center;
 }
 .header .headernav ul li a:hover {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
   color: rgb(180, 175, 175);
    
 }
