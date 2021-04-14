@@ -260,6 +260,7 @@ body {
   width: 0;
   height: 100vh;
   background-color: transparent;
+  text-align: left;
   
   
 }
@@ -267,14 +268,15 @@ body {
   width: 0;
   height: 100vh;
   display: block;
-  background-color: transparent;
+  background-color: rgba(238, 135, 97, .6);  
   color: whitesmoke;
   position: fixed;
   z-index: 1;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
   transition: 0.4s;
-  padding-top: 2em;
+  padding-top: 4em;
+  position: relative;
   
 }
 .item1 .sidenav-parent .sidenav ul {
@@ -299,23 +301,24 @@ body {
   padding-left: 1.25em;
 }
 .item1 .sidenav-parent .sidenav ul li a:hover {
-  color: whitesmoke;
+  color: rgb(180, 175, 175);
 }
 .item1 .sidenav-parent .sidenav ul li .closeBtn {
   position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1.9em;
+  top: -1em;
+  right: -.5em;
+  font-size: 2em;
   font-weight: bolder;
 }
 .item1 .sidenav-parent .sidenav ul li .closeBtn:hover {
-  color: whitesmoke;
+  color: rgb(180, 175, 175);
 }
 
 /* dropdown css for sidenav */
 .item1 .sidenav-parent .sidenav ul li ul {
-  
-  background-color: transparent;
+  padding: 0;
+  width: max-content;
+  background-color: rgba(238, 135, 97, .6);
   overflow: auto;
   display: none;
   
@@ -325,6 +328,11 @@ body {
 }
 .item1 .sidenav-parent .sidenav ul li ul li a {
   font-size: 1.25em;
+}
+.item1 .sidenav-parent .sidenav ul li ul li a:hover {
+
+  color: rgb(180, 175, 175);
+
 }
 .item1 .sidenav-parent .sidenav ul li:hover ul {
   display: block;
@@ -337,7 +345,7 @@ body {
   font-size: 1.25em;
 }
 .signoutBtn:hover {
-  color: whitesmoke;
+  color: rgb(180, 175, 175);
 }
 
 
