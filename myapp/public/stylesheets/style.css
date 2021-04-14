@@ -135,20 +135,34 @@ body {
   text-align: center;
 }
 .header .headernav ul li a:hover {
-  color: whitesmoke;  
+  color: rgb(180, 175, 175);
+   
 }
 /* dropdown menu css */
-.header .headernav ul li ul {
+.dropdown {
+  position: relative;  
+  text-align: left;
+}
+.header .headernav ul li ul { 
   position: absolute;
-  background-color: transparent;  
+  left: 0;  
+  padding: 0;
+  width: max-content;
+  background-color: rgba(238, 135, 97, .6);  
   border-radius: 5px;
   overflow: auto;
   display: none;
+  
   z-index: 1;
 }
 
 .header .headernav ul li ul li{
   border: 1px solid whitesmoke;  
+}
+.header .headernav ul li ul li a {
+  text-align: left;
+  padding: 5px;
+  font-size: 1em;
 }
 
 .header .headernav ul li:hover ul {
@@ -182,30 +196,35 @@ body {
   position: absolute;
   top: .9em;
   left: .9em;
-  font-size: 1.25em;
+  font-size: 1.7em;
   color: whitesmoke;
+  
 } 
 .item1 .iconbar:hover {
   cursor: pointer;
-  color: rgb(190, 184, 184);
+  /*color: rgb(180, 175, 175);*/
+  color: brown;
+  z-index: 1;
 }
 /*iconbar css ends*/
 /* brand-title css starts*/
 .item1 .brand-title {
   position: absolute;
-  top: .7em;
-  left: 3.5em;
+  top: .9em;
+  left: 4em;
   font-size: 25px;  
   text-decoration: none;
   color: whitesmoke;
   font-weight: bolder;
 }
-
+.item1 .brand-title:hover {
+  color: rgb(180, 175, 175);
+}
 @media only screen and (min-width: 280px) and (max-width: 768px) { 
   .item1 .brand-title {
     position: absolute;
     top: 1em;
-    right: 3.2em;
+    right: 3.5em;    
     font-size: 25px;  
     text-decoration: none;
     color: whitesmoke;
@@ -213,7 +232,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 280px) and (max-width: 768px) { 
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
   .item1 .brand-title {
     position: absolute;
     top: 1em;
@@ -225,6 +244,7 @@ body {
   }
 }
 /* brand title css ends */
+
 /* sidenav css starts */
 .item1 .sidenav-parent {
   margin: 0;
