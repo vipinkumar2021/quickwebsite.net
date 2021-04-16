@@ -475,8 +475,8 @@ body {
 .how-it-works ol {
   color: whitesmoke;
   text-align: left;
-  padding: auto;
-  margin: auto;
+  
+  margin: 3em;
 }
 
 .about {
