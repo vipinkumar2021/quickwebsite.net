@@ -498,44 +498,45 @@ body {
   height: auto;
   background-color: transparent;
   color: whitesmoke;  
-  padding: 60px 10px 60px 10px;
+  padding: 3.5em .8em 3.5em .8em;
   float: center;
   text-align: center;
   border: 1px solid whitesmoke;
   border-left: none;
   border-right: none;
+  margin: auto;
 
 }
 .services .row {
   display: flex;
   width: 100%;
-  padding: 15px;  
+  padding: .97em;  
   text-align: center;
   
 }
 .services .row .column {
   width: 50%;
-  padding: 15px;  
+  padding: .97em;  
   text-align: center;
   
   
 }
 .services .row .column ul{
   float: left;  
-  padding-left: 30px;
+  padding-left: 1.9em;
   text-align: left;
-  font-size: 18px;
+  font-size: 1.2em;
 }
 .services .row .column ul li a {
   text-decoration: none;
 }
 .services .row .column-right p {
   float: left; 
-  padding-left: 30px;
+  padding-left: 1.9em;
   text-align: left;
-  font-size: 18px;
+  font-size: 1.2em;
 }
 .services .row .column-right p a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.2em;
 }
