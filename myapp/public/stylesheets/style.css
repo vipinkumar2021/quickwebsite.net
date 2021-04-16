@@ -82,11 +82,11 @@ body {
  */
 .item3 { 
   grid-area: main;  
-  height: 100vh;  
-  padding-top: 3.5em;
-  
+  height: auto;  
+  padding-top: 3.5em .5em .5em .5em;  
   
 }
+
 /*
 .item4 { 
   grid-area: right;
@@ -355,7 +355,7 @@ body {
   width: 100%;
   height: auto;
   background-color: rgba(238, 135, 97, .6);  
-  margin-top: 3.8em;
+  /*margin-top: 3.8em;*/
   margin-bottom: 0;  
   padding: 1.9em;  
 }
@@ -367,7 +367,7 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  color: aliceblue;
+  color: whitesmoke;
 }
 .footer .row {
   display: flex;  
@@ -411,3 +411,126 @@ body {
   
 }
 /* footer css ends */
+
+/* main css*/
+.main .welcome {
+  background-color: transparent;
+  max-width: 100%;
+  height: auto;
+  padding-top: 3.2em;
+  margin-top: 0;
+  
+}
+
+.main .welcome h1 {
+  text-align: center;
+  padding-bottom: 1.6em;  
+  color: whitesmoke;
+  
+  margin: 2.5em auto auto auto;
+}
+.main .welcome h2 {
+  margin: auto;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.main .welcome .row {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  
+}
+.main .welcome .row .column {
+  width: 50%;
+  height: auto;
+  margin: auto;
+  padding: .5em;
+  /*border: 1px solid white;  */
+  
+}
+.main .welcome .row .column h3 {
+  text-align: left;  
+  color: whitesmoke;  
+  
+}
+@media screen and (min-width: 280px) and (max-width: 768px){
+  .main .welcome .row {
+    display: block;
+  }
+  .main .welcome .row .column {
+    width: 100%;
+  }
+}
+.how-it-works {
+  width: 100%;
+  height: auto;
+  margin: 2em auto 2em auto;
+  overflow: hidden;
+}
+.how-it-works ol {
+  color: whitesmoke;
+  text-align: left;
+  
+}
+
+.about {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: whitesmoke; 
+  margin: auto;
+  text-align: center;
+}
+.about p {
+  text-align: left;
+  font-size: 1.2em;  
+}
+/* Servicess css starts now*/
+.services {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  color: whitesmoke;  
+  padding: 60px 10px 60px 10px;
+  float: center;
+  text-align: center;
+  border: 1px solid whitesmoke;
+  border-left: none;
+  border-right: none;
+
+}
+.services .row {
+  display: flex;
+  width: 100%;
+  padding: 15px;  
+  text-align: center;
+  
+}
+.services .row .column {
+  width: 50%;
+  padding: 15px;  
+  text-align: center;
+  
+  
+}
+.services .row .column ul{
+  float: left;  
+  padding-left: 30px;
+  text-align: left;
+  font-size: 18px;
+}
+.services .row .column ul li a {
+  text-decoration: none;
+}
+.services .row .column-right p {
+  float: left; 
+  padding-left: 30px;
+  text-align: left;
+  font-size: 18px;
+}
+.services .row .column-right p a {
+  text-decoration: none;
+  font-size: 20px;
+}
