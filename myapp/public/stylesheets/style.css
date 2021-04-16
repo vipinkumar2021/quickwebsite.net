@@ -113,7 +113,8 @@ body {
 .header {  
   background-color: transparent; 
   color: whitesmoke;
-
+  background-color: transparent;
+  /*background-color: rgba(238, 135, 97, .6);*/
 }
 
 .header .headernav {
@@ -215,20 +216,18 @@ body {
 /* brand-title css starts*/
 .item1 .brand-title {
   position: absolute;
-  top: .9em;
-  left: 4em;
+  top: .2em;
+  left: 3.5em;
   font-size: 25px;  
   text-decoration: none;
   color: whitesmoke;
   font-weight: bolder;
 }
-.item1 .brand-title:hover {
-  color: rgb(180, 175, 175);
-}
+
 @media only screen and (min-width: 280px) and (max-width: 768px) { 
   .item1 .brand-title {
     position: absolute;
-    top: 1em;
+    top: .6em;
     right: 3.5em;    
     font-size: 25px;  
     text-decoration: none;
@@ -240,8 +239,8 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 1024px) { 
   .item1 .brand-title {
     position: absolute;
-    top: 1em;
-    left: 5.3em;
+    top: .6em;
+    left: 6em;
     font-size: 25px;  
     text-decoration: none;
     color: whitesmoke;
