@@ -489,7 +489,8 @@ body {
 }
 .about p {
   text-align: left;
-  font-size: 1.2em;  
+  font-size: 1.2em; 
+  padding: 3em 3em .6em 3em; 
 }
 /* Servicess css starts now*/
 .services {
