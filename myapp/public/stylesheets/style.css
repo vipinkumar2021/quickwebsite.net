@@ -466,13 +466,17 @@ body {
 .how-it-works {
   width: 100%;
   height: auto;
-  margin: 2em auto 2em auto;
+  margin: 2em 0 2em 0;
   overflow: hidden;
+}
+.how-it-works h2 {
+  margin: auto;
 }
 .how-it-works ol {
   color: whitesmoke;
   text-align: left;
-  
+  padding: auto;
+  margin: auto;
 }
 
 .about {
