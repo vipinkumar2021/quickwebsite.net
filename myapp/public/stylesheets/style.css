@@ -537,8 +537,7 @@ body {
 .services .row .column {
   width: 50%;
   padding: .97em;  
-  text-align: center;
-  
+  text-align: center;  
   
 }
 .services .row .column ul{
@@ -559,4 +558,23 @@ body {
 .services .row .column-right p a {
   text-decoration: none;
   font-size: 1.25em;
+}
+@media screen and (min-width: 280px) and (max-width: 480px) {
+  .services .row {
+    display: block;
+    width: 100%;
+    padding: .97em;  
+    text-align: center;
+    
+  }
+  .services .row .column {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: .97em;  
+    text-align: center;  
+    
+  }
+  .services .row .column-right h3 {
+    padding-top: 4em;
+  }
 }
