@@ -1,0 +1,24 @@
+
+        <!--Sign in Modal starts here-->
+        <div class="modal-parent-signin" id="signin">
+            <div class="modal-signin">
+                <h1 style="text-align: center;">Sign in</h1>      
+                <form action="/signin" method="post" role="form">
+                  <label for="username">Username</label><br/>
+                  <input name="uname" type="username" placeholder="Enter Your Username..." required/><br/><br/>
+                  <label for="password">Password</label><br/>
+                  <input name="password" type="password" placeholder="Enter Your Password..." required/><br/><br/>                            
+                  <button type="submit">Sign in</button><button onclick="closeSigninModal()">cancel</button><br/><br/>
+                  <div class="modal-anchor-tags">
+                    <a href="/forgotusername">Forgot Username</a> 
+                    <a href="/forgotpassword">Forgot Password</a>                                 
+                    <a href="#" onclick="openSignUpModal()">Sign up</a>
+                  </div>
+                 
+                </form>
+                <span class="X-signin">&times;</span>
+            </div>
+          </div>
+          <!--Sign in Modal ends here-->
+        
+             
