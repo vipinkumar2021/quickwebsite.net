@@ -21,4 +21,33 @@
           </div>
           <!--Sign in Modal ends here-->
         
+          <!--Sign up Customer Modal starts here-->
+          <div class="modal-parent-signup">
+            <div class="modal-signup">
+                <h1 style="text-align: center;">Customer Registration</h1>        
+                <form action="/signupcustomer" method="post" role="form" >
+                  <label for="firstname">First Name</label><br/>
+                  <input name="firstname" type="text" placeholder="Enter Your First Name..." required /><br/><br/>
+                  <label for="lastname">Last Name</label><br/>
+                  <input name="lastname" type="text" placeholder="Enter Your Last Name..." required /><br/><br/>
+                  <label for="usrname">Username</label><br/>
+                  <input name="usrname" type="username" placeholder="Create a Username..." required /><br/><br/>
+                  <label for="mobilenumber">Mobile Number</label><br/>
+                  <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required /><br/><br/>
+                  <label for="email">Email</label><br/>
+                  <input name="email" type="email" placeholder="Enter Your Email id..." required /><br/><br/>
+                  <div class="modal-button">
+                    <button type="submit">Proceed to Sign up</button><button type="reset">Reset</button><button onclick="closeSignupModal()">cancel</button><br/><br/>
+                  </div>
+                  
+                  <div class="modal-anchor-tags">
+                    <a href="#" onclick="openSignInModal()">Log in</a>
+                  </div>
+                  
+                </form>
+                <span class="X-signup" onclick="closeSignupModal()">&times;</span>
+            </div>
+          </div>
+          <!--Sign up Customer Modal ends here-->
+        
              
