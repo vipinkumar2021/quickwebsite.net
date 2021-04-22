@@ -358,6 +358,9 @@ body {
 
 /* footer css starts*/
 .footer {
+  
+
+  /* */
   width: 100%;
   height: auto;
   background-color: rgba(238, 135, 97, .6);  
@@ -374,9 +377,13 @@ body {
   border: none;
   outline: none;
   color: whitesmoke;
+  margin-top: 5em;
+  margin-bottom: 0;
 }
 .footer .row {
-  display: flex;  
+  display: flex; 
+  width: 100%; 
+  height: auto;
 }
 
 .footer .row .column {
@@ -513,9 +520,11 @@ body {
   width: 100%;
   height: auto;
   background-color: transparent;
-  color: whitesmoke;  
-  padding: 3.5em .8em 0 .8em;
+  color: whitesmoke; 
+  /* 
+  padding: 3.2em .8em 0 .8em;
   float: center;
+  */
   text-align: center;
   border: 1px solid whitesmoke;
   border-left: none;
@@ -590,14 +599,14 @@ body {
 /* getstarted css* starts*/
 .getstarted {
   
-  margin-bottom: 5em;
+  padding-bottom: 5em;
 }
 
 /* getstarted css* ends*/
 
 /* templates css* starts*/
 .templates {  
-  margin-bottom: 5em;
+  padding-bottom: 5em;
 }
 
 /* templates css* ends*/
@@ -685,6 +694,9 @@ background-color: rgba(238, 135, 97, .6);
 color: whitesmoke;
 margin-right: 1.25em;
 } 
+.modal-parent-signin .modal-signin form button:hover {
+  color: rgb(180, 175, 175);
+}
 .modal-anchor-tags {
   display: flex;
   justify-content: space-around;  
@@ -795,6 +807,9 @@ background-color: rgba(238, 135, 97, .6);
 color: whitesmoke;
 margin-right: 1.25em;
 } 
+.modal-parent-signup .modal-signup form button:hover {
+  color: rgb(180, 175, 175);
+}
 .modal-anchor-tags {
   display: flex;
   justify-content: space-around;  
@@ -810,7 +825,7 @@ margin-right: 1.25em;
     width: 100%;
     margin: auto auto 1em auto;
   }
-
+  
   .modal-anchor-tags {
     display: block;
     justify-content: none;  
@@ -924,6 +939,9 @@ background-color: rgba(238, 135, 97, .6);
 color: whitesmoke;
 margin-right: 1.25em;
 } 
+.modal-parent-contact .modal-contact form button:hover {
+  color: rgb(180, 175, 175);
+}
 .modal-anchor-tags {
   display: flex;
   justify-content: space-around;  
