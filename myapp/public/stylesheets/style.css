@@ -652,11 +652,12 @@ z-index: 1;
 position: absolute;
 top: .5em;
 right: .7em;
-font-size: 1.5em;
+font-size: 2em;
 
 }
 .X-signin:hover {
 cursor: pointer;
+color: rgb(180, 175, 175);
 
 }
 
@@ -761,11 +762,12 @@ z-index: 1;
 position: absolute;
 top: .5em;
 right: .7em;
-font-size: 1.5em;
+font-size: 2em;
 
 }
 .X-signup:hover {
 cursor: pointer;
+color: rgb(180, 175, 175);
 
 }
 
@@ -877,11 +879,13 @@ z-index: 1;
 position: absolute;
 top: .5em;
 right: .7em;
-font-size: 1.5em;
+font-size: 2em;
 
 }
 .X-contact:hover {
 cursor: pointer;
+color: rgb(180, 175, 175);
+
 
 }
 
