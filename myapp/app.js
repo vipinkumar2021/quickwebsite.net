@@ -10,7 +10,8 @@ var specialoffersRouter = require('./routes/specialoffers');
 var getstartedRouter = require('./routes/getstarted');
 var templatesRouter = require('./routes/templates');
 var careerRouter = require('./routes/career');
-
+var adminRouter = require('./routes/admin');
+var helpRouter = require('./routes/help');
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.use('/specialoffers', specialoffersRouter);
 app.use('/getstarted', getstartedRouter);
 app.use('/templates', templatesRouter);
 app.use('/career', careerRouter);
+app.use('/admin', adminRouter);
+app.use('/help', helpRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
