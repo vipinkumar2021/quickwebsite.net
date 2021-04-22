@@ -608,7 +608,7 @@ body {
 .modal-parent-signin {
   margin: 0 auto 0 auto;
   padding: 0 10%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -717,7 +717,7 @@ margin-right: 1.25em;
 .modal-parent-signup {
   margin: 0 auto 0 auto;
   padding: 0 10%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -834,7 +834,7 @@ margin-right: 1.25em;
 .modal-parent-contact {
   margin: 0 auto 0 auto;
   padding: 0 10%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -898,6 +898,17 @@ padding: .8em;
 background-color: rgba(238, 135, 97, .6); 
 color: whitesmoke;
 }
+
+.modal-parent-contact .modal-contact form textarea {
+  max-width: 100%;
+  border: 3px solid aliceblue;
+  border-radius: 10px;
+  outline: none;
+  padding: 1em;
+  background-color: transparent;
+  color: aliceblue;
+  overflow: auto;
+  }
 
 .modal-parent-contact .modal-contact form button {
 width: 25%;
