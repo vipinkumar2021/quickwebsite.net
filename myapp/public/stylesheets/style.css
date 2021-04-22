@@ -589,10 +589,18 @@ body {
 
 /* getstarted css* starts*/
 .getstarted {
+  
   margin-bottom: 5em;
 }
 
 /* getstarted css* ends*/
+
+/* templates css* starts*/
+.templates {  
+  margin-bottom: 5em;
+}
+
+/* templates css* ends*/
 
 /* modal css starts
 /* sign in modal css starts here */
