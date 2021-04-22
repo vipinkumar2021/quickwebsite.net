@@ -611,8 +611,46 @@
   }
   
   /* templates css* ends*/
+  /* career css* starts*/
+  .career {
+    
+    padding-bottom: 5em;
+  }
   
-  /* modal css starts
+  /* career css ends here*/
+
+  /* each-button css starts*/
+  .each-button {
+    width: 25%;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    outline: none;
+    padding: .8em;
+    background-color: transparent; 
+    color: whitesmoke;
+    margin: 1em auto 1em auto;
+    } 
+    .each-button:hover {
+      color: rgb(180, 175, 175);
+    }
+  /* each-button css starts*/
+    @media screen and (min-width: 280px) and (max-width: 768px) {
+      .each-button {
+        width: 100%;
+        margin: 1em auto 1em auto;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .each-button {
+        width: 50%;
+        margin: 1em auto 1em auto;
+      }
+    }
+      /* each-button css end*/
+  
+  /* modal css starts*/
+  
+
   /* sign in modal css starts here */
   
   .modal-parent-signin {

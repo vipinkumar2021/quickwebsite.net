@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var specialoffersRouter = require('./routes/specialoffers');
 var getstartedRouter = require('./routes/getstarted');
 var templatesRouter = require('./routes/templates');
+var careerRouter = require('./routes/career');
 
 
 var app = express();
@@ -28,6 +29,7 @@ app.use('/users', usersRouter);
 app.use('/specialoffers', specialoffersRouter);
 app.use('/getstarted', getstartedRouter);
 app.use('/templates', templatesRouter);
+app.use('/career', careerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
