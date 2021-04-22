@@ -49,5 +49,38 @@
             </div>
           </div>
           <!--Sign up Customer Modal ends here-->
+
+          <!--Contact Us Modal starts here-->
+                  
+          <div class="modal-parent-contact">
+            <div class="modal-contact">
+                <h1 style="text-align: center;">Contact Us</h1>
+                <form action="/contactus" method="post" role="form">
+                  <label for="firstname">First Name</label><br/>
+                  <input name="firstname" type="text" placeholder="Enter Your First Name..." required/><br/><br/>
+                  <label for="lastname">Last Name</label><br/>
+                  <input name="lastname" type="text" placeholder="Enter Your Last Name..." required/><br/><br/>
+                  <label for="mobilenumber">Mobile Number</label><br/>
+                  <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required/><br/><br/>
+                  <label for="email">Email</label><br/>
+                  <input name="email" type="email" placeholder="Enter Your Email id..." optional/><br/><br/>
+                  <label>Write Message</label><br/>
+                  <textarea name="writeusmessage" type="text" placeholder="Enter Your Message here...">
+  
+                  </textarea><br/><br/>
+                  <div class="modal-button">
+                    <button type="submit">Submit</button><button onclick="closeContactModal()">cancel</button><br/><br/>
+                  </div>
+                  
+                  <div class="modal-anchor-tags">
+                    <span>Toll Free: <a href="tel: +919813806752">0091 9813806752</a></span>
+                  </div>
+                                  
+                </form>
+                <span class="X-contact" onclick="closeContactModal()">&times;</span>
+            </div>
+          </div>
+          <!--Contact Modal ends here-->
+
         
              
