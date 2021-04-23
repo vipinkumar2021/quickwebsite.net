@@ -4,7 +4,105 @@
     <div class="container welcome getstarted" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Start Building Your Website</h2> 
-            </div>     
+        <form action="/cart" method="post" role="form">
+            <br/>
+            
+            <label>Select Basic Features:</label><br/>
+            <input type="checkbox" name="home"/><label>Home </label><br/>
+            <label>Upload content to Write in Home Page (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>About </label><br/>
+            <label>Upload content to Write in About Section (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>Services</label><br/>
+            <label>Upload content to Write in Services (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>Why Us</label><br/>
+            <label>Upload content to Write in Why Us (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>Contact Us (Only Address)</label><br/>
+            <label>Please provide the Address to be mentioned in your website</label><br/>
+            <input type="address" name="address"/><br/>
+            <label>Please provide the Phone Number to be mentioned in your website</label><br/>
+            <input type="tel" name="phonenumber" maxlength="15" /><br/>
+            <input type="checkbox" name="home"/><label>Social Media</label><br/>
+            <label>Please Provide url of your social media accounts. (eg. https://www.facebook.com/quickwebsite)</label><br/>
+            <textarea>
+        
+            </textarea><br/>
+            <input type="checkbox" name="home"/><label>Policy</label><br/>
+            <label>Upload Your Business Policy to mention in your website</label><br/>
+            <input type="file" name="home"/><br/>         
+            <input type="checkbox" name="home"/><label>Terms & Conditions</label><br/>
+            <label>Upload Your Business Terms & Conditions to mention in your website</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>Copy right</label><br/>
+            <label>Please provide Copy Right Information</label><br/>
+            <input type="text" name="copyright"/><br/><br/>
+            
+            <label>Designing Part:</label><br/>
+        
+            <label>Preferred Website Background color or image</label><br/>
+            <input type="color" name="home"/><label>Choose Background Color here OR Upload Image below</label><br/>
+            
+            <input type="file" name="background-image"/>
+            <br/>
+            <label>Preferred Website text color </label><br/>
+            <input type="color" name="home"/><label>Choose Text Color here OR Upload Image below</label><br/>
+        
+            <label>Select More Features: </label><br/>
+        
+            <input type="checkbox" name="home"/><label>Logo</label><br/>
+            <label>Upload your Logo here if you have one</label><br/>
+            <input type="file" name="logo"/><br/>
+            <label>OR</label><br/>
+            <input type="checkbox" name="home"/><label>Buy Logo (Rs. )</label><br/>
+            <input type="checkbox" name="home"/><label>Gallery</label><br/>
+            <label>Upload content to Write in Gallery (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>Templates</label><br/>
+            <label>Upload content to Write in Templates </label><br/>
+            <input type="file" name="home"/><br/>
+            <label>Upload Photos to show in Templates if you have</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="menu"/><label>Menu </label><br/>
+            <label>Upload content to Write in Menu Section of your Food Services website (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
+        <br/>
+        
+            <label>Select Advanced Features:</label><br/>
+        
+            <input type="checkbox" name="home"/><label>Register (Sign up) and Log in (Sign in)</label><br/>
+            <label>Please write your Personal Email Or Business Email Id (Required for OTP )</label><br/>
+            <input type="email" name="email"/><br/>            
+            <input type="checkbox" name="home"/><label>Contact Us (Address Plus Contact Us Form)</label><br/>
+            <input type="checkbox" name="home"/><label>Payment Method (Rs.)</label><br/><br/>
+        
+            <label>Other Features or Services:</label><br/>
+        
+            <input type="checkbox" name="home"/><label>Email Service (Rs.)</label><br/>
+            <input type="checkbox" name="home"/><label>Message Service (Rs.)</label><br/>
+        
+            <label>Describe your website briefly to get the idea of website you would like</label><br/>
+            <textarea>
+        
+            </textarea>
+        
+            <br/>
+            <label>Include</label><br/>
+            <textarea>
+        
+            </textarea><br/>
+            <label>Do Not Include</label><br/>
+            <textarea>
+        
+            </textarea><br/><br/>
+                        
+            <input type="submit" value="Proceed to Cart"/>
+        </form>        
+           
+    
+    </div>     
 
 </div>
 <%- include('modal') %>
