@@ -672,6 +672,30 @@
   
   /* admin css ends here*/
 
+  /* getstarted css* starts*/
+  .getstarted {
+    
+    padding-bottom: 5em;
+  }
+  .getstarted form select {
+    background-color: transparent;
+    color: whitesmoke;
+
+  }
+  .getstarted form select optgroup {
+    background-color: transparent;
+    color: black;
+  }
+  
+  /* getstarted css ends here*/
+
+  /* decidebyfeatures css* starts*/
+  .decidebyfeatures {
+    
+    padding-bottom: 5em;
+  }
+  
+  /* decidebyfeatures css ends here*/
   /* each-button css starts*/
   .each-button {
     width: 25%;

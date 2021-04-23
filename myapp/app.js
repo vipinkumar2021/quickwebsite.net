@@ -13,6 +13,7 @@ var dashboardtemplatesRouter = require('./routes/dashboardtemplates');
 var careerRouter = require('./routes/career');
 var adminRouter = require('./routes/admin');
 var helpRouter = require('./routes/help');
+var decidebyfeaturesRouter = require('./routes/decidebyfeatures');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/dashboardtemplates', dashboardtemplatesRouter);
 app.use('/career', careerRouter);
 app.use('/admin', adminRouter);
 app.use('/help', helpRouter);
+app.use('/decidebyfeatures', decidebyfeaturesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
