@@ -14,7 +14,7 @@ var careerRouter = require('./routes/career');
 var adminRouter = require('./routes/admin');
 var helpRouter = require('./routes/help');
 var decidebyfeaturesRouter = require('./routes/decidebyfeatures');
-
+var contactusRouter = require('./routes/contactus');
 var app = express();
 
 // view engine setup
@@ -37,6 +37,7 @@ app.use('/career', careerRouter);
 app.use('/admin', adminRouter);
 app.use('/help', helpRouter);
 app.use('/decidebyfeatures', decidebyfeaturesRouter);
+app.use('/contactus', contactusRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
