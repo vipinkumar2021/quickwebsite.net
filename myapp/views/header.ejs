@@ -17,18 +17,21 @@
   <body>
     <div class="grid-container">
       <div class="item item1 header">
-        <span onclick="openNav()" class="iconbar">&#9776;</span><a href="https://www.quickwebsite.net" class="brand-title"><img src="images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
+        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="https://www.quickwebsite.net" class="brand-title"><img src="images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
         
         <div class="headernav">
           <ul>
             <li>
-              <a href="/#homecontent" id="home-icon"><i class="glyphicon glyphicon-home"></i></a>
+              <a href="/#homecontent" id="home-icon" title="Home"><i class="glyphicon glyphicon-home"></i></a>
             </li>
             <li>
               <a href="/#aboutcontent">About</a>
             </li>
             <li>
               <a href="/#servicescontent">Services</a>
+            </li>
+            <li>
+              <a href="/#whyus">Why Us</a>
             </li>  
             <li class="dropdown">
               <a href="/templates">Templates</a>
@@ -50,16 +53,22 @@
             <li>
               <a href="#" onclick="openContactModal()">Contact</a>
             </li>     
-            <li>
-              <a href="#" onclick="openSignInModal()">Cart</a>
-            </li>
+            
           </ul>
           <ul>
-            <li>
-              <a href="#" onclick="openSignInModal()">Sign in</a>
+            <li class="cart">
+              <a href="#" onclick="openSignInModal()" title="Cart"><i class="fa fa-shopping-cart"></i></a>
             </li>
-            <li>
-              <a href="#" onclick="openSignUpModal()">Sign up</a>
+            <li class="account">
+              <a href="#">Account</a>
+              <ul>
+                <li>              
+                  <a href="#" onclick="openSignInModal()">Sign in</a>
+                </li>
+                <li>
+                  <a href="#" onclick="openSignUpModal()">Sign up</a>
+                </li>
+              </ul>              
             </li>
           </ul>
         </div>
@@ -71,10 +80,10 @@
         <div class="sidenav">
           <ul>
             <li>
-              <a href="javascript:void(0)" class="closeBtn">&times;</a>
+              <a href="javascript:void(0)" class="closeBtn" title="Close">&times;</a>
             </li>
             <li>
-              <a href="/#homecontent" onclick="closeSideNav()"><i class="glyphicon glyphicon-home"></i></a>
+              <a href="/#homecontent" onclick="closeSideNav()" title="Home"><i class="glyphicon glyphicon-home"></i></a>
             </li>
             <li>  
               <a href="#" onclick="openSignInModal()">View Cart</a>
@@ -85,13 +94,14 @@
             </li>
             <li>
               <a href="/#howitworkscontent">How It Works</a>
-            </li>            
+            </li>
             <li>
               <a href="#" onclick="openSignInModal()">Sign in</a>
             </li>
             <li>
               <a href="#" onclick="openSignUpModal()">Sign up</a>
-            </li>
+            </li>           
+            
             <li>
               <a href="/#aboutcontent" onclick="closeSideNav()">About</a>
             </li>
@@ -100,6 +110,7 @@
             </li>  
             <li>
               <a href="/templates" >Templates</a>
+              <!--
               <ul>
                 <li><a href="/foodandrestaurants">Food & Restaurants</a></li>
                 <li><a href="/portfolio">Portfolio Templates</a></li>
@@ -114,6 +125,7 @@
                 <li><a href="/startpagetemplates">Start Page Templates</a></li>                                                    
                 <li><a href="/othertemplates">Other Template</a></li>
             </ul>
+            -->
             </li>            
             <li>
               <a href="/career">Career</a>
@@ -122,7 +134,7 @@
               <a href="#" onclick="alert('Employees Only Section')">Employees</a>
             </li> 
             <li>
-              <a href="/admin">Admin Members</a>
+              <a href="/admin">Admin Staff</a>
             </li> 
             <li>
               <a href="/help">Help</a>

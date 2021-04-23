@@ -182,6 +182,17 @@
     overflow: hidden;
     
   }
+  .account {
+    position: relative;
+  }
+  .account ul {
+    position: absolute;
+    right: 0;
+  }
+  .cart[title] {
+    background-color: rgba(238, 135, 97, .6);
+    color: whitesmoke;
+  }
   @media only screen and (min-width: 280px) and (max-width: 768px) { 
     .header .headernav ul {
       display: none;
@@ -202,6 +213,7 @@
     }
   }
   */
+  
   /* header css ends */
   /*iconbar css starts*/
   .item1 .iconbar {
@@ -893,6 +905,126 @@
   }
   /* sign up modal css ends here */
   
+  /* Admin Staff sign up modal css starts here */
+  
+  .modal-parent-signup-admin {
+    margin: 0 auto 0 auto;
+    padding: 0 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: none;
+    text-align: left;
+    z-index: 1;
+    
+  }
+  
+  .modal-signup-admin {
+  position: absolute;
+  top: 10%;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+  margin: auto;
+  padding: 2em;
+  height: auto;
+  overflow: auto;
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke; 
+  position: relative;
+  animation: 1s drop;
+  display: block;
+  z-index: 1;
+  }
+  
+  @keyframes drop {
+  0% {
+   top: -13em;
+  }
+  100% {
+   top: 10%;
+  }
+  }
+  
+  .X-signup-admin {
+  position: absolute;
+  top: .5em;
+  right: .7em;
+  font-size: 2em;
+  
+  }
+  .X-signup-admin:hover {
+  cursor: pointer;
+  color: rgb(180, 175, 175);
+  
+  }
+  
+  .modal-parent-signup .modal-signup form label {
+   text-align: left;
+   font-size: 1.25em;
+  }
+  .modal-parent-signup .modal-signup form input {
+  width: 100%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  }
+  
+  .modal-parent-signup-admin .modal-signup-admin form button {
+  width: 25%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  margin-right: 1.25em;
+  } 
+  .modal-parent-signup-admin .modal-signup-admin form button:hover {
+    color: rgb(180, 175, 175);
+  }
+  .modal-anchor-tags {
+    display: flex;
+    justify-content: space-around;  
+  }
+  .modal-anchor-tags a {
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+  
+  
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .modal-parent-signup-admin .modal-signup-admin form button {
+      width: 100%;
+      margin: auto auto 1em auto;
+    }
+    
+    .modal-anchor-tags {
+      display: block;
+      justify-content: none;  
+    }
+    .modal-anchor-tags a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.25em;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .modal-parent-signup-admin .modal-signup-admin form button {
+      width: 40%;
+      margin: auto 1em 1em auto;
+    }
+  }
+  /* Admin Staff sign up modal css ends here */
+
   
   /* Contact Us modal css starts here */
   
