@@ -675,17 +675,34 @@
   /* getstarted css* starts*/
   .getstarted {
     
-    padding-bottom: 5em;
+    padding: 5em;
+    text-align: left;
+    margin: 1em auto 1em auto;
   }
+  .getstarted h2 {
+    margin: 1em auto 1em auto;
+    padding-bottom: 2em;
+  }
+  
   .getstarted form select {
     background-color: transparent;
     color: whitesmoke;
+    outline: none;
 
   }
   .getstarted form select optgroup {
     background-color: transparent;
     color: black;
   }
+  .getstarted form input {
+    background-color: transparent;
+    color: whitesmoke;
+    outline: none;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    font-size: 1.25em;
+  }
+  
   
   /* getstarted css ends here*/
 
