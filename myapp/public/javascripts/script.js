@@ -41,12 +41,16 @@ var parentModalGiveYourDetails = document.querySelector('.modal-parent-giveyourd
 function openSignInModal() {
     parentModalSignin.style.display = 'block';
     parentModalSignup.style.display = 'none';
+    parentModalContact.style.display = 'none';
 //closing sidenav when signin is clicked
     sidenavParent.style.width = '0';
     sideNav.style.width = '0';
     iconBarButton.style.display = 'block';
     //closing give details sign up modal when signin is clicked
-    parentModalGiveYourDetails.style.display = 'none';
+    //parentModalGiveYourDetails.style.display = 'none';
+//scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
 
 }
@@ -75,10 +79,16 @@ var parentModalSignin = document.getElementsByClassName('modal-parent-signin')[0
 function openSignUpModal() {
     parentModalSignup.style.display = 'block';
     parentModalSignin.style.display = 'none';
+    parentModalContact.style.display = 'none';
 //closing sidenav when signup is clicked
     sidenavParent.style.width = '0';
     sideNav.style.width = '0';
     iconBarButton.style.display = 'block';
+
+
+    //scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
 }
 
@@ -125,6 +135,7 @@ function closeGiveYourDetailsModadforWindow(e) {
 */
 //Give Your Details modal javascript ends here
 //Website Features List Modal javascript starts here
+/*
 function openWebsiteFeaturesListModal() {
     var parentModalWebsiteFeaturesList = document.querySelector('.modal-parent-websitefeatureslist');
 
@@ -138,6 +149,7 @@ function openWebsiteFeaturesListModal() {
     parentModalWebsiteFeaturesList.style.display = 'none';
 
  }
+ 
 //View Website Features list starts here
 function openViewWebsiteFeaturesListModal() {
     var parentModalViewWebsiteFeaturesList = document.querySelector('.modal-parent-viewwebsitefeatureslist');
@@ -183,6 +195,7 @@ function openViewWebsiteContentModal() {
     parentModalViewWebsiteContent.style.display = 'none';
 
  }
+ */
 //View Website Content list ends here
 
 //Agreement Modal javascript starts here
@@ -207,11 +220,16 @@ function openAgreementModal() {
 function openContactModal() {
     var parentModalContact = document.querySelector('.modal-parent-contact');
     parentModalContact.style.display = 'block';
-
+    parentModalSignin.style.display = 'none';
+    parentModalSignup.style.display = 'none';
     //closing sidenav when contact is clicked
     sidenavParent.style.width = '0';
     sideNav.style.width = '0';
     iconBarButton.style.display = 'block';
+    //Scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
 }
 
 //close contat modal when Cross or Cancel button is clicked
@@ -371,6 +389,7 @@ function closeModalRsvp() {
 
 // Freelance Work Advertisement Modal javascript starts here
 //open freelance Work Advertisement Modal
+/*
 function openFreelanceWorkAdvertisementModal() {
     var modalParentFreelanceWork = document.getElementsByClassName('modal-parent-freelancework-advertisement')[0];
     modalParentFreelanceWork.style.display = 'block';
@@ -392,7 +411,7 @@ modalParentFreelanceWork.addEventListener('click', closeFreelanceWorkAdvertiseme
 */
 // Freelance Work Advertisement Modal javascript ends here
 // Chat box modal javascript starts here
-
+/*
 function openChatBoxModal() {
     var modalParentChatbox = document.getElementsByClassName('modal-parent-chatbox')[0]; 
 
@@ -409,5 +428,5 @@ function closeChatBoxModal() {
 }
 
 
-
+*/
 // Chat box modal javascript ends here

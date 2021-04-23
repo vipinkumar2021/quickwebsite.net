@@ -642,8 +642,20 @@
   .templates {  
     padding-bottom: 5em;
   }
+  .templates h2 {
+    margin: auto;
+  }
+  .templates h3 {
+    margin: 1em auto 1em auto;
+  }
   
   /* templates css* ends*/
+  .class-img {
+    width: 100%;
+    /*max-width: 90%;*/
+    height: auto;
+    margin: auto auto 1em auto;
+  }
   /* career css* starts*/
   .career {
     
