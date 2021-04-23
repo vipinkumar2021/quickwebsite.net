@@ -603,6 +603,26 @@
     }
   }
   
+  /* Why us css starts */
+  .whyus {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: whitesmoke; 
+    margin: auto auto 5em auto;
+    text-align: center;
+    border-bottom: 1px solid whitesmoke;
+  }
+  .whyus h2 {
+    margin: auto;
+    padding-top: 4.5em;
+  }
+  .whyus p {
+    text-align: left;
+    font-size: 1.25em; 
+    padding: 3em 3em 0 3em; 
+  }
+  /* Why Us css ends*/
   /* specialoffers css* starts*/
   .specialoffers {
     margin-bottom: 5em;
