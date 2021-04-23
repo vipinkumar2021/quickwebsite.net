@@ -4,7 +4,7 @@
     <div class="container welcome getstarted" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <h2>Start Building Your Website</h2> 
-        <form action="/addtocart" method="post" role="form">
+        <form action="/cart" method="post" role="form">
             <select name="template" id="template">
                 <option >Select Template</option>
                 <optgroup label="Food & Restaurant Templates">
@@ -62,27 +62,64 @@
                     <option value=""></option>
                 </optgroup>                
             </select><br/>
-            <label>OR</label><br/>
-            <label>Upload Your Own Template</label><br/>
-            <input type="file" name="customer_own_template"/><br/>
+            
             <label>Select Features</label><br/>
             <input type="checkbox" name="home"/><label>Home </label><br/>
+            <label>Upload content to Write in Home Page (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>About </label><br/>
+            <label>Upload content to Write in About Section (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Services</label><br/>
+            <label>Upload content to Write in Services (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Why Us</label><br/>
+            <label>Upload content to Write in Why Us (word or pdf)</label><br/>
+            <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Gallery</label><br/>
+            <label>Upload content to Write in Gallery </label><br/>
+            <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Templates</label><br/>
-            <input type="checkbox" name="home"/><label>Register (Sign up)</label><br/>
-            <input type="checkbox" name="home"/><label>Log in (Sign in)</label><br/>
+            <label>Upload content to Write in Templates</label><br/>
+            <input type="file" name="home"/><br/>
+            <label>Upload in Templates photos if you have</label><br/>
+            <input type="file" name="home"/><br/>
+            <input type="checkbox" name="home"/><label>Register (Sign up) and Log in (Sign in)</label><br/>
+            <label>Please write your Personal Email Or Business Email Id (Required for OTP )</label><br/>
+            <input type="email" name="email"/><br/>
+            
             <input type="checkbox" name="home"/><label>Contact Us (Only Address)</label><br/>
+            <label>Please provide the Address to be mentioned in your website</label><br/>
+            <input type="address" name="address"/><br/>
+            <label>Please provide the Phone Number to be mentioned in your website</label><br/>
+            <input type="tel" name="phonenumber" maxlength="15" /><br/>
             <input type="checkbox" name="home"/><label>Contact Us (Address Plus Contact Us Form)</label><br/>
+
             <input type="checkbox" name="home"/><label>Email Service (Rs.)</label><br/>
             <input type="checkbox" name="home"/><label>Message Service (Rs.)</label><br/>
+            
             <input type="checkbox" name="home"/><label>Payment Method (Rs.)</label><br/>
+            <input type="checkbox" name="home"/><label>Logo</label><br/>
+            <label>Upload your Logo here if you have one</label><br/>
+            <input type="file" name="logo"/><br/>
+            <label>OR</label>
+            <input type="checkbox" name="home"/><label>Buy Logo (Rs. )</label><br/>            
             <input type="checkbox" name="home"/><label>Social Media</label><br/>
-            <input type="checkbox" name="home"/><label>Policy</label><br/>            
+            <label>Please Provide url of your social media accounts. (eg. https://www.facebook.com/quickwebsite)</label><br/>
+            <input type="text" name="social-media-url"/><br/>
+            <input type="checkbox" name="home"/><label>Policy</label><br/>
+            <label>Upload Your Business Policy to mention in your website</label><br/>
+            <input type="file" name="home"/><br/>         
             <input type="checkbox" name="home"/><label>Terms & Conditions</label><br/>
+            <label>Upload Your Business Terms & Conditions to mention in your website</label><br/>
+            <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Copy right</label><br/>
+            <label>Please provide Copy Right Information</label><br/>
+            <input type="text" name="copyright"/><br/>
+                       
+            
+            
+            
             <label>Write Other Feature</label><br/>
             <textarea>
 

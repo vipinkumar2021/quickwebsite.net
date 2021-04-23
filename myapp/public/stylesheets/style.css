@@ -688,11 +688,21 @@
     background-color: transparent;
     color: whitesmoke;
     outline: none;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
 
   }
   .getstarted form select optgroup {
     background-color: transparent;
     color: black;
+  }
+  .getstarted form select optgroup option {
+    background-color: transparent;
+    color: black;
+  }
+  .getstarted form label {
+    padding: .5em;
+    font-size: 1.25em;
   }
   .getstarted form input {
     background-color: transparent;
