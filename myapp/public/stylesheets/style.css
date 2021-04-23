@@ -189,10 +189,22 @@
     position: absolute;
     right: 0;
   }
+  .cart {
+    position: relative;
+  }
+  .notification {
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    color: blue;
+    /*display: none;*/
+  }
+  /*
   .cart[title] {
     background-color: rgba(238, 135, 97, .6);
     color: whitesmoke;
   }
+  */
   @media only screen and (min-width: 280px) and (max-width: 768px) { 
     .header .headernav ul {
       display: none;
@@ -670,7 +682,7 @@
   
   .getstarted {
     
-    padding: 2% 2% 5em 2%;
+    padding: 1.5% 1.5% 5em 1.5%;
     text-align: left;
     margin: 1em auto 1em auto;
   }
@@ -678,7 +690,11 @@
     margin: 1em auto 1em auto;
     padding-bottom: 2em;
   }
-  
+  .getstarted form {
+    max-width: 80%;
+    height: auto;
+    
+  }
   .getstarted form select {
     background-color: transparent;
     color: whitesmoke;

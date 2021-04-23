@@ -5,6 +5,7 @@
         <br/><br/><br/><br/>
         <h2>Start Building Your Website</h2> 
         <form action="/cart" method="post" role="form">
+            <label>STEP 1. (Required)</label><br/>
             <select name="template" id="template">
                 <option >Select Template</option>
                 <optgroup label="Food & Restaurant Templates">
@@ -21,10 +22,7 @@
                 </optgroup>
                 <optgroup label="Small Business Website Templates">
                     <option value="">Clothing Store Template</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    
                 </optgroup>
                 <optgroup label="Blog Templates">
                     <option value="">Blog Template</option>
@@ -34,52 +32,43 @@
                     <option value="">Travel Blog Template</option>
                 </optgroup>
                 <optgroup label="Invitation Templates">
-                    <option value="">Wedding Invitation</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Wedding Invitation</option>                    
                 </optgroup>
                 <optgroup label="Simple Webpage Templates">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Web Page Template</option>                    
                 </optgroup>
                 <optgroup label="Coming Soon Templates">
-                    <option value="">Coming Soon Template</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Coming Soon Template</option>                    
                 </optgroup>
                 <optgroup label="Other Templates">
                     <option value="">Band Template</option>
-                    <option value="">Photo Album Template</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="">Photo Album Template</option>                    
                 </optgroup>                
             </select><br/>
+
+            <label>OR</label><br/>
             
-            <label>Select Basic Features:</label><br/>
-            <input type="checkbox" name="home"/><label>Home </label><br/>
-            <label>Upload content to Write in Home Page (word or pdf)</label><br/>
+            <label>Describe your own Template (image file or word file or pdf)</label>
+            <input type="file" name="client-provided-template" /><br/>
+
+            <label>STEP 2.</label><br/>
+            <label>Select Basic Features: (No Additional Charges)</label><br/>
+            <input type="checkbox" name="home"/><label>Home</label><br/>
+            <label>Upload content for Home Page (word or pdf)</label><br/>
             <input type="file" name="home"/><br/>
-            <input type="checkbox" name="home"/><label>About </label><br/>
-            <label>Upload content to Write in About Section (word or pdf)</label><br/>
+            <input type="checkbox" name="home"/><label>About</label><br/>
+            <label>Upload content to show in About Section (word or pdf)</label><br/>
             <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Services</label><br/>
-            <label>Upload content to Write in Services (word or pdf)</label><br/>
+            <label>Upload content to show in Services (word or pdf)</label><br/>
             <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Why Us</label><br/>
-            <label>Upload content to Write in Why Us (word or pdf)</label><br/>
+            <label>Upload content for in Why Us Section  (word or pdf)</label><br/>
             <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Contact Us (Only Address)</label><br/>
             <label>Please provide the Address to be mentioned in your website</label><br/>
             <input type="address" name="address"/><br/>
-            <label>Please provide the Phone Number to be mentioned in your website</label><br/>
+            <label>Please provide the Phone Number to be shown in your website</label><br/>
             <input type="tel" name="phonenumber" maxlength="15" /><br/>
             <input type="checkbox" name="home"/><label>Social Media</label><br/>
             <label>Please Provide url of your social media accounts. (eg. https://www.facebook.com/quickwebsite)</label><br/>
@@ -93,19 +82,21 @@
             <label>Upload Your Business Terms & Conditions to mention in your website</label><br/>
             <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Copy right</label><br/>
-            <label>Please provide Copy Right Information</label><br/>
+            <label>Please provide Copy Right Information (if any)</label><br/>
             <input type="text" name="copyright"/><br/><br/>
-            
+
+            <label>STEP 3.</label><br/>
             <label>Designing Part:</label><br/>
         
-            <label>Preferred Website Background color or image</label><br/>
+            <label>Select Website Background color or image</label><br/>
             <input type="color" name="home"/><label>Choose Background Color here OR Upload Image below</label><br/>
             
             <input type="file" name="background-image"/>
             <br/>
-            <label>Preferred Website text color </label><br/>
+            <label>Select Website text color </label><br/>
             <input type="color" name="home"/><label>Choose Text Color here OR Upload Image below</label><br/>
-        
+            
+            <label>STEP 4.</label><br/>
             <label>Select More Features: </label><br/>
         
             <input type="checkbox" name="home"/><label>Logo</label><br/>
@@ -114,10 +105,10 @@
             <label>OR</label><br/>
             <input type="checkbox" name="home"/><label>Buy Logo (Rs. )</label><br/>
             <input type="checkbox" name="home"/><label>Gallery</label><br/>
-            <label>Upload content to Write in Gallery (word or pdf)</label><br/>
+            <label>Upload content to show in Gallery</label><br/>
             <input type="file" name="home"/><br/>
             <input type="checkbox" name="home"/><label>Templates</label><br/>
-            <label>Upload content to Write in Templates </label><br/>
+            <label>Upload text content to show in Templates </label><br/>
             <input type="file" name="home"/><br/>
             <label>Upload Photos to show in Templates if you have</label><br/>
             <input type="file" name="home"/><br/>
@@ -126,6 +117,7 @@
             <input type="file" name="home"/><br/>
         <br/>
         
+            <label>STEP 5.</label><br/>
             <label>Select Advanced Features:</label><br/>
         
             <input type="checkbox" name="home"/><label>Register (Sign up) and Log in (Sign in)</label><br/>
@@ -134,17 +126,20 @@
             <input type="checkbox" name="home"/><label>Contact Us (Address Plus Contact Us Form)</label><br/>
             <input type="checkbox" name="home"/><label>Payment Method (Rs.)</label><br/><br/>
         
+            <label>STEP 6.</label><br/>
             <label>Other Features or Services:</label><br/>
         
             <input type="checkbox" name="home"/><label>Email Service (Rs.)</label><br/>
             <input type="checkbox" name="home"/><label>Message Service (Rs.)</label><br/>
-        
+            <input type="checkbox" name="home"/><label>Data Base (Rs.)</label><br/>
+            
+            <label>STEP 7.</label><br/>
+            <label>Additional</label><br/>
+            
             <label>Describe your website briefly to get the idea of website you would like</label><br/>
             <textarea>
         
-            </textarea>
-        
-            <br/>
+            </textarea><br/>
             <label>Include</label><br/>
             <textarea>
         
