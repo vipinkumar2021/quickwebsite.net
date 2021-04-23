@@ -630,13 +630,6 @@
   
   /* specialoffers css* ends*/
   
-  /* getstarted css* starts*/
-  .getstarted {
-    
-    padding-bottom: 5em;
-  }
-  
-  /* getstarted css* ends*/
   
   /* templates css* starts*/
   .templates {  
@@ -672,10 +665,12 @@
   
   /* admin css ends here*/
 
+  
   /* getstarted css* starts*/
+  
   .getstarted {
     
-    padding: 5em;
+    padding: 1% 1% 5em 1%;
     text-align: left;
     margin: 1em auto 1em auto;
   }
