@@ -31,6 +31,7 @@ var bcrypt = require('bcryptjs');
 
 /* GET home page. */
 router.get('/',  function(req, res, next) {
+  /*
   var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
   var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
   var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
@@ -44,6 +45,9 @@ router.get('/',  function(req, res, next) {
   } else {
     res.render('admin', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
   }  
+  */
+  res.render('admin', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
+
 });
 
 

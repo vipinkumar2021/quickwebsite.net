@@ -673,8 +673,36 @@
   .admin {
     
     padding-bottom: 5em;
+    
+  }
+  .admin h2 {
+    padding-top: 2.5em;
   }
   
+
+  .signupadmin h2, .signupcustomer h2 {
+    margin: 2em auto 1em auto;
+    padding-bottom: 2em;
+  }
+  .signupadmin form{
+    max-width: 80%;
+    height: auto;
+    background-color: rgba(238, 135, 97, .6);
+    
+  }
+
+  .signupadmin form label {
+    padding: .5em;
+    font-size: 1.25em;
+  }
+  .signupadmin form input {
+    background-color: transparent;
+    color: whitesmoke;
+    outline: none;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    font-size: 1.25em;
+  }
   /* admin css ends here*/
 
   
@@ -1057,11 +1085,11 @@
   
   }
   
-  .modal-parent-signup .modal-signup form label {
+  .modal-parent-signup-admin .modal-signup-admin form label {
    text-align: left;
    font-size: 1.25em;
   }
-  .modal-parent-signup .modal-signup form input {
+  .modal-parent-signup-admin .modal-signup-admin form input {
   width: 100%;
   border: 3px solid whitesmoke;
   border-radius: 10px;

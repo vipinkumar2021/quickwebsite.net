@@ -1,22 +1,22 @@
 <%- include('header') %>
 
 <div class="item item3 main">
-    <div class="container admin signup-verification">
-        <h2>Sign up Verification Page</h2>
+    <div class="container admin signup-admin">
+        <h2>Sign up Verification</h2>
         <br/> 
-        <h2 style="color: whitesmoke;">
+        <h3 style="color: whitesmoke;">
           <% if(msg != ''){ %>
             <%= msg %>
           <% } %> 
-        </h2>
-        <h2>
+        </h3>
+        <h3>
           <% if(adminDetails != ''){ %>
             <%= adminDetails %>
           <% } %> 
-        </h2>
+        </h3>
         
         <br/>
-        <form action="/accountactivatedcustomer" method="post" role="form">
+        <form action="/admin/accountactivatedadmin" method="post" role="form">
           <label for="otp">Please Enter One Time Password (OTP) sent to your Email</label><br/>
           <input name="otp" type="otp" placeholder="Enter OTP....."/><br/><br/>
           <label for="password">Password</label><br/>

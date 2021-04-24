@@ -108,6 +108,48 @@ function closeSignupModadforWindow(e) {
 }
 //sign up modal javascript ends here
 
+//sign up Admin modal javascript starts here
+//open sign up Admin modal when sign up button is clicked
+var parentModalSignupAdmin = document.querySelector('.modal-parent-signup-admin');
+var parentModalSignup = document.querySelector('.modal-parent-signup');
+var parentModalSignin = document.getElementsByClassName('modal-parent-signin')[0];
+var parentModalContact = document.querySelector('.modal-parent-contact');
+
+function openSignUpAdminModal() {
+    parentModalSignupAdmin.style.display = 'block';
+    parentModalSignup.style.display = 'none';
+    parentModalSignin.style.display = 'none';
+    parentModalContact.style.display = 'none';
+//closing sidenav when signup Admin is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+
+    
+
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+
+}
+
+//close sign up Admin modal when close or cancel button is clicked
+var parentModalSignupAdmin = document.querySelector('.modal-parent-signup-admin');
+//var parentModalSignup = document.querySelector('.modal-parent-signup');
+function closeSignupAdminModal() {
+    parentModalSignupAdmin.style.display = 'none';
+}
+
+//close sign up Admin modal when outside modal is clicked
+var parentModalSignupAdmin = document.querySelector('.modal-parent-signup-admin');
+//var parentModalSignup = document.querySelector('.modal-parent-signup');
+parentModalSignupAdmin.addEventListener('click', closeSignupAdminModalforWindow);
+function closeSignupAdminModalforWindow(e) {
+    if(e.target.className == 'modal-parent-signup-admin') {
+        parentModalSignupAdmin.style.display = 'none';
+    }
+}
+//sign up Admin modal javascript ends here
 
 //Give Your Details modal javascript starts here
  function openGiveYourDetailsModal() {
@@ -430,3 +472,5 @@ function closeChatBoxModal() {
 
 */
 // Chat box modal javascript ends here
+
+

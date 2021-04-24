@@ -2,11 +2,15 @@
 
 <div class="item item3 main ">
     <div class="container welcome admin" ><!--welcome css working in this-->
-        <br/><br/><br/><br/>
-        <h2>Admin Staff Only</h2> 
-        <button class="each-button">Admin Staff Sign in</button> 
+        
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+          <% } %>
+        <h2>Admin Staff Only</h2>
+        
+        <button class="each-button" onclick="openSignInModal()">Admin Staff Sign in</button> 
         <br/>
-        <button class="each-button">Admin Staff Sign up</button>   
+        <button class="each-button" onclick="openSignUpAdminModal()">Admin Staff Sign up</button>   
     </div>     
 
 </div>
