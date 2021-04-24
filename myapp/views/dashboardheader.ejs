@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="small business wesite services">
+    <meta name="keywords" content="HTML, CSS, JavaScript, small business website, Small business website, web designing, web development, freelance services, cheapest website, front end website, business website, quick website, web design">
+    <meta name="author" content="web services">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--Font Awesome for icons-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' async></script>
+
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item item1 header">
+        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="https://www.quickwebsite.net" class="brand-title"><img src="images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
+        
+        <div class="headernav">
+          <ul>
+            <li>
+              <a href="/#homecontent" id="home-icon" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+            </li>
+            <li>
+              <a href="/#aboutcontent">About</a>
+            </li>
+            <li>
+              <a href="/#servicescontent">Services</a>
+            </li>
+            <li>
+              <a href="/#whyuscontent">Why Us</a>
+            </li>  
+            <li class="dropdown">
+              <a href="/templates">Templates</a>
+              <ul>
+                <li><a href="/foodandrestaurants">Food & Restaurants</a></li>
+                <li><a href="/portfolio">Portfolio Templates</a></li>
+                <li><a href="/smallbusiness">Small Business Website</a></li>                
+                <li><a href="/blog">Blog Template</a></li>                
+                <li><a href="/weddinginvitation">Wedding Invitation Template</a></li>
+                <li><a href="/webpage">Web Page</a></li>
+                <li><a href="/comingsoon">Coming Soon Template</a></li>                
+                <li><a href="/othertemplates">Other Template</a></li>
+            </ul>
+            </li> 
+            <li>
+              <a href="#" onclick="openContactModal()">Contact</a>
+            </li>     
+            
+          </ul>
+          <ul>
+            <li class="cart">
+              <a href="#" onclick="openSignInModal()" title="Cart"><i class="fa fa-shopping-cart"></i><span class="notification">2</span></a>
+
+            </li>
+            <li class="account">
+              <a href="#">Account</a>
+              <ul>
+                <li>
+                    <a href="#" style="color: rgb(71, 157, 255);" class="loggedinas">
+                        <i>
+                          <% if(loginUser){ %>  
+                            <%= loginUser %> 
+                          <% } %>
+                        </i> 
+                    </a>
+                    <ul id="dashboard-logged-in-dropdown-menu">
+                      <li><a href="/dashboardcustomer" >View Profile</a></li>
+                      <li>
+                        <a href="/dashboardcart">View Cart</a>
+                      </li>
+                      <li><a href="#" onclick="openConfirmBeforeDeleteModal()">Delete Account</a></li>
+                      <li><a href="/editaccountcustomer">Edit Account</a></li>
+                      <li>
+                        <form action="/signout" method="post" role="form">
+                          <button class="signoutBtn" type="submit"><i style="color: rgb(71, 157, 255);">Log out</i></button>
+                        </form>              
+                      </li>
+              </ul>              
+            </li>
+          </ul>
+        </div>
+
+      
+        
+
+      <div class="sidenav-parent">
+        <div class="sidenav">
+          <ul>
+            <li>
+              <a href="javascript:void(0)" class="closeBtn" title="Close">&times;</a>
+            </li>
+            <li>
+              <a href="/#homecontent" onclick="closeSideNav()" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+            </li>
+            <li>  
+              <a href="#" onclick="openSignInModal()">View Cart</a>
+              
+            </li>
+            <li>
+              <a href="/getstarted">Get Started</a>
+            </li>
+            <li>
+              <a href="/#howitworkscontent">How It Works</a>
+            </li>
+            <li>
+              <a href="#" onclick="openSignInModal()">Sign in</a>
+            </li>
+            <li>
+              <a href="#" onclick="openSignUpModal()">Sign up</a>
+            </li>           
+            
+            <li>
+              <a href="/#aboutcontent" onclick="closeSideNav()">About</a>
+            </li>
+            <li>
+              <a href="/#servicescontent" onclick="closeSideNav()">Services</a>
+            </li>  
+            <li>
+              <a href="/#whyuscontent">Why Us</a>
+            </li>
+            <li>
+              <a href="/templates" >Templates</a>
+              <!--
+              <ul>
+                <li><a href="/foodandrestaurants">Food & Restaurants</a></li>
+                <li><a href="/portfolio">Portfolio Templates</a></li>
+                <li><a href="/smallbusiness">Small Business Website</a></li>                
+                <li><a href="/blog">Blog Template</a></li>
+                <li><a href="/vlog">Vlog Template</a></li>
+                <li><a href="/marketing">Marketing Templates</a></li>
+                <li><a href="/weddinginvitation">Wedding Invitation Template</a></li>
+                <li><a href="/webpage">Web Page</a></li>
+                <li><a href="/comingsoon">Coming Soon Template</a></li>
+                <li><a href="/phototemplates">Photo Templates</a></li>
+                <li><a href="/startpagetemplates">Start Page Templates</a></li>                                                    
+                <li><a href="/othertemplates">Other Template</a></li>
+            </ul>
+            -->
+            </li>            
+            <li>
+              <a href="/career">Career</a>
+            </li>
+            <li>
+              <a href="#" onclick="alert('Employees Only Section')">Employees</a>
+            </li> 
+            <li>
+              <a href="/admin">Admin Staff</a>
+            </li> 
+            <li>
+              <a href="/help">Help</a>
+            </li> 
+            <li>
+              <a href="#" onclick="openContactModal()">Contact</a>
+            </li>  
+                    
+          </ul> 
+                 
+        </div>
+
+      </div>
+      
+
+      </div>
+      
