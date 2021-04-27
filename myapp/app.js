@@ -15,6 +15,7 @@ var adminRouter = require('./routes/admin');
 var helpRouter = require('./routes/help');
 var decidebyfeaturesRouter = require('./routes/decidebyfeatures');
 var contactusRouter = require('./routes/contactus');
+var cartRouter = require('./routes/cart');
 var dashboardcustomerRouter = require('./routes/dashboardcustomer');
 var dashboardadminRouter = require('./routes/dashboardadmin');
 
@@ -42,6 +43,7 @@ app.use('/admin', adminRouter);
 app.use('/help', helpRouter);
 app.use('/decidebyfeatures', decidebyfeaturesRouter);
 app.use('/contactus', contactusRouter);
+app.use('/cart', cartRouter);
 app.use('/dashboardcustomer', dashboardcustomerRouter);
 app.use('/dashboardadmin', dashboardadminRouter);
 

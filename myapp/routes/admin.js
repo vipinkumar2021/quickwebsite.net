@@ -46,7 +46,7 @@ router.get('/',  function(req, res, next) {
     res.render('admin', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
   }  
   */
-  res.render('admin', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
+  res.render('admin', { title: 'Quick Website', msg:''});
 
 });
 
@@ -291,14 +291,14 @@ router.post('/signupadmin', upload, function(req, res, next) {
       if(err) throw err;
       if(dataUsernameInAdmin != null) {
   
-          return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Username Already Exists in Admin Data' });
+          return res.render('admin', {title: 'Quick Website', msg:'Username Already Exists in Admin Data' });
             
       } else {
         
         customerModel.findOne({Username: username}).exec((err, dataUsernameInCustomers) => {
           if(err) throw err;
           if(dataUsernameInCustomers != null) {
-            return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Username Already Exists in Customer Data' });
+            return res.render('admin', {title: 'Quick Website', msg:'Username Already Exists in Customer Data' });
 
           } else {
             
@@ -307,19 +307,19 @@ router.post('/signupadmin', upload, function(req, res, next) {
            adminModule.findOne({Mobilenumber: mobilenumber}, {Mobilenumber: mobilenumber}).exec((err, dataMobileNumberInAdmin) => {
             if(err) throw err;
             if(dataMobileNumberInAdmin != null) {
-              return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Mobile Number Already Registered in Admin Data' });
+              return res.render('admin', {title: 'Quick Website', msg:'Mobile Number Already Registered in Admin Data' });
     
             } else {
               customerModel.findOne({Mobilenumber: mobilenumber}, {Mobilenumber: mobilenumber}).exec((err, dataMobileNumberInCustomer) => {
                 if(err) throw err;
                 if(dataMobileNumberInCustomer != null) {
-                  return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Mobile Number Already Registered in Customer Data' });
+                  return res.render('admin', {title: 'Quick Website', msg:'Mobile Number Already Registered in Customer Data' });
 
                 } else {
                   adminModule.findOne({Email: email}, {Email: email}).exec((err, dataEmailInAdminData) => {
                     if(err) throw err;
                     if(dataEmailInAdminData != null) {
-                      return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Email Already Registered in Admin Data' });
+                      return res.render('admin', {title: 'Quick Website', msg:'Email Already Registered in Admin Data' });
     
                     } else {
                       //next();
@@ -328,20 +328,20 @@ router.post('/signupadmin', upload, function(req, res, next) {
                         if(err) throw err;
                         if(dataEmailInCustomerData != null) {
 
-                          return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Email Already Registered in Customer Data' });
+                          return res.render('admin', {title: 'Quick Website', msg:'Email Already Registered in Customer Data' });
 
                         } else {
                           //next();
                           adminModule.findOne({Nationalid :nationalid}, {Nationalid :nationalid}).exec((err, dataNationalIdInAdminData) => {
                            if(err) throw err;
                            if(dataNationalIdInAdminData != null) {
-                            return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'National Id Already Registered in Admin Data' });
+                            return res.render('admin', {title: 'Quick Website', msg:'National Id Already Registered in Admin Data' });
 
                            } else {
                               adminMembersTeamModel.findOne({Email: email}, {Email: email}).exec((err, registeredNewAdminMemberEmail) => {
                                 if(err) throw err;
                                 if(registeredNewAdminMemberEmail == null) {
-                                  return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Please Enter Registered Email Address or Contact Admin' });
+                                  return res.render('admin', {title: 'Quick Website', msg:'Please Enter Registered Email Address or Contact Admin' });
 
                                 } else {                              
                              //
@@ -402,9 +402,9 @@ let params = {
 // this sends the email
 ses.sendEmail(params, (err) => {
   if(err) {
-    res.render('signupadmin', { title: 'frontendwebdeveloper', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+    res.render('signupadmin', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
   } else {
-    res.render('signupadmin', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+    res.render('signupadmin', { title: 'Quick Website', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
   }
 });
                           //
@@ -852,7 +852,7 @@ router.post('/signupadmin', upload, function(req, res, next) {
     } else if(loginUserAdmin) {
       res.redirect('/dashboardadmin');
     } else {
-      res.render('signupadmin', { title: 'Front End Web Developer', msg:''});
+      res.render('signupadmin', { title: 'Quick Website', msg:''});
     }  
   });
   // Sign up Account Activation with OTP strts here
@@ -861,21 +861,21 @@ router.post('/accountactivatedadmin', function(req, res, next) {
   var password = req.body.password;
   var confirmPassword = req.body.cnfpassword;
   if(password != confirmPassword || password == '' || confirmPassword == '') {
-    res.render('signupadmin', { title: 'frontendwebdeveloper', msg:'Password Not Matched, Please Try again', adminDetails: ''});
+    res.render('signupadmin', { title: 'Quick Website', msg:'Password Not Matched, Please Try again', adminDetails: ''});
   } else {
     password = bcrypt.hashSync(req.body.password, 10);
     var getAdminDetails = adminModule.findOne({Onetimepassword: oneTimePassword}, {});
     getAdminDetails.exec((err, ExistingAdminDetails)=> {
       if(err) throw err;
       if(ExistingAdminDetails == null || ExistingAdminDetails == '') {
-        res.render('signupadmin', { title: 'frontendwebdeveloper', msg:'Wrong OTP Entered, Please Try again', adminDetails:''});
+        res.render('signupadmin', { title: 'Quick Website', msg:'Wrong OTP Entered, Please Try again', adminDetails:''});
 
       } else {
         var getAdminId = ExistingAdminDetails._id;
         
         adminModule.findByIdAndUpdate(getAdminId, {Onetimepassword: null, Password: password}, {upsert: true}, function(err, updatedAdminDetails){
           if(err) throw err;           
-          res.render('admin', { title: 'frontendwebdeveloper', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+          res.render('admin', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
         })
       }      
     });        
