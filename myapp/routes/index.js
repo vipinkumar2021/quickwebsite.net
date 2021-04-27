@@ -19,6 +19,7 @@ var customerModel = require('../modules/customersignupschema');
 var employeesModel = require('../modules/employeessignupschema');
 
 
+
 // require dot env
 require('dotenv').config();
 //Crypto for creating randombytes key
@@ -64,7 +65,7 @@ router.get('/',  function(req, res, next) {
   var loginUserEmployee = req.session.employeeLoginUserName;//localStorage.getItem('employeeLoginUserName');
   var loginUserAdmin = req.session.adminLoginUserName;//localStorage.getItem('adminLoginUserName');
 */
-/* uncomment from here...
+/* uncomment from here...*/
   if(req.session.customerLoginUserName){
     res.redirect('/dashboardcustomer');
   } else if(req.session.employeeLoginUserName) {
@@ -74,9 +75,9 @@ router.get('/',  function(req, res, next) {
   } else {
     res.render('index', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
   }  
-  */
+  /*
   res.render('index', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
-
+*/
 });
 
 

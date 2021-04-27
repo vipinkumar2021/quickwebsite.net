@@ -76,7 +76,7 @@
                       <li><a href="/editaccountcustomer">Edit Account</a></li>
                       <li>
                         <form action="/signout" method="post" role="form">
-                          <button class="signoutBtn" type="submit"><i style="color: rgb(71, 157, 255);">Log out</i></button>
+                          <button class="signoutBtn" type="submit"><i style="color: rgb(71, 157, 255);">Sign out</i></button>
                         </form>              
                       </li>
               </ul>              
@@ -96,6 +96,13 @@
             <li>
               <a href="/#homecontent" onclick="closeSideNav()" title="Home"><i class="glyphicon glyphicon-home"></i></a>
             </li>
+            <li>
+              <a href="/dashboardcustomer" class="loggedinas">
+                  Logged in As: <% if(loginUser){ %>  
+                      <%= loginUser %> 
+                      <% } %>  
+              </a>
+            </li>  
             <li>  
               <a href="#" onclick="openSignInModal()">View Cart</a>
               
@@ -156,7 +163,12 @@
             <li>
               <a href="#" onclick="openContactModal()">Contact</a>
             </li>  
-                    
+            <li>
+              <form action="/signout" method="post" role="form">
+                <button class="signoutBtn" type="submit">Log out</button>
+              </form>
+            </li>       
+       
           </ul> 
                  
         </div>
