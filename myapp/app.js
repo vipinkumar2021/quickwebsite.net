@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var specialoffersRouter = require('./routes/specialoffers');
 var getstartedRouter = require('./routes/getstarted');
+var dashboardgetstartedRouter = require('./routes/dashboardgetstarted');
 var templatesRouter = require('./routes/templates');
 var dashboardtemplatesRouter = require('./routes/dashboardtemplates');
 var careerRouter = require('./routes/career');
@@ -17,10 +18,17 @@ var dashboardcareerRouter = require('./routes/dashboardcareer');
 var dashboardcareeradminRouter = require('./routes/dashboardcareeradmin');
 var adminRouter = require('./routes/admin');
 var helpRouter = require('./routes/help');
+var dashboardhelpRouter = require('./routes/dashboardhelp');
+/*
+var dashboardhelpadminRouter = require('./routes/dashboardhelpadmin');
+var dashboardhelpemployeeRouter = require('./routes/dashboardhelpemployee');
+
+*/
 var decidebyfeaturesRouter = require('./routes/decidebyfeatures');
 var contactusRouter = require('./routes/contactus');
 var dashboardcartRouter = require('./routes/dashboardcart');
 var dashboardcustomerRouter = require('./routes/dashboardcustomer');
+var dashboardcustomerprofileRouter = require('./routes/dashboardcustomerprofile');
 var dashboardadminRouter = require('./routes/dashboardadmin');
 var signoutRouter = require('./routes/signout');
 
@@ -48,6 +56,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/specialoffers', specialoffersRouter);
 app.use('/getstarted', getstartedRouter);
+app.use('/dashboardgetstarted', dashboardgetstartedRouter);
 app.use('/templates', templatesRouter);
 app.use('/dashboardtemplates', dashboardtemplatesRouter);
 app.use('/career', careerRouter);
@@ -55,10 +64,16 @@ app.use('/dashboardcareer', dashboardcareerRouter);
 app.use('/dashboardcareeradmin', dashboardcareeradminRouter);
 app.use('/admin', adminRouter);
 app.use('/help', helpRouter);
+app.use('/dashboardhelp', dashboardhelpRouter);
+/*
+app.use('/dashboardhelpadmin', dashboardhelpadminRouter);
+app.use('/dashboardhelpemployee', dashboardhelpemployeeRouter);
+*/
 app.use('/decidebyfeatures', decidebyfeaturesRouter);
 app.use('/contactus', contactusRouter);
 app.use('/dashboardcart', dashboardcartRouter);
 app.use('/dashboardcustomer', dashboardcustomerRouter);
+app.use('/dashboardcustomerprofile', dashboardcustomerprofileRouter);
 app.use('/dashboardadmin', dashboardadminRouter);
 app.use('/signout', signoutRouter);
 

@@ -82,7 +82,7 @@ router.post('/', function(req, res, next) {
     });
     contactUsMessageDetails.save((err) => {
       if(err) throw err;
-      /*
+      
       var loginUser = {
         loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
         loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
@@ -90,20 +90,17 @@ router.post('/', function(req, res, next) {
     
       };
   if(loginUser.loginUserCustomer) {
-    res.render('dashboardwebsite', { title: 'Front End Web Developer', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserCustomer });
+    res.render('dashboardcustomer', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee){
-    res.render('dashboardwebsite', { title: 'Front End Web Developer', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserEmployee });
+    res.render('dashboardemployees', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserEmployee });
   } else if(loginUser.loginUserAdmin) {
-    res.render('dashboardwebsiteadmin', { title: 'Front End Web Developer', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserAdmin});
+    res.render('dashboardadmin', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserAdmin});
   } else {
-    //res.redirect('index');
-    
+    //res.redirect('index');    
     res.render('index', {title: 'Music-Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
   
-  }
-     */
-  res.render('index', {title: 'Quick Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
-    });
+  }     
+      });
     
   });
 

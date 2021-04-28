@@ -1,0 +1,63 @@
+<%- include('dashboardheader') %>
+
+<div class="item item3 main ">
+    <div class="container welcome dashboardcustomerprofile" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <img class="profile-image" src="/images/avatar2.png" alt="Profile Image" width="100px" height="100px" /><br/>
+        <h2>
+            Logged in As: <% if(loginUser){ %>  
+                <%= loginUser %> 
+              <% } %>
+        </h2>
+        <br/> 
+        <div class="row">
+            <h2>Advertisement increases Your Business</h2><br/>
+            
+            
+        </div>
+        <div class="row">
+            <h2><a href="#">Advertise here for free</a></h2>
+        </div>
+        <div class="row">
+            <div class="column col-1">
+                <% if(currentLoginData != "") { %>
+                    <%= currentLoginData.Firstname %> 
+                <% } %> 
+                <h3>Profile</h3>                
+                <span>Name: </span> <br/>                
+                <span>Username: </span> <br/>
+                <span>Mobile: </span> <br/>
+                <span>Email: </span> <br/>
+                <span>Settings</span> <br/>
+                <span>Edit Account</span> <br/>
+                <span>Delete Account</span> <br/>
+                <span>Sign Out</span>
+
+            </div>
+            <div class="column col-2">
+                
+                <h3>Orders List</h3>
+                span>Name: </span> <br/>                
+                <span>Username: </span> <br/>
+                <span>Mobile: </span> <br/>
+                <span>Email: </span> <br/>
+                <span>Settings</span> <br/>
+                <span>Edit Account</span> <br/>
+                <span>Advertise Your Business on our website</span>
+                <span>Delete Account</span> <br/>
+                <span>Sign Out</span>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<%- include('modal') %>
+<%- include('dashboardfooter') %>
+
+
+
+

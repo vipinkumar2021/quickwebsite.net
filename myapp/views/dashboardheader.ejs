@@ -17,21 +17,21 @@
   <body>
     <div class="grid-container">
       <div class="item item1 header">
-        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="https://www.quickwebsite.net" class="brand-title"><img src="images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
+        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="https://www.quickwebsite.net" class="brand-title"><img src="../images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
         
         <div class="headernav">
           <ul>
             <li>
-              <a href="/dashboardwebsite/#homecontent" id="home-icon" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+              <a href="/dashboardcustomer/#homecontent" id="home-icon" title="Home"><i class="glyphicon glyphicon-home"></i></a>
             </li>
             <li>
-              <a href="/dashboardwebsite/#aboutcontent">About</a>
+              <a href="/dashboardcustomer/#aboutcontent">About</a>
             </li>
             <li>
-              <a href="/dashboardwebsite/#servicescontent">Services</a>
+              <a href="/dashboardcustomer/#servicescontent">Services</a>
             </li>
             <li>
-              <a href="/dashboardwebsite/#whyuscontent">Why Us</a>
+              <a href="/dashboardcustomer/#whyuscontent">Why Us</a>
             </li>  
             <li class="dropdown">
               <a href="/dashboardtemplates">Templates</a>
@@ -58,14 +58,14 @@
             </li>
             <li class="account">
               <a href="#" style="color: whitesmoke;" class="loggedinas">
-                <i>
+                <em style="color: rgb(71, 157, 255);">
                   <% if(loginUser){ %>  
                     <%= loginUser %> 
                   <% } %>
-                </i> 
+                  </em> 
               </a>
               <ul>                   
-                <li><a href="/dashboardcustomer" >View Profile</a></li>
+                <li><a href="/dashboardcustomerprofile" >View Profile</a></li>
                 <li><a href="/editaccountcustomer">Edit Account</a></li>
                 <li><a href="#" onclick="openConfirmBeforeDeleteModal()">Delete Account</a></li>
                 <li>
@@ -77,9 +77,7 @@
             </li>
           </ul>
         </div>
-
-      
-        
+       
 
       <div class="sidenav-parent">
         <div class="sidenav">
@@ -88,43 +86,39 @@
               <a href="javascript:void(0)" class="closeBtn" title="Close">&times;</a>
             </li>
             <li>
-              <a href="/dashboardwebsite/#homecontent" onclick="closeSideNav()" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+              <a href="/dashboardcustomer/#homecontent" onclick="closeSideNav()" title="Home"><i class="glyphicon glyphicon-home"></i></a>
             </li>
             <li>
               <a href="/dashboardcustomer" class="loggedinas">
-                  Logged in As: <% if(loginUser){ %>  
-                      <%= loginUser %> 
-                      <% } %>  
+                                   
+                  <em style="color: rgb(71, 157, 255);">
+                    <% if(loginUser){ %>  
+                    <%= loginUser %> 
+                    <% } %>
+                  </em>   
               </a>
             </li>  
             <li>  
-              <a href="#" onclick="openSignInModal()">View Cart</a>
+              <a href="/dashboardcart">View Cart</a>
               
             </li>
             <li>
-              <a href="/getstarted">Get Started</a>
+              <a href="/dashboardgetstarted">Get Started</a>
             </li>
             <li>
-              <a href="/dashboardwebsite/#howitworkscontent">How It Works</a>
-            </li>
-            <li>
-              <a href="#" onclick="openSignInModal()">Sign in</a>
-            </li>
-            <li>
-              <a href="#" onclick="openSignUpModal()">Sign up</a>
+              <a href="/dashboardcustomer/#howitworkscontent">How It Works</a>
             </li>           
-            
             <li>
-              <a href="/dashboardwebsite/#aboutcontent" onclick="closeSideNav()">About</a>
+              <a href="/dashboardcustomer/#aboutcontent" onclick="closeSideNav()">About</a>
             </li>
             <li>
-              <a href="/dashboardwebsite/#servicescontent" onclick="closeSideNav()">Services</a>
+              <a href="/dashboardcustomer/#servicescontent" onclick="closeSideNav()">Services</a>
             </li>  
             <li>
-              <a href="/dashboardwebsite/#whyuscontent">Why Us</a>
+              <a href="/dashboardcustomer/#whyuscontent">Why Us</a>
             </li>
             <li>
-              <a href="/templates" >Templates</a>
+              <a href="/dashboardtemplates" >Templates</a>
               <!--
               <ul>
                 <li><a href="/foodandrestaurants">Food & Restaurants</a></li>
@@ -143,23 +137,23 @@
             -->
             </li>            
             <li>
-              <a href="/career">Career</a>
+              <a href="/dashboardcareer">Career</a>
             </li>
             <li>
-              <a href="#" onclick="alert('Employees Only Section')">Employees</a>
+              <a href="#" onclick="alert('Only For Employees Use')">Employees</a>
             </li> 
             <li>
-              <a href="/admin">Admin Staff</a>
+              <a href="#" onclick="alert('Only For Admin Staff Use')">Admin Staff</a>
             </li> 
             <li>
-              <a href="/help">Help</a>
+              <a href="/dashboardhelp">Help</a>
             </li> 
             <li>
               <a href="#" onclick="openContactModal()">Contact</a>
             </li>  
             <li>
               <form action="/signout" method="post" role="form">
-                <button class="signoutBtn" type="submit">Log out</button>
+                <button class="signoutBtn" type="submit" style="color: rgb(71, 157, 255);"><em>Sign out</em></button>
               </form>
             </li>       
        

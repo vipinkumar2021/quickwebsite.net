@@ -666,8 +666,57 @@
     
     padding-bottom: 5em;
   }
+
   
   /* career css ends here*/
+
+  .profile-image {
+    
+    margin: auto;
+    border-radius: 50%;
+  }
+  /* dashhboardcustomerprofile css* starts*/
+  .dashboardcustomerprofile {
+    
+    padding-bottom: 5em;
+  }
+  .dashboardcustomerprofile .row {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: rgba(238, 135, 97, .6);
+    padding: 1.5%;
+    z-index: 1;
+    
+  }
+  .dashboardcustomerprofile .row .col-1 {
+    width: 30%;
+    height: auto;
+    text-align: left;
+    
+  }
+  .dashboardcustomerprofile .row .col-2 {
+    width: 70%;
+    height: auto;
+    text-align: left;
+    
+  } 
+  
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .dashboardcustomerprofile .row {
+      display: block;
+    }
+    .dashboardcustomerprofile .row .col-1 {
+      width: 100%;     
+      
+    }
+    .dashboardcustomerprofile .row .col-2 {
+      width: 100%;   
+      
+    } 
+  }
+  /* dashhboardcustomerprofile css ends here*/
 
   /* admin css starts*/
   .admin {
