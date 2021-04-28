@@ -102,7 +102,7 @@ router.post('/', function(req, res, next) {
   
   }
      */
-  res.render('index', {title: 'Music-Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
+  res.render('index', {title: 'Quick Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
     });
     
   });
