@@ -21,6 +21,8 @@ var dashboardcareeradminRouter = require('./routes/dashboardcareeradmin');
 var adminRouter = require('./routes/admin');
 var faqsRouter = require('./routes/faqs');
 var addonRouter = require('./routes/addon');
+var dashboardaddonRouter = require('./routes/dashboardaddon');
+var dashboardaddonadminRouter = require('./routes/dashboardaddonadmin');
 var dashboardfaqsRouter = require('./routes/dashboardfaqs');
 var dashboardwebsiteadminRouter = require('./routes/dashboardwebsiteadmin');
 var termsandconditionsRouter = require('./routes/termsandconditions');
@@ -82,6 +84,8 @@ app.use('/dashboardcareeradmin', dashboardcareeradminRouter);
 app.use('/admin', adminRouter);
 app.use('/faqs', faqsRouter);
 app.use('/addon', addonRouter);
+app.use('/dashboardaddon', dashboardaddonRouter);
+app.use('/dashboardaddonadmin', dashboardaddonadminRouter);
 app.use('/dashboardfaqs', dashboardfaqsRouter);
 app.use('/dashboardwebsiteadmin', dashboardwebsiteadminRouter);
 
