@@ -17,8 +17,19 @@ var careerRouter = require('./routes/career');
 var dashboardcareerRouter = require('./routes/dashboardcareer');
 var dashboardcareeradminRouter = require('./routes/dashboardcareeradmin');
 var adminRouter = require('./routes/admin');
+var faqsRouter = require('./routes/faqs');
+var dashboardfaqsRouter = require('./routes/dashboardfaqs');
+
+var termsandconditionsRouter = require('./routes/termsandconditions');
+var dashboardtermsandconditionsRouter = require('./routes/dashboardtermsandconditions');
+//var termsandconditionsRouter = require('./routes/termsandconditions');
+//var termsandconditionsRouter = require('./routes/termsandconditions');
+
 var helpRouter = require('./routes/help');
 var dashboardhelpRouter = require('./routes/dashboardhelp');
+
+var employeesRouter = require('./routes/employees');
+var dashboardemployeesRouter = require('./routes/dashboardemployees');
 /*
 var dashboardhelpadminRouter = require('./routes/dashboardhelpadmin');
 var dashboardhelpemployeeRouter = require('./routes/dashboardhelpemployee');
@@ -63,8 +74,19 @@ app.use('/career', careerRouter);
 app.use('/dashboardcareer', dashboardcareerRouter);
 app.use('/dashboardcareeradmin', dashboardcareeradminRouter);
 app.use('/admin', adminRouter);
+app.use('/faqs', faqsRouter);
+app.use('/dashboardfaqs', dashboardfaqsRouter);
+
+app.use('/termsandconditions', termsandconditionsRouter);
+app.use('/dashboardtermsandconditions', dashboardtermsandconditionsRouter);
+//app.use('/termsandconditions', termsandconditionsRouter);
+//app.use('/termsandconditions', termsandconditionsRouter);
+
 app.use('/help', helpRouter);
 app.use('/dashboardhelp', dashboardhelpRouter);
+
+app.use('/employees', employeesRouter);
+app.use('/dashboardemployees', dashboardemployeesRouter);
 /*
 app.use('/dashboardhelpadmin', dashboardhelpadminRouter);
 app.use('/dashboardhelpemployee', dashboardhelpemployeeRouter);

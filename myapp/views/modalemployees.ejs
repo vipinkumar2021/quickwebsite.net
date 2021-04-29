@@ -1,0 +1,89 @@
+<!--Sign in Modal starts here-->
+<div class="modal-parent-signin" id="signin">
+    <div class="modal-signin">
+        <h1 style="text-align: center;">Log in</h1>
+        <form action="/signin" method="post" role="form">
+          <label for="username">Username</label><br/>
+          <input name="uname" type="username" placeholder="Enter Your Username..." required/><br/><br/>
+          <label for="password">Password</label><br/>
+          <input name="password" type="password" placeholder="Enter Your Password..." required/><br/><br/>                            
+          <div class="modal-button">
+            <button type="submit">Sign in</button><button type="reset">Reset</button><button onclick="closeSigninModal()">cancel</button><br/><br/>
+          </div>          
+          <div class="modal-anchor-tags">
+            <a href="/forgotusername">Forgot Username</a>
+            <a href="/forgotpassword">Forgot Password</a>                
+            <a href="#" onclick="openSignUpModal()">Register</a>
+          </div>
+        </form>
+        <span class="X-signin">&times;</span>
+    </div>
+  </div>
+  <!--Sign in Modal ends here-->
+  
+  <!--Sign up Admin Modal starts here-->
+  <div class="modal-parent-signup-admin">
+    <div class="modal-signup-admin">
+        <h1 style="text-align: center;">Admin Staff Registeration</h1>
+        
+        <form action="/admin/signupadmin" method="post" role="form" enctype="multipart/form-data">
+          <label for="firstname">First Name</label><br/>
+          <input name="firstname" type="text" placeholder="Enter Your First Name..." /><br/><br/>
+          <label for="lastname">Last Name</label><br/>
+          <input name="lastname" type="text" placeholder="Enter Your Last Name..." /><br/><br/>
+          <label for="usrname">Username</label><br/>
+          <input name="usrname" type="username" placeholder="Create a Username..."  /><br/><br/>
+          <label for="mobilenumber">Mobile Number</label><br/>
+          <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." /><br/><br/>
+          <label for="email">Email</label><br/>
+          <input name="email" type="email" placeholder="Enter Your Email id..." /><br/><br/>
+          <label for="nationalid">National Id</label><br/>
+          <input name="nationalid" type="nationalid" placeholder="Enter Your National id..." /><br/><br/>
+          <label for="nationalid">Upload National Id Image</label><br/>
+          <input name="nationalidimage" type="file" /><br/><br/>         
+          <div class="modal-button">
+            <button type="submit">Proceed to Sign up</button><button type="reset">Reset</button><button type="button" onclick="closeSignupAdminModal()">Cancel</button><br/><br/>
+          </div>
+          
+          <div class="modal-anchor-tags">
+            <a href="#" onclick="openSignInModal()">Sign in</a>
+          </div>
+          
+        </form>
+        <span class="X-signup-admin" onclick="closeSignupAdminModal()">&times;</span>
+    </div>
+  </div>
+  <!--Sign up Admin Modal ends here-->
+
+  <!--Contact Us Modal starts here-->
+          
+  <div class="modal-parent-contact">
+    <div class="modal-contact">
+        <h1 style="text-align: center;">Contact Us</h1>
+        <form action="/contactus" method="post" role="form">
+          <label for="firstname">First Name</label><br/>
+          <input name="firstname" type="text" placeholder="Enter Your First Name..." required/><br/><br/>
+          <label for="lastname">Last Name</label><br/>
+          <input name="lastname" type="text" placeholder="Enter Your Last Name..." required/><br/><br/>
+          <label for="mobilenumber">Mobile Number</label><br/>
+          <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required/><br/><br/>
+          <label for="email">Email</label><br/>
+          <input name="email" type="email" placeholder="Enter Your Email id..." optional/><br/><br/>
+          <label>Write Message</label><br/>
+          <textarea name="writeusmessage" type="text" placeholder="Enter Your Message here...">
+
+          </textarea><br/><br/>
+          <div class="modal-button">
+            <button type="submit">Submit</button><button onclick="closeContactModal()">Cancel</button><br/><br/>
+          </div>
+          
+          <div class="modal-anchor-tags">
+            <span>Toll Free:<a href="tel: +919813806752">0091 9813806752</a></span>                
+          </div>
+          
+          
+        </form>
+        <span class="X-contact" onclick="closeContactModal()">&times;</span>
+    </div>
+  </div>
+  <!--Contact Modal ends here-->

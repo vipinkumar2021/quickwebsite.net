@@ -1,0 +1,20 @@
+<%- include('dashboardheader') %>
+
+<div class="item item3 main ">
+    <div class="container welcome admin" ><!--welcome css working in this-->
+        
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <h2>Employees Dashboard</h2>
+        
+    </div>     
+
+</div>
+<%- include('modal') %>
+<%- include('modalemployees') %> 
+<%- include('dashboardfooter') %>
+
+
+
+
