@@ -3,9 +3,12 @@
 <div class="item item3 main ">
     <div class="container welcome getstarted" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
+        <% if(msg != '') { %>
+            <h2><%= msg %> </h2>
+        <% } %> 
         <h2>Start Building Your Website</h2>    
             
-            <form>
+            <form action="/dashboardgetstarted" method="post" role="form">
             <label>STEP 1.</label><br/>
             <select name="template" id="template">
                 <option >Select Template</option>
@@ -170,7 +173,7 @@
         
             </textarea><br/><br/>
                         
-            <input type="submit" value="Purchase Order"/>
+            <input type="submit" value="Add To Cart"/>
         </form>        
            
     

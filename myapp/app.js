@@ -48,6 +48,10 @@ var dashboardcustomerRouter = require('./routes/dashboardcustomer');
 var dashboardcustomerprofileRouter = require('./routes/dashboardcustomerprofile');
 var dashboardadminRouter = require('./routes/dashboardadmin');
 var signoutRouter = require('./routes/signout');
+var dashboardinboxRouter = require('./routes/dashboardinbox');
+var dashboardoutboxRouter = require('./routes/dashboardoutbox');
+var dashboardrecyclebinRouter = require('./routes/dashboardrecyclebin');
+var dashboardsettingsRouter = require('./routes/dashboardsettings');
 
 var app = express();
 
@@ -111,6 +115,10 @@ app.use('/dashboardcustomer', dashboardcustomerRouter);
 app.use('/dashboardcustomerprofile', dashboardcustomerprofileRouter);
 app.use('/dashboardadmin', dashboardadminRouter);
 app.use('/signout', signoutRouter);
+app.use('/dashboardinbox', dashboardinboxRouter);
+app.use('/dashboardoutbox', dashboardoutboxRouter);
+app.use('/dashboardrecyclebin', dashboardrecyclebinRouter);
+app.use('/dashboardsettings', dashboardsettingsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
