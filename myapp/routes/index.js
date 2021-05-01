@@ -73,7 +73,7 @@ router.get('/',  function(req, res, next) {
   } else if(req.session.adminLoginUserName) {
     res.redirect('/dashboardadmin');
   } else {
-    res.render('index', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
+    res.render('index', { title: 'Quick Website', msg:''});
   }  
   /*
   res.render('index', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
@@ -89,7 +89,7 @@ function checkUsername(req, res, next) {
     if(err) throw err;
     if(customerData) {
 
-      return res.render('index', {title: 'Front End Web Developer', msg: 'Username Already Exists'});
+      return res.render('index', {title: 'Quick Website', msg: 'Username Already Exists'});
     
     }     
     if(!customerData) {
@@ -99,7 +99,7 @@ function checkUsername(req, res, next) {
         if(err) throw err;
         if(employeeData) {
 
-        return res.render('index', {title: 'Front End Web Developer', msg: 'Username Already Exists'});
+        return res.render('index', {title: 'Quick Website', msg: 'Username Already Exists'});
  
       }
       if(!employeeData) {
@@ -109,7 +109,7 @@ function checkUsername(req, res, next) {
           if(err) throw err;
           if(adminData) {
 
-            return res.render('index', {title: 'Front End Web Developer', msg: 'Username Already Exists'});
+            return res.render('index', {title: 'Quick Website', msg: 'Username Already Exists'});
  
           }
           next();
@@ -129,7 +129,7 @@ function checkMobileNumber(req, res, next) {
     if(err) throw err;
     if(customerData) {
 
-      return res.render('index', {title: 'Front End Web Developer', msg: 'This Mobile Number is Already Registered with us'});
+      return res.render('index', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
     
     }     
     if(!customerData) {
@@ -139,7 +139,7 @@ function checkMobileNumber(req, res, next) {
         if(err) throw err;
         if(employeeData) {
 
-        return res.render('index', {title: 'Front End Web Developer', msg: 'This Mobile Number is Already Registered with us'});
+        return res.render('index', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
  
       }
       if(!employeeData) {
@@ -149,7 +149,7 @@ function checkMobileNumber(req, res, next) {
           if(err) throw err;
           if(adminData) {
 
-            return res.render('index', {title: 'Front End Web Developer', msg: 'This Mobile Number is Already Registered with us'});
+            return res.render('index', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
  
           }
           next();
@@ -170,7 +170,7 @@ function checkMobileNumber(req, res, next) {
     if(err) throw err;
     if(customerData) {
 
-      return res.render('index', {title: 'Front End Web Developer', msg: 'This Email is Already Registered with us'});
+      return res.render('index', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
     
     }     
     if(!customerData) {
@@ -180,7 +180,7 @@ function checkMobileNumber(req, res, next) {
         if(err) throw err;
         if(employeeData) {
 
-        return res.render('index', {title: 'Front End Web Developer', msg: 'This Email is Already Registered with us'});
+        return res.render('index', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
  
       }
       if(!employeeData) {
@@ -190,7 +190,7 @@ function checkMobileNumber(req, res, next) {
           if(err) throw err;
           if(adminData) {
 
-            return res.render('index', {title: 'Front End Web Developer', msg: 'This Email is Already Registered with us'});
+            return res.render('index', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
  
           }
           next();
@@ -284,9 +284,9 @@ let params = {
 // this sends the email
 ses.sendEmail(params, (err) => {
   if(err) {
-    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+    res.render('signupcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
   } else {
-    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+    res.render('signupcustomer', { title: 'Quick Website', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
   }
 });
 //
@@ -378,21 +378,21 @@ router.post('/accountactivatedcustomer', function(req, res, next) {
   var password = req.body.password;
   var confirmPassword = req.body.cnfpassword;
   if(password != confirmPassword || password == '' || confirmPassword == '') {
-    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Password Not Matched, Please Try again', adminDetails: ''});
+    res.render('signupcustomer', { title: 'Quick Website', msg:'Password Not Matched, Please Try again', adminDetails: ''});
   } else {
     password = bcrypt.hashSync(req.body.password, 10);
     var getcustomerDetails = customerModel.findOne({Onetimepassword: oneTimePassword}, {});
     getcustomerDetails.exec((err, ExistingCustomerDetails)=> {
       if(err) throw err;
       if(ExistingCustomerDetails == null || ExistingCustomerDetails == '') {
-        res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Wrong OTP Entered, Please Try again', adminDetails:''});
+        res.render('signupcustomer', { title: 'Quick Website', msg:'Wrong OTP Entered, Please Try again', adminDetails:''});
 
       } else {
         var getCustomerId = ExistingCustomerDetails._id;
         
         customerModel.findByIdAndUpdate(getCustomerId, {Onetimepassword: null, Password: password}, {upsert: true}, function(err, updatedCustomerDetails){
           if(err) throw err;           
-          res.render('index', { title: 'frontendwebdeveloper', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+          res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
         })
       }      
     });        
@@ -565,7 +565,7 @@ router.post('/signin', function(req, res, next) {
       var getUserIDFromCustomersData = customerData._id;
       if(bcrypt.compareSync(password, getPasswordFromCustomersData)) {
         if(customerData.Onetimepassword != null) {
-          res.render('forgotpassword', { title: 'frontendwebdeveloper', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
+          res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
         } else { 
           var customerToken = jwt.sign({userID: getUserIDFromCustomersData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/            
 
@@ -580,7 +580,7 @@ router.post('/signin', function(req, res, next) {
           res.redirect('/dashboardcustomer');
         }
       } else {
-        res.render('index', { title: 'frontendwebdeveloper', msg:'Invalid Password' });
+        res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
       }  
       
     } else if(customerData == null) {
@@ -596,7 +596,7 @@ router.post('/signin', function(req, res, next) {
         
         if(bcrypt.compareSync(password, getPasswordFromEmployeeData)) {
           if(employeeData.Onetimepassword != null) {
-            res.render('forgotpassword', { title: 'frontendwebdeveloper', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
+            res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
           } else { 
             var employeeToken = jwt.sign({userID: getUserIDFromEmployeeData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
               
@@ -610,7 +610,7 @@ router.post('/signin', function(req, res, next) {
             res.redirect('/dashboardemployees');
           }
         } else {
-          res.render('index', { title: 'frontendwebdeveloper', msg:'Invalid Password' });
+          res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
         }  
      
 
@@ -628,7 +628,7 @@ router.post('/signin', function(req, res, next) {
 
         if(bcrypt.compareSync(password, getPasswordFromAdminData)) {
           if(adminData.Onetimepassword != null) {
-            res.render('forgotpassword', { title: 'frontendwebdeveloper', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
+            res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
           } else { 
             var adminToken = jwt.sign({userID: getUserIDFromAdminData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
               
@@ -642,13 +642,13 @@ router.post('/signin', function(req, res, next) {
             res.redirect('/dashboardadmin');
           }
         } else {
-          res.render('index', { title: 'frontendwebdeveloper', msg:'Invalid Password' });
+          res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
         }  
 
             }/* if(adminData != null) { */
               
               else{
-              res.render('index', { title: 'frontendwebdeveloper', msg:'Invalid Username' });
+              res.render('index', { title: 'Quick Website', msg:'Invalid Username' });
             }
 
 

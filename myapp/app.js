@@ -15,6 +15,18 @@ var dashboardgetstartedRouter = require('./routes/dashboardgetstarted');
 var templatesRouter = require('./routes/templates');
 var dashboardtemplatesRouter = require('./routes/dashboardtemplates');
 var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
+var foodandrestaurantsRouter = require('./routes/foodandrestaurants');
+//var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
+//var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
+//var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
+var portfoliotemplatesRouter = require('./routes/portfoliotemplates');
+var smallbusinesswebsiteRouter = require('./routes/smallbusinesswebsite');
+var blogtemplatesRouter = require('./routes/blogtemplates');
+var weddinginvitationtemplatesRouter = require('./routes/weddinginvitationtemplates');
+var webpagetemplatesRouter = require('./routes/webpagetemplates');
+var comingsoontemplatesRouter = require('./routes/comingsoontemplates');
+var othertemplatesRouter = require('./routes/othertemplates');
+
 var careerRouter = require('./routes/career');
 var dashboardcareerRouter = require('./routes/dashboardcareer');
 var dashboardcareeradminRouter = require('./routes/dashboardcareeradmin');
@@ -53,6 +65,46 @@ var dashboardoutboxRouter = require('./routes/dashboardoutbox');
 var dashboardrecyclebinRouter = require('./routes/dashboardrecyclebin');
 var dashboardsettingsRouter = require('./routes/dashboardsettings');
 
+var pizzarestaurantdemoRouter = require('./routes/pizzarestaurantdemo');
+var cateringtemplatedemoRouter = require('./routes/cateringtemplatedemo');
+
+var modalrestauranttemplatedemoRouter = require('./routes/modalrestauranttemplatedemo');
+
+var cafetemplatedemoRouter = require('./routes/cafetemplatedemo');
+
+var portfoliotemplatedemoRouter = require('./routes/portfoliotemplatedemo');
+
+var resumetemplatedemoRouter = require('./routes/resumetemplatedemo');
+
+var photoportfoliotemplatedemoRouter = require('./routes/photoportfoliotemplatedemo');
+
+var natureportfoliotemplatedemoRouter = require('./routes/natureportfoliotemplatedemo');
+
+var bandtemplatedemoRouter = require('./routes/bandtemplatedemo');
+
+var blogtemplatedemoRouter = require('./routes/blogtemplatedemo');
+
+var foodblogtemplatedemoRouter = require('./routes/foodblogtemplatedemo');
+
+var fashionblogtemplatedemoRouter = require('./routes/fashionblogtemplatedemo');
+
+
+var cafeblogtemplatedemoRouter = require('./routes/cafeblogtemplatedemo');
+
+var travelblogtemplatedemoRouter = require('./routes/travelblogtemplatedemo');
+
+var clothingstoretemplatedemoRouter = require('./routes/clothingstoretemplatedemo');
+
+var comingsoontemplatedemoRouter = require('./routes/comingsoontemplatedemo');
+
+var weddinginvitationtemplatedemoRouter = require('./routes/weddinginvitationtemplatedemo');
+
+var photoalbumtemplatedemoRouter = require('./routes/photoalbumtemplatedemo');
+
+
+
+
+
 var app = express();
 
 // view engine setup
@@ -82,6 +134,18 @@ app.use('/dashboardgetstarted', dashboardgetstartedRouter);
 app.use('/templates', templatesRouter);
 app.use('/dashboardtemplates', dashboardtemplatesRouter);
 app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);
+app.use('/foodandrestaurants', foodandrestaurantsRouter);
+/*app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);
+app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);
+app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);*/
+app.use('/portfoliotemplates', portfoliotemplatesRouter);
+app.use('/smallbusinesswebsite', smallbusinesswebsiteRouter);
+app.use('/blogtemplates', blogtemplatesRouter);
+app.use('/weddinginvitationtemplates', weddinginvitationtemplatesRouter);
+app.use('/webpagetemplates', webpagetemplatesRouter);
+app.use('/comingsoontemplates', comingsoontemplatesRouter);
+app.use('/othertemplates', othertemplatesRouter);
+
 app.use('/career', careerRouter);
 app.use('/dashboardcareer', dashboardcareerRouter);
 app.use('/dashboardcareeradmin', dashboardcareeradminRouter);
@@ -119,6 +183,41 @@ app.use('/dashboardinbox', dashboardinboxRouter);
 app.use('/dashboardoutbox', dashboardoutboxRouter);
 app.use('/dashboardrecyclebin', dashboardrecyclebinRouter);
 app.use('/dashboardsettings', dashboardsettingsRouter);
+
+app.use('/pizzarestaurantdemo', pizzarestaurantdemoRouter);
+app.use('/cateringtemplatedemo', cateringtemplatedemoRouter);
+
+app.use('/modalrestauranttemplatedemo', modalrestauranttemplatedemoRouter);
+
+app.use('/cafetemplatedemo', cafetemplatedemoRouter);
+
+app.use('/portfoliotemplatedemo', portfoliotemplatedemoRouter);
+
+app.use('/resumetemplatedemo', resumetemplatedemoRouter);
+
+app.use('/photoportfoliotemplatedemo', photoportfoliotemplatedemoRouter);
+
+app.use('/natureportfoliotemplatedemo', natureportfoliotemplatedemoRouter);
+
+app.use('/bandtemplatedemo', bandtemplatedemoRouter);
+
+app.use('/blogtemplatedemo', blogtemplatedemoRouter);
+app.use('/foodblogtemplatedemo', foodblogtemplatedemoRouter);
+app.use('/fashionblogtemplatedemo', fashionblogtemplatedemoRouter);
+
+app.use('/cafeblogtemplatedemo', cafeblogtemplatedemoRouter);
+
+app.use('/travelblogtemplatedemo', travelblogtemplatedemoRouter);
+
+app.use('/clothingstoretemplatedemo', clothingstoretemplatedemoRouter);
+
+app.use('/comingsoontemplatedemo', comingsoontemplatedemoRouter);
+
+app.use('/weddinginvitationtemplatedemo', weddinginvitationtemplatedemoRouter);
+
+app.use('/photoalbumtemplatedemo', photoalbumtemplatedemoRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -33,7 +33,7 @@ router.get('/',  function(req, res, next) {
 
   };
   if(loginUser.loginUserCustomer) {
-    res.render('dashboardcustomer', { title: 'Front End Web Developer', msg:'', loginUser: loginUser.loginUserCustomer });
+    res.render('dashboardcustomer', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee){
     res.redirect('dashboardemployees');
     //res.render('dashboardemployees', { title: 'Front End Web Developer', msg:'', loginUser: loginUser.loginUserEmployee, savedData:'', staffdata: '', staffid: '' });

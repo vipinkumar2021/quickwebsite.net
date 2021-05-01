@@ -83,7 +83,7 @@ router.get('/',  function(req, res, next) {
       getSavedData.exec((err, savedData)=> { 
 
         if(err) throw err;
-      res.render('dashboardadmin', { title: 'Frontend Webdeveloper', loginUser: loginUser.loginUserAdmin, staffdata: '', staffid: '', msg: '', file: '', uploadedImage: '', savedData: savedData });
+      res.render('dashboardadmin', { title: 'Quick Website', loginUser: loginUser.loginUserAdmin, staffdata: '', staffid: '', msg: '', file: '', uploadedImage: '', savedData: savedData });
       });
        
    // res.render('dashboardtadmin', { title: 'Front End Web Developer', msg:'', loginUser: loginUser.loginUserAdmin});
@@ -120,7 +120,7 @@ router.get('/', checkLoginUser, function(req, res, next) {
         if(err) throw err;
       uploadModel.find({}).exec((err, uploadedImage)=> {
         if(err) throw err;
-        res.render('dashboardadmin', { title: 'Frontend Webdeveloper', loginUser: loginUser, staffdata: '', staffid: '', msg: 'File Uploaded Successfully', file: '', uploadedImage: '', savedData: '' });
+        res.render('dashboardadmin', { title: 'Quick Website', loginUser: loginUser, staffdata: '', staffid: '', msg: 'File Uploaded Successfully', file: '', uploadedImage: '', savedData: '' });
 
       });             
         
@@ -190,7 +190,7 @@ let params = {
 // this sends the email
 ses.sendEmail(params, (err) => {
   if(err) {
-    res.render('dashboardadmin', { title: 'frontendwebdeveloper', msg:'Error Occured, Email Sending Failed', loginUser: loginUser, staffdata: '', staffid: '', file: '', uploadedImage: '', savedData: '' });
+    res.render('dashboardadmin', { title: 'Quick Website', msg:'Error Occured, Email Sending Failed', loginUser: loginUser, staffdata: '', staffid: '', file: '', uploadedImage: '', savedData: '' });
   } else {
     var outboxDetails = new outboxModel({
       MessageTo: messageto,
@@ -198,11 +198,11 @@ ses.sendEmail(params, (err) => {
     });
     outboxDetails.save((err) => {
       if(err) {
-        res.render('dashboardadmin', { title: 'frontendwebdeveloper', msg:'Outbox did not fetch data for this message', loginUser: loginUser, staffdata: '', staffid: '', file: '', uploadedImage: '', savedData: '' });
+        res.render('dashboardadmin', { title: 'Quick Website', msg:'Outbox did not fetch data for this message', loginUser: loginUser, staffdata: '', staffid: '', file: '', uploadedImage: '', savedData: '' });
 
       } else {
 
-        res.render('dashboardadmin', { title: 'frontendwebdeveloper', msg:'Email Sent Successfully', loginUser: loginUser, staffdata: '', staffid: '', file: '', uploadedImage: '', savedData: '' });
+        res.render('dashboardadmin', { title: 'Quick Website', msg:'Email Sent Successfully', loginUser: loginUser, staffdata: '', staffid: '', file: '', uploadedImage: '', savedData: '' });
 
       }
 

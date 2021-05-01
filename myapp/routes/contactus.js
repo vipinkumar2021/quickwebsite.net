@@ -151,7 +151,7 @@ ses.sendEmail(params, (err) => {
     res.render('dashboardadmin', { title: 'Quick Website', msg:'Contact Error, Try Again!', loginUser: loginUser.loginUserAdmin});
   } else {
     //res.redirect('index');    
-    res.render('index', {title: 'Music-Website', msg: 'Contact Error, Try Again!' });
+    res.render('index', {title: 'Quick Website', msg: 'Contact Error, Try Again!' });
   
   }  
 
@@ -165,7 +165,7 @@ ses.sendEmail(params, (err) => {
       res.render('dashboardadmin', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserAdmin});
     } else {
       //res.redirect('index');    
-      res.render('index', {title: 'Music-Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
+      res.render('index', {title: 'Quick Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
     
     }     
     //res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 

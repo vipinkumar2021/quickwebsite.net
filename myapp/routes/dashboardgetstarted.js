@@ -139,7 +139,7 @@ if(loginUser.loginUserCustomer) {
   res.render('dashboardadmin', { title: 'Quick Website', msg:'Error Occured, Try Again!', loginUser: loginUser.loginUserAdmin});
 } else {
   //res.redirect('index');    
-  res.render('index', {title: 'Music-Website', msg: 'Contact Error, Try Again!' });
+  res.render('index', {title: 'Quick Website', msg: 'Contact Error, Try Again!' });
 
 }  
 
