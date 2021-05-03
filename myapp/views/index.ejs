@@ -1,34 +1,40 @@
 
 <%- include('header')  %>
   <div class="item2"></div>
-  <div class="item item3 main">
 
-      <div class="container welcome" id="homecontent"> <!--welcome div-->
+  <div class="item item3 main">
+      <div class="container welcome" id="homecontent"> <!--welcome div--> 
                 <% if(msg != '') {%> 
                   <h1 style="color: whitesmoke"> <%= msg %> </h1>  
                 <% } %>
-                 <h1><a href="#">Web Site Under Construction!</a></h1>
+                 <h1><a href="#" style="color: royalblue;">Note: Web Site Under Construction!</a></h1>
                  <h1><a href="/getstarted">Get Started</a></h1>
                  <h2>Take your Small Business to the Next Level</h2> 
                  <div class="row">           
                   <div class="column column-left">
                     <h3><a href="/getstarted" style="text-decoration: none;">Start Building a Website</a></h3>
                     <h3><a href="/#howitworkscontent" style="text-decoration: none;">Let's Make it Easy</a></h3>
+                    <h3><a href="/#first-timers" style="text-decoration: none;">First Timers</a></h3>
                     <h3><a href="#" onclick="openContactModal()" style="text-decoration: none;">Ask Us</a></h3>                                
                   </div>
                   <div class="column column-right">
                     <h3><a href="/specialoffers" style="text-decoration: none;">Special Offers</a></h3>  
-                    <h3><a href="/decidebyfeatures" style="text-decoration: none;">Decide by Features</a></h3>
-                    <h3><a href="/addon" style="text-decoration: none;">Add On</a></h3>
+                    <h3><a href="#" onclick="openSignInModal()" style="text-decoration: none;">Decide by Features</a></h3>
+                    <h3><a href="/#old-customers" style="text-decoration: none;">Old Customers</a></h3>
+                    <h3><a href="#" onclick="openSignInModal()" style="text-decoration: none;">Add On</a></h3>
                   </div>
             </div><!--row div ends-->
       </div><!--welcome div ends here-->
         
        <div id="howitworkscontent" class="how-it-works"><!--how it works strts-->
                  <h2>This is how it works</h2>
+                 <div class="row">
+                  <h3><a href="#first-timers">First Timers</a></h3>
+                  <h3><a href="#old-customers">Old Customers</a></h3>
+                 </div>                
          
-                  <div class="row">     
-                                 
+                  <div class="row" id="first-timers"> 
+                        <h4>First Timers</h4>                              
                         <ol> 
                           <li><a href="#" onclick="openSignUpModal()">Sign up</a> (Register for Free)</li>   
                           <li><a href="#" onclick="openSignInModal()">Sign in</a> (Log in)</li>
@@ -44,11 +50,19 @@
                           <li>Sooner our team will start working on your project website</li>
                           <li>Please Keep in mind that our team may contact you several times, to ask required stuff from your side and to serve you best</li>
                           -->
-                        </ol>             
-                                                
-                      </div>
+                        </ol>                                                
+                  </div>
+                  <div class="row" id="old-customers"> 
+                    <h4>Old Customers</h4>                              
+                    <ol>                      
+                      <li><a href="#" onclick="openSignInModal()">Sign in</a> (Log in)</li>
+                      <li>Open <a href="/getstarted">Get Started</a></li> 
+                      <li>Complete Steps one by one</li> 
+                   
+                    </ol>                                                
+              </div>
             </div> 
-                        <!--how it works ends here-->      
+          <!--how it works ends here-->      
       
       
        <!-- About Content Stats here-->
@@ -56,7 +70,7 @@
        <div class="about" id="aboutcontent">
             <h2>About</h2>
             <p>
-              We are a Freelance Service Providers. We give web solutions to small businesses. Our employees work as a part of remote team from different locations. Our working procedures are hassle free for the customers and we have structured our business in such a way that our employees priortise quality over quantity. This is the main reason that our existing customers never go away. More you look at our website, more you will know about us.
+              We are a Freelance Service Providers. We give web solutions to individuals and small businesses. Our employees work as a part of remote team from different locations. Our working procedures are hassle free for the customers and we have structured our business in such a way that our employees priortise quality over quantity. This is the main reason that our existing customers never go away. More you look at our website, more you will know about us.
             </p>
             <p>Cheers :)</p>
           </div>
@@ -72,20 +86,18 @@
                 <h3 style="text-align: center;">Our services include:</h3>
                 <ul>
                   <li><b><i><a href="/getstarted" style="text-decoration: none;">Creating New Websites</a></i></b> for Small Businesses</li>
-                  <li>Small Business <b><i><a href="/getstarted" style="text-decoration: none;">Websites Repairing</a></i></b></li>
-                  <li><b><i><a href="/getstarted" style="text-decoration: none;">Editing</a></i></b> Small Business Websites</li>
-                </ul>
-                
-                
+                  <li>Small Business <b><i><a href="#" onclick="openContactModal()" style="text-decoration: none;">Websites Repairing</a></i></b></li>
+                  <li><b><i><a href="#" onclick="openContactModal()" style="text-decoration: none;">Editing</a></i></b> Small Business Websites</li>
+                </ul>                
               </div>
               <div class="column column-right">
-                  <h3> Freelance Services:</h3>
+                  <h3> Other Services:</h3>
                   <ul>
-                    <li><a href="#" onclick="openGiveYourDetailsModal()">Web-Development</a></li>                  
-                  </ul>
+                    <li><a href="/getstarted" >Web-Development</a></li>
+                    <li><a href="#" onclick="openSignInModal()">Advertise Yourself on<br/>www.quickwebsite.net</a></li>                  
+                    </ul>
               </div>
-            </div>            
-  
+            </div>   
           </div>                        
           <!-- Services Content ends here-->            
               
@@ -98,8 +110,7 @@
         </p>
         <p>
           Besides, We are punctual and specific to our tasks. We believe in "First Come, First Serve" policy. We think deep and always make sure that our clients get what they have come for. Our Knowledge is up to date and our honesty is our pride.
-        </p>
-        
+        </p>        
        </div>                        
       <!-- Why us Content ends here-->            
 

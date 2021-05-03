@@ -513,7 +513,11 @@
     margin: auto;
     padding-top: 4.5em;
   }
+  .how-it-works h4 {
+    padding: 4.2em 0 2em 0;
+  }
   .how-it-works ol {
+    
     color: whitesmoke;
     text-align: left;
     

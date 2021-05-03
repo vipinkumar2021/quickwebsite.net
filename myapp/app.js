@@ -9,6 +9,7 @@ var session = require('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var specialoffersRouter = require('./routes/specialoffers');
+var dashboardspecialoffersRouter = require('./routes/dashboardspecialoffers');
 var getstartedRouter = require('./routes/getstarted');
 var dashboardgetstartedRouter = require('./routes/dashboardgetstarted');
 //var dashboardgetstartedadminRouter = require('./routes/dashboardgetstartedadmin');
@@ -52,8 +53,9 @@ var dashboardhelpadminRouter = require('./routes/dashboardhelpadmin');
 var dashboardhelpemployeeRouter = require('./routes/dashboardhelpemployee');
 
 */
-var decidebyfeaturesRouter = require('./routes/decidebyfeatures');
+var dashboarddecidebyfeaturesRouter = require('./routes/dashboarddecidebyfeatures');
 var contactusRouter = require('./routes/contactus');
+var dashboardpostaddRouter = require('./routes/dashboardpostadd');
 var dashboardcartRouter = require('./routes/dashboardcart');
 var dashboardcartadminRouter = require('./routes/dashboardcartadmin');
 var dashboardcustomerRouter = require('./routes/dashboardcustomer');
@@ -128,6 +130,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/specialoffers', specialoffersRouter);
+app.use('/dashboardspecialoffers', dashboardspecialoffersRouter);
 app.use('/getstarted', getstartedRouter);
 app.use('/dashboardgetstarted', dashboardgetstartedRouter);
 //app.use('/dashboardgetstartedadmin', dashboardgetstartedadminRouter);
@@ -171,8 +174,9 @@ app.use('/dashboardemployees', dashboardemployeesRouter);
 app.use('/dashboardhelpadmin', dashboardhelpadminRouter);
 app.use('/dashboardhelpemployee', dashboardhelpemployeeRouter);
 */
-app.use('/decidebyfeatures', decidebyfeaturesRouter);
+app.use('/dashboarddecidebyfeatures', dashboarddecidebyfeaturesRouter);
 app.use('/contactus', contactusRouter);
+app.use('/dashboardpostadd', dashboardpostaddRouter);
 app.use('/dashboardcart', dashboardcartRouter);
 app.use('/dashboardcartadmin', dashboardcartadminRouter);
 app.use('/dashboardcustomer', dashboardcustomerRouter);

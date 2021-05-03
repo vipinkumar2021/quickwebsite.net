@@ -6,15 +6,14 @@
     <div class="container welcome" id="homecontent"> <!--welcome div-->
               <% if(msg != '') {%> 
                 <h1 style="color: whitesmoke"> <%= msg %> </h1>  
-              <% } %>
-               <h1><a href="#">Dashboardcustomer</a></h1>
+              <% } %>               
                <h1><a href="/dashboardgetstarted">Get Started</a></h1>
                <h2>Take your Small Business to the Next Level</h2> 
                <div class="row">           
                 <div class="column column-left">
                   <h3><a href="/dashboardgetstarted" style="text-decoration: none;">Start Building a Website</a></h3>
                   <h3><a href="/dashboardcustomer/#howitworkscontent" style="text-decoration: none;" >Let's Make it Easy</a></h3>
-                  <h3><a href="/dashboardcontactus" style="text-decoration: none;">Ask Us</a></h3>                                
+                  <h3><a href="#" onclick="openContactModal()" style="text-decoration: none;">Ask Us</a></h3>                                
                 </div>
                 <div class="column column-right">
                   <h3><a href="/dashboardspecialoffers" style="text-decoration: none;">Special Offers</a></h3>  
@@ -30,9 +29,7 @@
                 <div class="row">     
                                
                       <ol>  
-                        <li><a href="#" onclick="openSignUpModal()">Sign up</a> (Register for Free)</li>   
-                        <li><a href="#" onclick="openSignInModal()">Sign in</a> (Log in)</li>
-                        <li>Open <a href="/getstarted">Get Started</a></li> 
+                        <li>Open <a href="/dashboardgetstarted">Get Started</a></li> 
                         <li>Complete Steps one by one</li> 
                         <!--                                            
                         <li>Choose the right template from the <a href="#" target="_blank"><i>Templates</i></a></li>
@@ -56,7 +53,7 @@
      <div class="about" id="aboutcontent">
           <h2>About</h2>
           <p>
-            We are a Freelance Service Providers. We give web solutions to small businesses. Our employees work as a part of remote team from different locations. Our working procedures are hassle free for the customers and we have structured our business in such a way that our employees priortise quality over quantity. This is the main reason that our existing customers never go away. More you look at our website, more you will know about us.
+            We are a Freelance Service Providers. We give web solutions to individuals and small businesses. Our employees work as a part of remote team from different locations. Our working procedures are hassle free for the customers and we have structured our business in such a way that our employees priortise quality over quantity. This is the main reason that our existing customers never go away. More you look at our website, more you will know about us.
 
           </p>
           <p>Cheers :)</p>
@@ -72,17 +69,18 @@
             <div class="column column-left">
               <h3 style="text-align: center;">Our services include:</h3>
               <ul>
-                <li><b><i><a href="/getstarted" style="text-decoration: none;">Creating New Websites</a></i></b> for Small Businesses</li>
-                <li>Small Business <b><i><a href="/getstarted" style="text-decoration: none;">Websites Repairing</a></i></b></li>
-                <li><b><i><a href="/getstarted" style="text-decoration: none;">Editing</a></i></b> Small Business Websites</li>
+                <li><b><i><a href="/dashboardgetstarted" style="text-decoration: none;">Creating New Websites</a></i></b> for Small Businesses</li>
+                <li>Small Business <b><i><a href="#" onclick="openContactModal()" style="text-decoration: none;">Websites Repairing</a></i></b></li>
+                <li><b><i><a href="#" onclick="openContactModal()" style="text-decoration: none;">Editing</a></i></b> Small Business Websites</li>
               </ul>
               
               
             </div>
             <div class="column column-right">
-                <h3> Freelance Services:</h3>
+                <h3> Other Services:</h3>
                 <ul>
-                  <li><a href="#" onclick="openGiveYourDetailsModal()">Web-Development</a></li>                  
+                  <li><a href="/dashboardgetstarted" >Web-Development</a></li>
+                  <li><a href="/dashboardpostadd" >Advertise Yourself on<br/>www.quickwebsite.net</a></li>                  
                 </ul>
             </div>
           </div>            
