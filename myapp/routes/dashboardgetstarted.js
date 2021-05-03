@@ -37,10 +37,17 @@ var aws = require("aws-sdk");
 
 router.post('/', function(req, res, next) {
   
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  var currentAccountUsername = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
 //
 
 var cartItemsList = new cartItemsModel({
-  
+Username: currentAccountUsername,
 TemplateOption: req.body.template,
 CustomerGivenTemplate: req.body.customertemplate,
 Home: req.body.home ,

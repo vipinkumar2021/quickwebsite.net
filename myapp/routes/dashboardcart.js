@@ -11,32 +11,25 @@ router.get('/', function(req, res, next) {
         loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
     
       };
-      if(loginUser.loginUserCustomer) {
+    if(loginUser.loginUserCustomer) {
+      cartItemsModel.findOne({Username: loginUser.loginUserCustomer}).exec((err, currentCustomerAccountUserCartItems) => {
+        if(err) {
+          res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
 
-        cartItemsModel.find({}).exec((err, cartItem) => {
-            if(err) {
-                res.render('dashboardcart', { title: 'Quick Website', msg:'Cart is Empty', cartItem: '', loginUser: loginUser.loginUserCustomer});
-            } 
-            if(cartItem != null) {            
-                res.render('dashboardcart', { title: 'Quick Website', msg:'Selected Items', cartItem: cartItem, loginUser: loginUser.loginUserCustomer});
-    
-            } else {
-                res.render('dashboardcart', { title: 'Quick Website', msg:'Cart is Empty', cartItem: '', loginUser: loginUser.loginUserCustomer});
-            }
-        })
-        
-      } else if(loginUser.loginUserEmployee) {
-        res.render('dashboardemployee', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
-      } else if(loginUser.loginUserAdmin) {
-        res.render('dashboardadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
-    
-      } else {
-        res.render('/', { title: 'Quick Website', msg: '', loginUser: '' });
-      }
+        }
+        if(currentCustomerAccountUserCartItems) {
+          res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+
+        } else {
+          res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
+
+        }
+              });
+    } else {
+      res.redirect('/');
+    }     
+
+    });
       
-
-    
-  
-});
 
 module.exports = router;

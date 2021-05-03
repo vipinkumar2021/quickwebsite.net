@@ -4,10 +4,147 @@
     <div class="container dashboardcart" >
         <br/><br/>
         <h1>Welcome to Cart</h1>
-        <h1><a href="/dashboardgetstarted">Order Here</a></h1>        
-        <% if(cartItem != '') { %>
-            <%= cartItem %> 
+        <h1><a href="/dashboardgetstarted">Order Here</a></h1><br/>
+
+        <% if(msg !='') { %>
+        <h1><%= msg %> </h1>
+        <% } %>
+                      
+        <% if(currentCustomerAccountUserCartItems){ %>          
+                
+            <table>
+                <tr>
+                    <th>Order Detail For Id: <%= currentCustomerAccountUserCartItems._id  %> </th>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.TemplateOption %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.CustomerGivenTemplate %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Home %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.HomeContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.About %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.AboutContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Services %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.ServicesContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.WhyUs %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.WhyUsContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.ContactUs %></td>
+                </tr>                
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Address %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.PhoneNumber %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.SocialMediaLink %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Policy %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.PolicyContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.TermsAndConditions %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.TermsAndConditionsContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.CopyRight %></td>
+                </tr>                
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.BackgroundColor %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.TextColor %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.LogoByCustomer %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.LogoContentByCustomer %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.LogoPurchasing %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Gallery %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.GalleryContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Templates %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.TemplatesTextContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.TemplatesUploadContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Menu %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.MenuContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.RegisterLogin %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.ContactUsForm %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.PaymentMethod %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.PaymentMethodContent %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.EmailService %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.MessageService %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.DataBase %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.WebsiteBriefDescription %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.Include %></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.DoNotInclude %></td>
+                </tr>
+            </table>
         <% } %> 
+        
+
+        
+        
          
                        
     </div>

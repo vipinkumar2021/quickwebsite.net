@@ -84,6 +84,9 @@ PhotoAlbumTemplate: {
     //required: true
 },
 */
+Username: {
+    type:String
+},
 TemplateOption: {
     type:String
 },
@@ -236,7 +239,7 @@ DataBase: {
     type: String,
     //required: true
 },
-WebsiteBriedDescription: {
+WebsiteBriefDescription: {
     type: String,
     //required: true
 },
