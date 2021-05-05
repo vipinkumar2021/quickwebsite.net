@@ -90,7 +90,9 @@ Username: {
 TemplateOption: {
     type:String
 },
-
+TemplatePrice: {
+    type: String
+},
 CustomerGivenTemplate: {
     type: String,
     //required: true
@@ -138,6 +140,9 @@ Address: {
 PhoneNumber: {
     type: String,
     //required: true
+},
+SocialMedia: {
+    type: String
 },
 SocialMediaLink: {
     type: String,

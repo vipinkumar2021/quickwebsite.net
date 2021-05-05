@@ -674,6 +674,44 @@
   
   /* career css ends here*/
 
+  /* dashboardcart css* starts*/
+  .dashboardcart {
+    
+    padding-bottom: 5em;
+  }
+  .dashboardcart table {
+    width: 100%;
+    margin: auto;    
+    border: 2px solid whitesmoke;
+    text-align: left;
+  }
+  .dashboardcart table tr {
+    width: 100%;
+    margin: auto;
+
+  }
+  .dashboardcart table tr th {
+    width: 50%;
+    border: 2px solid whitesmoke; 
+    padding: 1.5%;     
+  }
+  .dashboardcart table tr td {
+    width: 50%;
+    border: 2px solid whitesmoke; 
+    padding-left: 1%;
+  }
+  
+  table caption {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .table-caption-anchor {
+    display: flex;
+    
+  }
+  
+  /* dashboardcart css ends here*/
   .profile-image {
     
     margin: auto;
@@ -844,6 +882,7 @@
     }
       /* each-button css end*/
   
+      
   /* modal css starts*/
   
 

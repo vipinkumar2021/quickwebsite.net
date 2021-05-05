@@ -4,6 +4,7 @@
     <div class="container dashboardcart" >
         <br/><br/>
         <h1>Welcome to Cart</h1>
+        
         <h1><a href="/dashboardgetstarted">Order Here</a></h1><br/>
 
         <% if(msg !='') { %>
@@ -11,147 +12,230 @@
         <% } %>
                       
         <% if(currentCustomerAccountUserCartItems){ %>          
-                
+             
             <table>
+                <caption style="color: whitesmoke;">Order Id: <%= currentCustomerAccountUserCartItems._id  %> <a class="table-caption-anchor" href="#">Add More</a><a class="table-caption-anchor" href="#">Edit Order</a><a class="table-caption-anchor" href="#">Remove</a></caption>
                 <tr>
-                    <th>Order Detail For Id: <%= currentCustomerAccountUserCartItems._id  %> </th>
+                    <th>Cart Items</th><th>Items Price (Rs.)</th>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.TemplateOption %></td>
+                    <td id="template-option"><%= currentCustomerAccountUserCartItems.TemplateOption %></td><td id="template-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.CustomerGivenTemplate %></td>
+                    <td><span>I have my own Template: </span><br/><%= currentCustomerAccountUserCartItems.CustomerGivenTemplate %></td><td>-</td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Home %></td>
+                    <td><%= currentCustomerAccountUserCartItems.Home %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.HomeContent %></td>
+                    <td><span>Home Content: </span><%= currentCustomerAccountUserCartItems.HomeContent %></td><td id="home-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.About %></td>
+                    <td><%= currentCustomerAccountUserCartItems.About %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.AboutContent %></td>
+                    <td><span>About Content: </span><br/><%= currentCustomerAccountUserCartItems.AboutContent %></td><td id="about-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Services %></td>
+                    <td><%= currentCustomerAccountUserCartItems.Services %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.ServicesContent %></td>
+                    <td><span>Services Content: </span><br/><%= currentCustomerAccountUserCartItems.ServicesContent %></td><td id="services-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.WhyUs %></td>
+                    <td><%= currentCustomerAccountUserCartItems.WhyUs %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.WhyUsContent %></td>
+                    <td><span>Why Us Content: </span><br/><%= currentCustomerAccountUserCartItems.WhyUsContent %></td><td id="why-us-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.ContactUs %></td>
+                    <td><%= currentCustomerAccountUserCartItems.ContactUs %></td><td></td>
                 </tr>                
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Address %></td>
+                    <td><span>Individual/Company Address: </span><br/><%= currentCustomerAccountUserCartItems.Address %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.PhoneNumber %></td>
+                    <td><span>Individual/Company Phone Number: </span><br/><%= currentCustomerAccountUserCartItems.PhoneNumber %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.SocialMediaLink %></td>
+                    <td><%= currentCustomerAccountUserCartItems.SocialMediaLink %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Policy %></td>
+                    <td><%= currentCustomerAccountUserCartItems.SocialMediaLink %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.PolicyContent %></td>
+                    <td><%= currentCustomerAccountUserCartItems.Policy %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.TermsAndConditions %></td>
+                    <td><span>Policy Content: </span><br/><%= currentCustomerAccountUserCartItems.PolicyContent %></td><td id="policy-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.TermsAndConditionsContent %></td>
+                    <td><%= currentCustomerAccountUserCartItems.TermsAndConditions %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.CopyRight %></td>
+                    <td><span>Terms & Conditions Content: </span><br/><%= currentCustomerAccountUserCartItems.TermsAndConditionsContent %></td><td id="terms-and-conditions-content-price"></td>
+                </tr>
+                <tr>
+                    <td><%= currentCustomerAccountUserCartItems.CopyRight %></td><td></td>
+                </tr>
+                <tr>
+                    <td><span>Copy Right Content: </span><br/><%= currentCustomerAccountUserCartItems.CopyRight %></td><td id="copy-right-content-price"></td>
                 </tr>                
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.BackgroundColor %></td>
+                    <td><span>Background Color: </span><br/><%= currentCustomerAccountUserCartItems.BackgroundColor %></td><td>-</td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.TextColor %></td>
+                    <td><span>Text Color: </span><br/><%= currentCustomerAccountUserCartItems.TextColor %></td><td>-</td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.LogoByCustomer %></td>
+                    <td><%= currentCustomerAccountUserCartItems.LogoByCustomer %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.LogoContentByCustomer %></td>
+                    <td><span>Logo Content By Customer: </span><br/><%= currentCustomerAccountUserCartItems.LogoContentByCustomer %></td><td>-</td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.LogoPurchasing %></td>
+                    <td><%= currentCustomerAccountUserCartItems.LogoPurchasing %></td><td id="logo-purchasing-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Gallery %></td>
+                    <td><%= currentCustomerAccountUserCartItems.Gallery %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.GalleryContent %></td>
+                    <td><span>Gallery Content: </span><br/><%= currentCustomerAccountUserCartItems.GalleryContent %></td><td id="gallery-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Templates %></td>
+                    <td><%= currentCustomerAccountUserCartItems.Templates %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.TemplatesTextContent %></td>
+                    <td><span>Templates Text Content: </span><br/><%= currentCustomerAccountUserCartItems.TemplatesTextContent %></td><td id="template-feature-text-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.TemplatesUploadContent %></td>
+                    <td><span>Templates Upload Content: </span><br/><%= currentCustomerAccountUserCartItems.TemplatesUploadContent %></td><td id="template-feature-upload-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Menu %></td>
+                    <td><%= currentCustomerAccountUserCartItems.Menu %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.MenuContent %></td>
+                    <td><span>Menu Content: </span><br/><%= currentCustomerAccountUserCartItems.MenuContent %></td><td id="menu-content-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.RegisterLogin %></td>
+                    <td id="register-login"><%= currentCustomerAccountUserCartItems.RegisterLogin %></td><td id="register-login-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.ContactUsForm %></td>
+                    <td><%= currentCustomerAccountUserCartItems.ContactUsForm %></td><td id="contact-us-form-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.PaymentMethod %></td>
+                    <td><%= currentCustomerAccountUserCartItems.PaymentMethod %></td><td id="payment-method-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.PaymentMethodContent %></td>
+                    <td><span>Payment Method Content: </span><br/><%= currentCustomerAccountUserCartItems.PaymentMethodContent %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.EmailService %></td>
+                    <td><%= currentCustomerAccountUserCartItems.EmailService %></td><td id="email-service-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.MessageService %></td>
+                    <td><%= currentCustomerAccountUserCartItems.MessageService %></td><td id="message-service-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.DataBase %></td>
+                    <td><%= currentCustomerAccountUserCartItems.DataBase %></td><td id="data-base-service-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.WebsiteBriefDescription %></td>
+                    <td><span>Website Brief Description: </span><br/><%= currentCustomerAccountUserCartItems.WebsiteBriefDescription %></td><td></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.Include %></td>
+                    <td><span>I want to Include: </span><br/><%= currentCustomerAccountUserCartItems.Include %></td><td id="including-feature-price"></td>
                 </tr>
                 <tr>
-                    <td><%= currentCustomerAccountUserCartItems.DoNotInclude %></td>
+                    <td><span>I do not want to Include: </span><br/><%= currentCustomerAccountUserCartItems.DoNotInclude %></td><td></td>
                 </tr>
-            </table>
-        <% } %> 
-        
+                <tr>
+                    <td><span>Service Charges: </span><br/></td><td id="service-charges"></td>
+                </tr>
+                <tr>
+                    <td >Total Cost: </td><td><span id="cart-total"></span></td>                  
+                </tr>                
+            </table>            
+            <button class="each-button">Purchase</button>
+            <script >
+                
+                var templatePrice = 4000;
+                var customerGivenTemplatePrice = 0;
+                var homeContentPrice = 0;
+                var aboutContentPrice = 0;
+                var servicesContentPrice = 0;
+                var whyUsContentPrice = 0;
+                var policyContentPrice = 0;
+                var termsAndConditionsContentPrice = 0;
+                var copyRightContentPrice = 0;
+                var logoPurchasingPrice = 0; 
+                var galleryContentPrice = 0;
+                var templateFeatureTextContentPrice = 0;
+                var templateFeatureUploadContentPrice = 0;
+                
+                var menuContentPrice = 0;
+                var registerLoginPrice = 5000;
+                var contactUsFormPrice = 4000;
+                var paymentMethod = 5900;                
+                var emailServicesPrice = 4000;
+                var messageServicesPrice = 4000;
+                var dataBaseServicePrice = 5900;
+                var includingFeaturePrice = 0;
+                var serviceCharges = 3000;
+                var cartTotal = 0 + templatePrice + customerGivenTemplatePrice + homeContentPrice + aboutContentPrice + servicesContentPrice + whyUsContentPrice + policyContentPrice + termsAndConditionsContentPrice + copyRightContentPrice + logoPurchasingPrice + galleryContentPrice + templateFeatureTextContentPrice + templateFeatureUploadContentPrice + menuContentPrice + registerLoginPrice + contactUsFormPrice + paymentMethod + emailServicesPrice + messageServicesPrice + dataBaseServicePrice + includingFeaturePrice + serviceCharges;
+                
+                document.getElementById('template-price').innerHTML = templatePrice;
+                //document.getElementById('customer-given-template-price').innerHTML = customerGivenTemplatePrice;
+                document.getElementById('home-content-price').innerHTML = homeContentPrice;
+                document.getElementById('about-content-price').innerHTML = aboutContentPrice;
+                document.getElementById('services-content-price').innerHTML = servicesContentPrice;
+                document.getElementById('why-us-content-price').innerHTML = whyUsContentPrice;
+                document.getElementById('policy-content-price').innerHTML = policyContentPrice;
+                document.getElementById('terms-and-conditions-content-price').innerHTML = termsAndConditionsContentPrice;
+                document.getElementById('copy-right-content-price').innerHTML = copyRightContentPrice
+                document.getElementById('logo-purchasing-price').innerHTML = logoPurchasingPrice;
+                document.getElementById('gallery-content-price').innerHTML = galleryContentPrice;
+                document.getElementById('template-feature-text-content-price').innerHTML = templateFeatureTextContentPrice;
+                document.getElementById('template-feature-upload-content-price').innerHTML = templateFeatureUploadContentPrice;
+                
+                document.getElementById('menu-content-price').innerHTML = menuContentPrice
+                document.getElementById('register-login-price').innerHTML = registerLoginPrice
+                document.getElementById('contact-us-form-price').innerHTML = contactUsFormPrice
+                document.getElementById('payment-method-price').innerHTML = paymentMethod;
+                document.getElementById('email-service-price').innerHTML = emailServicesPrice
+                document.getElementById('message-service-price').innerHTML = messageServicesPrice
+                document.getElementById('data-base-service-price').innerHTML = dataBaseServicePrice
+                document.getElementById('including-feature-price').innerHTML = includingFeaturePrice
+                document.getElementById('service-charges').innerHTML = serviceCharges
+                /*
+                function registerLogInPrice() {
+                    if(document.getElementById('register-login').innerHTML) {
+                        var price = 5000;
+                        parseInt(price);
+                        document.getElementById('register-login-price').innerHTML = price;
+                    }
+                }
 
-        
-        
+                function contactUsFormprice() {
+                    if(document.getElementById('register-login').innerHTML) {
+                        var price = 5000;
+                        parseInt(price);
+                        document.getElementById('register-login-price').innerHTML = price;
+                    }
+                }
+                
+                */
+                document.getElementById('cart-total').innerHTML = cartTotal;
+                
+                
+            </script>
+        <% } %>    
          
-                       
+                  
     </div>
 </div>
 <%- include('modal') %>
 
 <%- include('dashboardfooter') %>
+
 
 
 
