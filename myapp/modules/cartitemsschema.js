@@ -90,11 +90,12 @@ Username: {
 TemplateOption: {
     type:String
 },
-
+/*
 CustomerGivenTemplate: {
     type: String,
     //required: true
 },
+*/
 Home: {
     type: String,
     //required: true

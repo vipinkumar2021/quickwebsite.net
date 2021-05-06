@@ -49,7 +49,7 @@ router.post('/', function(req, res, next) {
 var cartItemsList = new cartItemsModel({
 Username: currentAccountUsername,
 TemplateOption: req.body.template,
-CustomerGivenTemplate: req.body.customertemplate,
+//CustomerGivenTemplate: req.body.customertemplate,
 Home: req.body.home ,
 About: req.body.about ,
 Services: req.body.services , 

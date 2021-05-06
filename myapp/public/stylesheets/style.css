@@ -199,9 +199,10 @@
     color: blue;
     /*display: none;*/
   }
-  .cart-sidenav {
+  .cart-sidenav {    
     position: relative;
     padding-top: .6em;
+
   }
   .notification-sidenav {
     position: absolute;
