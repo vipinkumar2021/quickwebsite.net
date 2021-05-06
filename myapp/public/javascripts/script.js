@@ -472,7 +472,7 @@ function closeChatBoxModal() {
 
 */
 // Chat box modal javascript ends here
-//cart total javascript
+
 
 
 

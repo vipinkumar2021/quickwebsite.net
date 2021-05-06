@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     
       };
     if(loginUser.loginUserCustomer) {
-      cartItemsModel.findOne({Username: loginUser.loginUserCustomer}).exec((err, currentCustomerAccountUserCartItems) => {
+      cartItemsModel.find({Username: loginUser.loginUserCustomer}).exec((err, currentCustomerAccountUserCartItems) => {
         if(err) {
           res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
 

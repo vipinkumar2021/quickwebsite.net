@@ -199,6 +199,17 @@
     color: blue;
     /*display: none;*/
   }
+  .cart-sidenav {
+    position: relative;
+    padding-top: .6em;
+  }
+  .notification-sidenav {
+    position: absolute;
+    top: -3px;
+    left: 47px;
+    color: blue;
+    font-size: .7em;
+  }
   /*
   .cart[title] {
     background-color: rgba(238, 135, 97, .6);
@@ -681,14 +692,14 @@
   }
   .dashboardcart table {
     width: 100%;
-    margin: auto;    
-    border: 2px solid whitesmoke;
+    margin: 1em auto 1em auto;    
+    /*border: 2px solid whitesmoke;*/
     text-align: left;
+    border-collapse: collapse;
   }
   .dashboardcart table tr {
     width: 100%;
     margin: auto;
-
   }
   .dashboardcart table tr th {
     width: 50%;
@@ -711,6 +722,12 @@
     
   }
   
+  #homepage-selected-icon, #aboutpage-selected-icon, #servicespage-selected-icon, #whyuspage-selected-icon, #contactuspage-selected-icon, #social-media-feature-selected-icon, #policypage-selected-icon, #terms-and-conditions-selected-icon, #copy-right-selected-icon, #logo-by-customer-selected-icon, #gallery-page-selected-icon, #menu-page-selected-icon{
+    background-color: transparent;
+    border: none;
+    display: none;
+
+  }
   /* dashboardcart css ends here*/
   .profile-image {
     

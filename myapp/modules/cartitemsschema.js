@@ -90,9 +90,7 @@ Username: {
 TemplateOption: {
     type:String
 },
-TemplatePrice: {
-    type: String
-},
+
 CustomerGivenTemplate: {
     type: String,
     //required: true
@@ -123,7 +121,7 @@ ServicesContent: {
 },
 WhyUs: {
     type: String,
-    //required: true
+    
 },
 WhyUsContent: {
     type: String,
