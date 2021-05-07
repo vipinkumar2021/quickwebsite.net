@@ -34,46 +34,46 @@
                     <th colspan="3">Features Selected</th>
                 </tr>
                 <tr>
-                    <td class="homepage"><%= element.Home %></td><td class="homepage-price"></td><td ><span class="homepage-selected-icon">&#9989;</span> </td>
+                    <td class="homepage"><%= element.Home %></td><td>-</td><td ><span class="homepage-selected-icon">&#9989;</span> </td>
                 </tr>
                 <tr>
-                    <td class="aboutpage"><%= element.About %></td><td class="aboutpage-price"></td><td ><span class="aboutpage-selected-icon">&#9989;</span></td>
+                    <td class="aboutpage"><%= element.About %></td><td>-</td><td ><span class="aboutpage-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="servicespage"><%= element.Services %></td><td class="servicespage-price"></td><td ><span class="servicespage-selected-icon">&#9989;</span></td>
+                    <td class="servicespage"><%= element.Services %></td><td>-</td><td ><span class="servicespage-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="whyuspage"><%= element.WhyUs %></td><td class="whyuspage-price"></td><td ><span class="whyuspage-selected-icon">&#9989;</span></td>
+                    <td class="whyuspage"><%= element.WhyUs %></td><td>-</td><td ><span class="whyuspage-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="socialmediafeature"><%= element.SocialMedia %></td><td class="socialmediafeature-price"></td><td ><span class="social-media-feature-selected-icon">&#9989;</span></td>
+                    <td class="socialmediafeature"><%= element.SocialMedia %></td><td>-</td><td ><span class="social-media-feature-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="contactuspage"><%= element.ContactUs %></td><td class="contactuspage-price"></td><td ><span class="contactuspage-selected-icon">&#9989;</span></td>
+                    <td class="contactuspage"><%= element.ContactUs %></td><td>-</td><td ><span class="contactuspage-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="contactuspluscontactformpage"><%= element.ContactUsForm %></td><td class="contactuspluscontactformpage-price">-</td><td ><span class="contactuspluscontactformpage-selected-icon">&#9989;</span></td>
+                    <td class="contactuspluscontactformpage"><%= element.ContactUsForm %></td><td>-</td><td ><span class="contactuspluscontactformpage-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="policypage"><%= element.Policy %></td><td class="policypage-price"></td><td ><span class="policypage-selected-icon">&#9989;</span></td>
+                    <td class="policypage"><%= element.Policy %></td><td>-</td><td ><span class="policypage-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="termsandconditions"><%= element.TermsAndConditions %></td><td class="termsandconditions-price"></td><td ><span class="terms-and-conditions-selected-icon">&#9989;</span></td>
+                    <td class="termsandconditions"><%= element.TermsAndConditions %></td><td>-</td><td ><span class="terms-and-conditions-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="logobycustomer"><%= element.LogoByCustomer %></td><td class="logobycustomer-price"></td><td ><span class="logo-by-customer-selected-icon">&#9989;</span></td>
+                    <td class="logobycustomer"><%= element.LogoByCustomer %></td><td>-</td><td ><span class="logo-by-customer-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
                     <td class="logopurchasing"><%= element.LogoPurchasing %></td><td class="logopurchasing-price"></td><td ><span class="logo-purchasing-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="copyright"><%= element.CopyRight %></td><td class="copyright-price"></td><td ><span class="copy-right-selected-icon">&#9989;</span></td>
+                    <td class="copyright"><%= element.CopyRight %></td><td>-</td><td ><span class="copy-right-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="gallerypage"><%= element.Gallery %></td><td class="gallerypage-price"></td><td ><span class="gallery-page-selected-icon">&#9989;</span></td>
+                    <td class="gallerypage"><%= element.Gallery %></td><td>-</td><td ><span class="gallery-page-selected-icon">&#9989;</span></td>
                 </tr>
                 <tr>
-                    <td class="menupage"><%= element.Menu %></td><td class="menupage-price"></td><td ><span class="menu-page-selected-icon">&#9989;</span></td>
+                    <td class="menupage"><%= element.Menu %></td><td>-</td><td ><span class="menu-page-selected-icon">&#9989;</span></td>
                 </tr>
 
 
@@ -246,17 +246,15 @@
                 </tr>
                 <th colspan="3">Total</th>
                 <tr>
-                    <td class="total-price">Total Price: %>  </td><td><span class="cart-total"></span></td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
+                    <td class="total-price">Total Price: %>  </td><td><span class="cart-total"></span></td><td><span class="payment-confirmation-notification">Unpaid</span></td>                 
                 </tr> 
-                <caption><a class="table-caption-anchor" href="#">Add-More</a><a class="table-caption-anchor" href="#">Edit-Order</a><a class="table-caption-anchor" href="#">Remove</a></caption> 
-                              
+                <caption><a class="table-caption-anchor" href="#">Add-More</a><a class="table-caption-anchor" href="#">Edit-Order</a><a class="table-caption-anchor" href="#">Remove</a></caption>               
             </table>            
             <button class="each-button purchase">Purchase</button>
-            
             <script >
                 
                 var templatePrice = 4000;
-                //var customerGivenTemplatePrice = 0;
+                var customerGivenTemplatePrice = 0;
                 
                 var homeContentPrice = 1000;
                 var aboutContentPrice = 1000;
@@ -278,7 +276,7 @@
                 var dataBaseServicePrice = 5900;
                 var includeExtraPrice = 0;
                 var serviceCharges = 3000;
-               // var cartTotal = 0 + templatePrice + homeContentPrice + aboutContentPrice + servicesContentPrice + whyUsContentPrice + policyContentPrice + termsAndConditionsContentPrice + copyRightContentPrice + logoPurchasingPrice + galleryContentPrice + templateFeatureTextContentPrice + templateFeatureUploadContentPrice + menuContentPrice + registerLoginPrice + contactUsFormPrice + paymentMethod + emailServicesPrice + messageServicesPrice + dataBaseServicePrice + includeExtraPrice + serviceCharges;
+                var cartTotal = 0 + templatePrice + customerGivenTemplatePrice + homeContentPrice + aboutContentPrice + servicesContentPrice + whyUsContentPrice + policyContentPrice + termsAndConditionsContentPrice + copyRightContentPrice + logoPurchasingPrice + galleryContentPrice + templateFeatureTextContentPrice + templateFeatureUploadContentPrice + menuContentPrice + registerLoginPrice + contactUsFormPrice + paymentMethod + emailServicesPrice + messageServicesPrice + dataBaseServicePrice + includeExtraPrice + serviceCharges;
                 
                 
             // update cart orders number
@@ -287,204 +285,7 @@
                 document.getElementsByClassName('cart-items-number')[0].innerText = numberOfTotalpurchaseButtons;             
                 document.getElementsByClassName('cart-items-number')[1].innerText = numberOfTotalpurchaseButtons;             
 
-
-                // show price and selected icon for each order table 
-                /* correct one
-                var getAllTables = document.getElementsByTagName('table');                
-                var i;
-                var outPut ='';
-                var getAllTablesLength = getAllTables.length;
-                
-                for(i = 0; i < getAllTablesLength; i++ ) {
-                    outPut += getAllTables[i];
-                    var currentTable = getAllTables[i];
-                    var currentTableTemplateHTML = currentTable.getElementsByClassName('template-option').innerHTML 
-
-                    if(currentTableTemplateHTML > 0) {
-                        document.getElementsByClassName('template-price')[0].innerHTML = '4000';
-                    }
-                    
-                    
-                }
-
-
-*/              var allTables = document.getElementsByTagName('table');
-                var i;
-                var allTablesLength = allTables.length;
-                for(i = 0; i < allTablesLength; i++) {
-                    // template price and template selected icon showing
-                    var templateOption = allTables[i].getElementsByClassName('template-option')[0].innerHTML;
-                if(templateOption.length > 0 && templateOption != 'Select Template') {
-                    allTables[i].getElementsByClassName('template-price')[0].innerHTML = templatePrice;
-                    allTables[i].getElementsByClassName('template-selected-icon')[0].style.display = 'block'
-                }  
-
-                // homepage price and template selected icon showing
-                    var homePage = allTables[i].getElementsByClassName('homepage')[0].innerHTML;
-                    if(homePage) {
-                        allTables[i].getElementsByClassName('homepage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('homepage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // aboutpage price and template selected icon showing
-                var aboutPage = allTables[i].getElementsByClassName('aboutpage')[0].innerHTML;
-                    if(aboutPage) {
-                        allTables[i].getElementsByClassName('aboutpage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('aboutpage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // servicespage price and template selected icon showing
-                var servicesPage = allTables[i].getElementsByClassName('servicespage')[0].innerHTML;
-                    if(servicesPage) {
-                        allTables[i].getElementsByClassName('servicespage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // whyuspage price and template selected icon showing
-                var whyusPage = allTables[i].getElementsByClassName('whyuspage')[0].innerHTML;
-                    if(whyusPage) {
-                        allTables[i].getElementsByClassName('whyuspage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('whyuspage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // socialmediafeature price and template selected icon showing
-                var socialmediafeature = allTables[i].getElementsByClassName('socialmediafeature')[0].innerHTML;
-                    if(socialmediafeature) {
-                        allTables[i].getElementsByClassName('socialmediafeature-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('social-media-feature-selected-icon')[0].style.display = 'block';
-                    }
-
-                // servicespage price and template selected icon showing
-                var contactUsPage = allTables[i].getElementsByClassName('contactuspage')[0].innerHTML;
-                    if(contactUsPage) {
-                        allTables[i].getElementsByClassName('contactuspage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('contactuspage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // contactuspluscontactformpage price and template selected icon showing
-                var contactUsPlusContactFormPage = allTables[i].getElementsByClassName('contactuspluscontactformpage')[0].innerHTML;
-                    if(contactUsPlusContactFormPage) {
-                        allTables[i].getElementsByClassName('contactuspluscontactformpage-price')[0].innerHTML = contactUsFormPrice;
-                        allTables[i].getElementsByClassName('contactuspluscontactformpage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // policypage price and template selected icon showing
-                var policyPage = allTables[i].getElementsByClassName('policypage')[0].innerHTML;
-                    if(policyPage) {
-                        allTables[i].getElementsByClassName('policypage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('policypage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // termsandconditions price and template selected icon showing
-                var termsandConditions = allTables[i].getElementsByClassName('termsandconditions')[0].innerHTML;
-                    if(termsandConditions) {
-                        allTables[i].getElementsByClassName('termsandconditions-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('terms-and-conditions-selected-icon')[0].style.display = 'block';
-                    }
-
-                // logobycustomer price and template selected icon showing
-                var logobycustomer = allTables[i].getElementsByClassName('logobycustomer')[0].innerHTML;
-                    if(logobycustomer) {
-                        allTables[i].getElementsByClassName('logobycustomer-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('logo-by-customer-selected-icon')[0].style.display = 'block';
-                    }
-
-                // logopurchasing price and template selected icon showing
-                var logoPurchasing = allTables[i].getElementsByClassName('logopurchasing')[0].innerHTML;
-                    if(logoPurchasing) {
-                        allTables[i].getElementsByClassName('logopurchasing-price')[0].innerHTML = logoPurchasingPrice;
-                        allTables[i].getElementsByClassName('logo-purchasing-selected-icon')[0].style.display = 'block';
-                    }
-
-                // copyright price and template selected icon showing
-                var copyRight = allTables[i].getElementsByClassName('copyright')[0].innerHTML;
-                    if(copyRight) {
-                        allTables[i].getElementsByClassName('copyright-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('copy-right-selected-icon')[0].style.display = 'block';
-                    }
-
-                // gallerypage price and template selected icon showing
-                var galleryPage = allTables[i].getElementsByClassName('gallerypage')[0].innerHTML;
-                    if(galleryPage) {
-                        allTables[i].getElementsByClassName('gallerypage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('gallery-page-selected-icon')[0].style.display = 'block';
-                    }
-
-                // menupage price and template selected icon showing
-                var menuPage = allTables[i].getElementsByClassName('menupage')[0].innerHTML;
-                    if(menuPage) {
-                        allTables[i].getElementsByClassName('menupage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('menu-page-selected-icon')[0].style.display = 'block';
-                    }
-
-
-                // homepage content price and template selected icon showing
-
-
-                }
-                
-                
-                /*var resultClass = document.getElementsByClassName('vipinn');
-                        for(var  z= 0; z < resultClass.length; z++) {
-                    
-                            resultClass[z].innerHTML = templateOption;
-                }
-                */
-                //
-               
-               
-                
-               
-                
-               
-                        //
-                        //var currentTemplateOptionValue = document.getElementsByClassName('template-option').innerText;
-                       
-
-                        /*var i;
-                        for(i = 0; i < templateOptionLength; i++) {
-                            var currentTemplateOptionValue = templateOption[i].innerText;
-//
-                            if(templateOptionLength > 0 && currentTemplateOptionValue != 'Select Template') {
-                                var templateSelectedIcon = document.getElementsByClassName('template-selected-icon');
-                                var templateSelectedIconLength = templateSelectedIcon.length;
-                                for(i = 0; i < templateSelectedIconLength; i++) {
-                                    templateSelectedIcon.style.display = 'block';
-                                }
-                            }
-                            
-                //
-                            }
-
-*/
-                 
-                 
-
-                        //
-                     /*var resultClass = document.getElementsByClassName('vipinn');
-                for(var j = 0; j < resultClass.length; j++) {
-                    resultClass[j].innerText = templatePrice;
-                }
-*/
-                /*
-                for(var i = 0; i < templateOption.length; i++) {
-
-                    if(templateOption[i].innerHTML) {
-                        var templatePriceOutput = document.getElementsByClassName('template-price');
-                        for(var j = 0; j < templatePriceOutput.length; j++) {
-                            templatePriceOutput[j].innerHTML = templatePrice;
-                        }
-                    }
-
-                }
-                */
-
-
-                
-               
-                //[1].innerText = getAllTables.length;
                 //show homepage selected icon
-                /*
                 var homePage = document.getElementsByClassName('homepage').innerHTML
                 if(homePage) {
                     document.getElementsByClassName('homepage-selected-icon')[0].style.display = 'block'

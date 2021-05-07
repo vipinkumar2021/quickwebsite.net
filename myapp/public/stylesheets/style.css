@@ -723,12 +723,20 @@
     
   }
   
-  #homepage-selected-icon, #aboutpage-selected-icon, #servicespage-selected-icon, #whyuspage-selected-icon, #contactuspage-selected-icon, #social-media-feature-selected-icon, #policypage-selected-icon, #terms-and-conditions-selected-icon, #copy-right-selected-icon, #logo-by-customer-selected-icon, #gallery-page-selected-icon, #menu-page-selected-icon{
+  .template-selected-icon, .homepage-selected-icon, .aboutpage-selected-icon, .servicespage-selected-icon, .whyuspage-selected-icon, .social-media-feature-selected-icon, .contactuspage-selected-icon, .contactuspluscontactformpage-selected-icon, .policypage-selected-icon, .terms-and-conditions-selected-icon, .logo-by-customer-selected-icon, .logo-purchasing-selected-icon, .copy-right-selected-icon, .logo-by-customer-selected-icon, .gallery-page-selected-icon, .menu-page-selected-icon{
     background-color: transparent;
     border: none;
     display: none;
 
   }
+
+  .home-content-selected-icon, .about-content-selected-icon, .services-content-selected-icon, .why-us-content-selected-icon, .address-content-selected-icon, .phone-content-selected-icon, .social-media-content-selected-icon, .policy-content-selected-icon, .terms-and-conditions-content-selected-icon, .logo-by-customer-content-selected-icon,  .copy-right-content-selected-icon, .gallery-content-selected-icon, .template-feature-text-content-selected-icon, .template-feature-upload-content-selected-icon, .menu-content-selected-icon, .payment-method-content-selected-icon, .social-media-content-selected-icon {
+    background-color: transparent;
+    border: none;
+    display: none;
+
+  }
+  
   /* dashboardcart css ends here*/
   .profile-image {
     
