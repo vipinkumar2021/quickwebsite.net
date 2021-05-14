@@ -36,12 +36,21 @@ router.use(express.static(path.join(__dirname, './public')));
 //Set Storage Engine for file to be stored
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, './public/uploads/')
+    cb(null, `./public/uploads/`)
   }, 
+  
   filename: function(req, file, cb) {
+    
+    cb(null, `${Date.now()}_${file.fieldname}${path.extname(file.originalname)}`);
+  }
+  
+  /* Correct One so far
+  filename: function(req, file, cb) {
+    
     
     cb(null, Date.now() + '_' + file.fieldname + '_' + path.extname(file.originalname));
   }
+  */
 });
 
 
@@ -62,7 +71,7 @@ const filesForGalleryUpload = multer({
 //
 const upload = multer({
   storage: storage,
-  limits: {fileSize: 1000000},   
+  limits: {fileSize: 1000000},    
   fileFilter: function(req, file, cb) {
     if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
       cb(null, true)
@@ -72,7 +81,7 @@ const upload = multer({
   }
 });
 
-var multipleUploads = upload.fields([{ name: 'uploadcontentforgallery', maxCount: 3}, {name: 'uploadcontentfortemplates', maxCount: 3}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+var multipleUploads = upload.fields([{ name: 'uploadcontentforgallery', maxCount: 1}, {name: 'uploadcontentfortemplates', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
 
 //
 var aws = require("aws-sdk");
@@ -110,17 +119,34 @@ if(currentAccountUsername) {
 
 console.log(req.files); //showing both files
 console.log('Vipin');
-console.log(req.files.filename);//undefined
-console.log('Type of req.files');
-console.log(typeof req.files)
-console.log('Type of req.files.filename');
-console.log(typeof req.files.filename)
-console.log('Vipin');
-console.log(req.file);
+console.log(req.files);
 
-
-var uploadContentForGallery = 'Gallery Image';
-  var uploadContentForTemplates = 'Templates Image';
+//Correct One is this one   console.log(req.files.uploadcontentforgallery[0].filename);
+/*
+if(req.files.uploadcontentforgallery[0]) {
+  var uploadContentForGallery = req.files.uploadcontentforgallery[0].filename;
+} else {
+  uploadContentForGallery = 'No Image Selected';
+}
+*/
+/*
+if(req.files == null) {
+  var uploadContentForGallery = 'No Image Selected';
+} else {
+  uploadContentForGallery = req.files.uploadcontentforgallery[0].filename;
+}
+*/
+/*if(req.files == undefined || req.files == null) {
+  var uploadContentForGallery = 'No Image Selected';
+} else {
+  var filename = req.files.uploadcontentforgallery[0].filename;
+  uploadContentForGallery = filename;
+} */
+//var uploadContentForGallery = 'No Image Selected';
+ 
+//var uploadContentForGallery = 'No Image Selected'// || req.files.uploadcontentforgallery[0].filename;
+var uploadContentForGallery = 'No Image Selected';  
+var uploadContentForTemplates = 'Templates Image';
 /*
  console.log(req.files, req.body);
   

@@ -90,7 +90,7 @@ const upload = multer({
       res.redirect('dashboardemployees');
       //res.render('dashboardoutboxemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
     } else if(loginUser.loginUserAdmin) {
-      
+        console.log(req.file);
           //
           if(req.file == undefined) {
             var Filename = 'No Image Selected';

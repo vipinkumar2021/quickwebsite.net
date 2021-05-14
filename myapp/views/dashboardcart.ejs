@@ -313,7 +313,7 @@
                 </tr>
                 <th colspan="4">Total</th>
                 <tr>
-                    <td class="total-price">Total %>  </td><td><span class="cart-total">Rs. </span></td><td>...Days</td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
+                    <td class="total-price">Total: </td><td>Rs.<span class="cart-total"> </span></td><td>...Days</td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
                 </tr> 
                 <tr>
                     <td colspan="4"><span>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully</span></td>
@@ -478,6 +478,8 @@
                         //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
                     }
 
+                    var cartTotal = 0 + templatePrice;
+                    allTables[i].getElementsByClassName('cart-total')[0].innerHTML = cartTotal;
 
                 }        
 
