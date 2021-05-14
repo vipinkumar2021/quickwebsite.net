@@ -722,20 +722,43 @@
     display: flex;
     
   }
+  /*
+  .template-selected-icon, .homepage-selected-icon, .aboutpage-selected-icon, .servicespage-selected-icon, .whyuspage-selected-icon, .social-media-feature-selected-icon, .contactuspage-selected-icon, .contactuspluscontactformpage-selected-icon, .policypage-selected-icon, .terms-and-conditions-selected-icon, .logo-by-customer-selected-icon, .logo-purchasing-selected-icon, .copy-right-selected-icon, .logo-by-customer-selected-icon, .gallery-page-selected-icon, .templates-feature-selected-icon .menu-page-selected-icon{
+    background-color: transparent;
+    border: none;
+    display: none;
+
+  }
+/*
+  .home-content-container, .about-content-container, .services-content-container, .why-us-content-container, .address-content-container, .phone-content-container, .social-media-content-container, .policy-content-container, .terms-and-conditions-content-container, .logo-by-customer-content-container,  .copy-right-content-container {
+    background-color: transparent;
+    border: none;
+    display: none;
+  }
+  /*
+  .home-content-estimated-time, .about-content-estimated-time, .services-content-estimated-time, .why-us-content-estimated-time, .address-content-estimated-time, .phone-content-estimated-time, .social-media-content-estimated-time, .policy-content-estimated-time, .terms-and-conditions-content-estimated-time, .logo-by-customer-content-estimated-time,  .copy-right-content-estimated-time {
+    background-color: transparent;
+    border: none;
+    display: block;
+  }
+  */
+  /*.home-content-selected-icon, .about-content-selected-icon, .services-content-selected-icon, .why-us-content-selected-icon, .address-content-selected-icon, .phone-content-selected-icon, .social-media-content-selected-icon, .policy-content-selected-icon, .terms-and-conditions-content-selected-icon, .logo-by-customer-content-selected-icon,  .copy-right-content-selected-icon, .gallery-content-selected-icon, .template-feature-text-content-selected-icon, .template-feature-upload-content-selected-icon, .menu-content-selected-icon, .payment-method-content-selected-icon, .social-media-content-selected-icon {
+    background-color: transparent;
+    border: none;
+    display: none;
+
+  }
+*/
   
-  .template-selected-icon, .homepage-selected-icon, .aboutpage-selected-icon, .servicespage-selected-icon, .whyuspage-selected-icon, .social-media-feature-selected-icon, .contactuspage-selected-icon, .contactuspluscontactformpage-selected-icon, .policypage-selected-icon, .terms-and-conditions-selected-icon, .logo-by-customer-selected-icon, .logo-purchasing-selected-icon, .copy-right-selected-icon, .logo-by-customer-selected-icon, .gallery-page-selected-icon, .menu-page-selected-icon{
+  /* External features content css*/
+  /*.text-content-for-gallery-container {
     background-color: transparent;
     border: none;
     display: none;
-
   }
+  */
+  
 
-  .home-content-selected-icon, .about-content-selected-icon, .services-content-selected-icon, .why-us-content-selected-icon, .address-content-selected-icon, .phone-content-selected-icon, .social-media-content-selected-icon, .policy-content-selected-icon, .terms-and-conditions-content-selected-icon, .logo-by-customer-content-selected-icon,  .copy-right-content-selected-icon, .gallery-content-selected-icon, .template-feature-text-content-selected-icon, .template-feature-upload-content-selected-icon, .menu-content-selected-icon, .payment-method-content-selected-icon, .social-media-content-selected-icon {
-    background-color: transparent;
-    border: none;
-    display: none;
-
-  }
   
   /* dashboardcart css ends here*/
   .profile-image {
@@ -868,7 +891,15 @@
     border-radius: 5px;
     font-size: 1.25em;
   }
-  
+  .getstarted form textarea {
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    color: whitesmoke;
+    outline: none;
+  }
   
   /* getstarted css ends here*/
 

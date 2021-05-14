@@ -8,164 +8,192 @@
         <% } %> 
         <h2>Start Building Your Website</h2>    
             
-            <form action="/dashboardgetstarted" method="post" role="form">
-            <label>STEP 1.</label><br/>
+            <form action="/dashboardgetstarted" method="post" role="form" enctype="multipart/form-data">
+            <label>STEP 1. Template</label><br/>
             <select name="template" id="template">
-                <option >Select Template</option>
+                <option>Select Template</option>
                 <optgroup label="Food & Restaurant Templates">
-                    <option value="Pizza Restaurant Template">Pizza Restaurant Template</option>
-                    <option value="Catering Template">Catering Template</option>
-                    <option value="Modal Restaurant Template">Modal Restaurant Template</option>                    
-                    <option value="Cafe Template">Cafe Template</option>                    
+                    <option value="Pizza Restaurant Template &#9989;">Pizza Restaurant Template</option>
+                    <option value="Catering Template &#9989;">Catering Template</option>
+                    <option value="Modal Restaurant Template &#9989;">Modal Restaurant Template</option>                    
+                    <option value="Cafe Template &#9989;">Cafe Template</option>                    
                 </optgroup>
                 <optgroup label="Portfolio Templates">
-                    <option value="Portfolio Template">Portfolio Template</option>
-                    <option value="CV Template">CV (Resume) Template</option>
-                    <option value="Photo Portfolio Template">Photo Portfolio Template</option>
-                    <option value="Nature Portfolio Template">Nature Portfolio</option>                    
+                    <option value="Portfolio Template &#9989;">Portfolio Template</option>
+                    <option value="CV Template &#9989;">CV (Resume) Template</option>
+                    <option value="Photo Portfolio Template &#9989;">Photo Portfolio Template</option>
+                    <option value="Nature Portfolio Template &#9989;">Nature Portfolio</option>                    
                 </optgroup>
                 <optgroup label="Small Business Website Templates">
-                    <option value="Clothing Store Template">Clothing Store Template</option>
+                    <option value="Clothing Store Template &#9989;">Clothing Store Template</option>
                     
                 </optgroup>
                 <optgroup label="Blog Templates">
-                    <option value="Blog Template">Blog Template</option>
-                    <option value="Food Blog Template">Food Blog Template</option>
-                    <option value="Fashion Blog Template">Fashion Blog Template</option>
-                    <option value="Cafe Blog Template">Cafe Blog Template</option>
-                    <option value="Travel Blog Template">Travel Blog Template</option>
+                    <option value="Blog Template &#9989;">Blog Template</option>
+                    <option value="Food Blog Template &#9989;">Food Blog Template</option>
+                    <option value="Fashion Blog Template &#9989;">Fashion Blog Template</option>
+                    <option value="Cafe Blog Template &#9989;">Cafe Blog Template</option>
+                    <option value="Travel Blog Template &#9989;">Travel Blog Template</option>
                 </optgroup>
                 <optgroup label="Invitation Templates">
-                    <option value="Wedding Invitation">Wedding Invitation</option>                    
+                    <option value="Wedding Invitation &#9989;">Wedding Invitation</option>                    
                 </optgroup>
                 <optgroup label="Simple Webpage Templates">
-                    <option value="Web Page Template">Web Page Template</option>                    
+                    <option value="Web Page Template &#9989;">Web Page Template</option>                    
                 </optgroup>
                 <optgroup label="Coming Soon Templates">
-                    <option value="Coming Soon Template">Coming Soon Template</option>                    
+                    <option value="Coming Soon Template &#9989;">Coming Soon Template</option>                    
                 </optgroup>
                 <optgroup label="Other Templates">
-                    <option value="Band Template">Band Template</option>
-                    <option value="Photo Album Template">Photo Album Template</option>                    
+                    <option value="Band Template &#9989;">Band Template</option>
+                    <option value="Photo Album Template &#9989;">Photo Album Template</option>                    
                 </optgroup>                
             </select><br/>
            
             
-            <label>STEP 2.</label><br/>
-            <label>Select Basic Features: </label><br/>
-            <input type="checkbox" name="home" value="Home Page"/><label>Home</label><br/>
-            <label>Upload content for Home Page (word or pdf)</label><br/>
-            <input type="file" name="homecontent" value="Home Content"/><br/>
+            <label>STEP 2. Basic Features</label><br/>
+            <label>Please Click the box and Select Basic Features: </label><br/>
+            <input type="checkbox" name="home" value="Home Page &#9989;"/><label>I want "Home Page" in my website</label><br/>
+            <label>Please Provide "Home Page Content" (If Available)</label><br/>
+            <textarea name="homepagecontent" placeholder="Enter Home Page Content here...">
+            
+            </textarea><br/>         
+            
+            <input type="checkbox" name="about" value="About &#9989;"/><label>I want "About"</label><br/>
+            <label>Please Provide "About Content" (if Available)</label><br/>
+            <textarea name="aboutcontent">
 
-            <input type="checkbox" name="about" value="About"/><label>About</label><br/>
-            <label>Upload content to show in About Section (word or pdf)</label><br/>
-            <input type="file" name="aboutcontent" value="About Content"/><br/>
+            </textarea><br/>
+            <input type="checkbox" name="services" value="Services &#9989;"/><label>I want "Services" Feature</label><br/>
+            <label>Please Provide "Services Content" (If Available)</label><br/>
+            <textarea name="servicescontent">
 
-            <input type="checkbox" name="services" value="Services "/><label>Services</label><br/>
-            <label>Upload content to show in Services (word or pdf)</label><br/>
-            <input type="file" name="servicescontent" value="Services Content "/><br/>
+            </textarea><br/>
+            <input type="checkbox" name="whyus" value="Why Us &#9989;"/><label>I want "Why Us" Feature</label><br/>
+            <label>Please Provide "Content for Why Us Feature" (If Available)</label><br/>
+            <textarea name="whyuscontent">
 
-            <input type="checkbox" name="whyus" value="Why Us"/><label>Why Us</label><br/>
-            <label>Upload content for in Why Us Section  (word or pdf)</label><br/>
-            <input type="file" name="whyuscontent" value="Why Us Content "/><br/>
+            </textarea><br/>
 
-            <input type="checkbox" name="contactusonlyaddress" value="Contact Us (Only Address)"/><label>Contact Us (Only Address)</label><br/>
-            <label>Please provide the Address to be mentioned in your website</label><br/>
-            <input type="address" name="address" /><br/>
+            <input type="checkbox" name="contactusonlyaddress" value="Contact Us (Only Address) &#9989;"/><label>I want "Contact Us (Only Address)"</label><br/>
+            <label>Please provide the "Address" to be mentioned in your website</label><br/>
+            <input type="address" name="address"/><br/>
 
-            <label>Please provide the Phone Number to be shown in your website</label><br/>
+            <label>Please provide the "Phone Number" to be shown in your website</label><br/>
             <input type="tel" name="phonenumber" maxlength="15" /><br/>
 
-            <input type="checkbox" name="socialmedia" value="Social Media"/><label>Social Media</label><br/>
+            <input type="checkbox" name="socialmedia" value="Social Media &#9989;"/><label>I want "Social Media" Feature</label><br/>
             <label>Please Provide url of your social media accounts link. (eg. https://www.facebook.com/quickwebsite)</label><br/>
-            <textarea name="socialmediaaccountlink" style="background-color: transparent; border: 2px solid whitesmoke;">
+            <textarea name="socialmedialink" >
         
             </textarea><br/>
-            <input type="checkbox" name="policy" value="Policy"/><label>Policy</label><br/>
+            <input type="checkbox" name="policy" value="Policy &#9989;"/><label>I want to include my "Policy"</label><br/>
             <label>Upload Your Business Policy to mention in your website</label><br/>
-            <input type="file" name="policycontent")/><br/>  
+            <textarea name="policycontent">
 
-            <input type="checkbox" name="termsandconditions" value="Terms & Conditions"/><label>Terms & Conditions</label><br/>
-            <label>Upload Your Business Terms & Conditions to mention in your website</label><br/>
-            <input type="file" name="termsandconditionscontent"/><br/>
+            </textarea><br/>  
 
-            <input type="checkbox" name="copyright" value="Copy Right"/><label>Copy right</label><br/>
+            <input type="checkbox" name="termsandconditions" value="Terms & Conditions &#9989;"/><label>I want to Include "Terms & Conditions"</label><br/>
+            <label>Please Provide Your Business Terms & Conditions to mention in your website</label><br/>
+            <textarea name="termsandconditionscontent">
+
+            </textarea><br/>
+            <input type="checkbox" name="copyright" value="Copy Right &#9989;"/><label>I want to include "Copy right" information</label><br/>
             <label>Please provide Copy Right Information (if any)</label><br/>
-            <textarea name="copyrightcontent" style="background-color: transparent;">
+            <textarea name="copyrightcontent" >
 
             </textarea><br/><br/>
 
-            <label>STEP 3.</label><br/>
-            <label>Designing Part:</label><br/>
-        
-            <label>Select Website Background color or image</label><br/>
-            <input type="color" name="backgroundcolor"/><label>Choose Background Color here OR Upload Image below</label><br/>
+            <input type="checkbox" name="logopurchasing" value="I want to buy Logo &#9989;"/><label>I want to buy "Logo"</label><br/>
+
+            <label>STEP 2. External Features</label><br/>
+                           
+            <input type="checkbox" name="gallery" value="Gallery &#9989;"/><label>I want to include "Photo Gallery"</label><br/>
+            <label>"Any Text Content" For "Photo Gallery"</label><br/>
+            <textarea name="textcontentforgallery">
+
+            </textarea><br/>
+
+            <label>Upload content to show in Photo Gallery</label><br/>
+            <input type="file" name="uploadcontentforgallery" multiple/><br/>
+
+            <input type="checkbox" name="templatesfeature" value="Templates Feature &#9989;"/><label>I want to show my work "Templates"</label><br/>
+            <label>"Text Content" for "Templates"</label><br/>
+            <textarea name="textcontentfortemplates">
+
+            </textarea><br/>
+            <label>"Upload Content" to show in "Templates" </label><br/>
+            <input type="file" name="uploadcontentfortemplates" multiple/><br/>  
+
             
-            <input type="file" name="background-image"/>
-            <br/>
-            <label>Select Website text color </label><br/>
-            <input type="color" name="textcolor"/><label>Choose Text Color here OR Upload Image below</label><br/>
-            
-            <label>STEP 4.</label><br/>
-            <label>Select More Features: </label><br/>
-        
-            <input type="checkbox" name="logobycustomer" value="I have my own Logo"/><label>I have my own Logo</label><br/>
-            <label>Upload your Logo here if you have one</label><br/>
-            <input type="file" name="logocontent"/><br/>
+            <input type="checkbox" name="menu" value="Menu &#9989;"/><label>I want to show my "Menu" to my website</label><br/>
+            <label>Menu Content</label><br/>
+            <textarea name="textcontentformenu">
 
-            <label>OR</label><br/>
-
-            <input type="checkbox" name="logopurchasing" value="I want to buy Logo"/><label>I want To Buy Logo</label><br/>
-            
-            <input type="checkbox" name="gallery" value="Gallery"/><label>Gallery</label><br/>
-            <label>Upload content to show in Gallery</label><br/>
-            <input type="file" name="gallerycontent"/><br/>
-
-            <input type="checkbox" name="templatefeature" value="Template Feature"/><label>Templates Feature</label><br/>
-            <label>Upload text content to show in Templates </label><br/>
-            <input type="file" name="templatefeaturetextcontent"/><br/>  
-
-            <label>Upload Photos to show in Templates if you have</label><br/>
-            <input type="file" name="templatefeaturecontentfiles"/><br/>
-
-            <input type="checkbox" name="menu" value="Menu"/><label>Menu </label><br/>
-            <label>Upload content to Write in Menu Section of your Food Services website (word or pdf)</label><br/>
-            <input type="file" name="menucontent"/><br/>
+            </textarea><br/>
+            <label>OR</label>
+            <label>"Upload Menu Image" to show in Menu Section of your Food Services website (word or pdf)</label><br/>
+            <input type="file" name="uploadcontentformenu"/><br/>
         <br/>
-        
-            <label>STEP 5.</label><br/>
+
+
+        <label>STEP 3. Advanced Features</label><br/>
             <label>Select Advanced Features:</label><br/>
         
-            <input type="checkbox" name="registerlogin" value="Register and Log in"/><label>Register (Sign up) and Log in (Sign in)</label><br/>
+            <input type="checkbox" name="registerlogin" value="Register and Log in &#9989;"/><label>I want Register and Log in Feature</label><br/>
             <label>Please write your Personal Email Or Business Email Id (Required for OTP )</label><br/>
             <input type="email" name="businessemail"/><br/>
 
-            <input type="checkbox" name="contactuswithform" value="Contact Us (With Address Plus Contact Form)"/><label>Contact Us (Address Plus Contact Us Form)</label><br/>
+            <input type="checkbox" name="contactuswithform" value="Contact Us (With Address Plus Contact Form) &#9989;"/><label>I want to add "Contact Form" in my Contact Us Feature</label><br/>
 
-            <input type="checkbox" name="paymentmethod" value="Payment Method"/><label>Payment Method</label><br/><br/>
-            <label>Payment Method Content (We will contact you regarding this)</label>
-            <input type="file" name="paymentmethodcontent"/><br/><br/>
+            <input type="checkbox" name="paymentmethod" value="Payment Method &#9989;"/><label>I want to accept payments through my website using "Payment Method"</label><br/><br/>
+            <label>Please Provide you Account Number, IFSC and GST/PAN Number</label>
+            <textarea name="contentforpaymentmethod">
+
+            </textarea><br/>
+            <label>STEP 3. Designing</label><br/>
+            <label>Designing Part:</label><br/>
         
+            <label>Select Website Background color or image (Optional)</label><br/>
+            <input type="color" name="backgroundcolor"/><label>Choose Background Color here OR Upload Image below</label><br/>
+            <label>Upload Website Background Image (Optional)</label><br/>
+            <input type="file" name="background-image"/>
+            <br/>
+
+            <label>Select Website text color (Optional)</label><br/>
+            <input type="color" name="textcolor"/><label>Choose Text Color here OR Upload Image below</label><br/>
+
+            <input type="checkbox" name="logobycustomer" value="I have my own Logo &#9989;"/><label>I have my own Logo</label><br/>
+            <label>Upload your Logo here if you have one</label><br/>
+            <input type="file" name="logocontent"/><br/>
+
+            
+
+            <label>STEP 5. Uploads</label><br/>            
+            <label>Upload Images and word Files</label><br/>
+            <input type="file" name="uploadedfilesnames" multiple /><br/>
+          
+                    
             <label>STEP 6.</label><br/>
             <label>Other Features or Services:</label><br/>
         
-            <input type="checkbox" name="emailservice" value="Email Services"/><label>I want to send Email from my website</label><br/>
-            <input type="checkbox" name="messageservice" value="Message Services"/><label>I want to send Text Messages from my website</label><br/>
-            <input type="checkbox" name="database" value="Data Base"/><label>Data Base</label><br/>
+            <input type="checkbox" name="emailservice" value="Email Services &#9989;"/><label>I want to send Email from my website</label><br/>
+            <input type="checkbox" name="messageservice" value="Message Services &#9989;"/><label>I want to send Text Messages from my website</label><br/>
+            <input type="checkbox" name="database" value="Data Base &#9989;"/><label>Data Base</label><br/>
             
             <label>STEP 7.</label><br/>
             <label>Additional</label><br/>
             
             <label>Describe your website briefly to get the idea of website you would like</label><br/>
-            <textarea name="websitedescription" style="background-color: transparent; border: 2px solid whitesmoke;">
+            <textarea name="websitedescription">
         
             </textarea><br/>
             <label>Include</label><br/>
-            <textarea name="include" style="background-color: transparent;">
+            <textarea name="include">
         
             </textarea><br/>
             <label>Do Not Include</label><br/>
-            <textarea name="donotinclude" style="background-color: transparent;">
+            <textarea name="donotinclude">
         
             </textarea><br/><br/>
                         

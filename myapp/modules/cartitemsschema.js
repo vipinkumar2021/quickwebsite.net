@@ -6,102 +6,22 @@ useCreateIndex: true});
 var conn = mongoose.Collection;
 
 var cartItemsSchema = new mongoose.Schema({
-/*
- PizzaRestaurantTemplate: {
-    type: String,
-    //required: true
-},
-CateringTemplate: {
-    type: String,
-    //required: true
-},
-ModalRestaurantTemplate: {
-    type: String,
-    //required: true
-},
-CafeTemplate: {
-    type: String,
-    //required: true
-},
-PortfolioTemplate: {
-    type: String,
-    //required: true
-},
-ResumeTemplate: {
-    type: String,
-    //required: true
-},
-PhotoPortfolioTemplate: {
-    type: String,
-    //required: true
-},
-NaturePortfolioTemplate: {
-    type: String,
-    //required: true
-},
-ClothingStoreTemplate: {
-    type: String,
-    //required: true
-},
-BlogTemplate: {
-    type: String,
-    //required: true
-},
-FoodBlogTemplate: {
-    type: String,
-    //required: true
-},
-FashionBlogTemplate: {
-    type: String,
-    //required: true
-},
-CafeBlogTemplate: {
-    type: String,
-    //required: true
-},
-TravelBlogTemplate: {
-    type: String,
-    //required: true
-},
-WeddingInvitationTemplate: {
-    type: String,
-    //required: true
-},
-WebPageTemplate: {
-    type: String,
-    //required: true
-},
-ComingSoonTemplate: {
-    type: String,
-    //required: true
-},
-BandTemplate: {
-    type: String,
-    //required: true
-},
-PhotoAlbumTemplate: {
-    type: String,
-    //required: true
-},
-*/
+
 Username: {
     type:String
 },
 TemplateOption: {
     type:String
 },
-/*
-CustomerGivenTemplate: {
-    type: String,
-    //required: true
-},
-*/
+
 Home: {
     type: String,
     //required: true
-},
-HomeContent: {
-    type: String,
+}, 
+
+HomePageContent: {
+    type: String
+    
     //required: true
 },
 About: {
@@ -167,6 +87,53 @@ CopyRight: {
     type: String,
     //required: true
 },
+CopyRightContent: {
+    type: String
+},
+LogoPurchasing: {
+    type: String,
+    //required: true
+},
+//External Features
+Gallery: {
+    type: String,
+    //required: true
+},
+TextContentForGallery: {
+    type: String,
+    //required: true
+},
+UploadContentForGallery: {
+    type: String,
+    //required: true
+},
+Templates: {
+    type: String,
+    //required: true
+},
+TextContentForTemplates: {
+    type: String,
+    //required: true
+},
+UploadContentForTemplates: {
+    type: String,
+    //required: true
+},
+Menu: {
+    type: String,
+    //required: true
+},
+TextContentForMenu: {
+    type: String,
+    //required: true
+},
+UploadContentForMenu: {
+    type: String,
+    //required: true
+},
+
+/*
+
 BackgroundColor: {
     type: String,
     //required: true
@@ -183,38 +150,9 @@ LogoContentByCustomer: {
     type: String,
     //required: true
 },
-LogoPurchasing: {
-    type: String,
-    //required: true
-},
-Gallery: {
-    type: String,
-    //required: true
-},
-GalleryContent: {
-    type: String,
-    //required: true
-},
-Templates: {
-    type: String,
-    //required: true
-},
-TemplatesTextContent: {
-    type: String,
-    //required: true
-},
-TemplatesUploadContent: {
-    type: String,
-    //required: true
-},
-Menu: {
-    type: String,
-    //required: true
-},
-MenuContent: {
-    type: String,
-    //required: true
-},
+
+
+
 RegisterLogin: {
     type: String,
     //required: true
@@ -255,6 +193,11 @@ DoNotInclude: {
     type: String,
     //required: true
 },
+
+UploadFilesNames: {
+    type: String
+},
+*/
 Date: {
     type: Date,
     default: Date.now

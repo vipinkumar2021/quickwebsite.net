@@ -4,6 +4,7 @@
     <div class="container dashboardcart" >
         <br/><br/>
         <h1>Welcome to Cart</h1>
+
         <p style="color: whitesmoke;" id="number-of-orders"></p>
         <h1><a href="/dashboardgetstarted">Order Here</a></h1><br/>
 
@@ -21,233 +22,302 @@
                     Date: <%= element.Date %>  
                 </caption>
                 <tr>
-                    <th>Cart Items</th><th>Items Price (Rs.)</th><th><span>&#9989;</span></th>
+                    <th colspan="3">Cart Items</th>
                 </tr>
+                <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
                 <tr>
-                    <th colspan="3">Template Selected</th>
-                </tr>
-                <tr>
-                    <td class="template-option"><%= element.TemplateOption %></td><td class="template-price"></td><td ><span class="template-selected-icon">&#9989;</span> </td>
+                    <td class="template-option"><%= element.TemplateOption %></td><td class="template-completing-estimated-time"></td><td class="template-price"></td>
                 </tr>
                 
                 <tr>
-                    <th colspan="3">Features Selected</th>
-                </tr>
-                <tr>
-                    <td class="homepage"><%= element.Home %></td><td class="homepage-price"></td><td ><span class="homepage-selected-icon">&#9989;</span> </td>
-                </tr>
-                <tr>
-                    <td class="aboutpage"><%= element.About %></td><td class="aboutpage-price"></td><td ><span class="aboutpage-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="servicespage"><%= element.Services %></td><td class="servicespage-price"></td><td ><span class="servicespage-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="whyuspage"><%= element.WhyUs %></td><td class="whyuspage-price"></td><td ><span class="whyuspage-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="socialmediafeature"><%= element.SocialMedia %></td><td class="socialmediafeature-price"></td><td ><span class="social-media-feature-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="contactuspage"><%= element.ContactUs %></td><td class="contactuspage-price"></td><td ><span class="contactuspage-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="contactuspluscontactformpage"><%= element.ContactUsForm %></td><td class="contactuspluscontactformpage-price">-</td><td ><span class="contactuspluscontactformpage-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="policypage"><%= element.Policy %></td><td class="policypage-price"></td><td ><span class="policypage-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="termsandconditions"><%= element.TermsAndConditions %></td><td class="termsandconditions-price"></td><td ><span class="terms-and-conditions-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="logobycustomer"><%= element.LogoByCustomer %></td><td class="logobycustomer-price"></td><td ><span class="logo-by-customer-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="logopurchasing"><%= element.LogoPurchasing %></td><td class="logopurchasing-price"></td><td ><span class="logo-purchasing-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="copyright"><%= element.CopyRight %></td><td class="copyright-price"></td><td ><span class="copy-right-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="gallerypage"><%= element.Gallery %></td><td class="gallerypage-price"></td><td ><span class="gallery-page-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="menupage"><%= element.Menu %></td><td class="menupage-price"></td><td ><span class="menu-page-selected-icon">&#9989;</span></td>
-                </tr>
-
-
-
-
-
-
-
-                <th colspan="3">Content Uploaded</th>
-                <tr>
-                    <td ><strong>Home Content:</strong>  <span class="home-content"><%= element.HomeContent %></span></td><td class="home-content-price"></td><td ><span class="home-content-selected-icon">&#9989;</span></td>
+                    <th colspan="3">Basic Features Selected</th>                    
                 </tr>
                 
-                <tr>
-                    <td ><span><strong>About Content:</strong>  </span><br/><span class="about-content"><%= element.AboutContent %></span></td><td class="about-content-price"></td><td ><span class="about-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td><span><strong>Services Content:</strong>  </span><br/>
-                        <span class="services-content"><%= element.ServicesContent %></span>
-                    </td>
-                    <td class="services-content-price"></td>
-                    <td ><span class="services-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td><span><strong>Why Us Content:</strong>  </span><br/>
-                        <span class="why-us-content"><%= element.WhyUsContent %></span>
-                    </td>
-                    <td class="why-us-content-price"></td>
-                    <td ><span class="why-us-content-selected-icon">&#9989;</span></td>
-                </tr>
-                                
-                <tr>
-                    <td><span><strong>Individual/Company Address:</strong>  </span><br/><%= element.Address %></td><td>-</td><td ><span class="address-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span><strong>Individual/Company Phone Number: </strong> </span><br/><%= element.PhoneNumber %></td><td></td><td ><span class="phone-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td ><span><strong>Spcial Media Link: </strong> </span><br/>
-                        <%= element.SocialMediaLink %>
-                    </td><td>-</td>
-                    <td ><span class="social-media-content-selected-icon">&#9989;</span></td>
-                </tr>                
-                
-                <tr>
-                    <td><span><strong>Policy Content:</strong>  </span><br/>
-                        <span class="policy-content"><%= element.PolicyContent %></span>
-                    </td>
-                    <td id="policy-content-price"></td>
-                    <td ><span class="policy-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td><span><strong>Terms & Conditions Content:</strong>  </span><br/>
-                        <span class="terms-and-conditions-content"><%= element.TermsAndConditionsContent %></span>
-                    </td>
-                    <td class="terms-and-conditions-content-price"></td>
-                    <td ><span class="terms-and-conditions-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td><span><strong>Copy Right Content: </strong>  </span><br/>
-                        <span class="copy-right-content"><%= element.CopyRight %></span>
-                    </td>
-                    <td class="copy-right-content-price"></td>
-                    <td ><span class="copy-right-content-selected-icon">&#9989;</span></td>
+                <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                <tr>                    
+                    <td class="homepage"><%= element.Home %></td>                    
+                    <td class="homepage-content-estimated-time"></td>
+                    <td class="homepage-price"></td>                    
+                   
                 </tr>                
                 <tr>
-                    <td><span><strong>Background Color: </strong>  </span><br/><div style="width: 4em; height: 4em; background-color: whitesmoke"></div><%= element.BackgroundColor %>  </td><td>-</td><td ><span class="background-color-content-selected-icon">&#9989;</span></td>
+                    <td class="aboutpage"><%= element.About %></td>                    
+                    <td class="aboutpage-content-estimated-time"></td>
+                    <td class="aboutpage-price"></td>           
+                    
+               </tr>
+                <tr>
+                    <td class="servicespage"><%= element.Services %></td>
+                    <td class="servicespage-content-estimated-time"></td>
+                    <td class="servicespage-price"></td>
+                    
                 </tr>
                 <tr>
-                    <td><span><strong>Text Color: </strong>  </span><br/> <div style="color: teal;">Text Color Selected</div>  <%= element.TextColor %></td><td>-</td><td ><span class="text-color-content-selected-icon">&#9989;</span></td>
+                    <td class="whyuspage"><%= element.WhyUs %></td>
+                    <td class="whyuspage-content-estimated-time"></td>
+                    <td class="whyuspage-price"></td>
                 </tr>
                 
                 <tr>
-                    <td><span><strong>Logo Content By Customer:</strong>  </span><br/><%= element.LogoContentByCustomer %></td><td>-</td><td ><span class="logo-by-customer-content-selected-icon">&#9989;</span></td>
+                    <td class="contactuspage"><%= element.ContactUs %></td>
+                    <td class="contactuspage-content-estimated-time"></td>
+                    <td class="contactuspage-price"></td>
+                                    
+                <tr>
+                    <td class="socialmediafeature"><%= element.SocialMedia %></td>
+                    <td class="socialmediafeature-content-estimated-time"></td>
+                    <td class="socialmediafeature-price"></td>
+                </tr>
+                <tr>
+                    <td class="policypage"><%= element.Policy %></td>
+                    <td class="policypage-content-estimated-time"></td>
+                    <td class="policypage-price"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="termsandconditions"><%= element.TermsAndConditions %></td>
+                    <td class="termsandconditions-content-estimated-time"></td>
+                    <td class="termsandconditions-price"></td>
+                </tr>
+                <tr>
+                    <td class="copyright"><%= element.CopyRight %></td>
+                    <td class="copyright-content-estimated-time"></td>
+                    <td class="copyright-price"></td>
+                </tr>
+                <tr>
+                    <td class="logopurchasing"><%= element.LogoPurchasing %></td>
+                    <td class="logopurchasing-estimated-time"></td>
+                    <td class="logopurchasing-price"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">Basic Features Content</th>
+                </tr>
+                <tr>
+                    <th>Name</th><th colspan="2">Content</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">Home Page Content: </th>
+                    <td class="home-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.HomePageContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="Home Content Image"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th rowspan="2">About Content: </th>
+                    <td class="about-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.AboutContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="About Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Services Content: </th>
+                    <td class="services-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.ServicesContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="Services Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Why Us Content: </th>
+                    <td class="whyus-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.WhyUsContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="Why Us Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Address: </th>
+                    <td class="address-content" colspan="2">
+                        <strong>Address:</strong><br/>
+                        <%= element.Address %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <th >Phone Number: </th>
+                    <td class="phone-content" colspan="2" >
+                        <strong>Phone Number:</strong><br/>
+                        <%= element.PhoneNumber %> 
+                    </td>                                       
+                </tr>
+                
+
+                <tr>
+                    <th>Social Media Link: </th>
+                    <td class="socialmedia-link" colspan="2"> 
+                        <strong>Social Media Link: </strong><br/>                       
+                        <%= element.SocialMediaLink %> <br/>
+                    </td>                                       
+                </tr>
+                
+
+                <tr>
+                    <th rowspan="2">Policy Content: </th>
+                    <td class="policy-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.PolicyContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="Policy Content Image"/>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <th rowspan="2">Terms & Conditions Content: </th>
+                    <td class="termsandconditions-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.TermsAndConditionsContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="Terms And Conditions Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Copy Right Content: </th>
+                    <td class="copyright-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.CopyRightContent %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="#" alt="Copy Right Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">External Features Selected</th>
+                </tr>
+                <tr>                    
+                    <td class="galleryfeature"><%= element.Gallery %></td>                    
+                    <td class="galleryfeature-content-estimated-time"></td>
+                    <td class="galleryfeature-price"></td>                    
+                   
+                </tr> 
+                
+                <tr>                    
+                    <td class="templatesfeature"><%= element.Templates %></td>                    
+                    <td class="templatesfeature-content-estimated-time"></td>
+                    <td class="templatesfeature-price"></td>                    
+                   
+                </tr>                
+
+                <tr>                    
+                    <td class="menupage"><%= element.Menu %></td>                    
+                    <td class="menupage-content-estimated-time"></td>
+                    <td class="menupage-price"></td>                    
+                   
+                </tr>                
+
+
+
+
+                <tr>
+                    <th colspan="3">External Features Content</th>
+                </tr>
+                
+                <tr>
+                    <th>Name</th><th colspan="2">Content</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">Photo Gallery Content: </th>
+                    <td class="photogallery-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.TextContentForGallery %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="./uploads/<%= element.UploadContentForGallery %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Templates Feature Content: </th>
+                    <td class="template-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.TextContentForTemplates %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="./uploads/<%= element.UploadContentForTemplates %> " alt="Templates Content Image"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Menu Content: </th>
+                    <td class="menu-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.TextContentForMenu %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="./uploads/<%= element.UploadContentForMenu %> " alt="Menu Content Image"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="3">New Heading</th>
                 </tr>
                 
                 
-                <tr>
-                    <td><span><strong>Gallery Content: </strong>  </span><br/>
-                        <span class="gallery-content"><%= element.GalleryContent %></span>
-                    </td><td class="gallery-content-price"></td>
-                    <td ><span class="gallery-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><%= element.Templates %></td><td></td>
-                </tr>
-                <tr>
-                    <td><span><strong>Templates Text Content:</strong>  </span><br/>
-                        <span class="template-feature-text-content"><%= element.TemplatesTextContent %></span>
-                    </td>
-                    <td class="template-feature-text-content-price"></td>
-                    <td ><span class="template-feature-text-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span><strong>Templates Upload Content:</strong>  </span><br/>
-                        <span class="template-feature-upload-content"><%= element.TemplatesUploadContent %></span>
-                    </td>
-                    <td class="template-feature-upload-content-price"></td>
-                    <td ><span class="template-feature-upload-content-selected-icon">&#9989;</span></td>
-                </tr>
-               
-                <tr>
-                    <td><span><strong>Menu Content: </strong> </span><br/>
-                        <span class="menu-content"><%= element.MenuContent %></span>
-                    </td>
-                    <td class="menu-content-price"></td>
-                    <td ><span class="menu-content-selected-icon">&#9989;</span></td>
-                </tr>
                 
-                <tr>
-                    <td class="register-login"><%= element.RegisterLogin %></td>
-                    <td class="register-login-price"></td>
-                    <td ><span class="register-login-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="contact-us-form"><%= element.ContactUsForm %></td>
-                    <td class="contact-us-form-price"></td>
-                    <td ><span class="contact-us-form-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="payment-method"><%= element.PaymentMethod %></td>
-                    <td class="payment-method-price"></td>
-                    <td ><span class="payment-method-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>Payment Method Content: </span><br/>
-                        <span class="payment-method-content"><%= element.PaymentMethodContent %></span>
-                    </td><td>-</td>
-                    <td ><span class="payment-method-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="email-service"><%= element.EmailService %></td>
-                    <td class="email-service-price"></td>
-                    <td ><span class="email-service-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="message-service"><%= element.MessageService %></td>
-                    <td class="message-service-price"></td>
-                    <td ><span class="message-service-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="data-base-service"><%= element.DataBase %></td>
-                    <td class="data-base-service-price"></td>
-                    <td ><span class="data-base-service-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>Website Brief Description: </span><br/><%= element.WebsiteBriefDescription %></td><td>-</td><td ><span class="brief-description-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>I want to Include: </span><br/>
-                        <span class="include-extra"><%= element.Include %></span>
-                    </td>
-                    <td class="include-extra-price"></td>
-                    <td ><span class="include-extra-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>I do not want to Include: </span><br/><%= element.DoNotInclude %></td><td>-</td><td ><span class="do-not-include-message-icon">&#9989;</span></td>
-                </tr>
-                <th colspan="3">Services Charges</th>
+                
+                <th colspan="4">Services Charges</th>
                 <tr>
                     <td><span>Service Charges: </span><br/></td>
                     <td class="service-charges"></td>
                     <td>-</td>
+                    <td></td>
 
                 </tr>
-                <th colspan="3">Total</th>
+                <th colspan="4">Total</th>
                 <tr>
-                    <td class="total-price">Total Price: %>  </td><td><span class="cart-total"></span></td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
+                    <td class="total-price">Total %>  </td><td><span class="cart-total">Rs. </span></td><td>...Days</td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
                 </tr> 
+                <tr>
+                    <td colspan="4"><span>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully</span></td>
+                </tr>
                 <caption><a class="table-caption-anchor" href="#">Add-More</a><a class="table-caption-anchor" href="#">Edit-Order</a><a class="table-caption-anchor" href="#">Remove</a></caption> 
                               
             </table>            
@@ -257,29 +327,6 @@
                 
                 var templatePrice = 4000;
                 //var customerGivenTemplatePrice = 0;
-                
-                var homeContentPrice = 1000;
-                var aboutContentPrice = 1000;
-                var servicesContentPrice = 2000;
-                var whyUsContentPrice = 1000;
-                var policyContentPrice = 1000;
-                var termsAndConditionsContentPrice = 1000;
-                var copyRightContentPrice = 1000;
-                var logoPurchasingPrice = 2000; 
-                var galleryContentPrice = 3000;
-                var templateFeatureTextContentPrice = 3000;
-                var templateFeatureUploadContentPrice = 3000;                
-                var menuContentPrice = 3000;
-                var registerLoginPrice = 5000;
-                var contactUsFormPrice = 3000;
-                var paymentMethod = 5900;                
-                var emailServicesPrice = 4000;
-                var messageServicesPrice = 4000;
-                var dataBaseServicePrice = 5900;
-                var includeExtraPrice = 0;
-                var serviceCharges = 3000;
-               // var cartTotal = 0 + templatePrice + homeContentPrice + aboutContentPrice + servicesContentPrice + whyUsContentPrice + policyContentPrice + termsAndConditionsContentPrice + copyRightContentPrice + logoPurchasingPrice + galleryContentPrice + templateFeatureTextContentPrice + templateFeatureUploadContentPrice + menuContentPrice + registerLoginPrice + contactUsFormPrice + paymentMethod + emailServicesPrice + messageServicesPrice + dataBaseServicePrice + includeExtraPrice + serviceCharges;
-                
                 
             // update cart orders number
                 var getAllPurchaseButtons = document.getElementsByClassName('purchase');
@@ -315,422 +362,130 @@
                     // template price and template selected icon showing
                     var templateOption = allTables[i].getElementsByClassName('template-option')[0].innerHTML;
                 if(templateOption.length > 0 && templateOption != 'Select Template') {
+                    allTables[i].getElementsByClassName('template-completing-estimated-time')[0].innerHTML = '16:00';
                     allTables[i].getElementsByClassName('template-price')[0].innerHTML = templatePrice;
-                    allTables[i].getElementsByClassName('template-selected-icon')[0].style.display = 'block'
+                    //allTables[i].getElementsByClassName('template-selected-icon')[0].style.display = 'block'
                 }  
 
                 // homepage price and template selected icon showing
-                    var homePage = allTables[i].getElementsByClassName('homepage')[0].innerHTML;
-                    if(homePage) {
-                        allTables[i].getElementsByClassName('homepage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('homepage-selected-icon')[0].style.display = 'block';
+                var homePage = allTables[i].getElementsByClassName('homepage')[0].innerHTML;
+                //var homePageContent = allTables[i].getElementsByClassName('homepage-content')[0].innerHTML;   
+                if(homePage) {
+                        allTables[i].getElementsByClassName('homepage-content-estimated-time')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('homepage-price')[0].innerHTML = '2000';
+                       // allTables[i].getElementsByClassName('homepage-selected-icon')[0].innerHTML = "&#9989;";
                     }
 
                 // aboutpage price and template selected icon showing
-                var aboutPage = allTables[i].getElementsByClassName('aboutpage')[0].innerHTML;
-                    if(aboutPage) {
-                        allTables[i].getElementsByClassName('aboutpage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('aboutpage-selected-icon')[0].style.display = 'block';
+               var aboutPage = allTables[i].getElementsByClassName('aboutpage')[0].innerHTML;
+               //var aboutPageContent = allTables[i].getElementsByClassName('aboutpage-content')[0].innerHTML     
+               if(aboutPage) {
+                        allTables[i].getElementsByClassName('aboutpage-content-estimated-time')[0].innerHTML = '4:00'
+                        allTables[i].getElementsByClassName('aboutpage-price')[0].innerHTML = '2000';
+                        //allTables[i].getElementsByClassName('aboutpage-selected-icon')[0].innerHTML = '&#9989;';
                     }
 
                 // servicespage price and template selected icon showing
                 var servicesPage = allTables[i].getElementsByClassName('servicespage')[0].innerHTML;
                     if(servicesPage) {
-                        allTables[i].getElementsByClassName('servicespage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
-                    }
+                        allTables[i].getElementsByClassName('servicespage-price')[0].innerHTML = '3000';
+                        allTables[i].getElementsByClassName('servicespage-content-estimated-time')[0].innerHTML = '6:00';
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }              
+                             
 
                 // whyuspage price and template selected icon showing
                 var whyusPage = allTables[i].getElementsByClassName('whyuspage')[0].innerHTML;
                     if(whyusPage) {
-                        allTables[i].getElementsByClassName('whyuspage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('whyuspage-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('whyuspage-content-estimated-time')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('whyuspage-price')[0].innerHTML = '2000';
+                        //allTables[i].getElementsByClassName('whyuspage-selected-icon')[0].style.display = 'block';
                     }
+
+                // contactpage price and template selected icon showing
+                var contactUsPage = allTables[i].getElementsByClassName('contactuspage')[0].innerHTML;
+                    if(contactUsPage) {
+                        allTables[i].getElementsByClassName('contactuspage-content-estimated-time')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('contactuspage-price')[0].innerHTML = '2000';
+                        
+                        //allTables[i].getElementsByClassName('whyuspage-selected-icon')[0].style.display = 'block';
+                    }
+
 
                 // socialmediafeature price and template selected icon showing
                 var socialmediafeature = allTables[i].getElementsByClassName('socialmediafeature')[0].innerHTML;
                     if(socialmediafeature) {
-                        allTables[i].getElementsByClassName('socialmediafeature-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('social-media-feature-selected-icon')[0].style.display = 'block';
-                    }
-
-                // servicespage price and template selected icon showing
-                var contactUsPage = allTables[i].getElementsByClassName('contactuspage')[0].innerHTML;
-                    if(contactUsPage) {
-                        allTables[i].getElementsByClassName('contactuspage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('contactuspage-selected-icon')[0].style.display = 'block';
-                    }
-
-                // contactuspluscontactformpage price and template selected icon showing
-                var contactUsPlusContactFormPage = allTables[i].getElementsByClassName('contactuspluscontactformpage')[0].innerHTML;
-                    if(contactUsPlusContactFormPage) {
-                        allTables[i].getElementsByClassName('contactuspluscontactformpage-price')[0].innerHTML = contactUsFormPrice;
-                        allTables[i].getElementsByClassName('contactuspluscontactformpage-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('socialmediafeature-content-estimated-time')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('socialmediafeature-price')[0].innerHTML = '2000';
+                        //allTables[i].getElementsByClassName('social-media-feature-selected-icon')[0].style.display = 'block';
                     }
 
                 // policypage price and template selected icon showing
                 var policyPage = allTables[i].getElementsByClassName('policypage')[0].innerHTML;
                     if(policyPage) {
-                        allTables[i].getElementsByClassName('policypage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('policypage-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('policypage-content-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('policypage-price')[0].innerHTML = '3000';
+                        //allTables[i].getElementsByClassName('policypage-selected-icon')[0].style.display = 'block';
                     }
+
 
                 // termsandconditions price and template selected icon showing
                 var termsandConditions = allTables[i].getElementsByClassName('termsandconditions')[0].innerHTML;
                     if(termsandConditions) {
-                        allTables[i].getElementsByClassName('termsandconditions-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('terms-and-conditions-selected-icon')[0].style.display = 'block';
-                    }
-
-                // logobycustomer price and template selected icon showing
-                var logobycustomer = allTables[i].getElementsByClassName('logobycustomer')[0].innerHTML;
-                    if(logobycustomer) {
-                        allTables[i].getElementsByClassName('logobycustomer-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('logo-by-customer-selected-icon')[0].style.display = 'block';
-                    }
-
-                // logopurchasing price and template selected icon showing
-                var logoPurchasing = allTables[i].getElementsByClassName('logopurchasing')[0].innerHTML;
-                    if(logoPurchasing) {
-                        allTables[i].getElementsByClassName('logopurchasing-price')[0].innerHTML = logoPurchasingPrice;
-                        allTables[i].getElementsByClassName('logo-purchasing-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('termsandconditions-content-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('termsandconditions-price')[0].innerHTML = '3000';
+                        //allTables[i].getElementsByClassName('terms-and-conditions-selected-icon')[0].style.display = 'block';
                     }
 
                 // copyright price and template selected icon showing
                 var copyRight = allTables[i].getElementsByClassName('copyright')[0].innerHTML;
                     if(copyRight) {
-                        allTables[i].getElementsByClassName('copyright-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('copy-right-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('copyright-content-estimated-time')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('copyright-price')[0].innerHTML = '2000';
+                        //allTables[i].getElementsByClassName('copy-right-selected-icon')[0].style.display = 'block';
                     }
 
-                // gallerypage price and template selected icon showing
-                var galleryPage = allTables[i].getElementsByClassName('gallerypage')[0].innerHTML;
-                    if(galleryPage) {
-                        allTables[i].getElementsByClassName('gallerypage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('gallery-page-selected-icon')[0].style.display = 'block';
+                // logopurchasing price and template selected icon showing
+                var logoPurchasing = allTables[i].getElementsByClassName('logopurchasing')[0].innerHTML;
+                    if(logoPurchasing) {
+                        allTables[i].getElementsByClassName('logopurchasing-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('logopurchasing-price')[0].innerHTML = '3000';
+                        //allTables[i].getElementsByClassName('logo-purchasing-selected-icon')[0].style.display = 'block';
                     }
 
-                // menupage price and template selected icon showing
+                //External Features javascript
+                // Gallery Feature price and template selected icon showing
+                var galleryFeature = allTables[i].getElementsByClassName('galleryfeature')[0].innerHTML;
+                    if(galleryFeature) {   
+                        allTables[i].getElementsByClassName('galleryfeature-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('galleryfeature-price')[0].innerHTML = '5000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+
+                // Templates Feature price and template selected icon showing
+                var templatesFeature = allTables[i].getElementsByClassName('templatesfeature')[0].innerHTML;
+                    if(templatesFeature) {   
+                        allTables[i].getElementsByClassName('templatesfeature-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('templatesfeature-price')[0].innerHTML = '5000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+
+                    // Menu Page price and template selected icon showing
                 var menuPage = allTables[i].getElementsByClassName('menupage')[0].innerHTML;
-                    if(menuPage) {
-                        allTables[i].getElementsByClassName('menupage-price')[0].innerHTML = '-';
-                        allTables[i].getElementsByClassName('menu-page-selected-icon')[0].style.display = 'block';
+                    if(menuPage) {   
+                        allTables[i].getElementsByClassName('menupage-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('menupage-price')[0].innerHTML = '5000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
                     }
 
 
-                // homepage content price and template selected icon showing
+                }        
 
-
-                }
-                
-                
-                /*var resultClass = document.getElementsByClassName('vipinn');
-                        for(var  z= 0; z < resultClass.length; z++) {
-                    
-                            resultClass[z].innerHTML = templateOption;
-                }
-                */
-                //
                
-               
-                
-               
-                
-               
-                        //
-                        //var currentTemplateOptionValue = document.getElementsByClassName('template-option').innerText;
-                       
-
-                        /*var i;
-                        for(i = 0; i < templateOptionLength; i++) {
-                            var currentTemplateOptionValue = templateOption[i].innerText;
-//
-                            if(templateOptionLength > 0 && currentTemplateOptionValue != 'Select Template') {
-                                var templateSelectedIcon = document.getElementsByClassName('template-selected-icon');
-                                var templateSelectedIconLength = templateSelectedIcon.length;
-                                for(i = 0; i < templateSelectedIconLength; i++) {
-                                    templateSelectedIcon.style.display = 'block';
-                                }
-                            }
-                            
-                //
-                            }
-
-*/
-                 
-                 
-
-                        //
-                     /*var resultClass = document.getElementsByClassName('vipinn');
-                for(var j = 0; j < resultClass.length; j++) {
-                    resultClass[j].innerText = templatePrice;
-                }
-*/
-                /*
-                for(var i = 0; i < templateOption.length; i++) {
-
-                    if(templateOption[i].innerHTML) {
-                        var templatePriceOutput = document.getElementsByClassName('template-price');
-                        for(var j = 0; j < templatePriceOutput.length; j++) {
-                            templatePriceOutput[j].innerHTML = templatePrice;
-                        }
-                    }
-
-                }
-                */
-
 
                 
-               
-                //[1].innerText = getAllTables.length;
-                //show homepage selected icon
-                /*
-                var homePage = document.getElementsByClassName('homepage').innerHTML
-                if(homePage) {
-                    document.getElementsByClassName('homepage-selected-icon')[0].style.display = 'block'
-                    
-                } 
-      
-                               
-                //selected pages and features javascript
-                // show prices and selected icon
-                var templateOption = document.getElementsByClassName('template-option').innerHTML;
-                
-                
-                /*if(templateOption.length > 0 && templateOption != 'Select Template') {
-                   var i;
-                   for(i = 0; i < templateOption.length; i++) {
-                    document.getElementsByClassName('template-price')[i].innerHTML = templatePrice;
-                    document.getElementsByClassName('template-selected-icon')[i].style.display = 'block';
-                   }
-                    
-                } 
-*/
-                
 
-/*
-                if(document.getElementById('aboutpage').innerHTML) {
-                    document.getElementById('aboutpage-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('aboutpage-selected-icon').style.display = 'none';
-                }
 
-                if(document.getElementById('servicespage').innerHTML) {
-                    document.getElementById('servicespage-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('servicespage-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('whyuspage').innerHTML) {
-                    document.getElementById('whyuspage-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('whyuspage-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('socialmediafeature').innerHTML) {
-                    document.getElementById('social-media-feature-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('social-media-feature-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('contactuspage').innerHTML) {
-                    document.getElementById('contactuspage-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('contactuspage-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('contactuspluscontactformpage').innerHTML) {
-                    document.getElementById('contactuspluscontactformpage-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('contactuspluscontactformpage-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('policypage').innerHTML) {
-                    document.getElementById('policypage-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('policypage-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('termsandconditions').innerHTML) {
-                    document.getElementById('terms-and-conditions-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('terms-and-conditions-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('logobycustomer').innerHTML) {
-                    document.getElementById('logo-by-customer-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('logo-by-customer-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('copyright').innerHTML) {
-                    document.getElementById('copy-right-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('copy-right-selected-icon').style.display = 'none';
-                }
-
-                if(document.getElementById('gallerypage').innerHTML) {
-                    document.getElementById('gallery-page-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('gallery-page-selected-icon').style.display = 'none';
-                }
-
-                
-                if(document.getElementById('menupage').innerHTML) {
-                    document.getElementById('menu-page-selected-icon').style.display = 'block';
-                } else {
-                    document.getElementById('menu-page-selected-icon').style.display = 'none';
-                }
-                
-                //content javascript
-                if(document.getElementById('home-content').innerHTML) {
-                    document.getElementById('home-content-price').innerHTML = homeContentPrice;
-                } else {
-                    document.getElementById('home-content-price').innerHTML = '-';
-                }               
-                
-                
-                if(document.getElementById('about-content').innerHTML) {
-                    document.getElementById('about-content-price').innerHTML = aboutContentPrice;
-                } else {
-                    document.getElementById('about-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('services-content').innerHTML) {
-                    document.getElementById('services-content-price').innerHTML = servicesContentPrice;
-                } else {
-                    document.getElementById('services-content-price').innerHTML = '-';
-                }
-               
-                if(document.getElementById('why-us-content').innerHTML) {
-                    document.getElementById('why-us-content-price').innerHTML = whyUsContentPrice;
-                } else {
-                    document.getElementById('why-us-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('policy-content').innerHTML) {
-                    document.getElementById('policy-content-price').innerHTML = policyContentPrice;
-                } else {
-                    document.getElementById('policy-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('terms-and-conditions-content').innerHTML) {
-                    document.getElementById('terms-and-conditions-content-price').innerHTML = termsAndConditionsContentPrice;
-                } else {
-                    document.getElementById('terms-and-conditions-content-price').innerHTML = '-';
-                }
-                /*
-                if(document.getElementById('copy-right-content').innerHTML) {
-                    document.getElementById('copy-right-content-price').innerHTML = copyRightContentPrice;
-                } else {
-                    document.getElementById('copy-right-content-price').innerHTML = '-';
-                }
-                */
-               /*
-                if(document.getElementById('logo-purchasing').innerHTML) {
-                    document.getElementById('logo-purchasing-price').innerHTML = logoPurchasingPrice;
-                    document.getElementById('logo-purchasing-selected-icon').style.display = 'block';
-                    document.getElementById('logo-purchasing-selected-icon').style.border = 'none';
-                } else {
-                    document.getElementById('logo-purchasing-price').innerHTML = '-';
-                    document.getElementById('logo-purchasing-selected-icon').style.display = 'none';
-                    document.getElementById('logo-purchasing-selected-icon').style.border = 'none';
-
-                }
-                
-                if(document.getElementById('gallery-content').innerHTML) {
-                    document.getElementById('gallery-content-price').innerHTML = galleryContentPrice;
-                } else {
-                    document.getElementById('gallery-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('template-feature-text-content').innerHTML) {
-                    document.getElementById('template-feature-text-content-price').innerHTML = templateFeatureTextContentPrice;
-                } else {
-                    document.getElementById('template-feature-text-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('template-feature-upload-content').innerHTML) {
-                    document.getElementById('template-feature-upload-content-price').innerHTML = templateFeatureUploadContentPrice;
-                } else {
-                    document.getElementById('template-feature-upload-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('menu-content').innerHTML) {
-                    document.getElementById('menu-content-price').innerHTML = menuContentPrice;
-                } else {
-                    document.getElementById('menu-content-price').innerHTML = '-';
-                }
-                
-                if(document.getElementById('register-login-content').innerHTML) {
-                    document.getElementById('register-login-price').innerHTML = registerLoginPrice;
-                } else {
-                    document.getElementById('register-login-price').innerHTML = '-';
-                }
-                
-                
-                if(document.getElementById('contac-us-form-content').innerHTML) {
-                    document.getElementById('contact-us-form-price').innerHTML = contactUsFormPrice;
-                } else {
-                    document.getElementById('contact-us-form-price').innerHTML = '-';
-                }
-                
-                
-                if(document.getElementById('payment-method').innerHTML) {
-                    document.getElementById('payment-method-price').innerHTML = paymentMethod;
-                } else {
-                    document.getElementById('payment-method-price').innerHTML = '-';
-                }
-                
-   
-                if(document.getElementById('email-service').innerHTML) {
-                    document.getElementById('email-service-price').innerHTML = emailServicesPrice;
-                } else {
-                    document.getElementById('email-service-price').innerHTML = '-';
-                }
-                
-                
-                if(document.getElementById('message-content').innerHTML) {
-                    document.getElementById('message-service-price').innerHTML = messageServicesPrice;
-                } else {
-                    document.getElementById('message-service-price').innerHTML = '-';
-                }
-                
-                
-                if(document.getElementById('data-base-service').innerHTML) {
-                    document.getElementById('data-base-service-price').innerHTML = dataBaseServicePrice;
-                } else {
-                   document.getElementById('data-base-service-price').innerHTML = '-';
-                }
-                document.getElementById('cart-total').innerHTML = cartTotal;
-                                /*
-                if(document.getElementById('include-extra').innerHTML) {
-                    document.getElementById('include-extra-price').innerHTML = includeExtraPrice;
-                } else {
-                    document.getElementById('include-extra-price').innerHTML = '-';
-                }
-                
-                /*
-                document.getElementById('service-charges').innerHTML = serviceCharges
-                /*
-                function registerLogInPrice() {
-                    if(document.getElementById('register-login').innerHTML) {
-                        var price = 5000;
-                        parseInt(price);
-                        document.getElementById('register-login-price').innerHTML = price;
-                    }
-                }
-
-                function contactUsFormprice() {
-                    if(document.getElementById('register-login').innerHTML) {
-                        var price = 5000;
-                        parseInt(price);
-                        document.getElementById('register-login-price').innerHTML = price;
-                    }
-                }
-                
-                */
-                
                 
                 
             </script>

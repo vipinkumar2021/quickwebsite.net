@@ -1,0 +1,34 @@
+<%- include('dashboardheaderadmin') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted" ><!--welcome css working in this-->
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <br/><br/><br/><br/>
+        <h2>Dashboard Upload Admin</h2>
+        <h2>Upload File</h2>
+        <form action="/dashboarduploadadmin" method="post" enctype="multipart/form-data">
+            <label id="choose-file">Choose File</label>
+            <input type="file" name="file" id="choose-file"/><br/>
+            <input type="submit" value="Submit"/>
+        </form>
+        
+        <% if(msgfile != '' ) { %>
+            <h2><%= msgfile %> </h2>
+        <% } %> 
+        <br/>
+        <% if(fileName.length > 0) { %>
+        <% fileName.forEach( element => { %>
+            <img src="./uploads/<%= element.Filename %>" width="200px" height="200px"/> 
+        <% }) %> 
+        <% } %> 
+    </div> 
+</div>
+<%- include('modal') %>
+<%- include('modaladmin') %> 
+<%- include('dashboardfooteradmin') %>
+
+
+
+

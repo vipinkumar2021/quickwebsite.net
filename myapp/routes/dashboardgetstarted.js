@@ -1,15 +1,9 @@
-/*var express = require('express');
-var router = express.Router();
 
-
-module.exports = router;
-
-*/
 
 var express = require('express');
   var router = express.Router();
   var cartItemsModel = require("../modules/cartitemsschema");
-  
+  //var uploadModel = require("../modules/uploadschema");
   /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -32,11 +26,60 @@ router.get('/', function(req, res, next) {
   //res.render('dashboardgetstarted', { title: 'Quick Website'});
 });
 
+//
+// Correct One starts
+//Require multer for file upload
+var multer = require('multer');
+//require path
+var path = require('path');
+router.use(express.static(path.join(__dirname, './public')));
+//Set Storage Engine for file to be stored
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './public/uploads/')
+  }, 
+  filename: function(req, file, cb) {
+    
+    cb(null, Date.now() + '_' + file.fieldname + '_' + path.extname(file.originalname));
+  }
+});
+
+
+//init upload correct one starts here
+/*
+const filesForGalleryUpload = multer({
+  storage: storage,
+  limits: {fileSize: 1000000},
+  fileFilter: function(req, file, cb) {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
+      cb(null, true)
+    } else {
+      cb(null, false)
+    }
+  }
+}).single('uploadcontentforgallery');
+ Correct One Ends*/
+//
+const upload = multer({
+  storage: storage,
+  limits: {fileSize: 1000000},   
+  fileFilter: function(req, file, cb) {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
+      cb(null, true)
+    } else {
+      cb(null, false)
+    }
+  }
+});
+
+var multipleUploads = upload.fields([{ name: 'uploadcontentforgallery', maxCount: 3}, {name: 'uploadcontentfortemplates', maxCount: 3}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+
+//
 var aws = require("aws-sdk");
   const ses = new aws.SES({"accessKeyId": process.env.SES_I_AM_USER_ACCESS_KEY, "secretAccessKey": process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, "region": process.env.AWS_SES_REGION});
 
-router.post('/', function(req, res, next) {
-  
+router.post('/', multipleUploads, function(req, res, next) {
+  //console.log(req.files);
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
     loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
@@ -46,32 +89,104 @@ router.post('/', function(req, res, next) {
   var currentAccountUsername = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
 //
 
+if(currentAccountUsername) {  
+
+  // Correct One
+  
+  // for Upload Content For Gallery
+  /*
+  if(req.files['uploadcontentforgallery'][0] == undefined || req.files['uploadcontentfortemplates'][0] == undefined) {
+    var uploadContentForGallery = 'No Image Selected';
+  } else {
+    uploadContentForGallery = req.files.filename;
+  }
+  */
+  /*if(req.files == undefined) {
+    var uploadContentForGallery = 'No Image Selected';//req.file.filename;
+  } else {
+    uploadContentForGallery = filename;
+  }
+*/
+
+console.log(req.files); //showing both files
+console.log('Vipin');
+console.log(req.files.filename);//undefined
+console.log('Type of req.files');
+console.log(typeof req.files)
+console.log('Type of req.files.filename');
+console.log(typeof req.files.filename)
+console.log('Vipin');
+console.log(req.file);
+
+
+var uploadContentForGallery = 'Gallery Image';
+  var uploadContentForTemplates = 'Templates Image';
+/*
+ console.log(req.files, req.body);
+  
+  
+
+  */
+
 var cartItemsList = new cartItemsModel({
+  
 Username: currentAccountUsername,
 TemplateOption: req.body.template,
 //CustomerGivenTemplate: req.body.customertemplate,
-Home: req.body.home ,
+//Basic Features
+Home: req.body.home,
+HomePageContent: req.body.homepagecontent,
 About: req.body.about ,
-Services: req.body.services , 
+AboutContent: req.body.aboutcontent, 
+Services: req.body.services ,
+ServicesContent: req.body.servicescontent,
 WhyUs: req.body.whyus ,
+WhyUsContent: req.body.whyuscontent,
 ContactUs: req.body.contactusonlyaddress , 
 Address: req.body.address , 
 PhoneNumber: req.body.phonenumber ,
 SocialMedia: req.body.socialmedia,
 SocialMediaLink: req.body.socialmedialink ,
 Policy: req.body.policy ,
+PolicyContent: req.body.policycontent,
 TermsAndConditions: req.body.termsandconditions ,
+TermsAndConditionsContent: req.body.termsandconditionscontent,
 CopyRight: req.body.copyright ,
+CopyRightContent: req.body.copyrightcontent,
+LogoPurchasing: req.body.logopurchasing ,
+//External Features
+Gallery: req.body.gallery ,
+TextContentForGallery: req.body.textcontentforgallery,
+UploadContentForGallery: uploadContentForGallery,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+Templates: req.body.templatesfeature ,
+TextContentForTemplates: req.body.textcontentfortemplates,
+UploadContentForTemplates: uploadContentForTemplates,//req.files.filename,//req.body.uploadcontentfortemplates, //uploadContentForTemplates,//req.files.filename, /*filenameUpload,*///req.files.filename,//uploadContentForGallery,//req.file.uploadcontentfortemplates,
+Menu: req.body.menu ,
+TextContentForMenu: req.body.textcontentformenu,
+//UploadContentForMenu: req.file.uploadcontentformenu 
+
+
+
+/*
+//UploadFilesNames: uploadedFilesName,
+
+//AboutContent: aboutContentImageName,
+
+//ServicesContent: req.file.servicescontentfile, 
+
+//WhyUsContent: req.file.whyuscontentfile,
+
+
+
+
 BackgroundColor: req.body.backgroundcolor ,
 TextColor: req.body.textcolor ,
 LogoByCustomer: req.body.logobycustomer , 
-LogoPurchasing: req.body.logopurchasing ,
-Gallery: req.body.gallery ,
-GalleryContent: req.body.gallerycontent ,
-Templates: req.body.templatesfeature ,
+
+
 TemplatesTextContent: req.body.templatefeaturetextcontent ,
 TemplatesUploadContent: req.body.templatefeaturecontentfiles ,
-Menu: req.body.menu ,
+
 MenuContent: req.body.menucontent ,
 TextColor: req.body.textcolor ,
 RegisterLogin: req.body.registerlogin ,
@@ -83,7 +198,7 @@ DataBase: req.body.database ,
 WebsiteBriefDescription: req.body.websitebriefdescription ,
 Include: req.body.include ,
 DoNotInclude: req.body.donotinclude 
-
+*/
 });
 cartItemsList.save((err) => {
   if(err) throw err;
@@ -172,7 +287,9 @@ if(loginUser.loginUserCustomer) {
   
 });
 //
-  
+} else {
+  res.redirect('/');
+}
   });
 /*
   router.post('/', (req, res, next) => {

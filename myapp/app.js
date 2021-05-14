@@ -102,6 +102,7 @@ var comingsoontemplatedemoRouter = require('./routes/comingsoontemplatedemo');
 var weddinginvitationtemplatedemoRouter = require('./routes/weddinginvitationtemplatedemo');
 
 var photoalbumtemplatedemoRouter = require('./routes/photoalbumtemplatedemo');
+var dashboarduploadadminRouter = require('./routes/dashboarduploadadmin');
 
 
 
@@ -220,6 +221,7 @@ app.use('/comingsoontemplatedemo', comingsoontemplatedemoRouter);
 app.use('/weddinginvitationtemplatedemo', weddinginvitationtemplatedemoRouter);
 
 app.use('/photoalbumtemplatedemo', photoalbumtemplatedemoRouter);
+app.use('/dashboarduploadadmin', dashboarduploadadminRouter);
 
 
 

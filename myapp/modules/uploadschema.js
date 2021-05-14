@@ -6,7 +6,9 @@ useCreateIndex: true});
 var conn = mongoose.Collection;
 
 var uploadSchema = new mongoose.Schema({
-
+Username: {
+    type: String
+},
 Filename: {
     type: String
 },
