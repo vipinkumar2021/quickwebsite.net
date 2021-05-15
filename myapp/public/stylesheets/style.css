@@ -901,6 +901,16 @@
     outline: none;
   }
   
+  .background-color-select-input {
+    display: none;
+  }
+  /*.background-image-selector-label {
+    display: none;
+  }
+  */
+  .background-image-select-label {
+    display: none;
+  }
   /* getstarted css ends here*/
 
   /* decidebyfeatures css* starts*/

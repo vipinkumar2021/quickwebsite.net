@@ -85,9 +85,9 @@
                     <td class="copyright-price"></td>
                 </tr>
                 <tr>
-                    <td class="logopurchasing"><%= element.LogoPurchasing %></td>
-                    <td class="logopurchasing-estimated-time"></td>
-                    <td class="logopurchasing-price"></td>
+                    <td class="logo"><%= element.Logo %></td>
+                    <td class="logo-estimated-time"></td>
+                    <td class="logo-price"></td>
                 </tr>
 
                 <tr>
@@ -221,7 +221,34 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <th colspan="3">External Features Selected</th>
+                </tr>
+                <tr>                    
+                    <td class="galleryfeature"><%= element.Gallery %></td>                    
+                    <td class="galleryfeature-content-estimated-time"></td>
+                    <td class="galleryfeature-price"></td>                    
+                   
+                </tr> 
                 
+                <tr>                    
+                    <td class="templatesfeature"><%= element.Templates %></td>                    
+                    <td class="templatesfeature-content-estimated-time"></td>
+                    <td class="templatesfeature-price"></td>                    
+                   
+                </tr>                
+
+                <tr>                    
+                    <td class="menupage"><%= element.Menu %></td>                    
+                    <td class="menupage-content-estimated-time"></td>
+                    <td class="menupage-price"></td>                    
+                   
+                </tr>                
+
+
+
+
+                <tr>
                     <th colspan="3">External Features Content</th>
                 </tr>
                 
@@ -230,260 +257,148 @@
                 </tr>
                 <tr>
                     <th rowspan="2">Photo Gallery Content: </th>
-                    <td class="home-content" colspan="2">
+                    <td class="photogallery-content" colspan="2">
                         <strong>Text Content:</strong><br/>
-                        <%= element.HomePageContent %> 
+                        <%= element.TextContentForGallery %> 
                     </td>                                       
                 </tr>
                 <tr>
                     <td colspan="2">
                         <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Home Content Image"/>
+                        <img src="./uploads/<%= element.UploadContentForGallery %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
                     </td>
                 </tr>
 
                 <tr>
                     <th rowspan="2">Templates Feature Content: </th>
-                    <td class="home-content" colspan="2">
+                    <td class="template-content" colspan="2">
                         <strong>Text Content:</strong><br/>
-                        <%= element.HomePageContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Menu Content:</strong><br/>
-                        <img src="#" alt="Home Content Image"/>
-                    </td>
-                </tr>
-                <tr>
-                    <th rowspan="2">Photo Gallery Content: </th>
-                    <td class="home-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.HomePageContent %> 
+                        <%= element.TextContentForTemplates %> 
                     </td>                                       
                 </tr>
                 <tr>
                     <td colspan="2">
                         <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Home Content Image"/>
+                        <img src="./uploads/<%= element.UploadContentForTemplates %> " alt="Templates Content Image"/>
                     </td>
                 </tr>
-                <th colspan="3">New Heading</th>
+
+                <tr>
+                    <th rowspan="2">Menu Content: </th>
+                    <td class="menu-content" colspan="2">
+                        <strong>Text Content:</strong><br/>
+                        <%= element.TextContentForMenu %> 
+                    </td>                                       
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong>Uploaded Files Content:</strong><br/>
+                        <img src="./uploads/<%= element.UploadContentForMenu %> " alt="Menu Content Image"/>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th colspan="3">Advanced Features Selected</th>                    
+                </tr>
                 
-                
-                <tr>
-                    <td ><strong>Individual/Company Address:</strong>
-                        <div class="address-content-container">
-                            <span ><%= element.Address %></span>
-                        </div>                        
-                    </td>
-                    <td class="address-content-price"></td>
-                    <td ><span class="address-content-estimated-time"></span></td>
-                    <td ><span class="address-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td ><strong>Individual/Company Phone Number:</strong>
-                        <div class="phone-content-container">
-                            <span ><%= element.PhoneNumber %></span>
-                        </div>                        
-                    </td>
-                    <td class="phone-content-price"></td>
-                    <td ><span class="phone-content-estimated-time"></span></td>
-                    <td ><span class="phone-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td ><strong>Social Media Link:</strong>
-                        <div class="social-media-content-container">
-                            <span ><%= element.SocialMediaLink %></span>
-                        </div>                        
-                    </td>
-                    <td class="social-media-content-price"></td>
-                    <td ><span class="social-media-content-estimated-time"></span></td>
-                    <td ><span class="social-media-content-selected-icon">&#9989;</span></td>
-                </tr>              
-                <tr>
-                    <td ><strong>Policy Content:</strong>
-                        <div class="policy-content-container">
-                            <span ><%= element.PolicyContent %></span>
-                        </div>                        
-                    </td>
-                    <td class="policy-content-price"></td>
-                    <td ><span class="policy-content-estimated-time"></span></td>
-                    <td ><span class="policy-content-selected-icon">&#9989;</span></td>
-                </tr>             
-               
-                <tr>
-                    <td ><strong>Terms & Conditions Content:</strong>
-                        <div class="terms-and-conditions-content-container">
-                            <span ><%= element.TermsAndConditionsContent %></span>
-                        </div>                        
-                    </td>
-                    <td class="terms-and-conditions-content-price"></td>
-                    <td ><span class="terms-and-conditions-content-estimated-time"></span></td>
-                    <td ><span class="terms-and-conditions-content-selected-icon">&#9989;</span></td>
+                <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                <tr>                    
+                    <td class="registerloginpage"><%= element.RegisterLogin %></td>                    
+                    <td class="registerloginpage-content-estimated-time"></td>
+                    <td class="registerloginpage-price"></td>                    
+                   
+                </tr> 
+                <tr>                    
+                    <td class="contactuswithform"><%= element.ContactUsForm %></td>                    
+                    <td class="contactuswithform-content-estimated-time"></td>
+                    <td class="contactuswithform-price"></td>                   
+                   
+                </tr> 
+                <tr>                    
+                    <td class="paymentmethod"><%= element.PaymentMethod %></td>                    
+                    <td class="paymentmethod-content-estimated-time"></td>
+                    <td class="paymentmethod-price"></td>                   
+                   
                 </tr> 
                 
                 <tr>
-                    <td ><strong>Copy right Content:</strong>
-                        <div class="copy-right-content-container">
-                            <span ><%= element.CopyRightContent %></span>
-                        </div>                        
-                    </td>
-                    <td class="copy-right-content-price"></td>
-                    <td ><span class="copy-right-content-estimated-time"></span></td>
-                    <td ><span class="copy-right-content-selected-icon">&#9989;</span></td>
-                </tr>  
+                    <th colspan="3">Advanced Features Content</th>
+                </tr>
+                
+                <tr>
+                    <th>Name</th><th colspan="2">Content</th>
+                </tr>
+                <tr>
+                    <th>Bank Account & IFSC: </th>
+                    <td class="bankaccount-ifsc-content" colspan="2">
+                        <strong>Bank Account & IFSC:</strong><br/>
+                        <%= element.BankAccountAndIfsc %> 
+                    </td>                                       
+                </tr>
+                
+                <tr>
+                    <th>Email Id: </th>
+                    <td class="emailid-content" colspan="2">
+                        <strong>Email Id:</strong><br/>
+                        <%= element.EmailId %> 
+                    </td>                                       
+                </tr>
+                <tr>
 
-                <tr>
-                    <th colspan="4">External Features Selected</th>
-                </tr>
-                
+                    <tr>
+                        <th colspan="3">Designing Features Selected</th>                    
+                    </tr>
+                    
+                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                    <tr>                    
+                        <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
+                        <td class="websitebackground-content-estimated-time"></td>
+                        <td class="websitebackground-price"></td>                    
+                       
+                    </tr> 
+                    <tr>
+                        <th colspan="3">Designing Features Content</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>Name</th><th colspan="2">Content</th>
+                    </tr>
+<!--
+                    <tr>
+                        <th rowspan="2">Designing Color Details: </th>
+                        <td class="menu-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.WebsiteBackgroundColor: %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Color Demo:</strong><br/>
+                            <div style="width: 50px; height: 70px; color: yellow" >
 
-                
-                <tr>
-                    <td class="contactuspluscontactformpage"><%= element.ContactUsForm %></td><td class="contactuspluscontactformpage-price">-</td><td></td><td ><span class="contactuspluscontactformpage-selected-icon">&#9989;</span></td>
+                            </div>
+                        </td>                       
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Designing Image Details: </th>
+                        <td class="menu-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.WebsiteBackgroundImage: %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Color Image Demo:</strong><br/>
+                            <img src="./uploads/<%= element.WebsiteBackgroundImage: %>" width="100px" height="100px" alt="Website Background Image"/>
+                        </td>                       
+                    </tr>
+-->
+                    <th colspan="3">New Heading</th>
                 </tr>
                 
                 
-                <tr>
-                    <td class="logobycustomer"><%= element.LogoByCustomer %></td><td class="logobycustomer-price"></td><td></td><td ><span class="logo-by-customer-selected-icon">&#9989;</span></td>
-                </tr>
                 
-               
-                <th colspan="4">Undone</th>
-                <tr>
-                    <td class="gallerypage"><%= element.Gallery %></td><td class="gallerypage-price"></td><td></td><td ><span class="gallery-page-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="menupage"><%= element.Menu %></td><td class="menupage-price"></td><td></td><td ><span class="menu-page-selected-icon">&#9989;</span></td>
-                </tr>
-
-
-
-
-
-
-
-                <th colspan="4">Features Content</th>
-                
-                        
-                <tr>
-                    <td><span><strong>Background Color: </strong>  </span><br/><div style="width: 4em; height: 4em; background-color: whitesmoke"></div><%= element.BackgroundColor %>  </td><td>-</td><td></td><td ><span class="background-color-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span><strong>Text Color: </strong>  </span><br/> <div style="color: teal;">Text Color Selected</div>  <%= element.TextColor %></td><td>-</td><td></td><td ><span class="text-color-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td><span><strong>Logo Content By Customer:</strong>  </span><br/><%= element.LogoContentByCustomer %></td><td>-</td><td></td><td ><span class="logo-by-customer-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                
-                <tr>
-                    <td><span><strong>Gallery Content: </strong>  </span><br/>
-                        <span class="gallery-content"><%= element.GalleryContent %></span>
-                    </td><td class="gallery-content-price"></td>
-                    <td></td>
-                    <td ><span class="gallery-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><%= element.Templates %></td><td></td>
-                </tr>
-                <tr>
-                    <td><span><strong>Templates Text Content:</strong>  </span><br/>
-                        <span class="template-feature-text-content"><%= element.TemplatesTextContent %></span>
-                    </td>
-                    <td class="template-feature-text-content-price"></td>
-                    <td></td>
-                    <td ><span class="template-feature-text-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span><strong>Templates Upload Content:</strong>  </span><br/>
-                        <span class="template-feature-upload-content"><%= element.TemplatesUploadContent %></span>
-                    </td>
-                    <td class="template-feature-upload-content-price"></td>
-                    <td></td>
-                    <td ><span class="template-feature-upload-content-selected-icon">&#9989;</span></td>
-                </tr>
-               
-                <tr>
-                    <td><span><strong>Menu Content: </strong> </span><br/>
-                        <span class="menu-content"><%= element.MenuContent %></span>
-                    </td>
-                    <td class="menu-content-price"></td>
-                    <td></td>
-                    <td ><span class="menu-content-selected-icon">&#9989;</span></td>
-                </tr>
-                
-                <tr>
-                    <td class="register-login"><%= element.RegisterLogin %></td>
-                    <td class="register-login-price"></td>
-                    <td></td>
-                    <td ><span class="register-login-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="contact-us-form"><%= element.ContactUsForm %></td>
-                    <td class="contact-us-form-price"></td>
-                    <td></td>
-                    <td ><span class="contact-us-form-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="payment-method"><%= element.PaymentMethod %></td>
-                    <td class="payment-method-price"></td>
-                    <td></td>
-                    <td ><span class="payment-method-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>Payment Method Content: </span><br/>
-                        <span class="payment-method-content"><%= element.PaymentMethodContent %></span>
-                    </td>
-                    <td>-</td>
-                    <td></td>
-                    <td ><span class="payment-method-content-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="email-service"><%= element.EmailService %></td>
-                    <td class="email-service-price"></td>
-                    <td></td>
-                    <td ><span class="email-service-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="message-service"><%= element.MessageService %></td>
-                    <td class="message-service-price"></td>
-                    <td></td>
-                    <td ><span class="message-service-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td class="data-base-service"><%= element.DataBase %></td>
-                    <td class="data-base-service-price"></td>
-                    <td></td>
-                    <td ><span class="data-base-service-selected-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>Website Brief Description: </span><br/><%= element.WebsiteBriefDescription %></td><td>-</td><td></td><td ><span class="brief-description-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>I want to Include: </span><br/>
-                        <span class="include-extra"><%= element.Include %></span>
-                    </td>
-                    <td class="include-extra-price"></td>
-                    <td></td>
-                    <td ><span class="include-extra-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <td><span>I do not want to Include: </span><br/><%= element.DoNotInclude %></td><td>-</td><td></td><td ><span class="do-not-include-message-icon">&#9989;</span></td>
-                </tr>
-                <tr>
-                    <th colspan="4">Uploaded Files and Images</th>
-                </tr>                
-                <tr>
-                    <td><span>Images: </span><br/>
-                    <img src="../uploads/<%= element.UploadFilesName %> " alt="Uploaded File Name"/>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
                 
                 <th colspan="4">Services Charges</th>
                 <tr>
@@ -495,7 +410,7 @@
                 </tr>
                 <th colspan="4">Total</th>
                 <tr>
-                    <td class="total-price">Total %>  </td><td><span class="cart-total">Rs. </span></td><td>...Days</td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
+                    <td class="total-price">Total: </td><td>Rs.<span class="cart-total"> </span></td><td>...Days</td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
                 </tr> 
                 <tr>
                     <td colspan="4"><span>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully</span></td>
@@ -509,30 +424,7 @@
                 
                 var templatePrice = 4000;
                 //var customerGivenTemplatePrice = 0;
-                /*
-                var homeContentPrice = 1000;
-                var aboutContentPrice = 1000;
-                var servicesContentPrice = 2000;
-                var whyUsContentPrice = 1000;
-                var policyContentPrice = 1000;
-                var termsAndConditionsContentPrice = 1000;
-                var copyRightContentPrice = 1000;
-                var logoPurchasingPrice = 2000; 
-                var galleryContentPrice = 3000;
-                var templateFeatureTextContentPrice = 3000;
-                var templateFeatureUploadContentPrice = 3000;                
-                var menuContentPrice = 3000;
-                var registerLoginPrice = 5000;
-                var contactUsFormPrice = 3000;
-                var paymentMethod = 5900;                
-                var emailServicesPrice = 4000;
-                var messageServicesPrice = 4000;
-                var dataBaseServicePrice = 5900;
-                var includeExtraPrice = 0;
-                var serviceCharges = 3000;
-               // var cartTotal = 0 + templatePrice + homeContentPrice + aboutContentPrice + servicesContentPrice + whyUsContentPrice + policyContentPrice + termsAndConditionsContentPrice + copyRightContentPrice + logoPurchasingPrice + galleryContentPrice + templateFeatureTextContentPrice + templateFeatureUploadContentPrice + menuContentPrice + registerLoginPrice + contactUsFormPrice + paymentMethod + emailServicesPrice + messageServicesPrice + dataBaseServicePrice + includeExtraPrice + serviceCharges;
                 
-                */
             // update cart orders number
                 var getAllPurchaseButtons = document.getElementsByClassName('purchase');
                 var numberOfTotalpurchaseButtons = getAllPurchaseButtons.length;
@@ -576,7 +468,7 @@
                 var homePage = allTables[i].getElementsByClassName('homepage')[0].innerHTML;
                 //var homePageContent = allTables[i].getElementsByClassName('homepage-content')[0].innerHTML;   
                 if(homePage) {
-                        allTables[i].getElementsByClassName('homepage-content-estimated-time')[0].innerHTML = '2:00';
+                        allTables[i].getElementsByClassName('homepage-content-estimated-time')[0].innerHTML = '4:00';
                         allTables[i].getElementsByClassName('homepage-price')[0].innerHTML = '2000';
                        // allTables[i].getElementsByClassName('homepage-selected-icon')[0].innerHTML = "&#9989;";
                     }
@@ -585,7 +477,7 @@
                var aboutPage = allTables[i].getElementsByClassName('aboutpage')[0].innerHTML;
                //var aboutPageContent = allTables[i].getElementsByClassName('aboutpage-content')[0].innerHTML     
                if(aboutPage) {
-                        allTables[i].getElementsByClassName('aboutpage-content-estimated-time')[0].innerHTML = '2:00'
+                        allTables[i].getElementsByClassName('aboutpage-content-estimated-time')[0].innerHTML = '4:00'
                         allTables[i].getElementsByClassName('aboutpage-price')[0].innerHTML = '2000';
                         //allTables[i].getElementsByClassName('aboutpage-selected-icon')[0].innerHTML = '&#9989;';
                     }
@@ -593,8 +485,8 @@
                 // servicespage price and template selected icon showing
                 var servicesPage = allTables[i].getElementsByClassName('servicespage')[0].innerHTML;
                     if(servicesPage) {
-                        allTables[i].getElementsByClassName('servicespage-price')[0].innerHTML = '2000';
-                        allTables[i].getElementsByClassName('servicespage-content-estimated-time')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('servicespage-price')[0].innerHTML = '3000';
+                        allTables[i].getElementsByClassName('servicespage-content-estimated-time')[0].innerHTML = '6:00';
                         //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
                     }              
                              
@@ -602,57 +494,117 @@
                 // whyuspage price and template selected icon showing
                 var whyusPage = allTables[i].getElementsByClassName('whyuspage')[0].innerHTML;
                     if(whyusPage) {
-                        allTables[i].getElementsByClassName('whyuspage-content-estimated-price')[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('whyuspage-content-estimated-time')[0].innerHTML = '4:00';
                         allTables[i].getElementsByClassName('whyuspage-price')[0].innerHTML = '2000';
                         //allTables[i].getElementsByClassName('whyuspage-selected-icon')[0].style.display = 'block';
                     }
-/*
-                // contact us page price and template selected icon showing
+
+                // contactpage price and template selected icon showing
                 var contactUsPage = allTables[i].getElementsByClassName('contactuspage')[0].innerHTML;
                     if(contactUsPage) {
-                         allTables[i].getElementsByClassName()[0].innerHTML = '4:00';
+                        allTables[i].getElementsByClassName('contactuspage-content-estimated-time')[0].innerHTML = '4:00';
                         allTables[i].getElementsByClassName('contactuspage-price')[0].innerHTML = '2000';
-                        allTables[i].getElementsByClassName('contactuspage-selected-icon')[0].style.display = 'block';
+                        
+                        //allTables[i].getElementsByClassName('whyuspage-selected-icon')[0].style.display = 'block';
                     }
 
 
                 // socialmediafeature price and template selected icon showing
                 var socialmediafeature = allTables[i].getElementsByClassName('socialmediafeature')[0].innerHTML;
                     if(socialmediafeature) {
+                        allTables[i].getElementsByClassName('socialmediafeature-content-estimated-time')[0].innerHTML = '4:00';
                         allTables[i].getElementsByClassName('socialmediafeature-price')[0].innerHTML = '2000';
-                        allTables[i].getElementsByClassName('social-media-feature-selected-icon')[0].style.display = 'block';
+                        //allTables[i].getElementsByClassName('social-media-feature-selected-icon')[0].style.display = 'block';
                     }
 
                 // policypage price and template selected icon showing
                 var policyPage = allTables[i].getElementsByClassName('policypage')[0].innerHTML;
                     if(policyPage) {
-                        allTables[i].getElementsByClassName('policypage-price')[0].innerHTML = '2000';
-                        allTables[i].getElementsByClassName('policypage-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('policypage-content-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('policypage-price')[0].innerHTML = '3000';
+                        //allTables[i].getElementsByClassName('policypage-selected-icon')[0].style.display = 'block';
                     }
+
 
                 // termsandconditions price and template selected icon showing
                 var termsandConditions = allTables[i].getElementsByClassName('termsandconditions')[0].innerHTML;
                     if(termsandConditions) {
-                        allTables[i].getElementsByClassName('termsandconditions-price')[0].innerHTML = '2000';
-                        allTables[i].getElementsByClassName('terms-and-conditions-selected-icon')[0].style.display = 'block';
+                        allTables[i].getElementsByClassName('termsandconditions-content-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('termsandconditions-price')[0].innerHTML = '3000';
+                        //allTables[i].getElementsByClassName('terms-and-conditions-selected-icon')[0].style.display = 'block';
                     }
 
                 // copyright price and template selected icon showing
                 var copyRight = allTables[i].getElementsByClassName('copyright')[0].innerHTML;
                     if(copyRight) {
+                        allTables[i].getElementsByClassName('copyright-content-estimated-time')[0].innerHTML = '4:00';
                         allTables[i].getElementsByClassName('copyright-price')[0].innerHTML = '2000';
-                        allTables[i].getElementsByClassName('copy-right-selected-icon')[0].style.display = 'block';
+                        //allTables[i].getElementsByClassName('copy-right-selected-icon')[0].style.display = 'block';
                     }
 
                 // logopurchasing price and template selected icon showing
-                var logoPurchasing = allTables[i].getElementsByClassName('logopurchasing')[0].innerHTML;
-                    if(logoPurchasing) {
-                        allTables[i].getElementsByClassName('logopurchasing-price')[0].innerHTML = logoPurchasingPrice;
-                        allTables[i].getElementsByClassName('logo-purchasing-selected-icon')[0].style.display = 'block';
+                var logoSelecting = allTables[i].getElementsByClassName('logo')[0].innerHTML;
+                var logoSelectingSubString = logoSelecting.substring(0, 18)
+                    if(logoSelectingSubString == "I want to buy Logo") {
+                        allTables[i].getElementsByClassName('logo-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('logo-price')[0].innerHTML = '3000';
+                        //allTables[i].getElementsByClassName('logo-purchasing-selected-icon')[0].style.display = 'block';
                     }
-*/
+
+                //External Features javascript
+                // Gallery Feature price and template selected icon showing
+                var galleryFeature = allTables[i].getElementsByClassName('galleryfeature')[0].innerHTML;
+                    if(galleryFeature) {   
+                        allTables[i].getElementsByClassName('galleryfeature-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('galleryfeature-price')[0].innerHTML = '5000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+
+                // Templates Feature price and template selected icon showing
+                var templatesFeature = allTables[i].getElementsByClassName('templatesfeature')[0].innerHTML;
+                    if(templatesFeature) {   
+                        allTables[i].getElementsByClassName('templatesfeature-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('templatesfeature-price')[0].innerHTML = '5000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+
+                    // Menu Page price and template selected icon showing
+                var menuPage = allTables[i].getElementsByClassName('menupage')[0].innerHTML;
+                    if(menuPage) {   
+                        allTables[i].getElementsByClassName('menupage-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('menupage-price')[0].innerHTML = '5000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+                    // Advanced Features javascript
+
+                     // register login page Page price and template selected icon showing
+                var registerLoginPage = allTables[i].getElementsByClassName('registerloginpage')[0].innerHTML;
+                    if(registerLoginPage) {   
+                        allTables[i].getElementsByClassName('registerloginpage-content-estimated-time')[0].innerHTML = '24:00';     
+                        allTables[i].getElementsByClassName('registerloginpage-price')[0].innerHTML = '10000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+          
+                       // Contact Us With Form Page price and template selected icon showing
+                var contactUsWithForm = allTables[i].getElementsByClassName('contactuswithform')[0].innerHTML;
+                    if(contactUsWithForm) {   
+                        allTables[i].getElementsByClassName('contactuswithform-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('contactuswithform-price')[0].innerHTML = '9000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
 
 
+                       // Payment Method page Page price and template selected icon showing
+                var paymentMethod = allTables[i].getElementsByClassName('paymentmethod')[0].innerHTML;
+                    if(paymentMethod) {   
+                        allTables[i].getElementsByClassName('paymentmethod-content-estimated-time')[0].innerHTML = '30:00';     
+                        allTables[i].getElementsByClassName('paymentmethod-price')[0].innerHTML = '13000';                        
+                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
+                    }
+
+                    //
+                    var cartTotal = 0 + templatePrice;
+                    allTables[i].getElementsByClassName('cart-total')[0].innerHTML = cartTotal;
 
                 }        
 

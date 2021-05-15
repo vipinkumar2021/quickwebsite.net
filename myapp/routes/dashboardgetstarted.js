@@ -179,7 +179,8 @@ TermsAndConditions: req.body.termsandconditions ,
 TermsAndConditionsContent: req.body.termsandconditionscontent,
 CopyRight: req.body.copyright ,
 CopyRightContent: req.body.copyrightcontent,
-LogoPurchasing: req.body.logopurchasing ,
+Logo: req.body.logo,
+//LogoContent: req.body.logocontent,
 //External Features
 Gallery: req.body.gallery ,
 TextContentForGallery: req.body.textcontentforgallery,
@@ -191,8 +192,18 @@ Menu: req.body.menu ,
 TextContentForMenu: req.body.textcontentformenu,
 //UploadContentForMenu: req.file.uploadcontentformenu 
 
-
-
+// Advanced Features
+RegisterLogin: req.body.registerlogin,
+ContactUsForm: req.body.contactuswithform,
+PaymentMethod: req.body.paymentmethod,
+BankAccountAndIfsc: req.body.bankaccountandifsc,
+EmailId: req.body.emailid,
+//Designing Features
+WebsiteBackground: req.body.websitebackground,
+WebsiteBackgroundColor: req.body.backgroundcolor,
+//WebsiteBackgroundImage: req.body.backgroundimage,
+TextColor: req.body.textcolor,
+//
 /*
 //UploadFilesNames: uploadedFilesName,
 

@@ -473,9 +473,26 @@ function closeChatBoxModal() {
 */
 // Chat box modal javascript ends here
 
+// show backgroundcolor input and hide backgroundImage input if "I Want Back Ground color in My Website is selected" dashboardgetstarted.js
 
+function showBackgroundColorInput() {
+    //backgroundColorInput.style.display = 'block';
+    document.getElementsByClassName('background-color-select-input')[0].style.display= 'inline';
+    document.getElementsByClassName('background-color-select-input')[1].style.display= 'inline';
+    document.getElementsByClassName('background-image-select-label')[0].style.display= 'none';
+    document.getElementsByClassName('background-image-select-input')[0].style.display= 'none';
 
+}
 
+// show backgroundcolor input if "I Want Back Ground color in My Website is selected" dashboardgetstarted.js
 
+function showBackgroundImageInput() {
+    // hide background color input first
+    document.getElementsByClassName('background-color-select-input')[0].style.display= 'none';
+    document.getElementsByClassName('background-color-select-input')[1].style.display= 'none';
+    document.getElementsByClassName('background-image-select-label')[0].style.display= 'inline';
+    document.getElementsByClassName('background-image-select-input')[0].style.display= 'inline';
+
+}
 
 

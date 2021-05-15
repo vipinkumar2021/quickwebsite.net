@@ -90,7 +90,7 @@ CopyRight: {
 CopyRightContent: {
     type: String
 },
-LogoPurchasing: {
+Logo: {
     type: String,
     //required: true
 },
@@ -131,7 +131,53 @@ UploadContentForMenu: {
     type: String,
     //required: true
 },
+//Advanced Features
+RegisterLogin: {
+    type: String,
+    //required: true
+},
 
+ContactUsForm: {
+    type: String,
+    //required: true
+},
+PaymentMethod: {
+    type: String,
+    //required: true
+},
+BankAccountAndIfsc: {
+    type: String,
+    //required: true
+},
+EmailId: {
+    type: String,
+},
+// Designing Features
+WebsiteBackground: {
+    type: String,
+},
+WebsiteBackgroundColor: {
+    type: String,
+},
+WebsiteBackgroundImage: {
+    type: String,
+},
+TextColor: {
+    type: String,
+},
+/*
+EmailService: {
+    type: String,
+    //required: true
+},
+MessageService: {
+    type: String,
+    //required: true
+},
+DataBase: {
+    type: String,
+    //required: true
+},
 /*
 
 BackgroundColor: {
@@ -153,34 +199,7 @@ LogoContentByCustomer: {
 
 
 
-RegisterLogin: {
-    type: String,
-    //required: true
-},
-ContactUsForm: {
-    type: String,
-    //required: true
-},
-PaymentMethod: {
-    type: String,
-    //required: true
-},
-PaymentMethodContent: {
-    type: String,
-    //required: true
-},
-EmailService: {
-    type: String,
-    //required: true
-},
-MessageService: {
-    type: String,
-    //required: true
-},
-DataBase: {
-    type: String,
-    //required: true
-},
+
 WebsiteBriefDescription: {
     type: String,
     //required: true

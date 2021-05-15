@@ -85,9 +85,9 @@
                     <td class="copyright-price"></td>
                 </tr>
                 <tr>
-                    <td class="logo"><%= element.Logo %></td>
-                    <td class="logo-estimated-time"></td>
-                    <td class="logo-price"></td>
+                    <td class="logopurchasing"><%= element.LogoPurchasing %></td>
+                    <td class="logopurchasing-estimated-time"></td>
+                    <td class="logopurchasing-price"></td>
                 </tr>
 
                 <tr>
@@ -346,76 +346,6 @@
                 </tr>
                 <tr>
 
-                    <tr>
-                        <th colspan="3">Designing Features Selected</th>                    
-                    </tr>
-                    
-                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
-                    <tr>                    
-                        <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
-                        <td class="websitebackground-content-estimated-time"></td>
-                        <td class="websitebackground-price"></td>                    
-                       
-                    </tr>
-                
-                    <tr>
-                        <th colspan="3">Designing Features Content</th>
-                    </tr>
-                    <tr>
-                        <th>Name</th><th colspan="2">Content</th>
-                    </tr>
-                    
-                    <tr>
-                        <th rowspan="2">Website Background-Color Details: </th>
-                        <td class="websitebackgroundcolor-content" colspan="2">
-                            <strong>Color Code:</strong><br/>
-                            <%= element.WebsiteBackgroundColor %> 
-                        </td>                                       
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <strong>Color Demo:</strong><br/>
-                            <div style="background-color: yellow; width: 100%; height: 50px; color: red;">
-                                Background color is your Selected Background
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th rowspan="2">Website Background-Image Details: </th>
-                        <td class="websitebackgroundimage-content" colspan="2">
-                            <strong>Background Image Name: </strong><br/>
-                            <%= element.WebsiteBackgroundImage %> 
-                        </td>                                       
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <strong>Background Image Demo:</strong><br/>
-                            <img src="./uploads/<%= element.WebsiteBackgroundImage %>" width="100px" height="100px" alt="Selected Website Background Image"/>
-                        </td>
-                    </tr>
-    
-
-                    <tr>
-                        <th rowspan="2">Text-Color Details: </th>
-                        <td class="textcolor-content" colspan="2">
-                            <strong>Color Code:</strong><br/>
-                            <%= element.TextColor %> 
-                        </td>                                       
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <strong>Text Color Demo:</strong><br/>
-                            <div style="width: 100%; height: 50px; color: red;">
-                                Color of this text is selected text color
-                            </div>
-                        </td>
-                    </tr>
-
-
-
-                <tr>
-                   
                     <th colspan="3">New Heading</th>
                 </tr>
                 
@@ -565,11 +495,10 @@
                     }
 
                 // logopurchasing price and template selected icon showing
-                var logoSelecting = allTables[i].getElementsByClassName('logo')[0].innerHTML;
-                var logoSelectingSubString = logoSelecting.substring(0, 18)
-                    if(logoSelectingSubString == "I want to buy Logo") {
-                        allTables[i].getElementsByClassName('logo-estimated-time')[0].innerHTML = '6:00';
-                        allTables[i].getElementsByClassName('logo-price')[0].innerHTML = '3000';
+                var logoPurchasing = allTables[i].getElementsByClassName('logopurchasing')[0].innerHTML;
+                    if(logoPurchasing) {
+                        allTables[i].getElementsByClassName('logopurchasing-estimated-time')[0].innerHTML = '6:00';
+                        allTables[i].getElementsByClassName('logopurchasing-price')[0].innerHTML = '3000';
                         //allTables[i].getElementsByClassName('logo-purchasing-selected-icon')[0].style.display = 'block';
                     }
 
@@ -599,59 +528,14 @@
                     }
                     // Advanced Features javascript
 
-                     // register login page Page price and template selected icon showing
-                var registerLoginPage = allTables[i].getElementsByClassName('registerloginpage')[0].innerHTML;
-                    if(registerLoginPage) {   
-                        allTables[i].getElementsByClassName('registerloginpage-content-estimated-time')[0].innerHTML = '24:00';     
-                        allTables[i].getElementsByClassName('registerloginpage-price')[0].innerHTML = '10000';                        
-                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
-                    }
-          
-                       // Contact Us With Form Page price and template selected icon showing
-                var contactUsWithForm = allTables[i].getElementsByClassName('contactuswithform')[0].innerHTML;
-                    if(contactUsWithForm) {   
-                        allTables[i].getElementsByClassName('contactuswithform-content-estimated-time')[0].innerHTML = '16:00';     
-                        allTables[i].getElementsByClassName('contactuswithform-price')[0].innerHTML = '9000';                        
+                     // Menu Page price and template selected icon showing
+                var menuPage = allTables[i].getElementsByClassName('menupage')[0].innerHTML;
+                    if(menuPage) {   
+                        allTables[i].getElementsByClassName('menupage-content-estimated-time')[0].innerHTML = '16:00';     
+                        allTables[i].getElementsByClassName('menupage-price')[0].innerHTML = '5000';                        
                         //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
                     }
 
-
-                       // Payment Method page Page price and template selected icon showing
-                var paymentMethod = allTables[i].getElementsByClassName('paymentmethod')[0].innerHTML;
-                    if(paymentMethod) {   
-                        allTables[i].getElementsByClassName('paymentmethod-content-estimated-time')[0].innerHTML = '30:00';     
-                        allTables[i].getElementsByClassName('paymentmethod-price')[0].innerHTML = '13000';                        
-                        //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
-                    }
-
-                    // Designing javascript
-
-                    // Website Background color and image price and template selected icon showing
-                var websiteBackground = allTables[i].getElementsByClassName('websitebackground')[0].innerHTML;
-                /*var websiteBackgroundSubString = websiteBackground.substring(0, 37); 
-                
-                if(websiteBackgroundSubString == "I want Background-Color in my Website") {
-                    var backgroundColor = allTables[i].getElementsByClassName('bakgroundcolor')[0];
-                    //allTables[i].getElementsByClassName('websitebackground-content-estimated-time')[0].innerHTML = websiteBackgroundSubString;     
-                    //allTables[i].getElementsByClassName('websitebackground-content-estimated-time')[0].innerHTML = '2:00';     
-                    //allTables[i].getElementsByClassName('websitebackground-price')[0].innerHTML = '-';                        
-
-                }*/
-                if(websiteBackground) {   
-                        allTables[i].getElementsByClassName('websitebackground-content-estimated-time')[0].innerHTML = '2:00';     
-                        allTables[i].getElementsByClassName('websitebackground-price')[0].innerHTML = '-';                        
-                        
-                    }
-
-                    //website text color javasctipt
-                var websiteTextColor = allTables[i].getElementsByClassName('websitetextcolor')[0].innerHTML;
-                if(ebsiteTextColor) {   
-                        allTables[i].getElementsByClassName('websitetextcolor-content-estimated-time')[0].innerHTML = '2:00';     
-                        allTables[i].getElementsByClassName('websitetextcolor-price')[0].innerHTML = '-';                        
-                        
-                    }
-
-                    
                     //
                     var cartTotal = 0 + templatePrice;
                     allTables[i].getElementsByClassName('cart-total')[0].innerHTML = cartTotal;
