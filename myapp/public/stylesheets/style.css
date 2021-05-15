@@ -901,6 +901,9 @@
     outline: none;
   }
   
+  .logo-file-upload-label {
+    display: none;
+  }
   .background-color-select-input {
     display: none;
   }

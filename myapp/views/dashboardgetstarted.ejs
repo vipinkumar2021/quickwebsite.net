@@ -106,10 +106,10 @@
 
             </textarea><br/><br/>
 
-            <input type="radio" name="logo" value="I want to buy Logo &#9989;"/><label>I want to buy "Logo"</label><br/>
-            <input type="radio" name="logo" value="I have my own Logo &#9989;"/><label>I have my own Logo</label><br/>
-            <label>Please Upload your Logo here (if you have one)</label><br/>
-            <input type="file" name="logocontent"/><br/>
+            <input type="radio" name="logo" value="I want to buy Logo &#9989;" onclick="hideLogoFileUploadInput()"/><label>I want to buy "Logo"</label><br/>
+            <input type="radio" name="logo" value="I have my own Logo &#9989;" onclick="showLogoFileUploadInput()"/><label>I have my own Logo</label><br/>
+            <label class="logo-file-upload-label">Please Upload your Logo here (if you have one)</label><br/>
+            <input type="file" name="logocontent" style="display: none;" class="logo-file-upload-input"/><br/>
 
 
             <label>STEP 2. External Features:- </label><br/>

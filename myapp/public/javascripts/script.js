@@ -473,6 +473,17 @@ function closeChatBoxModal() {
 */
 // Chat box modal javascript ends here
 
+// Show Logo File Upload Input when "I have my on logo" is clicked.
+function showLogoFileUploadInput() {
+    document.getElementsByClassName('logo-file-upload-label')[0].style.display = 'block';
+    document.getElementsByClassName('logo-file-upload-input')[0].style.display = 'block';
+}
+// hide logo file upload input if "I want to buy logo" is clicked.
+function hideLogoFileUploadInput() {
+    document.getElementsByClassName('logo-file-upload-label')[0].style.display = 'none';
+    document.getElementsByClassName('logo-file-upload-input')[0].style.display = 'none';
+
+}
 // show backgroundcolor input and hide backgroundImage input if "I Want Back Ground color in My Website is selected" dashboardgetstarted.js
 
 function showBackgroundColorInput() {
