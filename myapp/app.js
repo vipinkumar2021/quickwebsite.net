@@ -57,6 +57,8 @@ var dashboarddecidebyfeaturesRouter = require('./routes/dashboarddecidebyfeature
 var contactusRouter = require('./routes/contactus');
 var dashboardpostaddRouter = require('./routes/dashboardpostadd');
 var dashboardcartRouter = require('./routes/dashboardcart');
+var dashboardcart1Router = require('./routes/dashboardcart1');
+
 var dashboardcartadminRouter = require('./routes/dashboardcartadmin');
 var dashboardcustomerRouter = require('./routes/dashboardcustomer');
 var dashboardcustomerprofileRouter = require('./routes/dashboardcustomerprofile');
@@ -179,6 +181,8 @@ app.use('/dashboarddecidebyfeatures', dashboarddecidebyfeaturesRouter);
 app.use('/contactus', contactusRouter);
 app.use('/dashboardpostadd', dashboardpostaddRouter);
 app.use('/dashboardcart', dashboardcartRouter);
+app.use('/dashboardcart1', dashboardcart1Router);
+
 app.use('/dashboardcartadmin', dashboardcartadminRouter);
 app.use('/dashboardcustomer', dashboardcustomerRouter);
 app.use('/dashboardcustomerprofile', dashboardcustomerprofileRouter);

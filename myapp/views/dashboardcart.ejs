@@ -15,436 +15,759 @@
         <% if(currentCustomerAccountUserCartItems.length > 0){ %>
             
             <% currentCustomerAccountUserCartItems.forEach(element => { %>
-                         
-            <table>
-                <caption style="color: whitesmoke; ">
-                    Order Id: <%= element._id %><br/>
-                    Date: <%= element.Date %>  
-                </caption>
-                <tr>
-                    <th colspan="3">Cart Items</th>
-                </tr>
-                <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
-                <tr>
-                    <td class="template-option"><%= element.TemplateOption %></td><td class="template-completing-estimated-time"></td><td class="template-price"></td>
-                </tr>
-                
-                <tr>
-                    <th colspan="3">Basic Features Selected</th>                    
-                </tr>
-                
-                <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
-                <tr>                    
-                    <td class="homepage"><%= element.Home %></td>                    
-                    <td class="homepage-content-estimated-time"></td>
-                    <td class="homepage-price"></td>                    
-                   
-                </tr>                
-                <tr>
-                    <td class="aboutpage"><%= element.About %></td>                    
-                    <td class="aboutpage-content-estimated-time"></td>
-                    <td class="aboutpage-price"></td>           
-                    
-               </tr>
-                <tr>
-                    <td class="servicespage"><%= element.Services %></td>
-                    <td class="servicespage-content-estimated-time"></td>
-                    <td class="servicespage-price"></td>
-                    
-                </tr>
-                <tr>
-                    <td class="whyuspage"><%= element.WhyUs %></td>
-                    <td class="whyuspage-content-estimated-time"></td>
-                    <td class="whyuspage-price"></td>
-                </tr>
-                
-                <tr>
-                    <td class="contactuspage"><%= element.ContactUs %></td>
-                    <td class="contactuspage-content-estimated-time"></td>
-                    <td class="contactuspage-price"></td>
-                                    
-                <tr>
-                    <td class="socialmediafeature"><%= element.SocialMedia %></td>
-                    <td class="socialmediafeature-content-estimated-time"></td>
-                    <td class="socialmediafeature-price"></td>
-                </tr>
-                <tr>
-                    <td class="policypage"><%= element.Policy %></td>
-                    <td class="policypage-content-estimated-time"></td>
-                    <td class="policypage-price"></td>
-                    
-                </tr>
-                <tr>
-                    <td class="termsandconditions"><%= element.TermsAndConditions %></td>
-                    <td class="termsandconditions-content-estimated-time"></td>
-                    <td class="termsandconditions-price"></td>
-                </tr>
-                <tr>
-                    <td class="copyright"><%= element.CopyRight %></td>
-                    <td class="copyright-content-estimated-time"></td>
-                    <td class="copyright-price"></td>
-                </tr>
-                <tr>
-                    <td class="logo"><%= element.Logo %></td>
-                    <td class="logo-estimated-time"></td>
-                    <td class="logo-price"></td>
-                </tr>
-
-                <tr>
-                    <th colspan="3">Basic Features Content</th>
-                </tr>
-                <tr>
-                    <th>Name</th><th colspan="2">Content</th>
-                </tr>
-                <tr>
-                    <th rowspan="2">Home Page Content: </th>
-                    <td class="home-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.HomePageContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Home Content Image"/>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <th rowspan="2">About Content: </th>
-                    <td class="about-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.AboutContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="About Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th rowspan="2">Services Content: </th>
-                    <td class="services-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.ServicesContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Services Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th rowspan="2">Why Us Content: </th>
-                    <td class="whyus-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.WhyUsContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Why Us Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Address: </th>
-                    <td class="address-content" colspan="2">
-                        <strong>Address:</strong><br/>
-                        <%= element.Address %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <th >Phone Number: </th>
-                    <td class="phone-content" colspan="2" >
-                        <strong>Phone Number:</strong><br/>
-                        <%= element.PhoneNumber %> 
-                    </td>                                       
-                </tr>
-                
-
-                <tr>
-                    <th>Social Media Link: </th>
-                    <td class="socialmedia-link" colspan="2"> 
-                        <strong>Social Media Link: </strong><br/>                       
-                        <%= element.SocialMediaLink %> <br/>
-                    </td>                                       
-                </tr>
-                
-
-                <tr>
-                    <th rowspan="2">Policy Content: </th>
-                    <td class="policy-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.PolicyContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Policy Content Image"/>
-                    </td>
-                </tr>
-
-
-
-                <tr>
-                    <th rowspan="2">Terms & Conditions Content: </th>
-                    <td class="termsandconditions-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.TermsAndConditionsContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Terms And Conditions Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th rowspan="2">Copy Right Content: </th>
-                    <td class="copyright-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.CopyRightContent %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="#" alt="Copy Right Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th colspan="3">External Features Selected</th>
-                </tr>
-                <tr>                    
-                    <td class="galleryfeature"><%= element.Gallery %></td>                    
-                    <td class="galleryfeature-content-estimated-time"></td>
-                    <td class="galleryfeature-price"></td>                    
-                   
-                </tr> 
-                
-                <tr>                    
-                    <td class="templatesfeature"><%= element.Templates %></td>                    
-                    <td class="templatesfeature-content-estimated-time"></td>
-                    <td class="templatesfeature-price"></td>                    
-                   
-                </tr>                
-
-                <tr>                    
-                    <td class="menupage"><%= element.Menu %></td>                    
-                    <td class="menupage-content-estimated-time"></td>
-                    <td class="menupage-price"></td>                    
-                   
-                </tr>                
-
-
-
-
-                <tr>
-                    <th colspan="3">External Features Content</th>
-                </tr>
-                
-                <tr>
-                    <th>Name</th><th colspan="2">Content</th>
-                </tr>
-                <tr>
-                    <th rowspan="2">Photo Gallery Content: </th>
-                    <td class="photogallery-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.TextContentForGallery %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="./uploads/<%= element.UploadContentForGallery %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th rowspan="2">Templates Feature Content: </th>
-                    <td class="template-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.TextContentForTemplates %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="./uploads/<%= element.UploadContentForTemplates %> " alt="Templates Content Image"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th rowspan="2">Menu Content: </th>
-                    <td class="menu-content" colspan="2">
-                        <strong>Text Content:</strong><br/>
-                        <%= element.TextContentForMenu %> 
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <strong>Uploaded Files Content:</strong><br/>
-                        <img src="./uploads/<%= element.UploadContentForMenu %> " alt="Menu Content Image"/>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <th colspan="3">Advanced Features Selected</th>                    
-                </tr>
-                
-                <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
-                <tr>                    
-                    <td class="registerloginpage"><%= element.RegisterLogin %></td>                    
-                    <td class="registerloginpage-content-estimated-time"></td>
-                    <td class="registerloginpage-price"></td>                    
-                   
-                </tr> 
-                <tr>                    
-                    <td class="contactuswithform"><%= element.ContactUsForm %></td>                    
-                    <td class="contactuswithform-content-estimated-time"></td>
-                    <td class="contactuswithform-price"></td>                   
-                   
-                </tr> 
-                <tr>                    
-                    <td class="paymentmethod"><%= element.PaymentMethod %></td>                    
-                    <td class="paymentmethod-content-estimated-time"></td>
-                    <td class="paymentmethod-price"></td>                   
-                   
-                </tr> 
-                
-                <tr>
-                    <th colspan="3">Advanced Features Content</th>
-                </tr>
-                
-                <tr>
-                    <th>Name</th><th colspan="2">Content</th>
-                </tr>
-                <tr>
-                    <th>Bank Account & IFSC: </th>
-                    <td class="bankaccount-ifsc-content" colspan="2">
-                        <strong>Bank Account & IFSC:</strong><br/>
-                        <%= element.BankAccountAndIfsc %> 
-                    </td>                                       
-                </tr>
-                
-                <tr>
-                    <th>Email Id: </th>
-                    <td class="emailid-content" colspan="2">
-                        <strong>Email Id:</strong><br/>
-                        <%= element.EmailId %> 
-                    </td>                                       
-                </tr>
-                <tr>
-
+            <div class="cart-items"><!--cart-items start here-->
+                <div class="cart-row"><!--cart-row starts here-->                
+                <table >
+                    <caption style="color: whitesmoke; ">
+                        Order Id: <%= element._id %><br/>
+                        Date: <%= element.Date %>  
+                    </caption>
                     <tr>
-                        <th colspan="3">Designing Features Selected</th>                    
+                        <th colspan="3">Cart Items</th>
+                    </tr>
+                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
+                    <tr>
+                        <td class="template-option"><%= element.TemplateOption %></td>
+                        <td class="template-completing-estimated-time">
+                            <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
+                              <%= element.TemplateOptionEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="template-price">
+                            <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
+                                <%= element.TemplateOptionPrice %> 
+                            <% } %>
+                        </td>
                     </tr>
                     
-                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                    <tr>
+                        <th colspan="3">Basic Features Selected</th>                    
+                    </tr>
+                    
+                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
                     <tr>                    
-                        <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
-                        <td class="websitebackground-content-estimated-time"></td>
-                        <td class="websitebackground-price"></td>                    
+                        <td class="homepage"><%= element.Home %></td>                    
+                        <td class="homepage-content-estimated-time">
+                            <% if(element.Home ) { %>
+                                <%= element.HomePageEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="homepage-price">
+                            <% if(element.Home ) { %>
+                                <%= element.HomePagePrice %> 
+                            <% } %> 
+                        </td>                    
                        
-                    </tr>
-                
+                    </tr>                
                     <tr>
-                        <th colspan="3">Designing Features Content</th>
+                        <td class="aboutpage"><%= element.About %></td>                    
+                        <td class="aboutpage-content-estimated-time">
+                            <% if(element.About) { %>
+                                <%= element.AboutEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="aboutpage-price">
+                            <% if(element.About) { %>
+                                <%= element.AboutPrice %> 
+                            <% } %>
+                        </td>           
+                        
+                   </tr>
+                    <tr>
+                        <td class="servicespage"><%= element.Services %></td>
+                        <td class="servicespage-content-estimated-time">
+                            <% if(element.Services ) { %>
+                                <%= element.ServicesEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="servicespage-price">
+                            <% if(element.Services ) { %>
+                                <%= element.ServicesPrice %> 
+                            <% } %>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="whyuspage"><%= element.WhyUs %></td>
+                        <td class="whyuspage-content-estimated-time">
+                            <% if(element.WhyUs ) { %>
+                                <%= element.WhyUsEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="whyuspage-price">
+                            <% if(element.WhyUs ) { %>
+                                <%= element.WhyUsPrice %> 
+                            <% } %>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="contactuspage"><%= element.ContactUs %></td>
+                        <td class="contactuspage-content-estimated-time">
+                            <% if(element.ContactUs ) { %>
+                                <%= element.ContactUsEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="contactuspage-price">
+                            <% if(element.ContactUs ) { %>
+                                <%= element.ContactUsPrice %> 
+                            <% } %>
+                        </td>
+                                        
+                    <tr>
+                        <td class="socialmediafeature"><%= element.SocialMedia %></td>
+                        <td class="socialmediafeature-content-estimated-time">
+                            <% if(element.SocialMedia ) { %>
+                                <%= element.SocialMediaEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="socialmediafeature-price">
+                            <% if(element.SocialMedia ) { %>
+                                <%= element.SocialMediaPrice %> 
+                            <% } %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="policypage"><%= element.Policy %></td>
+                        <td class="policypage-content-estimated-time">
+                            <% if(element.Policy ) { %>
+                                <%= element.PolicyEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="policypage-price">
+                            <% if(element.Policy ) { %>
+                                <%= element.PolicyPrice %> 
+                            <% } %>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="termsandconditions"><%= element.TermsAndConditions %></td>
+                        <td class="termsandconditions-content-estimated-time">
+                            <% if(element.TermsAndConditions ) { %>
+                                <%= element.TermsAndConditionsEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="termsandconditions-price">
+                            <% if(element.TermsAndConditions ) { %>
+                                <%= element.TermsAndConditionsPrice %> 
+                            <% } %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="copyright"><%= element.CopyRight %></td>
+                        <td class="copyright-content-estimated-time">
+                            <% if(element.CopyRight ) { %>
+                                <%= element.CopyRightEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="copyright-price">
+                            <% if(element.CopyRight ) { %>
+                                <%= element.CopyRightPrice %> 
+                            <% } %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="logo"><%= element.Logo %></td>
+                        <td class="logo-estimated-time">
+                             
+                            <% if(element.Logo) { %>
+                                <%= element.LogoPurchasingEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        
+
+                        <td class="logo-price">
+                            
+                            <% if(element.Logo && element.Logo.substring(0, 18) == 'I want to buy Logo') { %>
+                                <%= element.LogoPurchasingPrice %> 
+                            <% } %>
+                            <% if(element.Logo && element.Logo.substring(0, 18) == 'I have my own Logo'){ %>
+                                <%= element.LogoByCustomerPrice %>
+                            <% } %>
+                             
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th colspan="3">Basic Features Content</th>
                     </tr>
                     <tr>
                         <th>Name</th><th colspan="2">Content</th>
                     </tr>
-                    
                     <tr>
-                        <th rowspan="2">Website Background-Color Details: </th>
-                        <td class="websitebackgroundcolor-content" colspan="2">
-                            <strong>Color Code:</strong><br/>
-                            <%= element.WebsiteBackgroundColor %> 
+                        <th rowspan="2">Home Page Content: </th>
+                        <td class="home-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.HomePageContent %> 
                         </td>                                       
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <strong>Color Demo:</strong><br/>
-                            <div style="background-color: yellow; width: 100%; height: 50px; color: red;">
-                                Background color is your Selected Background
-                            </div>
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="Home Content Image"/>
                         </td>
                     </tr>
-
+                    
                     <tr>
-                        <th rowspan="2">Website Background-Image Details: </th>
-                        <td class="websitebackgroundimage-content" colspan="2">
-                            <strong>Background Image Name: </strong><br/>
-                            <%= element.WebsiteBackgroundImage %> 
+                        <th rowspan="2">About Content: </th>
+                        <td class="about-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.AboutContent %> 
                         </td>                                       
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <strong>Background Image Demo:</strong><br/>
-                            <img src="./uploads/<%= element.WebsiteBackgroundImage %>" width="100px" height="100px" alt="Selected Website Background Image"/>
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="About Content Image"/>
                         </td>
                     </tr>
     
-
                     <tr>
-                        <th rowspan="2">Text-Color Details: </th>
-                        <td class="textcolor-content" colspan="2">
-                            <strong>Color Code:</strong><br/>
-                            <%= element.TextColor %> 
+                        <th rowspan="2">Services Content: </th>
+                        <td class="services-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.ServicesContent %> 
                         </td>                                       
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <strong>Text Color Demo:</strong><br/>
-                            <div style="width: 100%; height: 50px; color: red;">
-                                Color of this text is selected text color
-                            </div>
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="Services Content Image"/>
                         </td>
                     </tr>
+    
+                    <tr>
+                        <th rowspan="2">Why Us Content: </th>
+                        <td class="whyus-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.WhyUsContent %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="Why Us Content Image"/>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>Address: </th>
+                        <td class="address-content" colspan="2">
+                            <strong>Address:</strong><br/>
+                            <%= element.Address %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <th >Phone Number: </th>
+                        <td class="phone-content" colspan="2" >
+                            <strong>Phone Number:</strong><br/>
+                            <%= element.PhoneNumber %> 
+                        </td>                                       
+                    </tr>
+                    
+    
+                    <tr>
+                        <th>Social Media Link: </th>
+                        <td class="socialmedia-link" colspan="2"> 
+                            <strong>Social Media Link: </strong><br/>                       
+                            <%= element.SocialMediaLink %> <br/>
+                        </td>                                       
+                    </tr>
+                    
+    
+                    <tr>
+                        <th rowspan="2">Policy Content: </th>
+                        <td class="policy-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.PolicyContent %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="Policy Content Image"/>
+                        </td>
+                    </tr>
+    
+    
+    
+                    <tr>
+                        <th rowspan="2">Terms & Conditions Content: </th>
+                        <td class="termsandconditions-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.TermsAndConditionsContent %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="Terms And Conditions Content Image"/>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th rowspan="2">Copy Right Content: </th>
+                        <td class="copyright-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.CopyRightContent %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="#" alt="Copy Right Content Image"/>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th colspan="3">External Features Selected</th>
+                    </tr>
+                    <tr>                    
+                        <td class="galleryfeature">
+                            <%= element.Gallery %>                            
+                        </td>                    
+                        <td class="galleryfeature-content-estimated-time">
+                            <% if(element.Gallery) { %>
+                                <%= element.GalleryEstimatedTime %> 
+                              <% } %> 
+                        </td>
+                        <td class="galleryfeature-price">
+                            <% if(element.Gallery) { %>
+                                <%= element.GalleryPrice %> 
+                              <% } %> 
+                        </td>                    
+                       
+                    </tr> 
+                    
+                    <tr>                    
+                        <td class="templatesfeature"><%= element.Templates %></td>                    
+                        <td class="templatesfeature-content-estimated-time">
+                            <% if(element.Templates) { %>
+                                <%= element.TemplatesFeatureEstimatedTime %> 
+                              <% } %> 
+                        </td>
+                        <td class="templatesfeature-price">
+                            <% if(element.Templates) { %>
+                                <%= element.TemplatesFeaturePrice %> 
+                              <% } %> 
+                        </td>                    
+                       
+                    </tr>                
+    
+                    <tr>                    
+                        <td class="menupage"><%= element.Menu %></td>                    
+                        <td class="menupage-content-estimated-time">
+                            <% if(element.Menu) { %>
+                                <%= element.MenuEstimatedTime %> 
+                              <% } %> 
+                        </td>
+                        <td class="menupage-price">
+                            <% if(element.Menu) { %>
+                                <%= element.MenuPrice %> 
+                              <% } %>
+                        </td>                    
+                       
+                    </tr>                
+    
+    
+    
+    
+                    <tr>
+                        <th colspan="3">External Features Content</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>Name</th><th colspan="2">Content</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Photo Gallery Content: </th>
+                        <td class="photogallery-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.TextContentForGallery %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="./uploads/<%= element.UploadContentForGallery %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th rowspan="2">Templates Feature Content: </th>
+                        <td class="template-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.TextContentForTemplates %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="./uploads/<%= element.UploadContentForTemplates %> " alt="Templates Content Image"/>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th rowspan="2">Menu Content: </th>
+                        <td class="menu-content" colspan="2">
+                            <strong>Text Content:</strong><br/>
+                            <%= element.TextContentForMenu %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Uploaded Files Content:</strong><br/>
+                            <img src="./uploads/<%= element.UploadContentForMenu %> " alt="Menu Content Image"/>
+                        </td>
+                    </tr>
+    
+    
+                    <tr>
+                        <th colspan="3">Advanced Features Selected</th>                    
+                    </tr>
+                    
+                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                    <tr>                    
+                        <td class="registerloginpage"><%= element.RegisterLogin %></td>                    
+                        <td class="registerloginpage-content-estimated-time">
+                            <% if(element.RegisterLogin) {%>
+                                <%= element.RegisterLoginEstimatedTime %> 
+                            <% } %>  
+                        </td>
+                        <td class="registerloginpage-price">
+                            <% if(element.RegisterLogin) {%>
+                                <%= element.RegisterLoginPrice %> 
+                            <% } %>  
+                        </td>                    
+                       
+                    </tr> 
+                    <tr>                    
+                        <td class="contactuswithform"><%= element.ContactUsForm %></td>                    
+                        <td class="contactuswithform-content-estimated-time">
+                            <% if(element.ContactUsForm) {%>
+                                <%= element.ContactUsWithFormEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="contactuswithform-price">
+                            <% if(element.ContactUsForm) {%>
+                                <%= element.ContactUsWithFormPrice %> 
+                            <% } %>
+                        </td>                   
+                       
+                    </tr> 
+                    <tr>                    
+                        <td class="paymentmethod"><%= element.PaymentMethod %></td>                    
+                        <td class="paymentmethod-content-estimated-time">
+                            <% if(element.PaymentMethod) {%>
+                                <%= element.PaymentMethodEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="paymentmethod-price">
+                            <% if(element.PaymentMethod) {%>
+                                <%= element.PaymentMethodPrice %> 
+                            <% } %>
+                        </td>                   
+                       
+                    </tr> 
+                    
+                    <tr>
+                        <th colspan="3">Advanced Features Content</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>Name</th><th colspan="2">Content</th>
+                    </tr>
+                    <tr>
+                        <th>Bank Account & IFSC: </th>
+                        <td class="bankaccount-ifsc-content" colspan="2">
+                            <strong>Bank Account & IFSC:</strong><br/>
+                            <%= element.BankAccountAndIfsc %> 
+                        </td>                                       
+                    </tr>
+                    
+                    <tr>
+                        <th>Email Id: </th>
+                        <td class="emailid-content" colspan="2">
+                            <strong>Email Id:</strong><br/>
+                            <%= element.EmailId %> 
+                        </td>                                       
+                    </tr>
+                    <tr>
+    
+                        <tr>
+                            <th colspan="3">Designing Features Selected</th>                    
+                        </tr>
+                        
+                        <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                        <tr>                    
+                            <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
+                            <td class="websitebackground-content-estimated-time">
+                                <% if(element.WebsiteBackground) { %>
+                                    <%= element.WebsiteBackgroundEstimatedTime %> 
+                                <% } %> 
+                            </td>
+                            <td class="websitebackground-price">
+                                <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
+                                    <%= element.WebsiteBackgroundColorPrice %> 
+                                <% } %>
+                                <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website'){ %>
+                                    <%= element.WebsiteBackgroundImagePrice %>
+                                <% } %>
+                            </td>                    
+                           
+                        </tr>
+                    
+                        <tr>
+                            <th colspan="3">Designing Features Content</th>
+                        </tr>
+                        <tr>
+                            <th>Name</th><th colspan="2">Content</th>
+                        </tr>
+                        
+                        <tr>
+                            <th rowspan="2">Website Background-Color Details: </th>
+                            <td class="websitebackgroundcolor-content" colspan="2">
+                                <strong>Color Code:</strong><br/>
+                                <%= element.WebsiteBackgroundColor %> 
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <strong>Color Demo:</strong><br/>
+                                <div style="background-color: yellow; width: 100%; height: 50px; color: red;">
+                                    Background color is your Selected Background
+                                </div>
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <th rowspan="2">Website Background-Image Details: </th>
+                            <td class="websitebackgroundimage-content" colspan="2">
+                                <strong>Background Image Name: </strong><br/>
+                                <%= element.WebsiteBackgroundImage %> 
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <strong>Background Image Demo:</strong><br/>
+                                <img src="./uploads/<%= element.WebsiteBackgroundImage %>" width="100px" height="100px" alt="Selected Website Background Image"/>
+                            </td>
+                        </tr>
+        
+    
+                        <tr>
+                            <th rowspan="2">Text-Color Details: </th>
+                            <td class="textcolor-content" colspan="2">
+                                <strong>Color Code:</strong><br/>
+                                <%= element.TextColor %> 
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <strong>Text Color Demo:</strong><br/>
+                                <div style="width: 100%; height: 50px; color: red;">
+                                    Color of this text is selected text color
+                                </div>
+                            </td>
+                        </tr>  
+                    
+                        <tr>
+                            <th colspan="3">Other Features & Services</th>
+                        </tr>
+
+                        <tr>
+                            <th colspan="3">Uploads</th>
+                        </tr>
+
+                        <tr>
+                            <th colspan="3">Additional</th>
+                        </tr>
+
+                        <tr>
+                            <th colspan="3">External Individual Service Charges</th>
+                        </tr>
 
 
+                        
 
-                <tr>
-                   
-                    <th colspan="3">New Heading</th>
-                </tr>
-                
-                
-                
-                
-                <th colspan="4">Services Charges</th>
-                <tr>
-                    <td><span>Service Charges: </span><br/></td>
-                    <td class="service-charges"></td>
-                    <td>-</td>
-                    <td></td>
 
-                </tr>
-                <th colspan="4">Total</th>
-                <tr>
-                    <td class="total-price">Total: </td><td>Rs.<span class="cart-total"> </span></td><td>...Days</td><td><span class="payment-confirmation-notification">Unpaid <p class="vipinn"></p></span></td>                 
-                </tr> 
-                <tr>
-                    <td colspan="4"><span>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully</span></td>
-                </tr>
-                <caption><a class="table-caption-anchor" href="#">Add-More</a><a class="table-caption-anchor" href="#">Edit-Order</a><a class="table-caption-anchor" href="#">Remove</a></caption> 
-                              
-            </table>            
+                    <tr>
+                        <th colspan="3">Total</th>
+                    </tr>
+                    
+                    <tr>
+                        <td class="total-price">
+                            Total: 
+                        </td>
+                        <td>
+                            ...Days (Estimated)
+                        </td>
+                        <td>
+                            <span class="cart-total-price">
+                                <% var total = 0; %> 
+                                <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
+                                    <% var templatePrice = parseFloat(element.TemplateOptionPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% templatePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Home) { %>
+                                    <% var homePagePrice = parseFloat(element.HomePagePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% homePagePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.About) { %>
+                                    <% var aboutPrice = parseFloat(element.AboutPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% aboutPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Services) { %>
+                                    <% var servicesPrice = parseFloat(element.ServicesPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% servicesPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.WhyUs) { %>
+                                    <% var whyUsPrice = parseFloat(element.WhyUsPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% whyUsPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUs) { %>
+                                    <% var contactUsPrice = parseFloat(element.ContactUsPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.SocialMedia) { %>
+                                    <% var socialMediaPrice = parseFloat(element.SocialMediaPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% socialMediaPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Policy) { %>
+                                    <% var policyPrice = parseFloat(element.PolicyPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% policyPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.TermsAndConditions) { %>
+                                    <% var termsAndConditionsPrice = parseFloat(element.TermsAndConditionsPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% termsAndConditionsPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.CopyRight) { %>
+                                    <% var copyRightPrice = parseFloat(element.CopyRightPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% copyRightPrice = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I want to buy Logo') { %>
+                                    <% var logoPurchasingPrice = parseFloat(element.LogoPurchasingPrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% logoPurchasingPrice = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I have my own Logo') { %>
+                                    <% var logoByCustomerPrice = parseFloat(element.LogoByCustomerPrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% logoByCustomerPrice = 0; %> 
+                                 <% } %>
+                                <!--External Features check-->
+                                 <% if(element.Gallery) { %>
+                                    <% var galleryPrice = parseFloat(element.GalleryPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% galleryPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Templates) { %>
+                                    <% var templatesFeaturePrice = parseFloat(element.TemplatesFeaturePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% templatesFeaturePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Menu) { %>
+                                    <% var menuPrice = parseFloat(element.MenuPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% menuPrice = 0; %> 
+                                 <% } %>
+                                 <!--Advanced Features Check-->
+                                 <% if(element.RegisterLogin) { %>
+                                    <% var registerLogInPrice = parseFloat(element.RegisterLoginPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% registerLogInPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUsForm) { %>
+                                    <% var contactUsWithFormPrice = parseFloat(element.ContactUsWithFormPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsWithFormPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.PaymentMethod) { %>
+                                    <% var paymentMethodPrice = parseFloat(element.PaymentMethodPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% paymentMethodPrice = 0; %> 
+                                 <% } %>
+                                 <!--Designing-->
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
+                                    <% var websiteBackgroundColorPrice = parseFloat(element.WebsiteBackgroundColorPrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundColorPrice = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website') { %>
+                                    <% var websiteBackgroundImagePrice = parseFloat(element.WebsiteBackgroundImagePrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundImagePrice = 0; %> 
+                                 <% } %>
+
+                                Total: <%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice);%>
+                            </span>
+                        </td>                 
+                    </tr>
+
+                    <tr>
+                        <td colspan="4"><span>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully</span></td>
+                    </tr>
+                    <caption><a class="table-caption-anchor" href="#">Add-More</a><a class="table-caption-anchor" href="#">Edit-Order</a><a class="table-caption-anchor" href="#">Remove</a></caption> 
+                                  
+                </table> 
+                </div><!--cart-row ends here-->               
+            </div> <!--cart-items end here-->           
+                        
             <button class="each-button purchase">Purchase</button>
             
             <script >
                 
-                var templatePrice = 4000;
+               /* var total = 0;
+                // some correct one
+                var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+                var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+                //var cartRows = document.getElementsByClassName('cart-row');
+                for(var i = 0; i < cartRows.length; i++) {
+                    var cartRow = cartRows[i];
+                    var templatePriceElement = cartRow.getElementsByClassName('template-price')[0];
+                    var templatePrice = parseFloat(templatePriceElement.innerHTML.replace('$', ''));
+                    var homePagePriceElement = cartRow.getElementsByClassName('homepage-price')[0];
+                    var homePagePrice = parseFloat(homePagePriceElement.innerHTML.replace('$', ''));
+
+                    total = total + templatePrice + homePagePrice;
+                    //cartRow.getElementsByClassName('cart-total-price')[0].innerText ='$ ' + total;
+                }
+
+                total = Math.round(total * 100) / 100
+                document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+
+                //var templatePrice = 4000;
                 //var customerGivenTemplatePrice = 0;
                 
             // update cart orders number
@@ -479,6 +802,7 @@
                 var allTablesLength = allTables.length;
                 for(i = 0; i < allTablesLength; i++) {
                     // template price and template selected icon showing
+                    /* commented for now
                     var templateOption = allTables[i].getElementsByClassName('template-option')[0].innerHTML;
                 if(templateOption.length > 0 && templateOption != 'Select Template') {
                     allTables[i].getElementsByClassName('template-completing-estimated-time')[0].innerHTML = '16:00';
@@ -487,6 +811,7 @@
                 }  
 
                 // homepage price and template selected icon showing
+                
                 var homePage = allTables[i].getElementsByClassName('homepage')[0].innerHTML;
                 //var homePageContent = allTables[i].getElementsByClassName('homepage-content')[0].innerHTML;   
                 if(homePage) {
@@ -494,7 +819,7 @@
                         allTables[i].getElementsByClassName('homepage-price')[0].innerHTML = '2000';
                        // allTables[i].getElementsByClassName('homepage-selected-icon')[0].innerHTML = "&#9989;";
                     }
-
+                    
                 // aboutpage price and template selected icon showing
                var aboutPage = allTables[i].getElementsByClassName('aboutpage')[0].innerHTML;
                //var aboutPageContent = allTables[i].getElementsByClassName('aboutpage-content')[0].innerHTML     
@@ -563,7 +888,7 @@
                         allTables[i].getElementsByClassName('copyright-price')[0].innerHTML = '2000';
                         //allTables[i].getElementsByClassName('copy-right-selected-icon')[0].style.display = 'block';
                     }
-
+                    
                 // logopurchasing price and template selected icon showing
                 var logoSelecting = allTables[i].getElementsByClassName('logo')[0].innerHTML;
                 var logoSelectingSubString = logoSelecting.substring(0, 18)
@@ -623,7 +948,7 @@
                         allTables[i].getElementsByClassName('paymentmethod-price')[0].innerHTML = '13000';                        
                         //allTables[i].getElementsByClassName('servicespage-selected-icon')[0].style.display = 'block';
                     }
-
+commented for now*/
                     // Designing javascript
 
                     // Website Background color and image price and template selected icon showing

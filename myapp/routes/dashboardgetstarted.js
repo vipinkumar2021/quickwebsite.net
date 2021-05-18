@@ -1,5 +1,3 @@
-
-
 var express = require('express');
   var router = express.Router();
   var cartItemsModel = require("../modules/cartitemsschema");
@@ -98,7 +96,7 @@ router.post('/', multipleUploads, function(req, res, next) {
   var currentAccountUsername = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
 //
 
-if(currentAccountUsername) {  
+if(loginUser.loginUserCustomer) {  
 
   // Correct One
   
@@ -158,50 +156,105 @@ var cartItemsList = new cartItemsModel({
   
 Username: currentAccountUsername,
 TemplateOption: req.body.template,
+TemplateOptionEstimatedTime: req.body.templateoptionestimatedtime,
+TemplateOptionPrice: req.body.templateoptionprice,
+
 //CustomerGivenTemplate: req.body.customertemplate,
 //Basic Features
 Home: req.body.home,
+HomePageEstimatedTime: req.body.homepageestimatedtime,
+HomePagePrice: req.body.homepageprice,
 HomePageContent: req.body.homepagecontent,
+
 About: req.body.about ,
-AboutContent: req.body.aboutcontent, 
+AboutEstimatedTime: req.body.aboutestimatedtime,
+AboutPrice: req.body.aboutprice,
+AboutContent: req.body.aboutcontent,
+
 Services: req.body.services ,
+ServicesEstimatedTime: req.body.servicesestimatedtime,
+ServicesPrice: req.body.servicesprice,
 ServicesContent: req.body.servicescontent,
+
 WhyUs: req.body.whyus ,
+WhyUsEstimatedTime: req.body.whyusestimatedtime,
+WhyUsPrice: req.body.whyusprice,
 WhyUsContent: req.body.whyuscontent,
-ContactUs: req.body.contactusonlyaddress , 
+
+ContactUs: req.body.contactusonlyaddress ,
+ContactUsEstimatedTime: req.body.contactusestimatedtime,
+ContactUsPrice: req.body.contactusprice,
+
 Address: req.body.address , 
 PhoneNumber: req.body.phonenumber ,
+
 SocialMedia: req.body.socialmedia,
+SocialMediaEstimatedTime: req.body.socialmediaestimatedtime,
+SocialMediaPrice: req.body.socialmediaprice,
 SocialMediaLink: req.body.socialmedialink ,
+
 Policy: req.body.policy ,
+PolicyEstimatedTime: req.body.policyestimatedtime,
+PolicyPrice: req.body.policyprice,
 PolicyContent: req.body.policycontent,
+
 TermsAndConditions: req.body.termsandconditions ,
+TermsAndConditionsEstimatedTime: req.body.termsandconditionsestimatedtime,
+TermsAndConditionsPrice: req.body.termsandconditionsprice,
 TermsAndConditionsContent: req.body.termsandconditionscontent,
+
 CopyRight: req.body.copyright ,
+CopyRightEstimatedTime: req.body.copyrightestimatedtime,
+CopyRightPrice: req.body.copyrightprice,
 CopyRightContent: req.body.copyrightcontent,
+
 Logo: req.body.logo,
+LogoPurchasingEstimatedTime: req.body.logopurchasingestimatedtime,
+LogoPurchasingPrice: req.body.logopurchasingprice,
+LogoByCustomerEstimatedTime: req.body.logobycustomerestimatedtime,
+LogoByCustomerPrice: req.body.logobycustomerprice,
 //LogoContent: req.body.logocontent,
 //External Features
 Gallery: req.body.gallery ,
+GalleryEstimatedTime: req.body.galleryestimatedtime,
+GalleryPrice: req.body.galleryprice,
 TextContentForGallery: req.body.textcontentforgallery,
 UploadContentForGallery: uploadContentForGallery,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+
 Templates: req.body.templatesfeature ,
+TemplatesFeatureEstimatedTime: req.body.templatesfeatureestimatedtime,
+TemplatesFeaturePrice: req.body.templatesfeatureprice,
 TextContentForTemplates: req.body.textcontentfortemplates,
 UploadContentForTemplates: uploadContentForTemplates,//req.files.filename,//req.body.uploadcontentfortemplates, //uploadContentForTemplates,//req.files.filename, /*filenameUpload,*///req.files.filename,//uploadContentForGallery,//req.file.uploadcontentfortemplates,
+
 Menu: req.body.menu ,
+MenuEstimatedTime: req.body.menuestimatedtime,
+MenuPrice: req.body.menuprice,
 TextContentForMenu: req.body.textcontentformenu,
 //UploadContentForMenu: req.file.uploadcontentformenu 
 
 // Advanced Features
 RegisterLogin: req.body.registerlogin,
+RegisterLoginEstimatedTime: req.body.registerloginestimatedtime,
+RegisterLoginPrice: req.body.registerloginprice,
+
 ContactUsForm: req.body.contactuswithform,
+ContactUsWithFormEstimatedTime: req.body.contactuswithformestimatedtime,
+ContactUsWithFormPrice: req.body.contactuswithformprice,
+
 PaymentMethod: req.body.paymentmethod,
+PaymentMethodEstimatedTime: req.body.paymentmethodestimatedtime,
+PaymentMethodPrice: req.body.paymentmethodprice,
+
 BankAccountAndIfsc: req.body.bankaccountandifsc,
 EmailId: req.body.emailid,
 //Designing Features
 WebsiteBackground: req.body.websitebackground,
 WebsiteBackgroundColor: req.body.backgroundcolor,
+WebsiteBackgroundEstimatedTime: req.body.websitebackgroundestimatedtime,
+WebsiteBackgroundColorPrice: req.body.websitebackgroundcolorprice,
 //WebsiteBackgroundImage: req.body.backgroundimage,
+WebsiteBackgroundImagePrice: req.body.websitebackgroundimageprice,
 TextColor: req.body.textcolor,
 //
 /*

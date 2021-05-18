@@ -506,4 +506,42 @@ function showBackgroundImageInput() {
 
 }
 
+//
 
+/*
+if(document.readyState == 'loading')  {
+    document.addEventListener('DOMContentLoaded', ready);
+} else {
+    ready();
+}
+
+function ready() {
+    var removeButtonsForCartItems = document.getElementsByClassName('btn-danger');
+for(var i = 0; i < removeButtonsForCartItems.length; i++) {
+    var removeButtonForCurrentCartItem = removeButtonsForCartItems[i];
+    removeButtonForCurrentCartItem.addEventListener('click', removeCartItem}
+
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target;
+    buttonClicked.parentElement.parentElement.remove();
+    updateCartTotal();
+});
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+    var total = 0;
+    for(var i = 0; i < cartRows.length; i++) {
+        var currentCartRow = cartRows[i];
+        var currentCartRowPriceElement = currentCartRow.getElementsByClassName('cart-price')[0];
+        var currentCartRowQuantityElement = currentCartRow.getElementsByClassName('cart-quantity-input')[0]
+        var currentCartRowQuantityValue = currentCartRowQuantityElement.value;
+        var currentCartRowPrice = parseFloat(currentCartRowPriceElement.innerText.replace('$', ''));
+        
+        total = total + (currentCartRowQuantityValue*currentCartRowPrice)
+    }
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
+}
+*/
