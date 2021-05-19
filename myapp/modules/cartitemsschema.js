@@ -35,11 +35,13 @@ HomePageContent: {
     type: String,
     //required: true
 }, 
+/*
 HomePageContent: {
     type: String
     
     //required: true
 },
+*/
 About: {
     type: String,
     //required: true
