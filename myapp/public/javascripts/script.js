@@ -473,24 +473,205 @@ function closeChatBoxModal() {
 */
 // Chat box modal javascript ends here
 //dashboard get started javascript here
-// Show Home Page content form in dashboardgetstarted
- /*function showHideHomePageContentForm() {
-    var homePageCheckBox = document.getElementsByClassName('hompage-checkbox')[0];
-    if(homePageCheckBox.checked == false) {
-        var homePageContentLabel = document.getElementsByClassName('home-page-content-form')[0];
-        var homePageContentTextArea = document.getElementsByClassName('home-page-content-form')[1];
-        homePageContentLabel.style.display = 'none';
-        homePageContentTextArea.style.display = 'none';
-    } else {
+// Show and hide Home Page content form in dashboardgetstarted
+ function showHideHomePageContentForm() {
+    var homePageCheckBox = document.getElementById('hompage-checkbox');
+    var homePageContentLabel = document.getElementById('home-page-content-label');
+    var homePageContentTextArea = document.getElementById('home-page-content-textarea');
+    if(homePageCheckBox.checked == true) {
         homePageContentLabel.style.display = 'block';
         homePageContentTextArea.style.display = 'block';
+    } else {
+        homePageContentLabel.style.display = 'none';
+        homePageContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide About content form in dashboardgetstarted
+ function showHideAboutContentForm() {
+    var aboutCheckBox = document.getElementById('about-checkbox');
+    var aboutContentLabel = document.getElementById('about-content-label');
+    var aboutContentTextArea = document.getElementById('about-content-textarea');
+    if(aboutCheckBox.checked == true) {
+        aboutContentLabel.style.display = 'block';
+        aboutContentTextArea.style.display = 'block';
+    } else {
+        aboutContentLabel.style.display = 'none';
+        aboutContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide About content form in dashboardgetstarted
+ function showHideServicesContentForm() {
+    var servicesCheckBox = document.getElementById('services-checkbox');
+    var servicesContentLabel = document.getElementById('services-content-label');
+    var servicesContentTextArea = document.getElementById('services-content-textarea');
+    if(servicesCheckBox.checked == true) {
+        servicesContentLabel.style.display = 'block';
+        servicesContentTextArea.style.display = 'block';
+    } else {
+        servicesContentLabel.style.display = 'none';
+        servicesContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide Why Us content form in dashboardgetstarted
+ function showHideWhyUsContentForm() {
+    var whyUsCheckBox = document.getElementById('why-us-checkbox');
+    var whyUsContentLabel = document.getElementById('why-us-content-label');
+    var whyUsContentTextArea = document.getElementById('why-us-content-textarea');
+    if(whyUsCheckBox.checked == true) {
+        whyUsContentLabel.style.display = 'block';
+        whyUsContentTextArea.style.display = 'block';
+    } else {
+        whyUsContentLabel.style.display = 'none';
+        whyUsContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide Social Media content form in dashboardgetstarted
+ function showHideSocialMediaContentForm() {
+    var socialMediaCheckBox = document.getElementById('social-media-checkbox');
+    var socialMediaContentLabel = document.getElementById('social-media-content-label');
+    var socialMediaContentTextArea = document.getElementById('social-media-content-textarea');
+    if(socialMediaCheckBox.checked == true) {
+        socialMediaContentLabel.style.display = 'block';
+        socialMediaContentTextArea.style.display = 'block';
+    } else {
+        socialMediaContentLabel.style.display = 'none';
+        socialMediaContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide Policy content form in dashboardgetstarted
+ function showHidePolicyContentForm() {
+    var policyCheckBox = document.getElementById('policy-checkbox');
+    var policyContentLabel = document.getElementById('policy-content-label');
+    var policyContentTextArea = document.getElementById('policy-content-textarea');
+    if(policyCheckBox.checked == true) {
+        policyContentLabel.style.display = 'block';
+        policyContentTextArea.style.display = 'block';
+    } else {
+        policyContentLabel.style.display = 'none';
+        policyContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide Terms and Conditions content form in dashboardgetstarted
+ function showHideTermsAndConditionsContentForm() {
+    var termsAndConditionsCheckBox = document.getElementById('terms-and-conditions-checkbox');
+    var termsAndConditionsContentLabel = document.getElementById('terms-and-conditions-content-label');
+    var termsAndConditionsContentTextArea = document.getElementById('terms-and-conditions-content-textarea');
+    if(termsAndConditionsCheckBox.checked == true) {
+        termsAndConditionsContentLabel.style.display = 'block';
+        termsAndConditionsContentTextArea.style.display = 'block';
+    } else {
+        termsAndConditionsContentLabel.style.display = 'none';
+        termsAndConditionsContentTextArea.style.display = 'none';
+ 
+    }
+ }
+ // Show Hide Copy Right content form in dashboardgetstarted
+ function showHideCopyRightContentForm() {
+    var copyRightCheckBox = document.getElementById('copy-right-checkbox');
+    var copyRightContentLabel = document.getElementById('copy-right-content-label');
+    var copyRightContentTextArea = document.getElementById('copy-right-content-textarea');
+    if(copyRightCheckBox.checked == true) {
+        copyRightContentLabel.style.display = 'block';
+        copyRightContentTextArea.style.display = 'block';
+    } else {
+        copyRightContentLabel.style.display = 'none';
+        copyRightContentTextArea.style.display = 'none';
+ 
+    }
+ }
+// Show Hide Photo gallery content form in dashboardgetstarted
+function showHidePhotoGalleryContentForm() {
+    var photoGalleryCheckBox = document.getElementById('photo-gallery-checkbox');
+    var photoGalleryContentLabel = document.getElementById('photo-gallery-content-label');
+    var photoGalleryContentTextArea = document.getElementById('photo-gallery-content-textarea');
+    var photoGalleryUploadContentLabel = document.getElementById('photo-gallery-upload-content-label');
+    var photoGalleryUploadContentInput = document.getElementById('photo-gallery-upload-content-input');
+
+    if(photoGalleryCheckBox.checked == true) {
+        photoGalleryContentLabel.style.display = 'block';
+        photoGalleryContentTextArea.style.display = 'block';
+        photoGalleryUploadContentLabel.style.display = 'block';
+        photoGalleryUploadContentInput.style.display = 'block';
+    } else {
+        photoGalleryContentLabel.style.display = 'none';
+        photoGalleryContentTextArea.style.display = 'none';
+        photoGalleryUploadContentLabel.style.display = 'none';
+        photoGalleryUploadContentInput.style.display = 'none';
+
 
     }
-        
-}
-*/
- 
+ }
 
+ // Show Hide Templates Feature content form in dashboardgetstarted
+function showHideTemplatesFeatureContentForm() {
+    var templatesFeatureCheckBox = document.getElementById('templates-feature-checkbox');
+    var templatesFeatureContentLabel = document.getElementById('templates-feature-content-label');
+    var templatesFeatureContentTextArea = document.getElementById('templates-feature-content-textarea');
+    var templatesFeatureUploadContentLabel = document.getElementById('templates-feature-upload-content-label');
+    var templatesFeatureUploadContentInput = document.getElementById('templates-feature-upload-content-input');
+
+    if(templatesFeatureCheckBox.checked == true) {
+        templatesFeatureContentLabel.style.display = 'block';
+        templatesFeatureContentTextArea.style.display = 'block';
+        templatesFeatureUploadContentLabel.style.display = 'block';
+        templatesFeatureUploadContentInput.style.display = 'block';
+    } else {
+        templatesFeatureContentLabel.style.display = 'none';
+        templatesFeatureContentTextArea.style.display = 'none';
+        templatesFeatureUploadContentLabel.style.display = 'none';
+        templatesFeatureUploadContentInput.style.display = 'none';
+
+
+    }
+ }
+
+
+ // Show Hide Menu content form in dashboardgetstarted
+function showHideMenuContentForm() {
+    var menuCheckBox = document.getElementById('menu-checkbox');
+    var menuContentLabel = document.getElementById('menu-content-label');
+    var menuContentTextArea = document.getElementById('menu-content-textarea');
+    var menuOrLabel = document.getElementById('menu-or-label');
+    var menuUploadContentLabel = document.getElementById('menu-upload-content-label');
+    var menuUploadContentInput = document.getElementById('menu-upload-content-input');
+
+    if(menuCheckBox.checked == true) {
+        menuContentLabel.style.display = 'block';
+        menuContentTextArea.style.display = 'block';
+        menuOrLabel.style.display = 'block';
+        menuUploadContentLabel.style.display = 'block';
+        menuUploadContentInput.style.display = 'block';
+    } else {
+        menuContentLabel.style.display = 'none';
+        menuContentTextArea.style.display = 'none';
+        menuOrLabel.style.display = 'none';
+        menuUploadContentLabel.style.display = 'none';
+        menuUploadContentInput.style.display = 'none';
+
+
+    }
+ }
+
+// Show Hide payment method content (bank acc and ifsc) content form in dashboardgetstarted
+function showHidePaymentMethodContentForm() {
+    var paymentMethodCheckBox = document.getElementById('payment-method-checkbox');
+    var paymentMethodContentLabel = document.getElementById('payment-method-content-label');
+    var paymentMethodContentTextArea = document.getElementById('payment-method-content-textarea');
+    if(paymentMethodCheckBox.checked == true) {
+        paymentMethodContentLabel.style.display = 'block';
+        paymentMethodContentTextArea.style.display = 'block';
+    } else {
+        paymentMethodContentLabel.style.display = 'none';
+        paymentMethodContentTextArea.style.display = 'none';
+ 
+    }
+ }
 // Show Logo File Upload Input when "I have my on logo" is clicked.
 function showLogoFileUploadInput() {
     document.getElementsByClassName('logo-file-upload-label')[0].style.display = 'block';

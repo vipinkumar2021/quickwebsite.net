@@ -274,7 +274,7 @@ Include: req.body.include ,
 DoNotInclude: req.body.donotinclude,
 
 //Other Charges
-OtherCharges: '$ ' + req.body.othercharges
+OtherCharges: req.body.othercharges
 
 
 //

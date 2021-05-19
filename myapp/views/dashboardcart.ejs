@@ -847,7 +847,7 @@
                                  <% } %>
                                  <!--Other Charges check-->
                                  <% if(element.OtherCharges) { %>
-                                    <% var otherChargesPrice = parseFloat(element.OtherCharges.replace('$', '')); %> 
+                                    <% var otherChargesPrice = parseFloat(element.OtherCharges/*.replace('$', '')*/); %> 
                                                            
                                 <% } else { %>
                                         <% otherChargesPrice = 0; %> 
