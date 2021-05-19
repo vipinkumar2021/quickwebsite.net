@@ -576,22 +576,119 @@
                         <tr>
                             <th colspan="3">Other Features & Services</th>
                         </tr>
-
-                        <tr>
-                            <th colspan="3">Uploads</th>
-                        </tr>
-
-                        <tr>
-                            <th colspan="3">Additional</th>
-                        </tr>
-
-                        <tr>
-                            <th colspan="3">External Individual Service Charges</th>
-                        </tr>
-
-
+                        <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
+                    <tr>                    
+                        <td class="emailservice"><%= element.EmailService %></td>                    
+                        <td class="email-service-estimated-time">
+                            <% if(element.EmailService ) { %>
+                                <%= element.EmailServiceEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="email-service-price">
+                            <% if(element.EmailService ) { %>
+                                <%= element.EmailServicePrice %> 
+                            <% } %> 
+                        </td>                    
+                       
+                    </tr>   
+                    <tr>                    
+                        <td class="messageservice"><%= element.MessageService %></td>                    
+                        <td class="message-service-estimated-time">
+                            <% if(element.MessageService ) { %>
+                                <%= element.MessageServiceEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="message-service-price">
+                            <% if(element.MessageService ) { %>
+                                <%= element.MessageServicePrice %> 
+                            <% } %> 
+                        </td>                    
+                       
+                    </tr>   
+                    <tr>                    
+                        <td class="databaseservice"><%= element.DataBase %></td>                    
+                        <td class="database-service-estimated-time">
+                            <% if(element.DataBase ) { %>
+                                <%= element.DataBaseEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="database-service-price">
+                            <% if(element.DataBase ) { %>
+                                <%= element.DataBasePrice %> 
+                            <% } %> 
+                        </td>                    
+                       
+                    </tr>                    
                         
+                    <tr>
+                        <th colspan="3">Uploads</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <img src="#" width="150px" height="150px" alt="Uploaded Image 1"/> 
+                            <img src="#" width="150px" height="150px" alt="Uploaded Image 2"/> 
+                            <img src="#" width="150px" height="150px" alt="Uploaded Image 3"/> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">Additional</th>
+                    </tr>
+                    <tr>
+                        <th>Name</th><th colspan="2">Content</th>
+                    </tr>
+                    <tr>
+                        <th>Website's Brief Description: </th>
+                        <td class="website-brief-description" colspan="2">
+                            <p>
+                                <%= element.WebsiteBriefDescription %> 
+                            </p>                            
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <th>Include: </th>
+                        <td class="include" colspan="2">
+                            <p>
+                                <%= element.Include %> 
+                            </p>                            
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <th>Do Not Include: </th>
+                        <td class="do-not-include" colspan="2">
+                            <p>
+                                <%= element.DoNotInclude %> 
+                            </p>                            
+                        </td>                                       
+                    </tr>
 
+                    <tr>
+                        <th colspan="3">Other Charges</th>
+                    </tr>
+                    <tr>
+                        <th>Other Charges: </th>
+                        <td>
+                            
+                        </td>
+                        <td class="other-charges" colspan="2">
+                            <% if(element.OtherCharges) { %>
+                                <%= element.OtherCharges %> 
+                            <% } else { %>
+                                <%= 0  %> 
+                            <% } %>                            
+                        </td>                                       
+                    </tr>
+
+                    <tr>
+                        <th colspan="3">Discount</th>
+                    </tr>
+                    <tr>
+                        <th>Discount: </th>
+                        <td>                            
+                        </td>
+                        <td class="discount" colspan="2">
+                            <span>$0.00</span>                         
+                        </td>                                       
+                    </tr>
 
                     <tr>
                         <th colspan="3">Total</th>
@@ -729,25 +826,58 @@
                                   <% } else { %>
                                     <% websiteBackgroundImagePrice = 0; %> 
                                  <% } %>
+                                <!--Other Features or Services-->
+                                <% if(element.EmailService) { %>
+                                    <% var emailServicePrice = parseFloat(element.EmailServicePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% emailServicePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.MessageService) { %>
+                                    <% var messageServicePrice = parseFloat(element.MessageServicePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% messageServicePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.DataBase) { %>
+                                    <% var dataBasePrice = parseFloat(element.DataBasePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% dataBasePrice = 0; %> 
+                                 <% } %>
+                                 <!--Other Charges check-->
+                                 <% if(element.OtherCharges) { %>
+                                    <% var otherChargesPrice = parseFloat(element.OtherCharges.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% otherChargesPrice = 0; %> 
+                                 <% } %>
+                                <% var discount = 0; %> 
 
-                                Total: <%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice);%>
+                                <!-- Total: --><%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice - discount);%>
                             </span>
                         </td>                 
-                    </tr>
-
-                    <tr>
-                        <td colspan="4"><span>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully</span></td>
-                    </tr>
+                    </tr>                    
                     <caption><a class="table-caption-anchor" href="#">Add-More</a><a class="table-caption-anchor" href="#">Edit-Order</a><a class="table-caption-anchor" href="#">Remove</a></caption> 
                                   
                 </table> 
                 </div><!--cart-row ends here-->               
             </div> <!--cart-items end here-->           
-                        
+            <div>
+                <form>
+                    <input type="checkbox" name="termsandconditionsreadandaccepted"/><label>I accept the <a href="/dashboardtermsandconditions">Terms and Conditions</a> and I have read them carefully.</label> 
+                </form>
+                
+            </div>           
             <button class="each-button purchase">Purchase</button>
             
             <script >
-                
+                // update cart orders number
+                var getAllPurchaseButtons = document.getElementsByClassName('purchase');
+                var numberOfTotalpurchaseButtons = getAllPurchaseButtons.length;
+                document.getElementsByClassName('cart-items-number')[0].innerText = numberOfTotalpurchaseButtons;             
+                document.getElementsByClassName('cart-items-number')[1].innerText = numberOfTotalpurchaseButtons;             
+
                /* var total = 0;
                 // some correct one
                 var cartItemContainer = document.getElementsByClassName('cart-items')[0];
@@ -770,12 +900,7 @@
                 //var templatePrice = 4000;
                 //var customerGivenTemplatePrice = 0;
                 
-            // update cart orders number
-                var getAllPurchaseButtons = document.getElementsByClassName('purchase');
-                var numberOfTotalpurchaseButtons = getAllPurchaseButtons.length;
-                document.getElementsByClassName('cart-items-number')[0].innerText = numberOfTotalpurchaseButtons;             
-                document.getElementsByClassName('cart-items-number')[1].innerText = numberOfTotalpurchaseButtons;             
-
+            
 
                 // show price and selected icon for each order table 
                 /* correct one

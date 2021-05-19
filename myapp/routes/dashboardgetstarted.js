@@ -256,6 +256,27 @@ WebsiteBackgroundColorPrice: req.body.websitebackgroundcolorprice,
 //WebsiteBackgroundImage: req.body.backgroundimage,
 WebsiteBackgroundImagePrice: req.body.websitebackgroundimageprice,
 TextColor: req.body.textcolor,
+//Other Features or Services
+EmailService: req.body.emailservice ,
+EmailServiceEstimatedTime: req.body.emailserviceestimatedtime ,
+EmailServicePrice: req.body.emailserviceprice ,
+MessageService: req.body.messageservice ,
+MessageServiceEstimatedTime: req.body.messageserviceestimatedtime ,
+MessageServicePrice: req.body.messageserviceprice ,
+DataBase: req.body.database ,
+DataBaseEstimatedTime: req.body.databaseestimatedtime ,
+DataBasePrice: req.body.databaseprice ,
+// Uploads
+//UploadedFilesNames: req.body.uploadedfilesnames,
+//Additional
+WebsiteBriefDescription: req.body.websitebriefdescription ,
+Include: req.body.include ,
+DoNotInclude: req.body.donotinclude,
+
+//Other Charges
+OtherCharges: '$ ' + req.body.othercharges
+
+
 //
 /*
 //UploadFilesNames: uploadedFilesName,
@@ -282,12 +303,8 @@ TextColor: req.body.textcolor ,
 RegisterLogin: req.body.registerlogin ,
 ContactUsForm: req.body.contactuswithform,
 PaymentMethod: req.body.paymentmethod ,
-EmailService: req.body.emailservice ,
-MessageService: req.body.messageservice ,
-DataBase: req.body.database ,
-WebsiteBriefDescription: req.body.websitebriefdescription ,
-Include: req.body.include ,
-DoNotInclude: req.body.donotinclude 
+
+
 */
 });
 cartItemsList.save((err) => {

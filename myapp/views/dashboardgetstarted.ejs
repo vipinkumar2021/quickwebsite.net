@@ -55,9 +55,9 @@
             
             <label>STEP 2. Basic Features:- </label><br/>
             <label>Please Click the box and Select Basic Features: </label><br/>
-            <input type="checkbox" name="home" value="Home Page &#9989;"/><input type="hidden" name="homepageestimatedtime" value="1 Day"/><input type="hidden" name="homepageprice" value="$ 30.00"/><label>I want "Home Page" in my website</label><br/>
-            <label>Please Provide "Home Page Content" (If Available)</label><br/>
-            <textarea name="homepagecontent" placeholder="Enter Home Page Content here...">
+            <input type="checkbox" name="home" value="Home Page &#9989;" class="hompage-checkbox" onclick="showHideHomePageContentForm()"/><input type="hidden" name="homepageestimatedtime" value="1 Day"/><input type="hidden" name="homepageprice" value="$ 30.00"/><label>I want "Home Page" in my website</label><br/>
+            <label class="home-page-content-form">Please Provide "Home Page Content" (If Available)</label><br/>
+            <textarea name="homepagecontent" placeholder="Enter Home Page Content here..." class="home-page-content-form">
             
             </textarea><br/>         
             
@@ -172,27 +172,20 @@
             <label>STEP 5.</label><br/>
             <label>Other Features or Services:</label><br/>
         
-            <input type="checkbox" name="emailservice" value="Email Services &#9989;"/><label>I want to send Email from my website</label><br/>
-            <input type="checkbox" name="messageservice" value="Message Services &#9989;"/><label>I want to send Text Messages from my website</label><br/>
-            <input type="checkbox" name="database" value="Data Base &#9989;"/><label>Data Base</label><br/>
+            <input type="checkbox" name="emailservice" value="Email Services &#9989;"/><input type="hidden" name="emailserviceestimatedtime" value="3 Day"/><input type="hidden" name="emailserviceprice" value="$ 140.00"/><label>I want to send Email from my website</label><br/>
+            <input type="checkbox" name="messageservice" value="Message Services &#9989;"/><input type="hidden" name="messageserviceestimatedtime" value="3 Day"/><input type="hidden" name="messageserviceprice" value="$ 150.00"/><label>I want to send Text Messages from my website</label><br/>
+            <input type="checkbox" name="database" value="Data Base &#9989;"/><input type="hidden" name="databaseestimatedtime" value="3 Day"/><input type="hidden" name="databaseprice" value="$ 150.00"/><label>Data Base</label><br/>
 <br/>
-            <label>STEP 6. Uploads</label><br/>            
+            <label>STEP 7. Uploads</label><br/>            
             <label>Upload Images and word Files</label><br/>
             <input type="file" name="uploadedfilesnames" multiple /><br/>
-          
-                    
-            <label>STEP 7.</label><br/>
-            <label>Other Features or Services:</label><br/>
-        
-            <input type="checkbox" name="emailservice" value="Email Services &#9989;"/><label>I want to send Email from my website</label><br/>
-            <input type="checkbox" name="messageservice" value="Message Services &#9989;"/><label>I want to send Text Messages from my website</label><br/>
-            <input type="checkbox" name="database" value="Data Base &#9989;"/><label>Data Base</label><br/>
-            
+                     
+                
             <label>STEP 8.</label><br/>
             <label>Additional</label><br/>
             
             <label>Describe your website briefly to get the idea of website you would like</label><br/>
-            <textarea name="websitedescription">
+            <textarea name="websitebriefdescription">
         
             </textarea><br/>
             <label>Include</label><br/>
@@ -202,11 +195,10 @@
             <label>Do Not Include</label><br/>
             <textarea name="donotinclude">
         
-            </textarea><br/><br/>
-
-            <br/>
-            <label>STEP 8. External Individual Service</label><br/>
-            <br/>
+            </textarea><br/>
+            <label>Other Charges (For Additional Services if provided):</label><br/>
+            $: <input type="number" name="othercharges" min="0" placeholder="0.00"/>
+            <br/><br/><br/>           
             
 
             <input type="submit" class="shop-item-button"  value="Add To Cart"/>

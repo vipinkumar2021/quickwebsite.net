@@ -319,12 +319,26 @@ WebsiteBackgroundImagePrice: {
 TextColor: {
     type: String,
 },
-/*
+// Other Features and Services
 EmailService: {
     type: String,
     //required: true
 },
+EmailServiceEstimatedTime: {
+    type: String
+},
+EmailServicePrice: {
+    type: String
+},
 MessageService: {
+    type: String,
+    //required: true
+},
+MessageServiceEstimatedTime: {
+    type: String,
+    //required: true
+},
+MessageServicePrice: {
     type: String,
     //required: true
 },
@@ -332,45 +346,45 @@ DataBase: {
     type: String,
     //required: true
 },
-/*
-
-BackgroundColor: {
+DataBaseEstimatedTime: {
     type: String,
     //required: true
 },
-TextColor: {
+DataBasePrice: {
     type: String,
     //required: true
 },
-LogoByCustomer: {
-    type: String,
-    //required: true
+// Uploads
+UploadedFilesNames: {
+    type: String
 },
-LogoContentByCustomer: {
-    type: String,
-    //required: true
-},
-
-
-
-
+// Additional
 WebsiteBriefDescription: {
-    type: String,
-    //required: true
+    type: String
 },
 Include: {
-    type: String,
-    //required: true
+    type: String
 },
 DoNotInclude: {
-    type: String,
-    //required: true
+    type: String
 },
-
-UploadFilesNames: {
+//Other Charges
+OtherCharges: {
+    type: String
+},
+//Discount Coupon
+/*DiscountCoupon: {
     type: String
 },
 */
+//Total
+/*Total: {
+    type: String
+},
+
+*/
+
+
 Date: {
     type: Date,
     default: Date.now

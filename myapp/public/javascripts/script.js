@@ -472,6 +472,24 @@ function closeChatBoxModal() {
 
 */
 // Chat box modal javascript ends here
+//dashboard get started javascript here
+// Show Home Page content form in dashboardgetstarted
+ /*function showHideHomePageContentForm() {
+    var homePageCheckBox = document.getElementsByClassName('hompage-checkbox')[0];
+    if(homePageCheckBox.checked == false) {
+        var homePageContentLabel = document.getElementsByClassName('home-page-content-form')[0];
+        var homePageContentTextArea = document.getElementsByClassName('home-page-content-form')[1];
+        homePageContentLabel.style.display = 'none';
+        homePageContentTextArea.style.display = 'none';
+    } else {
+        homePageContentLabel.style.display = 'block';
+        homePageContentTextArea.style.display = 'block';
+
+    }
+        
+}
+*/
+ 
 
 // Show Logo File Upload Input when "I have my on logo" is clicked.
 function showLogoFileUploadInput() {
