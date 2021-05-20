@@ -292,8 +292,8 @@ function closeContactModalforWindow(e) {
 
 //footer javascript 
 //tap here to go to top javascript
-var tapToTopButton = document.querySelector('#taptotopButton');
-tapToTopButton.addEventListener('click', goToTop);
+//var tapToTopButton = document.querySelector('#taptotopButton');
+//tapToTopButton.addEventListener('click', goToTop);
 
 function goToTop() {
     document.body.scrollTop = 0; //For Safari
