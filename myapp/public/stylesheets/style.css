@@ -1451,3 +1451,9 @@
   
   
   /* modal css ends*/
+  /* signup-verification signup customer .ejs css*/
+  .signup-verification form input, .signup-verification form button {
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+  }
