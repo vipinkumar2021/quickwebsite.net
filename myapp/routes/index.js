@@ -689,7 +689,7 @@ router.post('/create-checkout-session', async (req, res) => {
   
   var date = Date();
 
-  const YOUR_DOMAIN = 'http://localhost:5000'
+  const YOUR_DOMAIN = 'http://www.quickwebsite.net';//'http://localhost:5000'
 
   //
   
