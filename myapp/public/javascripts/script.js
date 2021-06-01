@@ -290,6 +290,42 @@ function closeContactModalforWindow(e) {
 }
 // contact modal javascript ends here
 
+// confirm before deleting modal javascript starts here
+// Remove Item when remove tag is clicked
+
+//open confirm before delete modal when Contact button is clicked
+/*
+function openConfirmBeforeDeleteModal() {
+    var parentModalConfirmBeforeDelete = document.querySelector('.modal-parent-confirmation-before-delete');
+    parentModalConfirmBeforeDelete.style.display = 'block';
+    parentModalSignin.style.display = 'none';
+    parentModalSignup.style.display = 'none';
+    //closing sidenav when contact is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //Scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+}
+*/
+//close confirm before delete modal when Cross or Cancel button is clicked
+function closeConfirmBeforeDeleteModal() {
+    var parentModalConfirmBeforeDelete = document.querySelector('.modal-parent-confirmation-before-delete');
+    parentModalConfirmBeforeDelete.style.display = 'none';
+}
+//close confirmbefore delete modal when outside window is clicked
+var parentModalContact = document.querySelector('.modal-parent-contact');
+parentModalContact.addEventListener('click', closeContactModalforWindow);
+
+function closeContactModalforWindow(e) {
+    if(e.target.className == 'modal-parent-confirmation-before-delete') {
+        parentModalContact.style.display = 'none';  
+    }
+}
+// confirm before deliting modal javascript ends here
+
 //footer javascript 
 //tap here to go to top javascript
 //var tapToTopButton = document.querySelector('#taptotopButton');
@@ -744,3 +780,4 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 }
 */
+

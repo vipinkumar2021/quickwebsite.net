@@ -1449,7 +1449,88 @@
   }
   /* Contact Us modal css ends here */
   
+  /* Modal confirm before deleting strts here */
+    
+  .modal-parent-confirmation-before-delete {
+    margin: 0 auto 0 auto;
+    padding: 0 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: none;
+    text-align: left;
+    z-index: 1;  
+  }
   
+  .modal-confirmation-before-delete {
+  position: absolute;
+  top: 10%;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+  margin: auto;
+  padding: 2em;
+  height: auto;
+  overflow: auto;
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke; 
+  position: relative;
+  animation: 1s drop;
+  display: block;
+  z-index: 1;
+  }
+  
+  @keyframes drop {
+  0% {
+   top: -13em;
+  }
+  100% {
+   top: 10%;
+  }
+  }
+  
+  .X-confirmation-before-delete {
+  position: absolute;
+  top: .5em;
+  right: .7em;
+  font-size: 2em;
+  
+  }
+  .X-confirmation-before-delete:hover {
+  cursor: pointer;
+  color: rgb(180, 175, 175);
+  
+  
+  }
+  
+  .modal-parent-confirmation-before-delete .modal-confirmation-before-delete a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+  
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .modal-parent-contact .modal-contact button {
+      width: 100%;
+      margin: auto auto 1em auto;
+    }
+  
+    .modal-anchor-tags {
+      display: block;
+      justify-content: none;  
+    }
+    .modal-parent-confirmation-before-delete .modal-confirmation-before-delete a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.25em;
+    }
+  }
+  /* modal confirm before deleting css ends here */
+
   /* modal css ends*/
   /* signup-verification signup customer .ejs css*/
   .signup-verification form input, .signup-verification form button {

@@ -546,6 +546,7 @@ function authenticateCustomerToken(req, res, next ) {
   
 }
 */
+//sign in starts
 router.post('/signin', function(req, res, next) {
 
   var username = req.body.uname;
@@ -661,6 +662,226 @@ router.post('/signin', function(req, res, next) {
   });
 });
  
+
+//sign in ends
+
+
+
+
+//stripe
+var cartItemsModel = require('../modules/cartitemsschema'); 
+//
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
+//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
+
+//const stripePublicKey = process.env.STRIPE_PUBLIC_KEY_Test//process.env.STRIPE_PUBLIC_KEY_Live;
+const stripe = require('stripe')(stripeSecretKey);
+
+
+// Exactly correct One
+router.post('/create-checkout-session', async (req, res) => { 
+   
+  var getitemPrice = req.body.orderPrice;   
+  //var itemPrice = parseFloat(getitemPrice)*100;  
+  var itemPrice = getitemPrice*70*100;   
+  var itemId = req.body.orderId;
+
+  
+  var date = Date();
+
+  const YOUR_DOMAIN = 'http://localhost:5000'
+
+  //
+  
+  //
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  var currentAccountUser = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
+  if(currentAccountUser) {
+    //
+    customerModel.findOne({Username: currentAccountUser}).exec(async (err, currentAccountUserData) => {
+      if(err) throw err;
+      if(currentAccountUserData) {
+        var currentAccountUserEmailId = currentAccountUserData.Email;
+      
+     //
+  //var currentAccountUserEmailId = 'currentAccountUserEmailId'
+  
+  
+
+  const session = await stripe.checkout.sessions.create({    
+       
+    payment_method_types: ['card'],
+    
+    line_items: [
+      {
+          
+          price_data: {
+          currency: 'inr',       
+          product_data: { 
+
+            name: 'Order Id: ' + itemId ,
+            //receipt_email: customerEmailId,
+            //description: 'Username: ' + currentAccountUser,
+                             
+              //images: ['https://i.imgur.com/EHyR2nP.png'],
+            },
+          
+          unit_amount: itemPrice,
+        },
+        
+        quantity: 1,
+        
+      },   
+    ],
+    //Exactly correct one below
+    customer_email: currentAccountUserEmailId,
+    //Exactly correct one below
+    client_reference_id: itemId, 
+    mode: 'payment',
+    
+   
+    success_url: `${YOUR_DOMAIN}/success`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
+  
+    
+  });
+ 
+  res.json({ id: session.id });
+  //console.log(currentAccountUserEmailId);
+  //
+
+}
+});
+
+  }
+
+});
+//exactly correct one ends here
+
+
+
+  /*
+  // send invoice in Email
+  //
+  //Send OTP Email
+  // get currentAccountUser's Email Id to send invoice
+  cartItemsModel.findOne({Username: currentAccountUser}).exec((err, currentAccountUserData) => {
+    if(err) {
+      res.render('dashboardcart', {title: 'Quick Website', msg:'Error Occured, Try Again Please', loginUser: loginUser.currentAccountUser, currentAccountUserData: ''});
+    } if(currentAccountUserData) {
+      //
+    var email = currentAccountUserData.Email;
+  //
+  //var email = 'current user account email id'
+  var output = `
+  <h3>Hi, Here is invoice for the order your Order Id Number ${itemId}</h3>
+  `;
+
+// exactly correct one for production
+let params = {
+// send to list
+Destination: {
+    ToAddresses: [
+        email
+    ]
+},
+Message: {
+    Body: {
+        Html: {
+            Charset: "UTF-8",
+            Data: output//"<p>this is test body.</p>"
+        },
+        Text: {
+            Charset: "UTF-8",
+            Data: 'Hey, this is test.'
+        }
+    },
+    
+    Subject: {
+        Charset: 'UTF-8',
+        Data: "Invoice Email"
+    }
+},
+Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+ReplyToAddresses: [
+    email,
+],
+};
+
+// this sends the email
+ses.sendEmail(params, (err) => {
+if(err) {
+  res.render('dashboardcart', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+} else {
+  res.render('dashboardcart', { title: 'Quick Website', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+}
+});
+}
+//
+}) 
+//
+  //
+  } //if(currentAccountUser ends here)
+  
+});
+*/
+
+
+/* Exactly Correct One
+router.post('/create-checkout-session', async (req, res) => {
+  
+  
+  var getitemPrice = req.body.orderPrice;   
+  //var itemPrice = parseFloat(getitemPrice)*100;  
+  var itemPrice = getitemPrice*70*100;  
+
+  console.log(itemPrice);
+  console.log(typeof itemPrice);
+
+  var itemId = req.body.orderId;
+  var customerEmailId = 'Customer\'s Email Id';
+  var date = Date();
+  var name = `
+  Item Id: ${itemId},  
+  Customer's Email Id: ${customerEmailId}, 
+  Date: ${date},  
+  
+  `
+  
+  
+  const YOUR_DOMAIN = 'http://localhost:5000'
+  const session = await stripe.checkout.sessions.create({
+    
+    payment_method_types: ['card'],
+    line_items: [
+      {
+          
+          price_data: {
+          currency: 'inr',
+          product_data: {            
+          name: name,                        
+            //images: ['https://i.imgur.com/EHyR2nP.png'],
+          },
+          
+          unit_amount: itemPrice,
+        },
+        
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/success`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
+  });
+  res.json({ id: session.id });
+});
+*/
+//
 
 
 module.exports = router;

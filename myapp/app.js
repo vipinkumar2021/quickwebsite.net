@@ -105,6 +105,10 @@ var weddinginvitationtemplatedemoRouter = require('./routes/weddinginvitationtem
 
 var photoalbumtemplatedemoRouter = require('./routes/photoalbumtemplatedemo');
 var dashboarduploadadminRouter = require('./routes/dashboarduploadadmin');
+//var createcheckoutsessionRouter = require('./routes/createcheckoutsession');
+//var checkoutRouter = require('./routes/checkout');
+var successRouter = require('./routes/success');
+var cancelRouter = require('./routes/cancel');
 
 
 
@@ -226,6 +230,10 @@ app.use('/weddinginvitationtemplatedemo', weddinginvitationtemplatedemoRouter);
 
 app.use('/photoalbumtemplatedemo', photoalbumtemplatedemoRouter);
 app.use('/dashboarduploadadmin', dashboarduploadadminRouter);
+//app.use('/createcheckoutsession', createcheckoutsessionRouter);
+//app.use('/checkout', checkoutRouter);
+app.use('/success', successRouter);
+app.use('/cancel', cancelRouter);
 
 
 

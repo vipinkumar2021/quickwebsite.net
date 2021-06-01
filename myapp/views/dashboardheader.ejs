@@ -9,16 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title><%= title %></title>
+    <!--Link for global css means the css used for payment checkout and button etc--> 
+    <link rel="stylesheet" href="/stylesheets/global.css"/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <!--Font Awesome for icons-->
     <script src='https://kit.fontawesome.com/a076d05399.js' async></script>
 
     <script src="./javascripts/store.js" async></script>
+    <!--javascript for payment gateway-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>    
+    <script src="./javascripts/client.js" defer></script>
+    
   </head>
   <body oncontextmenu="return false">
     <div class="grid-container">
       <div class="item item1 header">
-        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="/" class="brand-title"><img src="../images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
+        <span onclick="openNav()" class="iconbar" title="Menu">&#9776;</span><a href="/" class="brand-title"><img src="/images/Quick Website-logos_transparent.png" width="200px" height="70px"></a>
         
         <div class="headernav">
           <ul>

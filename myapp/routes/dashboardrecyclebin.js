@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var recycleBinModel = require('../modules/recyclebinschema');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var loginUser = {
@@ -10,11 +11,20 @@ router.get('/', function(req, res, next) {
 
   };
   if(loginUser.loginUserCustomer) {
-    res.render('dashboardrecyclebin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
+    recycleBinModel.find({Username: loginUser.loginUserCustomer}).exec((err, deletedRecycleBinItems) => {
+      if(err) {
+        res.render('dashboardrecyclebin', { title: 'Quick Website', msg: 'Error Occured while showing Recycle Bin', loginUser: loginUser.loginUserCustomer, deletedRecycleBinItems: '' });
+      }
+      if(deletedRecycleBinItems) {
+        res.render('dashboardrecyclebin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, deletedRecycleBinItems: deletedRecycleBinItems });
+      }
+    });
+
+    //res.render('dashboardrecyclebin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, deletedRecycleBinItems: '' });
   } else if(loginUser.loginUserEmployee) {
-    res.render('dashboardrecyclebinemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
+    res.render('dashboardrecyclebinemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee, deletedRecycleBinItems: '' });
   } else if(loginUser.loginUserAdmin) {
-    res.render('dashboardrecyclebinadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
+    res.render('dashboardrecyclebinadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin, deletedRecycleBinItems: '' });
 
   } else {
     res.render('/', { title: 'Quick Website', msg: '', loginUser: '' });

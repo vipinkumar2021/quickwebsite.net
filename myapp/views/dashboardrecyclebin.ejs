@@ -4,9 +4,26 @@
     <div class="container welcome getstarted" ><!--welcome css working in this-->
         
         <h2>Recycle Bin</h2> 
-                
-    </div>     
-
+           
+        <% if(deletedRecycleBinItems.length > 0) { %>
+        <% deletedRecycleBinItems.forEach(element => { %>
+            <table>
+                <caption>
+                    <span>Username :</span>  <span><%= element.Username %> </span>
+                   </caption>
+                <caption>
+                 <span>Recycle Bin Id :</span>  <span><%= element._id %> </span>
+                </caption>
+                <tr>
+                    <th>Deleted Item Id</th><th>Deleted Data</th>
+                </tr>
+                <tr>
+                    <td>Need to work on this part, this is not what we want:<%= element._id._id %> </td><td><%= element %> </td>
+                </tr>
+            </table> 
+        <% }); %>           
+        <% } %> 
+    </div> 
 </div>
 <%- include('modal') %>
 <%- include('dashboardfooter') %>

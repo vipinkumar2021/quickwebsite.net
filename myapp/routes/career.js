@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     if(loginUserCustomer){
       res.redirect('/dashboardcareer');
     } else if(loginUserEmployee) {
-      res.redirect('/dashboardcareer');
+      res.redirect('/dashboardcareeremployee');
     } else if(loginUserAdmin) {
       res.redirect('/dashboardcareeradmin');
     } else {

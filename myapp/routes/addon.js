@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   if(loginUser.loginUserCustomer) {
     res.render('dashboardaddon', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee) {
-    res.render('dashboardaddon', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
+    res.render('dashboardaddonemployee', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
   } else if(loginUser.loginUserAdmin) {
     res.render('dashboardaddonadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
 

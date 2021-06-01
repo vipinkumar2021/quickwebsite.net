@@ -1,0 +1,81 @@
+<%- include('dashboardheader') %>
+<!--
+<div class="item item3 main cart">
+    <div class="container dashboardcart" >
+        <br/><br/>
+        <h1>Welcome to Checkout Session</h1>
+        <% if(msg !='') { %>
+          <h1><%= msg %> </h1>
+          <% } %>
+    <section>
+      <div class="product">
+        <img
+          src="https://i.imgur.com/EHyR2nP.png"
+          alt="The cover of Stubborn Attachments"
+        />
+        
+        <div class="description">
+          <h3 ></h3>
+          <h5>$40</h5>
+        </div>
+      </div>
+      <button type="button" id="checkout-button">Checkout</button>
+    </section>
+  </body>
+  <script>
+    /*
+    var proceedToCheckOutButtons = document.getElementsByClassName('proceed-to-checkout');
+    for(var i = 0; i < proceedToCheckOutButtons.length; i++) {
+      var proceedToCheckOutButton = proceedToCheckOutButtons[i];
+      // add total for that order id to checkout
+      proceedToCheckOutButton.addEventListener('click', proceedToCheckOutButtonClicked);
+    
+    }
+    function proceedToCheckOutButtonClicked(event) {
+      var button = event.target;
+      var currentButtonItemsTable = button.parentElement;
+      var currentItemIdElement = currentButtonItemsTable.firstChild;
+      var currentItemId = currentItemIdElement.getElementsByClassName('item-id')[0].innerHTML;
+
+      document.getElementById('order-id').innerHTML = currentItemId
+    }
+    */
+  </script>
+  <script type="text/javascript">
+  /*
+    // Create an instance of the Stripe object with your publishable API key
+    var stripe = Stripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+    var checkoutButton = document.getElementById("checkout-button");
+
+    checkoutButton.addEventListener("click", function () {
+      fetch("/create-checkout-session", {
+        method: "POST",
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function (result) {
+          // If redirectToCheckout fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using error.message.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function (error) {
+          console.error("Error:", error);
+        });
+    });
+    */
+  </script>
+
+
+  </div>
+</div>
+-->
+<%- include('modal') %>
+
+<%- include('dashboardfooter') %>
