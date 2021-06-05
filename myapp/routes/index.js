@@ -670,6 +670,8 @@ router.post('/signin', function(req, res, next) {
 
 //stripe
 var cartItemsModel = require('../modules/cartitemsschema'); 
+var purchasedModel = require('../modules/purchasedschema');
+const { error } = require('console');
 //
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
 //const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
@@ -678,22 +680,41 @@ const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
 const stripe = require('stripe')(stripeSecretKey);
 
 
-// Exactly correct One
+/* customised experimental one
+const calculateOrderAmount = items => {
+  // Replace this constant with a calculation of the order's amount
+  // Calculate the order total on the server to prevent
+  // people from directly manipulating the amount on the client
+  return 1;
+}; 
+router.post("/create-payment-intent", async (req, res) => {
+  const { items } = req.body;
+  // Create a PaymentIntent with the order amount and currency
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: calculateOrderAmount(items),
+    currency: "inr"
+  });
+  res.send({
+    clientSecret: paymentIntent.client_secret
+  });
+});
+
+// customised experimental one */
+
+
+// Exactly correct One 
+//
 router.post('/create-checkout-session', async (req, res) => { 
    
   var getitemPrice = req.body.orderPrice;   
   //var itemPrice = parseFloat(getitemPrice)*100;  
   var itemPrice = getitemPrice*70*100;   
   var itemId = req.body.orderId;
-
   
-  var date = Date();
+  //var date = Date();
 
-  const YOUR_DOMAIN = 'http://www.quickwebsite.net';//'http://localhost:5000'
-
-  //
+  const YOUR_DOMAIN = 'http://localhost:5000'//'http://www.quickwebsite.net';
   
-  //
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
     loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
@@ -711,12 +732,8 @@ router.post('/create-checkout-session', async (req, res) => {
      //
   //var currentAccountUserEmailId = 'currentAccountUserEmailId'
   
-  
-
-  const session = await stripe.checkout.sessions.create({    
-       
-    payment_method_types: ['card'],
-    
+  const session = await stripe.checkout.sessions.create({       
+    payment_method_types: ['card'],    
     line_items: [
       {
           
@@ -741,7 +758,7 @@ router.post('/create-checkout-session', async (req, res) => {
     //Exactly correct one below
     customer_email: currentAccountUserEmailId,
     //Exactly correct one below
-    client_reference_id: itemId, 
+    client_reference_id: itemId,//.replace(' ', ''), 
     mode: 'payment',
     
    
@@ -750,17 +767,74 @@ router.post('/create-checkout-session', async (req, res) => {
   
     
   });
- 
-  res.json({ id: session.id });
-  //console.log(currentAccountUserEmailId);
+
+  res.json({ id: session.id }); 
+  }
+});
+
+//
+/* experimental
+const sessionn = await stripe.checkout.sessions.retrieve(
+  session.id
+);
+if(sessionn) {
+  cartItemsModel.findByIdAndRemove(itemId.replace(' ', ''), function(err, itemToBeMovedToPurchased) {
+    if(err) throw err;
+    if(itemToBeMovedToPurchased) {
+      var purchasedDetails = new purchasedModel({
+        Username: currentAccountUser,
+        Purchased: itemToBeMovedToPurchased
+      });
+      purchasedDetails.save((err) => {
+        if(err) throw err;
+
+        console.log(`Item Id/${itemId}`);
+      //console.log(`Reference Id/${client_reference_id}`);
+      //res.json({ id: session.id });
+      res.send();
+      });
+    }
+  });
+}
+*/
+//
+// exactly correct one commented
+} 
+});
+ //exactly correct one commented 
+  //  
+  /*
+  const referenceId = await stripe.client_reference_id.retrieve(
+    client_reference_id
+  );  
+  const session = await stripe.checkout.sessions.retrieve(
+  session.id
+);
+ if(referenceId) {
+  cartItemsModel.findByIdAndRemove(itemId.replace(' ', ''), function(err, itemToBeMovedToPurchased) {
+    if(err) throw err;
+    if(itemToBeMovedToPurchased) {
+      var purchasedDetails = new purchasedModel({
+        Username: currentAccountUser,
+        Purchased: itemToBeMovedToPurchased
+      });
+      purchasedDetails.save((err) => {
+        if(err) throw err;
+        console.log(`Item Id/${itemId}`);
+        //console.log(`Reference Id/${client_reference_id}`);
+        //res.json({ id: session.id });
+        res.send();
+      });
+    }
+      
+  });
+  
+ //}
+
+*/
   //
 
-}
-});
-
-  }
-
-});
+  
 //exactly correct one ends here
 
 

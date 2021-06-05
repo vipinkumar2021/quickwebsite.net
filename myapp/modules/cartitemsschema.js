@@ -192,6 +192,9 @@ LogoByCustomerPrice: {
     type: String,
     //required: true
 },
+UploadContentForLogo: {
+    type: String
+},
 //External Features
 Gallery: {
     type: String,

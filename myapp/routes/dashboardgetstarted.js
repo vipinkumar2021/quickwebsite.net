@@ -38,6 +38,10 @@ const storage = multer.diskStorage({
   }, 
   
   filename: function(req, file, cb) {
+   /* for(var i = 0; i < files.length; i++) {
+      file = files[i];
+      cb(null, `${Date.now()}_${file.fieldname}${path.extname(file.originalname)}`);
+    } */   
     
     cb(null, `${Date.now()}_${file.fieldname}${path.extname(file.originalname)}`);
   }
@@ -79,7 +83,7 @@ const upload = multer({
   }
 });
 
-var multipleUploads = upload.fields([{ name: 'uploadcontentforgallery', maxCount: 1}, {name: 'uploadcontentfortemplates', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery'}, {name: 'uploadcontentfortemplates', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
 
 //
 var aws = require("aws-sdk");
@@ -117,8 +121,10 @@ if(loginUser.loginUserCustomer) {
 
 console.log(req.files); //showing both files
 console.log('Vipin');
-console.log(req.files);
-
+console.log(typeof req.files)
+//console.log(req.file.filename);
+//console.log(req.files.uploadcontentforgallery[0].filename);
+//console.log(req.files.uploadcontentforgallery.filename);
 //Correct One is this one   console.log(req.files.uploadcontentforgallery[0].filename);
 /*
 if(req.files.uploadcontentforgallery[0]) {
@@ -143,7 +149,25 @@ if(req.files == null) {
 //var uploadContentForGallery = 'No Image Selected';
  
 //var uploadContentForGallery = 'No Image Selected'// || req.files.uploadcontentforgallery[0].filename;
-var uploadContentForGallery = 'No Image Selected';  
+/*if(req) {
+  var uploadContentForGallery = req.files.uploadcontentforgallery[0].filename;
+} else {
+  uploadContentForGallery = 'No Image Selected!'
+}*/
+
+//var uploadContentForGallery = req.files.uploadcontentforgallery;//req.files.uploadcontentforgallery[0].filename;//req.files.fieldname//req.body.fieldname;//'No Image Selected';  
+// Exactly Correct One
+// Exactly Correct One
+if(req.files.uploadcontentforlogo) {
+  var uploadContentForLogo = req.files.uploadcontentforlogo[0].filename;
+} else {
+  uploadContentForLogo = 'No Logo Image Provided'
+}
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGallery = req.files.uploadcontentforgallery[0].filename;
+} else {
+  uploadContentForGallery = 'No Image Selected'
+}
 var uploadContentForTemplates = 'Templates Image';
 /*
  console.log(req.files, req.body);
@@ -213,7 +237,8 @@ LogoPurchasingEstimatedTime: req.body.logopurchasingestimatedtime,
 LogoPurchasingPrice: req.body.logopurchasingprice,
 LogoByCustomerEstimatedTime: req.body.logobycustomerestimatedtime,
 LogoByCustomerPrice: req.body.logobycustomerprice,
-//LogoContent: req.body.logocontent,
+UploadContentForLogo: uploadContentForLogo,
+
 //External Features
 Gallery: req.body.gallery ,
 GalleryEstimatedTime: req.body.galleryestimatedtime,

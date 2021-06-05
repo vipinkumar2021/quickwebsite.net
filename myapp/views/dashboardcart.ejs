@@ -865,20 +865,7 @@
   
     
                     <script> 
-                    /*
-                        var confirmBeforeDeleteAnchors = document.getElementsByClassName('confirm-before-delete-anchor');
-                    for(var i = 0; i < confirmBeforeDeleteAnchors.length; i++) {
-                        var confirmBeforeDeleteAnchor = confirmBeforeDeleteAnchors[i];
-                    }
-                    confirmBeforeDeleteAnchor.addEventListener('click', confirmBeforeDeleteAnchorClicked);
-
-                    function confirmBeforeDeleteAnchorClicked(event) {
-                        var currentButtonClicked = event.target;
-                        var fatherOtCurrentButtonClicked = currentButtonClicked.parentElement;
-                        var currenItemId = fatherOtCurrentButtonClicked.getElementsByClassName('item-id')[0].innerText;
-                        openConfirmBeforeDeletingDashboardCartItem();
-                    }
-*/
+                    // exactly correct one commented
                     var confirmBeforeDeleteAnchors = document.getElementsByClassName('confirm-before-delete-anchor');
                     for(var i = 0; i < confirmBeforeDeleteAnchors.length; i++) {
                         var confirmBeforeDeleteAnchor = confirmBeforeDeleteAnchors[i];
@@ -901,29 +888,7 @@
                                 
                             //} 
                         }
-/*
-                        function deleteItButtonFunction(event) {
-                            if(event.target) {
-                                fetch("/dashboardcart/delete", {
-                            method: "POST",
 
-                            // sending order id and order price to index.js for further process
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({currentOrderId: itemIdForThisAnchorClicked})
-                           //
-                          })
-                            .then(function (response) {
-                              return response.json();
-                            })
-                            .catch(function (error) {
-                              console.error("Error:", error);
-                            });
-                            }
-                            
-                        }
-*/
                         function openConfirmBeforeDeletingDashboardCartItem() {
                         var parentModalConfirmBeforeDelete = document.querySelector('.modal-parent-confirmation-before-delete');
                         parentModalConfirmBeforeDelete.style.display = 'block';
@@ -938,10 +903,10 @@
                         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
                     }                     
-                        
+                      //exactly correct one commented  
                     </script>   
                     <script type="text/javascript">
-                    
+                    // Exactly correct one commented
                         // Create an instance of the Stripe object with your publishable API key
                         // stripe test public key
                         var stripe = Stripe("pk_test_51ItREQSEMkQETB1SIhw1E634RliTARxiTgCe8ZOOPq1eT8ML64MRD7kzg7GAVgu62ljneLaCAR1qPs3G1fnHjwZd00jeF9qn13");
@@ -960,7 +925,7 @@
                             //get item id for current checkoutButton
                             var currentCheckOutButton = event.target;
                             var fatherOfCurrentCheckoutButton = currentCheckOutButton.parentElement;
-                            var itemId = fatherOfCurrentCheckoutButton.getElementsByClassName('item-id')[0].innerHTML;
+                            var itemId = fatherOfCurrentCheckoutButton.getElementsByClassName('item-id')[0].innerText;
                         
                          //get total price for current checkoutButton
                         var cartTotalPrice = parseFloat(fatherOfCurrentCheckoutButton.getElementsByClassName('cart-total-price')[0].innerText.replace('$', ''));
@@ -984,16 +949,36 @@
                             .then(function (result) {
                               // If redirectToCheckout fails due to a browser or network
                               // error, you should display the localized error message to your
-                              // customer using error.message.
+                              // customer using error.message.                              
                               if (result.error) {
                                 alert(result.error.message);
-                              }
-                            })
+                              } 
+                            })                                          
                             .catch(function (error) {
                               console.error("Error:", error);
-                            });
+                            }) // experimental code below
+                            /*                          
+                            .finally(function() {
+                                /*
+                                fetch('/dashboardcart/updatecart/:id', {
+                                        method: 'POST',
+                                        // sending order id and order price to index.js for further process
+                                        headers: {
+                                                "Content-Type": "application/json"
+                                        },
+                                        body: JSON.stringify({orderId: itemId, orderPrice: cartTotalPrice})
+                                        //
+                                    })
+                                    */
+                        //  })                        
+                               
+                              
+                            // 
+                            
+                            
                         });
                         //exactly correct one prebuilt 
+                         //Exactly correct one commented 
                       </script>                           
             </div> <!--cart-items end here-->           
            

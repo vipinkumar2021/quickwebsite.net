@@ -109,6 +109,7 @@ var dashboarduploadadminRouter = require('./routes/dashboarduploadadmin');
 //var checkoutRouter = require('./routes/checkout');
 var successRouter = require('./routes/success');
 var cancelRouter = require('./routes/cancel');
+var dashboardpurchasedRouter = require('./routes/dashboardpurchased');
 
 
 
@@ -234,6 +235,7 @@ app.use('/dashboarduploadadmin', dashboarduploadadminRouter);
 //app.use('/checkout', checkoutRouter);
 app.use('/success', successRouter);
 app.use('/cancel', cancelRouter);
+app.use('/dashboardpurchased', dashboardpurchasedRouter);
 
 
 

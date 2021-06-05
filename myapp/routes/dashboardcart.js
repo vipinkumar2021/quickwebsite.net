@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
       res.redirect('/');
     }
   });
-   
+  
   // delete starts
 router.post('/delete/:id', function(req, res, next) {
   var loginUser = {
@@ -77,11 +77,35 @@ router.post('/delete/:id', function(req, res, next) {
   }
 });
 
-
-
-
 // delete ends
   
+//update cart once the order is purchased
+router.post('/dashboardcart/updatecart/:id', function(req, res, next) {
+
+  var loginUser = {
+      loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+      loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+      loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+    };
+  if(loginUser.loginUserCustomer) {
+    var itemId = req.body.orderId;
+    cartItemsModel.find({Username: loginUser.loginUserCustomer}).exec((err, currentCustomerAccountUserCartItems) => {
+      if(err) {
+        res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
+      }
+      if(currentCustomerAccountUserCartItems) {
+        res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+      } else {
+        res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
+      }
+            });
+  } else {
+    res.redirect('/');
+  }
+});
+
+
+//update cart once the order is purchased
 /*
   router.post('/delete/:id', function(req, res, next) {
 

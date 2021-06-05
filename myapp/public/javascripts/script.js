@@ -634,11 +634,16 @@ function showHidePhotoGalleryContentForm() {
         photoGalleryContentTextArea.style.display = 'block';
         photoGalleryUploadContentLabel.style.display = 'block';
         photoGalleryUploadContentInput.style.display = 'block';
+        //set required attribute
+        photoGalleryUploadContentInput.setAttribute('required', 'required');
     } else {
         photoGalleryContentLabel.style.display = 'none';
         photoGalleryContentTextArea.style.display = 'none';
         photoGalleryUploadContentLabel.style.display = 'none';
         photoGalleryUploadContentInput.style.display = 'none';
+        //remove required attribute        
+        photoGalleryUploadContentInput.required = false;
+        
 
 
     }
@@ -712,11 +717,16 @@ function showHidePaymentMethodContentForm() {
 function showLogoFileUploadInput() {
     document.getElementsByClassName('logo-file-upload-label')[0].style.display = 'block';
     document.getElementsByClassName('logo-file-upload-input')[0].style.display = 'block';
+    //Set required attribute
+    document.getElementsByClassName('logo-file-upload-input')[0].setAttribute('required', 'required');
+    //document.getElementsByClassName('logo-file-upload-input')[0].
 }
 // hide logo file upload input if "I want to buy logo" is clicked.
 function hideLogoFileUploadInput() {
     document.getElementsByClassName('logo-file-upload-label')[0].style.display = 'none';
     document.getElementsByClassName('logo-file-upload-input')[0].style.display = 'none';
+    // Remove required attribute
+    document.getElementsByClassName('logo-file-upload-input')[0].required = false;
 
 }
 // show backgroundcolor input and hide backgroundImage input if "I Want Back Ground color in My Website is selected" dashboardgetstarted.js

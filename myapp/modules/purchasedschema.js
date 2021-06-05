@@ -1,0 +1,24 @@
+var mongoose = require('mongoose');
+require('dotenv').config();
+var uri = process.env.DATABASEADMIN
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false,
+useCreateIndex: true});
+var conn = mongoose.Collection;
+
+var purchasedSchema = new mongoose.Schema({
+
+Username: {
+    type:String
+},
+Purchased: {
+    type: String
+},
+
+Date: {
+    type: Date,
+    default: Date.now
+}
+});
+
+var purchasedModel = mongoose.model('purchased', purchasedSchema);
+module.exports = purchasedModel;
