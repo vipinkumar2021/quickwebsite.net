@@ -83,7 +83,7 @@ const upload = multer({
   }
 });
 
-var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery', maxCount: 10}, {name: 'uploadcontentfortemplates', maxCount: 10}, {name: 'uploadcontentformenu', maxCount: 5}, {name: 'backgroundimage', maxCount: 1}, {name: 'uploadedfilesnames', maxCount: 10}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery', maxCount: 1}, {name: 'uploadcontentfortemplates', maxCount: 1}, {name: 'uploadcontentformenu', maxCount: 1}, {name: 'backgroundimage', maxCount: 1}, {name: 'uploadedfilesnames', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
 
 //
 var aws = require("aws-sdk");
@@ -169,7 +169,7 @@ if(req.files.uploadcontentforgallery) {
 } else {
   uploadContentForGalleryOne = 'No Gallery Image Selected'
 }
-
+/* uncomment later if corrected
 if(req.files.uploadcontentforgallery) {
   var uploadContentForGalleryTwo = req.files.uploadcontentforgallery[1].filename;
 } else {
@@ -224,7 +224,7 @@ if(req.files.uploadcontentforgallery) {
   uploadContentForGalleryTen = 'No Gallery Image Selected'
 }
 
-
+uncomment later if corrected */
 
 //
 if(req.files.uploadcontentfortemplates) {
@@ -250,7 +250,7 @@ if(req.files.uploadedfilesnames) {
 } else {
   extraUploadedFileNameOne = 'No Extra File Uploaded'
 }
-
+/* uncomment later if corrected
 if(req.files.uploadedfilesnames) {
   var extraUploadedFileNameTwo = req.files.uploadedfilesnames[1].filename;
 } else {
@@ -280,6 +280,10 @@ if(req.files.uploadedfilesnames) {
 } else {
   extraUploadedFileNameSix = 'No Extra File Uploaded'
 }
+ uncomment later if corrected */
+
+
+ 
 /*
 if(req.files.uploadedfilesnames) {
   var extraUploadedFileNameThree = req.files.uploadedfilesnames[2].filename;
@@ -406,6 +410,7 @@ GalleryEstimatedTime: req.body.galleryestimatedtime,
 GalleryPrice: req.body.galleryprice,
 TextContentForGallery: req.body.textcontentforgallery,
 UploadContentForGalleryOne: uploadContentForGalleryOne,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+/* uncomment later if corrected
 UploadContentForGalleryTwo: uploadContentForGalleryTwo,
 UploadContentForGalleryThree: uploadContentForGalleryThree,
 UploadContentForGalleryFour: uploadContentForGalleryFour,
@@ -415,6 +420,7 @@ UploadContentForGallerySeven: uploadContentForGallerySeven,
 UploadContentForGalleryEight: uploadContentForGalleryEight,
 UploadContentForGalleryNine: uploadContentForGalleryNine,
 UploadContentForGalleryTen: uploadContentForGalleryTen,
+ uncomment later if corrected */
 
 Templates: req.body.templatesfeature ,
 TemplatesFeatureEstimatedTime: req.body.templatesfeatureestimatedtime,
@@ -463,20 +469,13 @@ DataBaseEstimatedTime: req.body.databaseestimatedtime ,
 DataBasePrice: req.body.databaseprice ,
 // Uploads
 ExtraUploadedFilesNameOne: extraUploadedFileNameOne,//uploadedFilesNames,//req.body.uploadedfilesnames,
+/* uncomment later if corrected
 ExtraUploadedFilesNameTwo: extraUploadedFileNameTwo,//uploadedFilesNames
 ExtraUploadedFilesNameThree: extraUploadedFileNameThree,
 ExtraUploadedFilesNameFour: extraUploadedFileNameFour,
 ExtraUploadedFilesNameFive: extraUploadedFileNameFive,
 ExtraUploadedFilesNameSix: extraUploadedFileNameSix,
-/*ExtraUploadedFilesNameThree: extraUploadedFileNameThree,//uploadedFilesNames
-ExtraUploadedFilesNameFour: extraUploadedFileNameFour,//uploadedFilesNames
-ExtraUploadedFilesNameFive: extraUploadedFileNameFive,//uploadedFilesNames
-ExtraUploadedFilesNameSix: extraUploadedFileNameSix,//uploadedFilesNames
-ExtraUploadedFilesNameSeven: extraUploadedFileNameSeven,//uploadedFilesNames
-ExtraUploadedFilesNameEight: extraUploadedFileNameEight,//uploadedFilesNames
-ExtraUploadedFilesNameNine: extraUploadedFileNameNine,//uploadedFilesNames,
-ExtraUploadedFilesNameTen: extraUploadedFileNameTen,//uploadedFilesNames,
-*/
+ uncomment later if corrected */
 
 //Additional
 WebsiteBriefDescription: req.body.websitebriefdescription ,
