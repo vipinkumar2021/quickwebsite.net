@@ -662,11 +662,17 @@ function showHideTemplatesFeatureContentForm() {
         templatesFeatureContentTextArea.style.display = 'block';
         templatesFeatureUploadContentLabel.style.display = 'block';
         templatesFeatureUploadContentInput.style.display = 'block';
+        //Set required attribute
+        templatesFeatureUploadContentInput.setAttribute('required', 'required');
+
     } else {
         templatesFeatureContentLabel.style.display = 'none';
         templatesFeatureContentTextArea.style.display = 'none';
         templatesFeatureUploadContentLabel.style.display = 'none';
         templatesFeatureUploadContentInput.style.display = 'none';
+
+        //Remove required attribute
+        templatesFeatureUploadContentInput.required = false;
 
 
     }
@@ -737,6 +743,8 @@ function showBackgroundColorInput() {
     document.getElementsByClassName('background-color-select-input')[1].style.display= 'inline';
     document.getElementsByClassName('background-image-select-label')[0].style.display= 'none';
     document.getElementsByClassName('background-image-select-input')[0].style.display= 'none';
+    // remove required attribute
+    document.getElementsByClassName('background-image-select-input')[0].required = false;
 
 }
 
@@ -748,6 +756,9 @@ function showBackgroundImageInput() {
     document.getElementsByClassName('background-color-select-input')[1].style.display= 'none';
     document.getElementsByClassName('background-image-select-label')[0].style.display= 'inline';
     document.getElementsByClassName('background-image-select-input')[0].style.display= 'inline';
+
+    // Set required attribute 
+    document.getElementsByClassName('background-image-select-input')[0].setAttribute('required', 'required');
 
 }
 

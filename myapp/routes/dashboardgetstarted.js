@@ -73,7 +73,7 @@ const filesForGalleryUpload = multer({
 //
 const upload = multer({
   storage: storage,
-  limits: {fileSize: 1000000},    
+  limits: {fileSize: 1000000000},    
   fileFilter: function(req, file, cb) {
     if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
       cb(null, true)
@@ -83,7 +83,7 @@ const upload = multer({
   }
 });
 
-var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery'}, {name: 'uploadcontentfortemplates', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery', maxCount: 10}, {name: 'uploadcontentfortemplates', maxCount: 10}, {name: 'uploadcontentformenu', maxCount: 5}, {name: 'backgroundimage', maxCount: 1}, {name: 'uploadedfilesnames', maxCount: 10}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
 
 //
 var aws = require("aws-sdk");
@@ -163,12 +163,173 @@ if(req.files.uploadcontentforlogo) {
 } else {
   uploadContentForLogo = 'No Logo Image Provided'
 }
+//
 if(req.files.uploadcontentforgallery) {
-  var uploadContentForGallery = req.files.uploadcontentforgallery[0].filename;
+  var uploadContentForGalleryOne = req.files.uploadcontentforgallery[0].filename;
 } else {
-  uploadContentForGallery = 'No Image Selected'
+  uploadContentForGalleryOne = 'No Gallery Image Selected'
 }
-var uploadContentForTemplates = 'Templates Image';
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryTwo = req.files.uploadcontentforgallery[1].filename;
+} else {
+  uploadContentForGalleryTwo = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryThree = req.files.uploadcontentforgallery[2].filename;
+} else {
+  uploadContentForGalleryThree = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryFour = req.files.uploadcontentforgallery[3].filename;
+} else {
+  uploadContentForGalleryFour = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryFive = req.files.uploadcontentforgallery[4].filename;
+} else {
+  uploadContentForGalleryFive = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGallerySix = req.files.uploadcontentforgallery[5].filename;
+} else {
+  uploadContentForGallerySix = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGallerySeven = req.files.uploadcontentforgallery[6].filename;
+} else {
+  uploadContentForGallerySeven = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryEight = req.files.uploadcontentforgallery[7].filename;
+} else {
+  uploadContentForGalleryEight = 'No Gallery Image Selected'
+}
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryNine = req.files.uploadcontentforgallery[8].filename;
+} else {
+  uploadContentForGalleryNine = 'No Gallery Image Selected'
+}  
+
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForGalleryTen = req.files.uploadcontentforgallery[9].filename;
+} else {
+  uploadContentForGalleryTen = 'No Gallery Image Selected'
+}
+
+
+
+//
+if(req.files.uploadcontentfortemplates) {
+  var uploadContentForTemplates = req.files.uploadcontentfortemplates[0].filename;
+} else {
+  uploadContentForTemplates = 'No Template Image Selected'
+}
+
+if(req.files.uploadcontentformenu) {
+  var uploadContentForMenu = req.files.uploadcontentformenu[0].filename;
+} else {
+  uploadContentForMenu = 'No Menu Image Selected'
+}
+
+if(req.files.backgroundimage) {
+  var backgroundImage = req.files.backgroundimage[0].filename;
+} else {
+  backgroundImage = 'No Background Image Selected'
+}
+//
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameOne = req.files.uploadedfilesnames[0].filename;
+} else {
+  extraUploadedFileNameOne = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameTwo = req.files.uploadedfilesnames[1].filename;
+} else {
+  extraUploadedFileNameTwo = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameThree = req.files.uploadedfilesnames[2].filename;
+} else {
+  extraUploadedFileNameThree = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameFour = req.files.uploadedfilesnames[3].filename;
+} else {
+  extraUploadedFileNameFour = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameFive = req.files.uploadedfilesnames[4].filename;
+} else {
+  extraUploadedFileNameFive = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameSix = req.files.uploadedfilesnames[5].filename;
+} else {
+  extraUploadedFileNameSix = 'No Extra File Uploaded'
+}
+/*
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameThree = req.files.uploadedfilesnames[2].filename;
+} else {
+  extraUploadedFileNameThree = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var ExtraUploadedFileNameFour = req.files.uploadedfilesnames[3].filename;
+} else {
+  extraUploadedFileNameFour = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameFive = req.files.uploadedfilesnames[4].filename;
+} else {
+  extraUploadedFileNameFive = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameSix = req.files.uploadedfilesnames[5].filename;
+} else {
+  extraUploadedFileNameSix = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameSeven = req.files.uploadedfilesnames[6].filename;
+} else {
+  extraUploadedFileNameSeven = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameEight = req.files.uploadedfilesnames[7].filename;
+} else {
+  extraUploadedFileNameEight = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameNine = req.files.uploadedfilesnames[8].filename;
+} else {
+  extraUploadedFileNameNine = 'No Extra File Uploaded'
+}
+
+if(req.files.uploadedfilesnames) {
+  var extraUploadedFileNameTen = req.files.uploadedfilesnames[9].filename;
+} else {
+  extraUploadedFileNameTen = 'No Extra File Uploaded'
+}
+
+*/
 /*
  console.log(req.files, req.body);
   
@@ -244,7 +405,16 @@ Gallery: req.body.gallery ,
 GalleryEstimatedTime: req.body.galleryestimatedtime,
 GalleryPrice: req.body.galleryprice,
 TextContentForGallery: req.body.textcontentforgallery,
-UploadContentForGallery: uploadContentForGallery,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+UploadContentForGalleryOne: uploadContentForGalleryOne,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+UploadContentForGalleryTwo: uploadContentForGalleryTwo,
+UploadContentForGalleryThree: uploadContentForGalleryThree,
+UploadContentForGalleryFour: uploadContentForGalleryFour,
+UploadContentForGalleryFive: uploadContentForGalleryFive,
+UploadContentForGallerySix: uploadContentForGallerySix,
+UploadContentForGallerySeven: uploadContentForGallerySeven,
+UploadContentForGalleryEight: uploadContentForGalleryEight,
+UploadContentForGalleryNine: uploadContentForGalleryNine,
+UploadContentForGalleryTen: uploadContentForGalleryTen,
 
 Templates: req.body.templatesfeature ,
 TemplatesFeatureEstimatedTime: req.body.templatesfeatureestimatedtime,
@@ -256,7 +426,7 @@ Menu: req.body.menu ,
 MenuEstimatedTime: req.body.menuestimatedtime,
 MenuPrice: req.body.menuprice,
 TextContentForMenu: req.body.textcontentformenu,
-//UploadContentForMenu: req.file.uploadcontentformenu 
+UploadContentForMenu: uploadContentForMenu, 
 
 // Advanced Features
 RegisterLogin: req.body.registerlogin,
@@ -278,7 +448,7 @@ WebsiteBackground: req.body.websitebackground,
 WebsiteBackgroundColor: req.body.backgroundcolor,
 WebsiteBackgroundEstimatedTime: req.body.websitebackgroundestimatedtime,
 WebsiteBackgroundColorPrice: req.body.websitebackgroundcolorprice,
-//WebsiteBackgroundImage: req.body.backgroundimage,
+WebsiteBackgroundImage: backgroundImage,//req.body.backgroundimage,
 WebsiteBackgroundImagePrice: req.body.websitebackgroundimageprice,
 TextColor: req.body.textcolor,
 //Other Features or Services
@@ -292,7 +462,22 @@ DataBase: req.body.database ,
 DataBaseEstimatedTime: req.body.databaseestimatedtime ,
 DataBasePrice: req.body.databaseprice ,
 // Uploads
-//UploadedFilesNames: req.body.uploadedfilesnames,
+ExtraUploadedFilesNameOne: extraUploadedFileNameOne,//uploadedFilesNames,//req.body.uploadedfilesnames,
+ExtraUploadedFilesNameTwo: extraUploadedFileNameTwo,//uploadedFilesNames
+ExtraUploadedFilesNameThree: extraUploadedFileNameThree,
+ExtraUploadedFilesNameFour: extraUploadedFileNameFour,
+ExtraUploadedFilesNameFive: extraUploadedFileNameFive,
+ExtraUploadedFilesNameSix: extraUploadedFileNameSix,
+/*ExtraUploadedFilesNameThree: extraUploadedFileNameThree,//uploadedFilesNames
+ExtraUploadedFilesNameFour: extraUploadedFileNameFour,//uploadedFilesNames
+ExtraUploadedFilesNameFive: extraUploadedFileNameFive,//uploadedFilesNames
+ExtraUploadedFilesNameSix: extraUploadedFileNameSix,//uploadedFilesNames
+ExtraUploadedFilesNameSeven: extraUploadedFileNameSeven,//uploadedFilesNames
+ExtraUploadedFilesNameEight: extraUploadedFileNameEight,//uploadedFilesNames
+ExtraUploadedFilesNameNine: extraUploadedFileNameNine,//uploadedFilesNames,
+ExtraUploadedFilesNameTen: extraUploadedFileNameTen,//uploadedFilesNames,
+*/
+
 //Additional
 WebsiteBriefDescription: req.body.websitebriefdescription ,
 Include: req.body.include ,

@@ -212,7 +212,43 @@ TextContentForGallery: {
     type: String,
     //required: true
 },
-UploadContentForGallery: {
+UploadContentForGalleryOne: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryTwo: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryThree: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryFour: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryFive: {
+    type: String,
+    //required: true
+},
+UploadContentForGallerySix: {
+    type: String,
+    //required: true
+},
+UploadContentForGallerySeven: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryEight: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryNine: {
+    type: String,
+    //required: true
+},
+UploadContentForGalleryTen: {
     type: String,
     //required: true
 },
@@ -360,7 +396,34 @@ DataBasePrice: {
     //required: true
 },
 // Uploads
-UploadedFilesNames: {
+ExtraUploadedFilesNameOne: {
+    type: String
+},
+ExtraUploadedFilesNameTwo: {
+    type: String
+},
+ExtraUploadedFilesNameThree: {
+    type: String
+},
+ExtraUploadedFilesNameFour: {
+    type: String
+},
+ExtraUploadedFilesNameFive: {
+    type: String
+},
+ExtraUploadedFilesNameSix: {
+    type: String
+},
+ExtraUploadedFilesNameSeven: {
+    type: String
+},
+ExtraUploadedFilesNameEight: {
+    type: String
+},
+ExtraUploadedFilesNameNine: {
+    type: String
+},
+ExtraUploadedFilesNameTen: {
     type: String
 },
 // Additional
