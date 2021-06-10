@@ -704,6 +704,7 @@ router.post("/create-payment-intent", async (req, res) => {
 
 // Exactly correct One 
 //
+
 router.post('/create-checkout-session', async (req, res) => { 
    
   var getitemPrice = req.body.orderPrice;   
@@ -727,10 +728,7 @@ router.post('/create-checkout-session', async (req, res) => {
     customerModel.findOne({Username: currentAccountUser}).exec(async (err, currentAccountUserData) => {
       if(err) throw err;
       if(currentAccountUserData) {
-        var currentAccountUserEmailId = currentAccountUserData.Email;
-      
-     //
-  //var currentAccountUserEmailId = 'currentAccountUserEmailId'
+        var currentAccountUserEmailId = currentAccountUserData.Email;   
   
   const session = await stripe.checkout.sessions.create({       
     payment_method_types: ['card'],    
@@ -762,83 +760,47 @@ router.post('/create-checkout-session', async (req, res) => {
     mode: 'payment',
     
    
-    success_url: `${YOUR_DOMAIN}/success`,
+    success_url: YOUR_DOMAIN + '/success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
     cancel_url: `${YOUR_DOMAIN}/cancel`,
-  
     
   });
-
-  res.json({ id: session.id }); 
-  }
-});
-
+  
+ res.json({ id: session.id }); 
+ 
 //
-/* experimental
-const sessionn = await stripe.checkout.sessions.retrieve(
-  session.id
-);
-if(sessionn) {
-  cartItemsModel.findByIdAndRemove(itemId.replace(' ', ''), function(err, itemToBeMovedToPurchased) {
+  //Send Session Id to database to fetch data from stripe
+   //exactly correct one
+   /*
+   const sessionn = await stripe.checkout.sessions.retrieve(
+    session.id
+  );
+  console.log(sessionn);
+  console.log(sessionn.payment_status); */
+   cartItemsModel.findByIdAndUpdate(itemId.replace(' ', ''), {SessionId: session.id}, async function(err, sessionId) {
     if(err) throw err;
-    if(itemToBeMovedToPurchased) {
-      var purchasedDetails = new purchasedModel({
-        Username: currentAccountUser,
-        Purchased: itemToBeMovedToPurchased
-      });
-      purchasedDetails.save((err) => {
-        if(err) throw err;
-
-        console.log(`Item Id/${itemId}`);
-      //console.log(`Reference Id/${client_reference_id}`);
-      //res.json({ id: session.id });
-      res.send();
-      });
-    }
-  });
-}
-*/
-//
-// exactly correct one commented
-} 
-});
- //exactly correct one commented 
-  //  
-  /*
-  const referenceId = await stripe.client_reference_id.retrieve(
-    client_reference_id
-  );  
-  const session = await stripe.checkout.sessions.retrieve(
-  session.id
-);
- if(referenceId) {
-  cartItemsModel.findByIdAndRemove(itemId.replace(' ', ''), function(err, itemToBeMovedToPurchased) {
-    if(err) throw err;
-    if(itemToBeMovedToPurchased) {
-      var purchasedDetails = new purchasedModel({
-        Username: currentAccountUser,
-        Purchased: itemToBeMovedToPurchased
-      });
-      purchasedDetails.save((err) => {
-        if(err) throw err;
-        console.log(`Item Id/${itemId}`);
-        //console.log(`Reference Id/${client_reference_id}`);
-        //res.json({ id: session.id });
-        res.send();
-      });
-    }
+    if(sessionId) {     
       
+      res.end();
+    }
   });
   
- //}
+ //
 
-*/
-  //
+  }  // if currentAccountUserDate ends here  
+}); // findOne by Username ends here
 
-  
+
+} // if(currentAccountUser) ends here
+}); // create -session ends here
+ 
 //exactly correct one ends here
-
-
-
+/*
+router.get('/checkout-session'/*'/success'*//*, async (req, res) => {
+  const session = await stripe.checkout.sessions.retrieve(req.query.id);
+    res.json(session);  
+  
+});
+*/
   /*
   // send invoice in Email
   //

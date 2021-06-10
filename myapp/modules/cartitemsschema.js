@@ -10,6 +10,12 @@ var cartItemsSchema = new mongoose.Schema({
 Username: {
     type:String
 },
+SessionId: {
+    type: String
+},
+PaymentStatus: {
+    type: String
+},
 TemplateOption: {
     type:String
 },

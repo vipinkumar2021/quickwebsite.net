@@ -1,20 +1,36 @@
 var express = require('express');
 var router = express.Router();
 
+//const YOUR_DOMAIN = 'http://localhost:5000';
+//var cartItemsModel = require('../modules/cartitemsschema');
+var recycleBinModel = require('../modules/recyclebinschema');
+
 // require dot env
 require('dotenv').config();
-//using stripe payment gateway
-var stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-var stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
-// stripe
+//stripe
+var cartItemsModel = require('../modules/cartitemsschema'); 
+var purchasedModel = require('../modules/purchasedschema');
+const { error } = require('console');
+const { findByIdAndRemove } = require('../modules/cartitemsschema');
+//
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
+//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
+
+//const stripePublicKey = process.env.STRIPE_PUBLIC_KEY_Test//process.env.STRIPE_PUBLIC_KEY_Live;
 const stripe = require('stripe')(stripeSecretKey);
 
 
-//const YOUR_DOMAIN = 'http://localhost:5000';
-var cartItemsModel = require('../modules/cartitemsschema');
-var recycleBinModel = require('../modules/recyclebinschema');
+
+
+
+// require dot env
+//require('dotenv').config();
+//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
+//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
+
+//const stripe = require('stripe')(stripeSecretKey);
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
 
     var loginUser = {
         loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -22,11 +38,81 @@ router.get('/', function(req, res, next) {
         loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
       };
     if(loginUser.loginUserCustomer) {
-      cartItemsModel.find({Username: loginUser.loginUserCustomer}).exec((err, currentCustomerAccountUserCartItems) => {
+      
+      cartItemsModel.find({Username: loginUser.loginUserCustomer}).exec( async (err, currentCustomerAccountUserCartItems) => {
         if(err) {
           res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
         }
-        if(currentCustomerAccountUserCartItems) {
+        if(currentCustomerAccountUserCartItems ) {
+          //
+          /*
+          var sessionId = currentCustomerAccountUserCartItems[0].SessionId;
+          if(sessionId != '') { // Also do changes || sessionId != null
+            console.log(sessionId);
+
+            const sessionnn = await stripe.checkout.sessions.retrieve(
+              sessionId
+            );
+            console.log(sessionnn);
+            console.log(`Payment Status: ${sessionnn.payment_status}`);
+            console.log(`Client Reference Id/${sessionnn.client_reference_id}`);
+
+            if(sessionnn.payment_status == 'paid') {
+              findByIdAndRemove(sessionnn.client_reference_id, async function(err, itemToBeMovedToPurchased) {
+                if(err) {
+                  res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+                } else {
+                  /*
+                  var purchasedItemDetail = new purchasedModel({
+                    Username: loginUser.loginUserCustomer,
+                    Purchased: itemToBeMovedToPurchased
+                  });
+                  purchasedItemDetail.save(async function(err) {
+                    if(err) {
+                      res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+                    } else {
+                      res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+                    }
+                  }); *//*
+                  res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+                }
+              });
+            } else {
+
+              res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+            }
+            
+            
+          } else {
+            res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+          }
+          
+          //console.log(currentCustomerAccountUserCartItems[1].SessionId)
+          
+          
+          //
+           
+          // 
+          //if(sessionnn != '')
+          /*if(sessionnn.payment_status == 'paid') {
+            cartItemsModel.findOneAndRemove(sessionnn.client_reference_id, function(err, itemToBeMovedToPurchased) {
+              if(err) throw err;
+              if(itemToBeMovedToPurchased) {
+                var purchasedItemDetail = new purchasedModel({
+                  Username: loginUser.loginUserCustomer,
+                  Purchased: itemToBeMovedToPurchased
+                });
+                purchasedItemDetail.save((err) => {
+                  if(err) throw err;
+                  res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
+                });
+              } 
+            });            
+          } */
+          //
+
+          //
+          
           res.render('dashboardcart', {title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: currentCustomerAccountUserCartItems});
         } else {
           res.render('dashboardcart', {title: 'Quick Website', msg:'No Item in Customer Cart', loginUser: loginUser.loginUserCustomer, currentCustomerAccountUserCartItems: ''});
@@ -80,6 +166,7 @@ router.post('/delete/:id', function(req, res, next) {
 // delete ends
   
 //update cart once the order is purchased
+/*
 router.post('/dashboardcart/updatecart/:id', function(req, res, next) {
 
   var loginUser = {
@@ -103,7 +190,7 @@ router.post('/dashboardcart/updatecart/:id', function(req, res, next) {
     res.redirect('/');
   }
 });
-
+*/
 
 //update cart once the order is purchased
 /*

@@ -4,7 +4,7 @@
     <div class="container dashboardcart" >
         <br/><br/>
         <h1>Welcome to Cart</h1>
-        <p id="checkitout"></p>
+        <p id="getsession"></p>
         <p style="color: whitesmoke;" id="number-of-orders"></p>
         <h1><a href="/dashboardgetstarted">Order Here</a></h1><br/>
         <h1 id="current-remove-button"></h1>
@@ -25,7 +25,12 @@
                     <caption style="color: whitesmoke; justify-content: left;">
                         <span><strong>Dated: </strong></span><span style="padding-left: .7em;"> <%= element.Date %></span>
                     </caption>
-                    
+                    <caption style="color: whitesmoke; justify-content: left;">
+                        <span><strong>Session Id: </strong></span><span class="session-id" style="padding-left: .7em;"> <%= element.SessionId %></span>
+                    </caption>
+                    <caption style="color: whitesmoke; justify-content: left;">
+                        <span><strong>Payment Status: </strong></span><span class="session-id" style="padding-left: .7em;"><%= element.PaymentStatus %></span>
+                    </caption>
                     <tr>
                         <th colspan="3">Cart Items</th>
                     </tr>
@@ -953,32 +958,43 @@
                               if (result.error) {
                                 alert(result.error.message);
                               } 
-                            })                                          
+                              
+                            })                                        
                             .catch(function (error) {
                               console.error("Error:", error);
-                            }) // experimental code below
-                            /*                          
-                            .finally(function() {
-                                /*
-                                fetch('/dashboardcart/updatecart/:id', {
-                                        method: 'POST',
-                                        // sending order id and order price to index.js for further process
-                                        headers: {
-                                                "Content-Type": "application/json"
-                                        },
-                                        body: JSON.stringify({orderId: itemId, orderPrice: cartTotalPrice})
-                                        //
-                                    })
-                                    */
-                        //  })                        
-                               
-                              
-                            // 
-                            
-                            
+                            }) 
+                            //
+                            /* experimental
+                            fetch('/dashboardcart',  {
+                            method: "post",
+
+                            // sending order id and order price to index.js for further process
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({orderI: 'vipin id'})
+                            //body: JSON.stringify({orderId: itemId, orderPrice: cartTotalPrice})
+                          
+                            //
+                          })
+                          .then(function (response) {
+                              return response.json();
+                            })
+                            .catch(function (error) {
+                              console.error("Error:", error);
+                            })
+                             */
+                          //
+
+
                         });
                         //exactly correct one prebuilt 
                          //Exactly correct one commented 
+                      </script>
+                      <script>
+                          // remove order from cart if order is purchased and move it to 
+                          
+                        document.getElementById('getsession').innerHTML = 'Session Id';
                       </script>                           
             </div> <!--cart-items end here-->           
            
@@ -987,7 +1003,7 @@
             <!-- Created by Vipin Kamboj
             <button type="button" id="checkout-button" class="each-button purchase" onclick="createCheckOutSession()">Checkout</button>
             -->
-             
+            
             <script >
                 //
                 // update cart orders number

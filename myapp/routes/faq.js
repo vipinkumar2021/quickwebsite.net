@@ -10,14 +10,14 @@ router.get('/', function(req, res, next) {
 
   };
   if(loginUser.loginUserCustomer) {
-    res.render('dashboardfaqs', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
+    res.render('dashboardfaq', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee) {
-    res.render('dashboardfaqs', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
+    res.render('dashboardfaq', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
   } else if(loginUser.loginUserAdmin) {
-    res.render('dashboardfaqs', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
+    res.render('dashboardfaq', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
 
   } else {
-    res.render('faqs', { title: 'Quick Website', msg: '', loginUser: '' });
+    res.render('faq', { title: 'Quick Website', msg: '', loginUser: '' });
   }
   
 });

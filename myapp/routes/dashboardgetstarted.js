@@ -344,6 +344,8 @@ if(req.files.uploadedfilesnames) {
 var cartItemsList = new cartItemsModel({
   
 Username: currentAccountUsername,
+SessionId: '',
+PaymentStatus: '',
 TemplateOption: req.body.template,
 TemplateOptionEstimatedTime: req.body.templateoptionestimatedtime,
 TemplateOptionPrice: req.body.templateoptionprice,

@@ -10,7 +10,17 @@ var purchasedSchema = new mongoose.Schema({
 Username: {
     type:String
 },
+CustomerId: {
+    type: String
+},
+ClientReferenceId: {
+    type: String
+},
+
 Purchased: {
+    type: String
+},
+TotalCost: {
     type: String
 },
 
