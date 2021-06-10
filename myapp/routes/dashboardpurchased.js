@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var purchasedModel = require('../modules/recyclebinschema');
+var purchasedModel = require('../modules/purchasedschema');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var loginUser = {

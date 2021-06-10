@@ -30,5 +30,5 @@ Date: {
 }
 });
 
-var purchasedModel = mongoose.model('purchased', purchasedSchema);
+var purchasedModel = mongoose.model('purchaseds', purchasedSchema);
 module.exports = purchasedModel;

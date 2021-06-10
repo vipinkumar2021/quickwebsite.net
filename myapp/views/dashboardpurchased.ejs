@@ -4,7 +4,11 @@
     <div class="container dashboardcart" >
         <br/><br/>
         <h1>List Of Purchased Services</h1>
-    
+        <% if(purchasedItems.length > 0) { %>
+            <% purchasedItems.forEach(element => { %>
+                <% element._id %> 
+        <%  }) %> 
+        <% } %> 
                   
     </div>
 </div>

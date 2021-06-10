@@ -73,7 +73,7 @@ const filesForGalleryUpload = multer({
 //
 const upload = multer({
   storage: storage,
-  limits: {fileSize: 1000000000},    
+  //limits: {fileSize: 1000000000},    
   fileFilter: function(req, file, cb) {
     if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
       cb(null, true)
@@ -118,10 +118,12 @@ if(loginUser.loginUserCustomer) {
     uploadContentForGallery = filename;
   }
 */
-
+/*
 console.log(req.files); //showing both files
 console.log('Vipin');
 console.log(typeof req.files)
+*/
+
 //console.log(req.file.filename);
 //console.log(req.files.uploadcontentforgallery[0].filename);
 //console.log(req.files.uploadcontentforgallery.filename);

@@ -293,7 +293,14 @@
                             <%= element.CopyRightContent %> 
                         </td>                                       
                     </tr>                    
-    
+                    <tr>
+                        <th>Logo Image: </th>
+                        <td class="logo-image" colspan="2">
+                            <img src="./uploads/<%= element.UploadContentForLogo %> " width="150px" height="150px" alt="Photo Gallery Content Image" style="margin: auto;"/>
+                        </td>                                       
+                    </tr>
+                    
+
                     <tr>
                         <th colspan="3">External Features Selected</th>
                     </tr>
@@ -362,7 +369,7 @@
                     <tr>
                         <td colspan="2">
                             <strong>Uploaded Files Content:</strong><br/>
-                            <img src="./uploads/<%= element.UploadContentForGallery %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                            <img src="./uploads/<%= element.UploadContentForGalleryOne %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
                         </td>
                     </tr>
     
@@ -376,7 +383,7 @@
                     <tr>
                         <td colspan="2">
                             <strong>Uploaded Files Content:</strong><br/>
-                            <img src="./uploads/<%= element.UploadContentForTemplates %> " alt="Templates Content Image"/>
+                            <img src="./uploads/<%= element.UploadContentForTemplates %>" width="150px" height="150px" alt="Templates Content Image"/>
                         </td>
                     </tr>
     
@@ -390,7 +397,7 @@
                     <tr>
                         <td colspan="2">
                             <strong>Uploaded Files Content:</strong><br/>
-                            <img src="./uploads/<%= element.UploadContentForMenu %> " alt="Menu Content Image"/>
+                            <img src="./uploads/<%= element.UploadContentForMenu %> " width="150px" height="150px" alt="Menu Content Image"/>
                         </td>
                     </tr>
     
@@ -596,7 +603,7 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <img src="#" width="150px" height="150px" alt="Uploaded Image 1"/> 
+                            <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="150px" height="150px" alt="Uploaded Image 1"/> 
                             <img src="#" width="150px" height="150px" alt="Uploaded Image 2"/> 
                             <img src="#" width="150px" height="150px" alt="Uploaded Image 3"/> 
                         </td>
