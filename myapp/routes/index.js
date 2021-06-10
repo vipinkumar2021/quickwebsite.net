@@ -714,7 +714,7 @@ router.post('/create-checkout-session', async (req, res) => {
   
   //var date = Date();
 
-  const YOUR_DOMAIN = 'http://www.quickwebsite.net'; // 'http://localhost:5000'
+  const YOUR_DOMAIN = '/';//'http://www.quickwebsite.net'; // 'http://localhost:5000'
   
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
