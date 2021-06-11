@@ -4,7 +4,7 @@
     <div class="container dashboardcart" >
         <br/><br/>
         <h1>Welcome to Cart</h1>
-        <p id="getsession"></p>
+        <p id="all-color-codes"></p>
         <p style="color: whitesmoke;" id="number-of-orders"></p>
         <h1><a href="/dashboardgetstarted">Order Here</a></h1><br/>
         <h1 id="current-remove-button"></h1>
@@ -18,7 +18,7 @@
             <% currentCustomerAccountUserCartItems.forEach(element => { %>
             <div class="cart-items"><!--cart-items start here-->
                 <div class="cart-row"><!--cart-row starts here-->                
-                <table >
+                <table class="table-class">
                     <caption style="color: whitesmoke; justify-content: left;">
                         <span><strong>Order Id: </strong></span><span class="item-id" style="padding-left: .7em;"> <%= element._id %></span>
                     </caption>
@@ -207,8 +207,11 @@
                     </tr>
                     <tr>
                         <th>Home Page Content: </th>
-                        <td class="home-content" colspan="2">                            
-                            <%= element.HomePageContent %> 
+                        <td class="home-content" colspan="2">
+                            <p>
+                                <%= element.HomePageContent %>
+                            </p>                            
+                             
                         </td>                                       
                     </tr> 
                     <!--
@@ -228,22 +231,30 @@
                     -->
                     <tr>
                         <th>About Content: </th>
-                        <td class="about-content" colspan="2">                            
-                            <%= element.AboutContent %> 
+                        <td class="about-content" colspan="2"> 
+                            <p>
+                                <%= element.AboutContent %> 
+                            </p>                    
                         </td>                                       
                     </tr>                    
     
                     <tr>
                         <th>Services Content: </th>
-                        <td class="services-content" colspan="2">                            
-                            <%= element.ServicesContent %> 
+                        <td class="services-content" colspan="2">
+                            <p>
+                                <%= element.ServicesContent %>
+                            </p>                            
+                             
                         </td>                                       
                     </tr>
                         
                     <tr>
                         <th>Why Us Content: </th>
-                        <td class="whyus-content" colspan="2">                            
-                            <%= element.WhyUsContent %> 
+                        <td class="whyus-content" colspan="2">
+                            <p>
+                                <%= element.WhyUsContent %>
+                            </p>                            
+                             
                         </td>                                       
                     </tr>
                         
@@ -251,14 +262,23 @@
                         <th>Address: </th>
                         <td class="address-content" colspan="2">
                             <strong>Address:</strong><br/>
-                            <%= element.Address %> 
+                            <p>
+                                <address>
+                                    <%= element.Address %>
+                                </address>
+                                
+                            </p>
+                             
                         </td>                                       
                     </tr>
                     <tr>
                         <th >Phone Number: </th>
                         <td class="phone-content" colspan="2" >
                             <strong>Phone Number:</strong><br/>
-                            <%= element.PhoneNumber %> 
+                            <p>
+                                <%= element.PhoneNumber %>
+                            </p>
+                             
                         </td>                                       
                     </tr>
                     
@@ -266,8 +286,11 @@
                     <tr>
                         <th>Social Media Link: </th>
                         <td class="socialmedia-link" colspan="2"> 
-                            <strong>Social Media Link: </strong><br/>                       
-                            <%= element.SocialMediaLink %> <br/>
+                            <strong>Social Media Link: </strong><br/>
+                            <p>
+                                <%= element.SocialMediaLink %> <br/>
+                            </p>                       
+                            
                         </td>                                       
                     </tr>
                     
@@ -283,20 +306,29 @@
                     <tr>
                         <th>Terms & Conditions Content: </th>
                         <td class="termsandconditions-content" colspan="2">
-                            <%= element.TermsAndConditionsContent %> 
+                            <p>
+                                <%= element.TermsAndConditionsContent %>
+                            </p>
+                             
                         </td>                                       
                     </tr>                    
     
                     <tr>
                         <th>Copy Right Content: </th>
-                        <td class="copyright-content" colspan="2">                            
-                            <%= element.CopyRightContent %> 
+                        <td class="copyright-content" colspan="2"> 
+                            <p>
+                                <%= element.CopyRightContent %>
+                            </p>                           
+                             
                         </td>                                       
                     </tr>                    
                     <tr>
                         <th>Logo Image: </th>
                         <td class="logo-image" colspan="2">
-                            <img src="./uploads/<%= element.UploadContentForLogo %> " width="150px" height="150px" alt="Photo Gallery Content Image" style="margin: auto;"/>
+                            <div>
+                                <img src="./uploads/<%= element.UploadContentForLogo %> " width="150px" height="150px" alt="Photo Gallery Content Image" style="margin: auto;"/>
+                            </div>
+                            
                         </td>                                       
                     </tr>
                     
@@ -363,13 +395,19 @@
                         <th rowspan="2">Photo Gallery Content: </th>
                         <td class="photogallery-content" colspan="2">
                             <strong>Text Content:</strong><br/>
-                            <%= element.TextContentForGallery %> 
+                            <p>
+                                <%= element.TextContentForGallery %>
+                            </p>
+                             
                         </td>                                       
                     </tr>
                     <tr>
                         <td colspan="2">
                             <strong>Uploaded Files Content:</strong><br/>
-                            <img src="./uploads/<%= element.UploadContentForGalleryOne %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                            <div>
+                                <img src="./uploads/<%= element.UploadContentForGalleryOne %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                            </div>
+                            
                         </td>
                     </tr>
     
@@ -377,13 +415,19 @@
                         <th rowspan="2">Templates Feature Content: </th>
                         <td class="template-content" colspan="2">
                             <strong>Text Content:</strong><br/>
-                            <%= element.TextContentForTemplates %> 
+                            <p>
+                                <%= element.TextContentForTemplates %> 
+                            </p>
+                            
                         </td>                                       
                     </tr>
                     <tr>
                         <td colspan="2">
                             <strong>Uploaded Files Content:</strong><br/>
-                            <img src="./uploads/<%= element.UploadContentForTemplates %>" width="150px" height="150px" alt="Templates Content Image"/>
+                            <div>
+                                <img src="./uploads/<%= element.UploadContentForTemplates %>" width="150px" height="150px" alt="Templates Content Image"/>
+                            </div>
+                            
                         </td>
                     </tr>
     
@@ -391,13 +435,19 @@
                         <th rowspan="2">Menu Content: </th>
                         <td class="menu-content" colspan="2">
                             <strong>Text Content:</strong><br/>
-                            <%= element.TextContentForMenu %> 
+                            <p>
+                                <%= element.TextContentForMenu %> 
+                            </p>
+                            
                         </td>                                       
                     </tr>
                     <tr>
                         <td colspan="2">
                             <strong>Uploaded Files Content:</strong><br/>
-                            <img src="./uploads/<%= element.UploadContentForMenu %> " width="150px" height="150px" alt="Menu Content Image"/>
+                            <div>
+                                <img src="./uploads/<%= element.UploadContentForMenu %> " width="150px" height="150px" alt="Menu Content Image"/>
+                            </div>
+                            
                         </td>
                     </tr>
     
@@ -458,18 +508,20 @@
                         <th>Name</th><th colspan="2">Content</th>
                     </tr>
                     <tr>
-                        <th>Bank Account & IFSC: </th>
+                        <th>Bank Account, IFSC & GST/PAN: </th>
                         <td class="bankaccount-ifsc-content" colspan="2">
-                            <strong>Bank Account & IFSC:</strong><br/>
+                            <strong>Bank Account, IFSC & GST/PAN:</strong><br/>
                             <%= element.BankAccountAndIfsc %> 
                         </td>                                       
                     </tr>
                     
                     <tr>
                         <th>Email Id: </th>
-                        <td class="emailid-content" colspan="2">
-                            <strong>Email Id:</strong><br/>
-                            <%= element.EmailId %> 
+                        <td class="emailid-content" colspan="2">                            
+                            <p>
+                                <%= element.EmailId %>
+                            </p>
+                             
                         </td>                                       
                     </tr>
                     <tr>
@@ -505,21 +557,25 @@
                         </tr>
                         
                         <tr>
-                            <th rowspan="2">Website Background-Color Details: </th>
-                            <td class="websitebackgroundcolor-content" colspan="2">
-                                <strong>Color Code:</strong><br/>
-                                <%= element.WebsiteBackgroundColor %> 
+                            <th rowspan="2">Website Background-Color & Text  Color: </th>
+                            <td class="websitebackgroundcolor-content"  colspan="2">
+                                <strong>Background Color Code Selected:</strong><span class="background-color-code"><%= element.WebsiteBackgroundColor %></span><br/>
+                                <strong>Text Color Code Selected:</strong><span class="text-color-code"><%= element.TextColor %> </span><br/>                                
+                                
                             </td>                                       
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <strong>Color Demo:</strong><br/>
-                                <div style="background-color: yellow; width: 100%; height: 50px; color: red;">
-                                    Background color is your Selected Background
+                                <strong>Website Color Demo:</strong><br/>
+                                
+                                <div class="background-color" style= " width: 80%; height: auto; margin: .8em auto .8em auto; border: none; border-radius: 5px;">
+                                    <p style="text-align: center; padding: .8em; font-size: 1em;">
+                                        This is how your website will look like
+                                    </p>
                                 </div>
                             </td>
                         </tr>
-    
+                        
                         <tr>
                             <th rowspan="2">Website Background-Image Details: </th>
                             <td class="websitebackgroundimage-content" colspan="2">
@@ -534,7 +590,7 @@
                             </td>
                         </tr>
         
-    
+    <!--
                         <tr>
                             <th rowspan="2">Text-Color Details: </th>
                             <td class="textcolor-content" colspan="2">
@@ -550,7 +606,7 @@
                                 </div>
                             </td>
                         </tr>  
-                    
+                  -->  
                         <tr>
                             <th colspan="3">Other Features & Services</th>
                         </tr>
@@ -603,7 +659,26 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="150px" height="150px" alt="Uploaded Image 1"/> 
+                            <div class="container image-container">
+                                <div class="column col-1">
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 1"/>
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 2"/>
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 3"/>
+
+                                </div>
+                                <div class="column col-2">
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 4"/>
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 5"/>
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 6"/>
+                                </div>
+                                <div class="column col-3">
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 7"/>
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 8"/>
+                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 9"/>
+                                </div>
+                            </div>
+                                                        
+                            
                             <img src="#" width="150px" height="150px" alt="Uploaded Image 2"/> 
                             <img src="#" width="150px" height="150px" alt="Uploaded Image 3"/> 
                         </td>
@@ -998,10 +1073,38 @@
                         //exactly correct one prebuilt 
                          //Exactly correct one commented 
                       </script>
-                      <script>
-                          // remove order from cart if order is purchased and move it to 
+                      <script>                          
                           
-                        document.getElementById('getsession').innerHTML = 'Session Id';
+                          var allTables = document.getElementsByClassName('table-class');
+                         for (let index = 0; index < allTables.length; index++) {
+                              const table = allTables[index];                        
+                           
+                            var getCurrentTableBackGroundColorCode = table.getElementsByClassName('background-color-code')[0].innerText;
+                            var getCurrentTableTextColorCode = table.getElementsByClassName('text-color-code')[0].innerText;
+                            var backgroundColorDiv = table.getElementsByClassName('background-color')[0]
+                          
+                            backgroundColorDiv.style.background= getCurrentTableBackGroundColorCode;
+                            backgroundColorDiv.style.color = getCurrentTableTextColorCode;
+                          
+                        }
+                        //document.getElementById('all-color-codes').innerHTML = getCurrentTableTextColorCode;
+
+
+                          /*
+                          var allColorCodes = [];
+                          allColorCodes = document.getElementsByClassName('background-color-code');
+                          var text = "";
+                          var i;
+                          for (i = 0; i < allColorCodes.length; i++) {
+                          text += allColorCodes[i] + "<br>";
+                        }
+                            
+                            
+                            document.getElementById('all-color-codes').innerHTML = typeof allColorCodes;
+                            //var backgroundColorCode = document.getElementsByClassName('background-color-code')[0].innerText;                            
+                            //document.getElementsByClassName('background-color')[0].style.background= backgroundColorCode;
+                     
+                        */
                       </script>                           
             </div> <!--cart-items end here-->           
            

@@ -338,8 +338,24 @@
     text-align: left;
     
   }
-  .item1 .sidenav-parent .sidenav ul li .signoutBtn {
+  /*
+  .signout-btn-list {    
     padding-left: 1.25em;
+    background-color: aquamarine;
+  }
+  .item1 .sidenav-parent .sidenav ul li form {    
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-color: aqua;
+  }
+  */
+  .item1 .sidenav-parent .sidenav ul li form .signoutBtn {
+    margin: 0;
+    /*padding-left: 0;*/
+    padding-left: 1.25em;
+    text-align: left;
+    
   }
   .item1 .sidenav-parent .sidenav ul li a:hover {
     color: rgb(180, 175, 175);
@@ -708,13 +724,19 @@
     border: 2px solid whitesmoke; 
     padding: 1.5%;  
     text-align: center;  
-    font-size: 1.25em;
+    font-size: 1.2em;
     font-weight: bold; 
+    overflow: hidden;
+    text-overflow: clip;
+    /*padding: 1%;*/
+    /*overflow: auto;*/
   }
   .dashboardcart table tr td {
     width: 50%;
     border: 2px solid whitesmoke; 
-    padding-left: 1%;
+    text-overflow: clip;
+    padding: 1%;
+    /*overflow: auto;*/
   }
   
   table caption {
@@ -725,6 +747,52 @@
   .table-caption-anchor {
     display: flex;
     
+  }
+  .dashboardcart .image-container {
+    width: 100%;
+    height: auto;
+    margin: 1em auto 1em auto;  
+    padding: .5em;  
+    display: flex;
+    
+  }
+  .dashboardcart .image-container .column {
+    width: 33%;
+    max-width: 33%;
+    height: auto;
+    margin: 1em 0 1em 0;
+    padding: .5em;
+    text-align: center;
+    
+  }
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .dashboardcart .image-container {
+      width: 100%;
+      height: auto;
+      margin: 1em 0 1em 0;      
+      display: block;
+      
+    }
+    .dashboardcart .image-container .column {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 1em auto 1em auto;
+      padding: 1em 0 1em 0;
+      text-align: center;
+      
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .dashboardcart .image-container .column {
+      width: 50%;
+      max-width: 50%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      
+    }
   }
   /*
   .template-selected-icon, .homepage-selected-icon, .aboutpage-selected-icon, .servicespage-selected-icon, .whyuspage-selected-icon, .social-media-feature-selected-icon, .contactuspage-selected-icon, .contactuspluscontactformpage-selected-icon, .policypage-selected-icon, .terms-and-conditions-selected-icon, .logo-by-customer-selected-icon, .logo-purchasing-selected-icon, .copy-right-selected-icon, .logo-by-customer-selected-icon, .gallery-page-selected-icon, .templates-feature-selected-icon .menu-page-selected-icon{
@@ -1043,6 +1111,21 @@
   color: whitesmoke;
   }
   
+  
+  .show-password-input { 
+    
+    /*border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;*/
+  position: absolute;
+  left: 0;
+  padding-left: 0;
+  margin-left: 0;
+    
+  }
   .modal-parent-signin .modal-signin form button {
   width: 20%;
   border: 3px solid whitesmoke;
