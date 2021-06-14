@@ -703,8 +703,7 @@
   /* career css ends here*/
 
   /* dashboardcart css* starts*/
-  .dashboardcart {
-    
+  .dashboardcart {    
     padding-bottom: 5em;
   }
   .dashboardcart table {
@@ -837,6 +836,9 @@
     
     margin: auto;
     border-radius: 50%;
+  }
+  .profile-image:hover {
+    cursor: pointer;
   }
   /* dashhboardcustomerprofile css* starts*/
   .dashboardcustomerprofile {
@@ -1532,6 +1534,130 @@
   }
   /* Contact Us modal css ends here */
   
+  /* Upload Profile Image modal css starts here */
+  
+  .modal-parent-upload-profile-image {
+    margin: 0 auto 0 auto;
+    padding: 0 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: none;
+    text-align: left;
+    z-index: 1;  
+  }
+  
+  .modal-upload-profile-image {
+  position: absolute;
+  top: 10%;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+  margin: auto;
+  padding: 2em;
+  height: auto;
+  overflow: auto;
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke; 
+  position: relative;
+  animation: 1s drop;
+  display: block;
+  z-index: 1;
+  }
+  
+  @keyframes drop {
+  0% {
+   top: -13em;
+  }
+  100% {
+   top: 10%;
+  }
+  }
+  
+  .X-upload-profile-image {
+  position: absolute;
+  top: .5em;
+  right: .7em;
+  font-size: 2em;
+  
+  }
+  .X-upload-profile-image:hover {
+  cursor: pointer;
+  color: rgb(180, 175, 175);
+  
+  
+  }
+  
+  .modal-parent-upload-profile-image .modal-upload-profile-image form label {
+   text-align: left;
+   font-size: 1.25em;
+  }
+  .modal-parent-upload-profile-image .modal-upload-profile-image form input {
+  width: 100%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  }
+  
+  .modal-parent-upload-profile-image .modal-upload-profile-image form textarea {
+    max-width: 100%;
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    outline: none;
+    padding: 1em;
+    background-color: transparent;
+    color: aliceblue;
+    overflow: auto;
+    }
+  
+  .modal-parent-upload-profile-image .modal-upload-profile-image form button {
+  width: 25%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  margin-right: 1.25em;
+  } 
+  .modal-parent-upload-profile-image .modal-upload-profile-image form button:hover {
+    color: rgb(180, 175, 175);
+  }
+  .modal-anchor-tags {
+    display: flex;
+    justify-content: space-around;  
+  }
+  .modal-anchor-tags a {
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+  
+  
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .modal-parent-upload-profile-image .modal-upload-profile-image form button {
+      width: 100%;
+      margin: auto auto 1em auto;
+    }
+  
+    .modal-anchor-tags {
+      display: block;
+      justify-content: none;  
+    }
+    .modal-anchor-tags a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.25em;
+    }
+  }
+  /* Upload Profile Image modal css ends here */
+  
   /* Modal confirm before deleting strts here */
     
   .modal-parent-confirmation-before-delete {
@@ -1621,3 +1747,38 @@
     border: 2px solid whitesmoke;
     border-radius: 5px;
   }
+  .forgot-username form input, .forgot-username form button {
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+  }
+  .forgot-password form input, .forgot-password form button {
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+  }
+/* faq css*/
+.accordion {
+  background-color: rgb(238, 135, 97);
+  color: whitesmoke;
+  cursor: pointer;
+  padding: 1.2em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2em;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: rgb(224, 105, 61); 
+}
+
+.panel {
+  margin-bottom: 0;
+  padding: 0 1.1em;
+  display: none;
+  background-color: rgb(211, 129, 99);
+  overflow: hidden;
+}

@@ -3,6 +3,28 @@ var router = express.Router();
 
 var customerModel = require('../modules/customersignupschema');
 /* GET home page. */
+
+router.get('/',  function(req, res, next) {
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  if(loginUser.loginUserCustomer) {
+    customerModel.findOne({Username: loginUser.loginUserCustomer}).exec((err, currentLogInData) => {
+      if(err) {
+        res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'Data Not Found', loginUser: loginUser.loginUserCustomer, currentLogInData: '' });
+      } else {
+        res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: currentLogInData  });
+      }
+
+    });
+  } else {
+    res.redirect('/');
+  }
+});
+/*
 router.get('/',  function(req, res, next) {
     var loginUser = {
       loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -10,13 +32,12 @@ router.get('/',  function(req, res, next) {
       loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
   
     };
-
     if(loginUser.loginUserCustomer) {
         customerModel.findOne({Username: loginUser.loginUserCustomer}).exec((err, currentLoginData) => {
             if(err) {
                 res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'Data Not Found', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
             }
-            if(currentLoginData != null) {
+            if(currentLoginData) {
                 
                 res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLoginData: currentLoginData });
             } else {
@@ -25,6 +46,7 @@ router.get('/',  function(req, res, next) {
         });
       res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
     } else if(loginUser.loginUserEmployee){
+
       res.redirect('dashboardemployees');
       
     } else if(loginUser.loginUserAdmin) {
@@ -35,5 +57,5 @@ router.get('/',  function(req, res, next) {
       res.redirect('/');
     }   
   });
-
+*/
 module.exports = router;

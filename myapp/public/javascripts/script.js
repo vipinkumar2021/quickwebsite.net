@@ -290,6 +290,42 @@ function closeContactModalforWindow(e) {
 }
 // contact modal javascript ends here
 
+// Upload Profile Image modal javascript starts here
+//open Upload Profile Image modal when Contact button is clicked
+function openUloadProfileImageModal() {
+    var parentModalUploadProfileImage = document.querySelector('.modal-parent-upload-profile-image');
+    var parentModalContact = document.querySelector('.modal-parent-contact');
+    
+    parentModalUploadProfileImage.style.display = 'block';
+    parentModalSignin.style.display = 'none';
+    parentModalSignup.style.display = 'none';
+    parentModalContact.style.display = 'none';
+    //closing sidenav when contact is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //Scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+}
+
+//close contat modal when Cross or Cancel button is clicked
+function closeUloadProfileImageModal() {
+    var parentModalUploadProfileImage = document.querySelector('.modal-parent-upload-profile-image');
+    parentModalUploadProfileImage.style.display = 'none';
+}
+//close contat modal when outside window is clicked
+var parentModalUploadProfileImage = document.querySelector('.modal-parent-upload-profile-image');
+parentModalUploadProfileImage.addEventListener('click', closeUploadProfileImageModalforWindow);
+
+function closeUploadProfileImageModalforWindow(e) {
+    if(e.target.className == 'modal-parent-contact') {
+        parentModalUploadProfileImage.style.display = 'none';  
+    }
+}
+// Upload Profile Image modal javascript ends here
+
 // confirm before deleting modal javascript starts here
 // Remove Item when remove tag is clicked
 
@@ -811,3 +847,5 @@ function showPassword() {
         passwordInput.type = 'password'
     } 
 }
+
+

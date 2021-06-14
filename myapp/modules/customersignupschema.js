@@ -45,7 +45,10 @@ Onetimepassword: {
     type: String
   //  required: true    
 }, 
-
+ProfileImage: {
+    type: String
+  //  required: true    
+},
 Date: {
     type: Date,
     default: Date.now

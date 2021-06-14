@@ -239,7 +239,8 @@ router.post('/signupcustomer', checkUsername, checkMobileNumber, checkEmail,   f
     Mobilenumber: mobilenumber,
     Email: email,    
    // Password: password,
-    Onetimepassword: Onetimepassword
+    Onetimepassword: Onetimepassword,
+    ProfileImage: '/images/avatar2.png'
     });
 
     customerDetails.save((err )=> {
@@ -918,6 +919,111 @@ router.post('/create-checkout-session', async (req, res) => {
 });
 */
 //
+
+// upload profile image
+//Require multer for file upload
+var multer = require('multer');
+//require path
+var path = require('path');
+router.use(express.static(path.join(__dirname, './public')));
+//Set Storage Engine for file to be stored
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, `./public/uploads/`)
+  },
+  
+  filename: function(req, file, cb) {     
+    
+    cb(null, `${Date.now()}_${file.fieldname}${path.extname(file.originalname)}`);
+  }  
+  /* Correct One so far
+  filename: function(req, file, cb) {    
+    cb(null, Date.now() + '_' + file.fieldname + '_' + path.extname(file.originalname));
+  }
+  */
+});
+//init upload correct one starts here
+/*
+const filesForGalleryUpload = multer({
+  storage: storage,
+  limits: {fileSize: 1000000},
+  fileFilter: function(req, file, cb) {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
+      cb(null, true)
+    } else {
+      cb(null, false)
+    }
+  }
+}).single('uploadcontentforgallery');
+ Correct One Ends*/
+//
+const upload = multer({
+  storage: storage,
+  //limits: {fileSize: 1000000000},    
+  fileFilter: function(req, file, cb) {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
+      cb(null, true)
+    } else {
+      cb(null, false)
+    }
+  }
+});
+
+var multipleUploads = upload.fields([{name: 'uploadprofileimage', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+
+router.post('/uploadprofileimage', multipleUploads, function(req, res, next) {
+
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  var currentAccountUser = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
+
+  if(currentAccountUser) {
+    if(req.files.uploadprofileimage) {
+      var profileImage = req.files.uploadprofileimage[0].filename;
+    } else {
+      profileImage = 'No Profile Image Uploaded'
+    }
+    if(loginUser.loginUserCustomer) {
+      // first move old profile image to recyclebin then do findOneAndUpdate()      
+      customerModel.findOneAndUpdate({Username: loginUser.loginUserCustomer}, {ProfileImage: `./uploads/${profileImage}`}, /*{new: true},*/ {upsert: true}, function(err) {
+        if(err) {
+          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
+        } else {
+          res.redirect('dashboardcustomerprofile');
+          //res.redirect('/');
+          //res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'Profile Image Uploaded', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
+        }
+        //
+        /*
+        if(currentLoginData !== null) {
+          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'Profile Image Uploaded', loginUser: loginUser.loginUserCustomer, currentLoginData: ''});
+        } else {
+          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'Profile Image Uploaded', loginUser: loginUser.loginUserCustomer, currentLoginData: '' });
+        }
+        */
+      });
+    } else if(loginUser.loginUserEmployee) {
+      //
+      //first of all move old profile image from employee schema to recyclebin and then findOneandUpdate() to update new image. 
+
+      //
+    } else if(loginUser.loginUserAdmin){
+      //
+      //first of all move old profile image from Admin schema to recyclebin and then findOneandUpdate() to update new image. 
+
+
+      //
+    } else {
+      res.redirect('/');
+    }
+  } else {
+    res.redirect('/');
+  }
+});
 
 
 module.exports = router;

@@ -88,6 +88,35 @@
           </div>
           <!--Contact Modal ends here-->
 
+          <!--Upload Profile image Modal starts here-->
+                  
+          <div class="modal-parent-upload-profile-image">
+            <div class="modal-upload-profile-image">
+             <!--
+              <h3 style="text-align: left;">View Profile Picture</h1>
+              <a href="#">View</a>
+            -->
+              <h3 style="text-align: center;">Update Profile Picture</h1>
+                <form action="/uploadprofileimage" method="post" role="form" enctype="multipart/form-data">
+                  <label for="profileimage">Choose Image</label><br/>
+                  <input name="uploadprofileimage" type="file"/><br/><br/>
+                  
+                  <div class="modal-button">
+                    <button type="submit">Submit</button><button type="button" onclick="closeUloadProfileImageModal()">Cancel</button><br/><br/>
+                  </div>
+                  
+                  <div class="modal-anchor-tags">
+                    <span>Advertising increases your sales <a href="/dashboardpostadd">Click here</a></span>
+                  </div>
+                                  
+                </form>
+                <span class="X-upload-profile-image" onclick="closeUloadProfileImageModal()">&times;</span>
+            </div>
+          </div>
+          <!--Upload Profile image Modal ends here-->
+
+
+
           
 
         

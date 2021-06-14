@@ -6,34 +6,29 @@
         <% if(msg != '') {%> 
             <h1 style="color: whitesmoke"> <%= msg %> </h1>  
         <% } %>
-        <img class="profile-image" src="/images/avatar2.png" alt="Profile Image" width="100px" height="100px" /><br/>
+        
+        <img id="profile-image-id" class="profile-image" src="<%= currentLogInData.ProfileImage %> " alt="Profile Image" width="100px" height="100px" onclick="openUloadProfileImageModal()" /><br/>
+          
+        
         <h2>
             Logged in As: <% if(loginUser){ %>  
-                <%= loginUser %> 
+                <a href="/dashboardcustomerprofile"><%= loginUser %></a> 
               <% } %>
         </h2>
         <br/> 
-        <div class="row">
-            <h2>Advertisement increases Your Business</h2><br/>
-            
-            
-        </div>
-        <div class="row">
-            <h2><a href="#">Advertise here for free</a></h2>
-        </div>
+        
         <div class="row">
             <div class="column col-1">
-                <% if(currentLoginData != "") { %>
-                    <%= currentLoginData.Firstname %> 
-                <% } %> 
+                 
                 <h3>Profile</h3>                
-                <span>Name: </span> <br/>                
-                <span>Username: </span> <br/>
-                <span>Mobile: </span> <br/>
-                <span>Email: </span> <br/>
-                <span>Settings</span> <br/>
+                <span>Name: <%= currentLogInData.Firstname %> <%= currentLogInData.Lastname %></span> <br/>                
+                <span>Username: <%= currentLogInData.Username %> </span> <br/>
+                <span>Mobile: <%= currentLogInData.Mobilenumber %></span> <br/>
+                <span>Email: <%= currentLogInData.Email %> </span> <br/>
+                <span>Change Password: <a href="/dashboardforgotpassword">Click here</a></span><br/>
                 <span>Edit Account</span> <br/>
                 <span>Delete Account</span> <br/>
+                <!--<span>Settings</span> <br/>-->
                 <span>Sign Out</span>
 
             </div>
@@ -52,9 +47,35 @@
             </div>
             
         </div>
+        <div class="row">
+            <h2>Advertisement increases Your Business</h2><br/>           
+        </div>
+        <div class="row">
+            <h2><a href="/dashboardpostadd">Advertise here for free</a></h2>
+        </div>
         
     </div>
 </div>
+<script>
+    /*
+    var profileImage = document.getElementById('profile-image-id');
+    profileImage.addEventListener('click', profileImageClicked);
+
+    function profileImageClicked(event) {
+        var button = even.target;
+
+        fetch('/profileimageupload', {
+        method: "POST",
+        // sending order id and order price to index.js for further process
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify({orderId: itemId, orderPrice: cartTotalPrice})
+        //
+        });
+    }
+    */
+</script>
 <%- include('modal') %>
 <%- include('dashboardfooter') %>
 

@@ -110,7 +110,12 @@ var dashboarduploadadminRouter = require('./routes/dashboarduploadadmin');
 var successRouter = require('./routes/success');
 var cancelRouter = require('./routes/cancel');
 var dashboardpurchasedRouter = require('./routes/dashboardpurchased');
-
+var forgotpasswordRouter = require('./routes/forgotpassword');
+var dashboardforgotpasswordRouter = require('./routes/dashboardforgotpassword');
+var forgotusernameRouter = require('./routes/forgotusername');
+var getusernameRouter = require('./routes/getusername');
+var resetpasswordRouter = require('./routes/resetpassword');
+var dashboardresetpasswordRouter = require('./routes/dashboardresetpassword');
 
 
 
@@ -236,7 +241,12 @@ app.use('/dashboarduploadadmin', dashboarduploadadminRouter);
 app.use('/success', successRouter);
 app.use('/cancel', cancelRouter);
 app.use('/dashboardpurchased', dashboardpurchasedRouter);
-
+app.use('/forgotpassword', forgotpasswordRouter);
+app.use('/dashboardforgotpassword', dashboardforgotpasswordRouter);
+app.use('/forgotusername', forgotusernameRouter);
+app.use('/getusername', getusernameRouter);
+app.use('/resetpassword', resetpasswordRouter);
+app.use('/dashboardresetpassword', dashboardresetpasswordRouter);
 
 
 // catch 404 and forward to error handler
