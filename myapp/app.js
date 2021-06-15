@@ -116,6 +116,7 @@ var forgotusernameRouter = require('./routes/forgotusername');
 var getusernameRouter = require('./routes/getusername');
 var resetpasswordRouter = require('./routes/resetpassword');
 var dashboardresetpasswordRouter = require('./routes/dashboardresetpassword');
+var dashboardgivefeedbackRouter = require('./routes/dashboardgivefeedback');
 
 
 
@@ -247,6 +248,7 @@ app.use('/forgotusername', forgotusernameRouter);
 app.use('/getusername', getusernameRouter);
 app.use('/resetpassword', resetpasswordRouter);
 app.use('/dashboardresetpassword', dashboardresetpasswordRouter);
+app.use('/dashboardgivefeedback', dashboardgivefeedbackRouter);
 
 
 // catch 404 and forward to error handler

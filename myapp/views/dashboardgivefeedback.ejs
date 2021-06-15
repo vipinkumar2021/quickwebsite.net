@@ -1,0 +1,28 @@
+<%- include('dashboardheader') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted" ><!--welcome css working in this-->
+        <% if(msg != '') { %>
+            <h2 style="margin: 3.5em auto 1em auto;"><%= msg %> </h2>
+        <% } %> 
+        <h2 style="margin: 3.5em auto 1em auto;">Give Feedback</h2> 
+        <form action="/dashboardgivefeedback" method="post" role="form">
+            <label>Please provide your feedback</label><br/>
+            <textarea name="feedback">
+
+            </textarea><br/>
+            <label>Any important suggestion, to improve our services, is appreciated.</label><br/>
+            <textarea name="suggestion">
+
+            </textarea><br/><br/>
+            <button type="submit">Submit</button>
+        </form>
+    </div>     
+
+</div>
+<%- include('modal') %>
+<%- include('dashboardfooter') %>
+
+
+
+

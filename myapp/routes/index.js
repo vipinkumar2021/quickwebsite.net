@@ -925,6 +925,7 @@ router.post('/create-checkout-session', async (req, res) => {
 var multer = require('multer');
 //require path
 var path = require('path');
+const { findOneAndDelete, findOneAndRemove } = require('../modules/cartitemsschema');
 router.use(express.static(path.join(__dirname, './public')));
 //Set Storage Engine for file to be stored
 const storage = multer.diskStorage({
@@ -1025,6 +1026,58 @@ router.post('/uploadprofileimage', multipleUploads, function(req, res, next) {
   }
 });
 
+// Delete customer Account strts here
+var recycleBinModel = require('../modules/recyclebinschema');
+
+router.post('/deletecustomeraccount', (req, res, next) => {
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  //if(loginUser.loginUserCustomer) {
+    //var id = loginUser.loginUserCustomer;
+    //console.log(loginUser.loginUserCustomer)
+    customerModel.findOneAndRemove({Username: loginUser.loginUserCustomer}, (err, customerAccountToBeMovedToRecyclebin) => {
+      if(err) throw err;
+      cartItemsModel.find({Username: loginUser.loginUserCustomer}).exec((err, cartItemsToBeMovedToRecycleBin) => {
+        if(err) throw err;
+
+
+        console.log(customerAccountToBeMovedToRecyclebin);
+        console.log(cartItemsToBeMovedToRecycleBin);
+        cartItemsModel.deleteMany({Username: loginUser.loginUserCustomer}, function(err) {
+          if(err) throw err;      
+        
+        
+      
+      var customerAccountDetails = new recycleBinModel({
+        DeletedCustomerAccountDetails: `
+        Customer Account Details: ${customerAccountToBeMovedToRecyclebin} <br/>
+        Customer Account Cart Items: ${cartItemsToBeMovedToRecycleBin}        
+        `
+      });
+      customerAccountDetails.save((err) => {
+        if(err) throw err;
+        req.session.destroy(function(err) {
+          if(err) {
+            res.redirect('/');
+          } else {
+            res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
+      
+          } 
+        });
+        
+      });
+    });
+    });
+    });
+  //}
+});
+
+
+//Delete Customer Account ends here
 
 module.exports = router;
 

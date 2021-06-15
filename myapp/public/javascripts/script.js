@@ -328,8 +328,39 @@ function closeUploadProfileImageModalforWindow(e) {
 
 // confirm before deleting modal javascript starts here
 // Remove Item when remove tag is clicked
+//delete customer account javascript strts here
+/*
+    var deleteCustomerAccountAnchor = document.getElementById('delete-customer-account-anchor');
+    deleteCustomerAccountAnchor.addEventListener('click', deleteCustomerAccountAnchorClicked);
 
-//open confirm before delete modal when Contact button is clicked
+    function deleteCustomerAccountAnchorClicked() {
+        var deleteForm = document.getElementById('delete-form');
+        var deleteFormAttribute = `/deletecustomeraccount/:id`
+        deleteForm.setAttribute('action', deleteFormAttribute);
+
+        openConfirmBeforeDeleteModalForCustomerAccount()
+    }
+*/
+    function openConfirmBeforeDeleteModalForCustomerAccount() {
+        var deleteForm = document.getElementById('delete-form');
+        var deleteFormAttribute = `/deletecustomeraccount`;
+        deleteForm.setAttribute('action', deleteFormAttribute);
+
+        var parentModalConfirmBeforeDelete = document.querySelector('.modal-parent-confirmation-before-delete');
+        parentModalConfirmBeforeDelete.style.display = 'block';
+        parentModalSignin.style.display = 'none';
+        parentModalSignup.style.display = 'none';
+        //closing sidenav when contact is clicked
+        sidenavParent.style.width = '0';
+        sideNav.style.width = '0';
+        iconBarButton.style.display = 'block';
+        //Scroll to top
+        document.body.scrollTop = 0; //For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    
+    }
+// delete customer account javascript ends here
+//open confirm before delete modal when button is clicked
 /*
 function openConfirmBeforeDeleteModal() {
     var parentModalConfirmBeforeDelete = document.querySelector('.modal-parent-confirmation-before-delete');
