@@ -7,8 +7,64 @@
             <h1 style="color: whitesmoke"> <%= msg %> </h1>  
         <% } %>
         <h2>Career</h2> 
+        <h2>List of Applications</h2>
+        <% careerApplications.forEach(element => { %>
+          <table>
+              <tr>
+                  <th>Application Id: </th> <td> <%=  element._id %></td>                  
+              </tr>
+              <tr>
+                <th>First Name: </th> <td> <%= element.Firstname %></td>                
+            </tr>
+            <tr>
+                <th>Last Name: </th> <td> <%=  element.Lastname %></td>                
+            </tr>
+            <tr>
+                <th>Email: </th> <td> <%=  element.Email %></td>                
+            </tr>
+            <tr>
+                <th>Mobile Number: </th> <td> <%=  element.Mobilenumber %></td>                
+            </tr>
+            <tr>
+                <th>Gender: </th> <td> <%=  element.Gender %></td>                
+            </tr>
+            <tr>
+                <th>Address: </th> <td> <%=  element.Address %></td>                
+            </tr>
+            <tr>
+                <th>National Id: </th> <td> <%=  element.NationalIdNumber %></td>                
+            </tr>
+            <tr>
+                <th>National Id Image: </th> <td> <img src="./uploads/<%= element.NationIdImageName %>" width="150px" height="150px" style="margin: auto;" alt="National Id Image"/></td>                
+            </tr>
+            <!--
+            <tr>
+                <th>CV: </th> <td> <embed type="application/pdf" src="/uploads/<%= element.CVfilename %>" width="50px" height="50px"></embed></td>                
+            </tr>
+            -->
+            <tr>
+                <th>CV: </th> <td> <a href="/uploads/<%= element.CVfilename %>" download=""><%= element.CVfilename %></a></td>                
+            </tr>
+            <!--
+            <tr>
+                <th>
+                    CV:
+                </th> 
+                <td>
+                    <object data="/uploads/<%= element.CVfilename %>" type="application/pdf" width="100%" height="100%">
+                        <p>Alternative text - include a link <a href="/uploads/<%= element.CVfilename %>">to the PDF!</a></p>
+                    </object>
+                </td>                
+            </tr>
+            -->
+            <tr>
+                <th>Brief Description: </th> <td><p><%= element.BriefDescription %> </p> </td>                
+            </tr>
+            <hr/>
+               
+        <% }) %>
+         
         
-        <button onclick="alert('There is no vacancy available at the moment, Please Try Again later')" class="each-button">Apply For Job</button>    
     
     </div>
 </div>

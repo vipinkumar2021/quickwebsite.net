@@ -25,25 +25,37 @@
                 <span>Username: <%= currentLogInData.Username %> </span> <br/>
                 <span>Mobile: <%= currentLogInData.Mobilenumber %></span> <br/>
                 <span>Email: <%= currentLogInData.Email %> </span> <br/>
-                <span>Change Password: <a href="/dashboardforgotpassword">Click here</a></span><br/>
-                <span>Edit Account</span> <br/>
-                <span>Delete Account</span> <br/>
+                <span><a href="/dashboardforgotpassword">Change Password</a></span><br/>
+                <span><a href="/dashboardeditaccountcustomer">Edit Account</a></span> <br/>
+                <span><a style="cursor: pointer;" onclick="openConfirmBeforeDeleteModalForCustomerAccount()" id="delete-customer-account-anchor">Delete Account</a></span> <br/><br/>
                 <!--<span>Settings</span> <br/>-->
-                <span>Sign Out</span>
+                <span>
+                    <form action="/signout" method="post" role="form">
+                    <input class="signoutBtn" type="submit" value="Sign Out" style="color: rgb(71, 157, 255); text-align: left;">
+                    </form>
+                </span>
 
             </div>
             <div class="column col-2">
                 
-                <h3>Orders List</h3>
-                span>Name: </span> <br/>                
-                <span>Username: </span> <br/>
-                <span>Mobile: </span> <br/>
-                <span>Email: </span> <br/>
-                <span>Settings</span> <br/>
-                <span>Edit Account</span> <br/>
-                <span>Advertise Your Business on our website</span>
-                <span>Delete Account</span> <br/>
-                <span>Sign Out</span>
+                <h3>Orders by Ids</h3>
+                
+                <% if(allCartItems.length > 0) { %>
+                    <% allCartItems.forEach(function(element) { %>                      
+                    
+                <span>Unpurchased: </span><span><a href="/dashboardcart/#<%= element._id%>"><%= element._id%></a>  </span> <br/>                
+                
+                <% }) %>  
+               <% } %> 
+
+               <% if(allPurchasedItems.length > 0) { %>
+                <% allPurchasedItems.forEach(function(element) { %>                      
+                
+                <span>purchased: </span><span><a href="/dashboardpurchased/#<%= element._id %>"><%= element._id %> </a></span> <br/>
+            
+            <% }) %>  
+           <% } %> 
+               
             </div>
             
         </div>

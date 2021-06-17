@@ -1,14 +1,42 @@
 <%- include('dashboardheader') %>
 
 <div class="item item3 main ">
-    <div class="container welcome career" ><!--welcome css working in this-->
+    <div class="container welcome getstarted career" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
         <% if(msg != '') {%> 
             <h1 style="color: whitesmoke"> <%= msg %> </h1>  
         <% } %>
-        <h2>Career Dashboard</h2> 
+        <h2>Career</h2> 
+        <form action="/dashboardcareer" method="POST" role="form" enctype="multipart/form-data">            
+            <label>First Name</label><br/>
+            <input type="text" name="firstname" placeholder="First Name"/><br/>
+            <label>Last Name</label><br/>
+            <input type="text" name="lastname" placeholder="Lastt Name"/><br/>            
+            <label>Email</label><br/>
+            <input type="email" name="email" placeholder="Email"/><br/>
+            <label>Mobile Number</label><br/>
+            <input type="number" name="mobilenumber" placeholder="Mobile Number"/><br/><br/>
+            <label>Gender</label><br/>
+            <input type="radio" id="male" name="gender" value="male"/><label>Male</label><br/>
+            <input type="radio" id="female" name="gender" value="female"/><label>Female</label><br/>
+            <input type="radio" id="other" name="gender" value="other"/><label>Other</label><br/><br/>
+            <label>Address</label><br/>
+            <textarea name="address">
+
+            </textarea><br/>
+            <label>National Id Number (Or Adhar Card Number)</label><br/>
+            <input type="text" name="nationalidnumber" placeholder="National Id"/><br/>
+            <label>Upload National Id (Or Adhar Card) Image</label><br/>
+            <input type="file" name="nationalidimagename"/><br/>
+            <label>Upload CV (pdf only)</label><br/>
+            <input type="file" name="cv"/><br/>
+            <label>Give a brief description about your work life</label><br/>
+            <textarea name="briefdescription" minlength="150">
+
+            </textarea><br/><br/>
+            <input type="submit" value="Submit"/>
+        </form>
         
-        Enter Your Email Id and look for your Resume Status
             
     </div>
 </div>

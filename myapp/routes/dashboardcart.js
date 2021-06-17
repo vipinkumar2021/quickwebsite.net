@@ -136,8 +136,7 @@ router.post('/delete/:id', function(req, res, next) {
     //var currentAccountUserItemId = req.body.currentItemId;
     //var currentAccountUserItemId = req.body.currentOrderId;//req.params.id;
 
-    console.log(currentAccountUserItemId);
-    
+    console.log(currentAccountUserItemId);   
     
     cartItemsModel.findByIdAndRemove(currentAccountUserItemId, function(err, itemToBeMovedToRecycleBin) {
       if(err) {

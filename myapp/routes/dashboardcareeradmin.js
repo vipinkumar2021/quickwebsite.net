@@ -1,22 +1,26 @@
 var express = require('express');
+//const careerModel = require('../modules/careerschema');
 var router = express.Router();
 
+var careerModel = require('../modules/careerschema');  
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
-    var loginUserEmployee = req.session.employeeLoginUserName;//localStorage.getItem('employeeLoginUserName');
-    var loginUserAdmin = req.session.adminLoginUserName;//localStorage.getItem('adminLoginUserName');
-    
-    if(loginUserCustomer){
-      res.redirect('/dashboardcareer');
-    } else if(loginUserEmployee) {
-      res.redirect('/dashboardcareer');
-    } else if(loginUserAdmin) {
-      res.redirect('/dashboardcareeradmin');
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,
+    loginUserEmployee: req.session.employeeLoginUserName,
+    loginUserAdmin: req.session.adminLoginUserName
+  } 
+    if(loginUser.loginUserAdmin){     
+      careerModel.find().exec((err, careerApplications) => {
+        if(err) {
+          res.render('dashboardcareeradmin', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserAdmin, careerApplications: ''});
+        } else {
+          res.render('dashboardcareeradmin', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserAdmin, careerApplications: careerApplications });
+        }
+      });      
     } else {
-      res.render('career', { title: 'Quick Website', msg:''});
-    }
-  
+      res.redirect('/');
+    }  
 });
 
 module.exports = router;

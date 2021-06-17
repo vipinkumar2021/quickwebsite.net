@@ -16,9 +16,9 @@
         <% if(currentCustomerAccountUserCartItems.length > 0){ %>
             
             <% currentCustomerAccountUserCartItems.forEach(element => { %>
-            <div class="cart-items"><!--cart-items start here-->
-                <div class="cart-row"><!--cart-row starts here-->                
-                <table class="table-class">
+            <div class="cart-items" id="<%= element._id %>"><!--cart-items start here-->
+                <div class="cart-row" ><!--cart-row starts here-->                
+                <table class="table-class" >
                     <caption style="color: whitesmoke; justify-content: left;">
                         <span><strong>Order Id: </strong></span><span class="item-id" style="padding-left: .7em;"> <%= element._id %></span>
                     </caption>

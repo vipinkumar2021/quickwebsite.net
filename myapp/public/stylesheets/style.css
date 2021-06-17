@@ -699,12 +699,35 @@
     padding-bottom: 5em;
   }
 
+  .career table {
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    
+    border: 1px solid whitesmoke;
+    margin-top: 4em;   
+
+  }
+  .career table tr {
+    height: auto;
+  }
+  .career table th, td {
+    text-align: left;
+    padding: 8px;
+    border: 2px solid whitesmoke;
+  }
+  
+  .career table tr:nth-child(even){background-color: rgba(238, 135, 97, .6)}
   
   /* career css ends here*/
 
   /* dashboardcart css* starts*/
   .dashboardcart {    
     padding-bottom: 5em;
+  }
+  .dashboardcart .cart-items, .dashboardpurchased .purchased-items {
+    padding-top: 3.8em;
   }
   .dashboardcart table {
     width: 100%;
@@ -713,6 +736,7 @@
     text-align: left;
     border-collapse: collapse;
     /*padding: 1%;*/
+    /*padding-top: 2em;*/
   }
   .dashboardcart table tr {
     width: 100%;

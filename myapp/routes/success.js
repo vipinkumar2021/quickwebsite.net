@@ -34,9 +34,11 @@ router.get('/', async function(req, res, next) {
     });
     //var Session = res.json(session); 
 
+    var sessionId = session.id;
     var customerId = session.customer;
     var orderId = session.client_reference_id;
     var totalCost = session.amount_total;
+    var paymentStatus = session.payment_status;
     cartItemsModel.findByIdAndRemove(orderId, function(err, itemToBeMovedToPurchased) {
       if(err) throw err;
       if(itemToBeMovedToPurchased) {
@@ -44,7 +46,152 @@ router.get('/', async function(req, res, next) {
           Username: loginUser.loginUserCustomer,
           CustomerId: customerId,
           ClientReferenceId: orderId,
-          Purchased: itemToBeMovedToPurchased,
+          //
+          SessionId: itemToBeMovedToPurchased.SessionId,
+PaymentStatus: paymentStatus,
+TemplateOption: itemToBeMovedToPurchased.TemplateOption,
+TemplateOptionEstimatedTime: itemToBeMovedToPurchased.TemplateOptionEstimatedTime,
+TemplateOptionPrice: itemToBeMovedToPurchased.TemplateOptionPrice,
+
+//CustomerGivenTemplate: req.body.customertemplate,
+//Basic Features
+Home: itemToBeMovedToPurchased.Home,
+HomePageEstimatedTime: itemToBeMovedToPurchased.HomePageEstimatedTime,
+HomePagePrice: itemToBeMovedToPurchased.HomePagePrice,
+HomePageContent: itemToBeMovedToPurchased.HomePageContent,
+
+About: itemToBeMovedToPurchased.About,
+AboutEstimatedTime: itemToBeMovedToPurchased.AboutEstimatedTime,
+AboutPrice: itemToBeMovedToPurchased.AboutPrice,
+AboutContent: itemToBeMovedToPurchased.AboutContent,
+
+Services: itemToBeMovedToPurchased.Services,
+ServicesEstimatedTime: itemToBeMovedToPurchased.ServicesEstimatedTime,
+ServicesPrice: itemToBeMovedToPurchased.ServicesPrice,
+ServicesContent: itemToBeMovedToPurchased.ServicesContent,
+
+WhyUs: itemToBeMovedToPurchased.WhyUs,
+WhyUsEstimatedTime: itemToBeMovedToPurchased.WhyUsEstimatedTime,
+WhyUsPrice: itemToBeMovedToPurchased.WhyUsPrice,
+WhyUsContent: itemToBeMovedToPurchased.WhyUsContent,
+
+ContactUs: itemToBeMovedToPurchased.ContactUs,
+ContactUsEstimatedTime: itemToBeMovedToPurchased.ContactUsEstimatedTime,
+ContactUsPrice: itemToBeMovedToPurchased.ContactUsPrice,
+
+Address: itemToBeMovedToPurchased.Address, 
+PhoneNumber: itemToBeMovedToPurchased.PhoneNumber,
+
+SocialMedia: itemToBeMovedToPurchased.SocialMedia,
+SocialMediaEstimatedTime: itemToBeMovedToPurchased.SocialMediaEstimatedTime,
+SocialMediaPrice: itemToBeMovedToPurchased.SocialMediaPrice,
+SocialMediaLink: itemToBeMovedToPurchased.SocialMediaLink,
+
+Policy: itemToBeMovedToPurchased.Policy,
+PolicyEstimatedTime: itemToBeMovedToPurchased.PolicyEstimatedTime,
+PolicyPrice: itemToBeMovedToPurchased.PolicyPrice,
+PolicyContent: itemToBeMovedToPurchased.PolicyContent,
+
+TermsAndConditions: itemToBeMovedToPurchased.TermsAndConditions,
+TermsAndConditionsEstimatedTime: itemToBeMovedToPurchased.TermsAndConditionsEstimatedTime,
+TermsAndConditionsPrice: itemToBeMovedToPurchased.TermsAndConditionsPrice,
+TermsAndConditionsContent: itemToBeMovedToPurchased.TermsAndConditionsContent,
+
+CopyRight: itemToBeMovedToPurchased.CopyRight,
+CopyRightEstimatedTime: itemToBeMovedToPurchased.CopyRightEstimatedTime,
+CopyRightPrice: itemToBeMovedToPurchased.CopyRightPrice,
+CopyRightContent: itemToBeMovedToPurchased.CopyRightContent,
+
+Logo: itemToBeMovedToPurchased.Logo,
+LogoPurchasingEstimatedTime: itemToBeMovedToPurchased.LogoPurchasingEstimatedTime,
+LogoPurchasingPrice: itemToBeMovedToPurchased.LogoPurchasingPrice,
+LogoByCustomerEstimatedTime: itemToBeMovedToPurchased.LogoByCustomerEstimatedTime,
+LogoByCustomerPrice: itemToBeMovedToPurchased.LogoByCustomerPrice,
+UploadContentForLogo: itemToBeMovedToPurchased.UploadContentForLogo,
+
+//External Features
+Gallery: itemToBeMovedToPurchased.Gallery,
+GalleryEstimatedTime: itemToBeMovedToPurchased.GalleryEstimatedTime,
+GalleryPrice: itemToBeMovedToPurchased.GalleryPrice,
+TextContentForGallery: itemToBeMovedToPurchased.TextContentForGallery,
+UploadContentForGalleryOne: itemToBeMovedToPurchased.UploadContentForGalleryOne,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+/* uncomment later if corrected
+UploadContentForGalleryTwo: uploadContentForGalleryTwo,
+UploadContentForGalleryThree: uploadContentForGalleryThree,
+UploadContentForGalleryFour: uploadContentForGalleryFour,
+UploadContentForGalleryFive: uploadContentForGalleryFive,
+UploadContentForGallerySix: uploadContentForGallerySix,
+UploadContentForGallerySeven: uploadContentForGallerySeven,
+UploadContentForGalleryEight: uploadContentForGalleryEight,
+UploadContentForGalleryNine: uploadContentForGalleryNine,
+UploadContentForGalleryTen: uploadContentForGalleryTen,
+ uncomment later if corrected */
+
+Templates: itemToBeMovedToPurchased.Templates,
+TemplatesFeatureEstimatedTime: itemToBeMovedToPurchased.TemplatesFeatureEstimatedTime,
+TemplatesFeaturePrice: itemToBeMovedToPurchased.TemplatesFeaturePrice,
+TextContentForTemplates: itemToBeMovedToPurchased.TextContentForTemplates,
+UploadContentForTemplates: itemToBeMovedToPurchased.UploadContentForTemplates,//req.files.filename,//req.body.uploadcontentfortemplates, //uploadContentForTemplates,//req.files.filename, /*filenameUpload,*///req.files.filename,//uploadContentForGallery,//req.file.uploadcontentfortemplates,
+
+Menu: itemToBeMovedToPurchased.Menu,
+MenuEstimatedTime: itemToBeMovedToPurchased.MenuEstimatedTime,
+MenuPrice: itemToBeMovedToPurchased.MenuPrice,
+TextContentForMenu: itemToBeMovedToPurchased.TextContentForMenu,
+UploadContentForMenu: itemToBeMovedToPurchased.UploadContentForMenu, 
+
+// Advanced Features
+RegisterLogin: itemToBeMovedToPurchased.RegisterLogin,
+RegisterLoginEstimatedTime: itemToBeMovedToPurchased.RegisterLoginEstimatedTime,
+RegisterLoginPrice: itemToBeMovedToPurchased.RegisterLoginPrice,
+
+ContactUsForm: itemToBeMovedToPurchased.ContactUsForm,
+ContactUsWithFormEstimatedTime: itemToBeMovedToPurchased.ContactUsWithFormEstimatedTime,
+ContactUsWithFormPrice: itemToBeMovedToPurchased.ContactUsWithFormPrice,
+
+PaymentMethod: itemToBeMovedToPurchased.PaymentMethod,
+PaymentMethodEstimatedTime: itemToBeMovedToPurchased.PaymentMethodEstimatedTime,
+PaymentMethodPrice: itemToBeMovedToPurchased.PaymentMethodPrice,
+
+BankAccountAndIfsc: itemToBeMovedToPurchased.BankAccountAndIfsc,
+EmailId: itemToBeMovedToPurchased.EmailId,
+//Designing Features
+WebsiteBackground: itemToBeMovedToPurchased.WebsiteBackground,
+WebsiteBackgroundColor: itemToBeMovedToPurchased.WebsiteBackgroundColor,
+WebsiteBackgroundEstimatedTime: itemToBeMovedToPurchased.WebsiteBackgroundEstimatedTime,
+WebsiteBackgroundColorPrice: itemToBeMovedToPurchased.WebsiteBackgroundColorPrice,
+WebsiteBackgroundImage: itemToBeMovedToPurchased.WebsiteBackgroundImage,//req.body.backgroundimage,
+WebsiteBackgroundImagePrice: itemToBeMovedToPurchased.WebsiteBackgroundImagePrice,
+TextColor: itemToBeMovedToPurchased.TextColor,
+//Other Features or Services
+EmailService: itemToBeMovedToPurchased.EmailService,
+EmailServiceEstimatedTime: itemToBeMovedToPurchased.EmailServiceEstimatedTime,
+EmailServicePrice: itemToBeMovedToPurchased.EmailServicePrice,
+MessageService: itemToBeMovedToPurchased.MessageService,
+MessageServiceEstimatedTime: itemToBeMovedToPurchased.MessageServiceEstimatedTime,
+MessageServicePrice: itemToBeMovedToPurchased.MessageServicePrice,
+DataBase: itemToBeMovedToPurchased.DataBase,
+DataBaseEstimatedTime: itemToBeMovedToPurchased.DataBaseEstimatedTime,
+DataBasePrice: itemToBeMovedToPurchased.DataBasePrice,
+// Uploads
+ExtraUploadedFilesNameOne: itemToBeMovedToPurchased.ExtraUploadedFilesNameOne,//uploadedFilesNames,//req.body.uploadedfilesnames,
+/* uncomment later if corrected
+ExtraUploadedFilesNameTwo: extraUploadedFileNameTwo,//uploadedFilesNames
+ExtraUploadedFilesNameThree: extraUploadedFileNameThree,
+ExtraUploadedFilesNameFour: extraUploadedFileNameFour,
+ExtraUploadedFilesNameFive: extraUploadedFileNameFive,
+ExtraUploadedFilesNameSix: extraUploadedFileNameSix,
+ uncomment later if corrected */
+
+//Additional
+WebsiteBriefDescription: itemToBeMovedToPurchased.WebsiteBriefDescription,
+Include: itemToBeMovedToPurchased.Include,
+DoNotInclude: itemToBeMovedToPurchased.DoNotInclude,
+
+//Other Charges
+OtherCharges: itemToBeMovedToPurchased.OtherCharges,
+
+          //
+          //Purchased: itemToBeMovedToPurchased,
           TotalCost: totalCost/100 + ' ' + '(' + session.currency + ')'
         });
         purchasedDetail.save((err) => {
