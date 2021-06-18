@@ -7,6 +7,7 @@
             <h2><%= msg %> </h2>
         <% } %> 
         <h2>Start Building Your Website<br/><br/>
+            <p id="pathname"></p>
              <strong>Select your choice below</strong>
         </h2>    
          
@@ -15,41 +16,203 @@
             <select name="template" id="template">
                 <option>Select Template</option>
                 <optgroup label="Food & Restaurant Templates">
-                    <option value="Pizza Restaurant Template &#9989;">Pizza Restaurant Template</option>
-                    <option value="Catering Template &#9989;">Catering Template</option>
-                    <option value="Modal Restaurant Template &#9989;">Modal Restaurant Template</option>                    
-                    <option value="Cafe Template &#9989;">Cafe Template</option>                    
+                    <option value="Pizza Restaurant Template &#9989;" id="pizza-restaurant-template" >Pizza Restaurant Template</option>
+                    <option value="Catering Template &#9989;" id="catering-template">Catering Template</option>
+                    <option value="Modal Restaurant Template &#9989;" id="modal-restaurant-template">Modal Restaurant Template</option>                    
+                    <option value="Cafe Template &#9989;" id="cafe-template">Cafe Template</option>                    
                 </optgroup>
+                
+                <script> 
+                                   
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#pizza-restaurant-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#pizza-restaurant-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#pizza-restaurant-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#pizza-restaurant-template') {
+                        var pizzaRestaurantTemplateOption = document.getElementById('pizza-restaurant-template');
+                        pizzaRestaurantTemplateOption.setAttribute('selected', 'true');                
+                    } else {
+                        pizzaRestaurantTemplateOption.setAttribute('selected', 'false');                
+                    } 
+                </script>
+                <script>
+                     if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#catering-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#catering-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#catering-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#catering-template') {
+                        var cateringTemplateOption = document.getElementById('catering-template');
+                        cateringTemplateOption.setAttribute('selected', 'true');                
+                    } else {
+                        cateringTemplateOption.setAttribute('selected', 'false');                
+                    } 
+                    
+                </script>
+                <script>
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#modal-restaurant-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#modal-restaurant-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#modal-restaurant-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#modal-restaurant-template') {
+                       var modalRestaurantTemplateOption = document.getElementById('modal-restaurant-template');
+                       modalRestaurantTemplateOption.setAttribute('selected', 'true');                
+                   } else {
+                       modalRestaurantTemplateOption.setAttribute('selected', 'false');                
+                   }                    
+               </script>
+               <script>
+                if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#cafe-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#cafe-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#cafe-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#cafe-template') {
+                   var cafeTemplateOption = document.getElementById('cafe-template');
+                   cafeTemplateOption.setAttribute('selected', 'true');                
+               } else {
+                   cafeTemplateOption.setAttribute('selected', 'false');                
+               }                    
+           </script>
                 <optgroup label="Portfolio Templates">
-                    <option value="Portfolio Template &#9989;">Portfolio Template</option>
-                    <option value="CV Template &#9989;">CV (Resume) Template</option>
-                    <option value="Photo Portfolio Template &#9989;">Photo Portfolio Template</option>
-                    <option value="Nature Portfolio Template &#9989;">Nature Portfolio</option>                    
+                    <option value="Portfolio Template &#9989;" id="portfolio-template">Portfolio Template</option>
+                    <option value="CV Template &#9989;" id="cv-template">CV (Resume) Template</option>
+                    <option value="Photo Portfolio Template &#9989;" id="photo-portfolio-template">Photo Portfolio Template</option>
+                    <option value="Nature Portfolio Template &#9989;" id="nature-portfolio-template">Nature Portfolio</option>                    
                 </optgroup>
+                <script>
+                    //portfolio templtate select javascript reference dashboardtemplates
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#portfolio-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#portfolio-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#portfolio-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#portfolio-template') {
+                       var portfolioTemplateOption = document.getElementById('portfolio-template');
+                       portfolioTemplateOption.setAttribute('selected', 'true');                
+                   } else {
+                       portfolioTemplateOption.setAttribute('selected', 'false');                
+                   }                    
+               </script>
+               <script>
+                if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#cv-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#cv-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#cv-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#cv-template') {
+                   var cvTemplateOption = document.getElementById('cv-template');
+                   cvTemplateOption.setAttribute('selected', 'true');                
+               } else {
+                   cvTemplateOption.setAttribute('selected', 'false');                
+               }                    
+           </script>
+           <script>
+            //photo portfolio templtate select javascript reference dashboardtemplates
+            if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#photo-portfolio-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#photo-portfolio-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#photo-portfolio-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#photo-portfolio-template') {
+                       var photoPortfolioTemplateOption = document.getElementById('photo-portfolio-template');
+                       photoPortfolioTemplateOption.setAttribute('selected', 'true');                
+                   } else {
+                       photoPortfolioTemplateOption.setAttribute('selected', 'false');                
+                   }                
+       </script>
+       <script>
+        //Nature portfolio templtate select javascript reference dashboardtemplates
+        if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#nature-portfolio-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#nature-portfolio-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#nature-portfolio-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#nature-portfolio-template') {
+                       var naturePortfolioTemplateOption = document.getElementById('nature-portfolio-template');
+                       naturePortfolioTemplateOption.setAttribute('selected', 'true');                
+                   } else {
+                       naturePortfolioTemplateOption.setAttribute('selected', 'false');                
+                   }           
+        </script>
                 <optgroup label="Small Business Website Templates">
-                    <option value="Clothing Store Template &#9989;">Clothing Store Template</option>
+                    <option value="Clothing Store Template &#9989;" id="clothing-store-template">Clothing Store Template</option>
                     
                 </optgroup>
+                <script>
+                    //Clothing templtate select javascript reference dashboardtemplates
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#clothing-store-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#clothing-store-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#clothing-store-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#clothing-store-template') {
+                                   var clothingStoreTemplateOption = document.getElementById('clothing-store-template');
+                                   clothingStoreTemplateOption.setAttribute('selected', 'true');                
+                               } else {
+                                   clothingStoreTemplateOption.setAttribute('selected', 'false');                
+                               }           
+                    </script>       
                 <optgroup label="Blog Templates">
-                    <option value="Blog Template &#9989;">Blog Template</option>
-                    <option value="Food Blog Template &#9989;">Food Blog Template</option>
-                    <option value="Fashion Blog Template &#9989;">Fashion Blog Template</option>
-                    <option value="Cafe Blog Template &#9989;">Cafe Blog Template</option>
-                    <option value="Travel Blog Template &#9989;">Travel Blog Template</option>
+                    <option value="Blog Template &#9989;" id="blog-template">Blog Template</option>
+                    <option value="Food Blog Template &#9989;" id="food-blog-template">Food Blog Template</option>
+                    <option value="Fashion Blog Template &#9989;" id="fashion-blog-template">Fashion Blog Template</option>
+                    <option value="Cafe Blog Template &#9989;" id="cafe-blog-template">Cafe Blog Template</option>
+                    <option value="Travel Blog Template &#9989;" id="travel-blog-template">Travel Blog Template</option>
                 </optgroup>
+                <script>
+                    //Blog templtate select javascript reference dashboardtemplates
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#blog-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#blog-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#blog-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#blog-template') {
+                                   var blogTemplateOption = document.getElementById('blog-template');
+                                   blogTemplateOption.setAttribute('selected', 'true');                
+                               } else {
+                                   blogTemplateOption.setAttribute('selected', 'false');                
+                               }           
+                    </script>   
+                    <script>
+                        //Food Blog templtate select javascript reference dashboardtemplates
+                        if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#food-blog-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#food-blog-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#food-blog-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#food-blog-template') {
+                                       var foodBlogTemplateOption = document.getElementById('food-blog-template');
+                                       foodBlogTemplateOption.setAttribute('selected', 'true');                
+                                   } else {
+                                       foodBlogTemplateOption.setAttribute('selected', 'false');                
+                                   }           
+                        </script>   
+                        <script>
+                            //Fashion Blog templtate select javascript reference dashboardtemplates
+                            if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#fashion-blog-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#fashion-blog-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#fashion-blog-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#fashion-blog-template') {
+                                           var fashionBlogTemplateOption = document.getElementById('fashion-blog-template');
+                                           fashionBlogTemplateOption.setAttribute('selected', 'true');                
+                                       } else {
+                                           fashionBlogTemplateOption.setAttribute('selected', 'false');                
+                                       }           
+                            </script>
+                            <script>
+                                //Cafe Blog templtate select javascript reference dashboardtemplates
+                                if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#cafe-blog-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#cafe-blog-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#cafe-blog-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#cafe-blog-template') {
+                                               var cafeBlogTemplateOption = document.getElementById('cafe-blog-template');
+                                               cafeBlogTemplateOption.setAttribute('selected', 'true');                
+                                           } else {
+                                               cafeBlogTemplateOption.setAttribute('selected', 'false');                
+                                           }           
+                                </script> 
+                                <script>
+                                    //Travel Blog templtate select javascript reference dashboardtemplates
+                                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#travel-blog-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#travel-blog-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#travel-blog-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#travel-blog-template') {
+                                                   var travelBlogTemplateOption = document.getElementById('travel-blog-template');
+                                                   travelBlogTemplateOption.setAttribute('selected', 'true');                
+                                               } else {
+                                                   travelBlogTemplateOption.setAttribute('selected', 'false');                
+                                               }           
+                                    </script>        
                 <optgroup label="Invitation Templates">
-                    <option value="Wedding Invitation &#9989;">Wedding Invitation</option>                    
+                    <option value="Wedding Invitation &#9989;" id="wedding-invitation-template">Wedding Invitation</option>                    
                 </optgroup>
+                <script>
+                    //Wedding Invitation templtate select javascript reference dashboardtemplates
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#wedding-invitation-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#wedding-invitation-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#wedding-invitation-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#wedding-invitation-template') {
+                                   var weddingInvitationTemplateOption = document.getElementById('wedding-invitation-template');
+                                   weddingInvitationTemplateOption.setAttribute('selected', 'true');                
+                               } else {
+                                weddingInvitationTemplateOption.setAttribute('selected', 'false');                
+                               }           
+                    </script>  
+                    <!--     
                 <optgroup label="Simple Webpage Templates">
                     <option value="Web Page Template &#9989;">Web Page Template</option>                    
                 </optgroup>
+            -->
                 <optgroup label="Coming Soon Templates">
-                    <option value="Coming Soon Template &#9989;">Coming Soon Template</option>                    
+                    <option value="Coming Soon Template &#9989;" id="coming-soon-template">Coming Soon Template</option>                    
                 </optgroup>
+                <script>
+                    //Coming Soon templtate select javascript reference dashboardtemplates
+                        if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#coming-soon-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#coming-soon-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#coming-soon-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#coming-soon-template') {
+                                       var comingSoonTemplateOption = document.getElementById('coming-soon-template');
+                                       comingSoonTemplateOption.setAttribute('selected', 'true');                
+                                   } else {
+                                       comingSoonTemplateOption.setAttribute('selected', 'false');                
+                                   }           
+                        </script>  
                 <optgroup label="Other Templates">
-                    <option value="Band Template &#9989;">Band Template</option>
-                    <option value="Photo Album Template &#9989;">Photo Album Template</option>                    
-                </optgroup>                
+                    <option value="Band Template &#9989;" id="band-template">Band Template</option>
+                    <option value="Photo Album Template &#9989;" id="photo-album-template">Photo Album Template</option>                    
+                </optgroup> 
+                <script>
+                    //Band templtate select javascript reference dashboardtemplates
+                    if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#band-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#band-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#band-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#band-template') {
+                                   var bandTemplateOption = document.getElementById('band-template');
+                                   bandTemplateOption.setAttribute('selected', 'true');                
+                               } else {
+                                   bandTemplateOption.setAttribute('selected', 'false');                
+                               }           
+                    </script> 
+                    <script>
+                        //photo albumtempltate select javascript reference dashboardtemplates
+                        if(window.location.href == 'http://localhost:5000/dashboardgetstarted/#photo-album-template' || window.location.href == 'https://localhost:5000/dashboardgetstarted/#photo-album-template' || window.location.href == 'https://www.quickwebsite.net/dashboardgetstarted/#photo-album-template' || window.location.href == 'http://www.quickwebsite.net/dashboardgetstarted/#photo-album-template') {
+                                       var photoAlbumTemplateOption = document.getElementById('photo-album-template');
+                                       photoAlbumTemplateOption.setAttribute('selected', 'true');                
+                                   } else {
+                                    photoAlbumTemplateOption.setAttribute('selected', 'false');                
+                                   }           
+                        </script>                 
             </select><br/>
             <input type="hidden" name="templateoptionestimatedtime" value="1 Day"/><input type="hidden" name="templateoptionprice" value="$ 50.00"/>
             

@@ -879,4 +879,13 @@ function showPassword() {
     } 
 }
 
-
+// Select pizza restaurant template
+/*
+                    function selectPizzaRestaurantTemplate() {                    
+                window.open('/dashboardgetstarted/#pizza-restaurant-template')
+                
+               
+            }
+                
+            */
+                

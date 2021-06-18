@@ -1,8 +1,10 @@
+/* Correct One Not needed for now
 var express = require('express');
 var router = express.Router();
 
 var recycleBinModel = require('../modules/recyclebinschema');
 /* GET home page. */
+/* Correct One Not needed for now
 router.get('/', function(req, res, next) {
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -33,3 +35,4 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+Correct One Not needed for now */

@@ -70,6 +70,8 @@ var dashboardrecyclebinRouter = require('./routes/dashboardrecyclebin');
 var dashboardsettingsRouter = require('./routes/dashboardsettings');
 
 var pizzarestaurantdemoRouter = require('./routes/pizzarestaurantdemo');
+var dashboardpizzarestaurantdemoRouter = require('./routes/dashboardpizzarestaurantdemo');
+
 var cateringtemplatedemoRouter = require('./routes/cateringtemplatedemo');
 
 var modalrestauranttemplatedemoRouter = require('./routes/modalrestauranttemplatedemo');
@@ -201,10 +203,12 @@ app.use('/dashboardadmin', dashboardadminRouter);
 app.use('/signout', signoutRouter);
 app.use('/dashboardinbox', dashboardinboxRouter);
 app.use('/dashboardoutbox', dashboardoutboxRouter);
-app.use('/dashboardrecyclebin', dashboardrecyclebinRouter);
+//app.use('/dashboardrecyclebin', dashboardrecyclebinRouter);
 app.use('/dashboardsettings', dashboardsettingsRouter);
 
 app.use('/pizzarestaurantdemo', pizzarestaurantdemoRouter);
+app.use('/dashboardpizzarestaurantdemo', dashboardpizzarestaurantdemoRouter);
+
 app.use('/cateringtemplatedemo', cateringtemplatedemoRouter);
 
 app.use('/modalrestauranttemplatedemo', modalrestauranttemplatedemoRouter);

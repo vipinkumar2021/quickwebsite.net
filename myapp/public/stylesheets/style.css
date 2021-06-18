@@ -1806,3 +1806,26 @@
   background-color: rgb(211, 129, 99);
   overflow: hidden;
 }
+
+.settings table{
+  width: 100%;
+  height: auto;
+  border: none;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 1.25em;
+}
+.settings table caption {  
+  color: whitesmoke;
+  font-size: 1.25em;
+}
+.settings table th {
+  width: 25%;
+}
+.settings table td {
+  width: 25%;
+}
+
+.settings table tr td {
+  border: none;
+}

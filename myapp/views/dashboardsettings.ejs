@@ -1,12 +1,37 @@
 <%- include('dashboardheader') %>
 
 <div class="item item3 main ">
-    <div class="container welcome getstarted" ><!--welcome css working in this-->
+    <div class="container welcome getstarted settings"> <!--welcome css working in this-->
         
-        <h2>Settings</h2> 
-                
-    </div>     
-
+        <h2>General Account Settings</h2> 
+        <table>            
+            <tr>
+                <th>Name</th><td colspan="2">Full Name</td><td><a href="#">Edit</a></td>
+            </tr>
+            <tr>
+                <th>Username</th><td colspan="2">Username</td><td><a href="#">Edit</a></td>
+            </tr>
+            <tr>
+                <th>Mobile</th><td colspan="2">Mobile Number</td><td><a href="#">Edit</a></td>
+            </tr>
+            <tr>
+                <th>Email</th><td colspan="2">Email</td><td><a href="#">Edit</a></td>
+            </tr>
+            
+        </table>
+        <br/>
+        <h2>Security Settings</h2>
+        <table>
+            <!--
+            <tr>
+                <th>Where You are Logged in</th><td colspan="2">Still Under Construction</td><td><a href="#">Log Out</a></td>
+            </tr>
+            -->
+            <tr>
+                <th>Password</th><td colspan="2">Can't Show</td><td><a href="/dashboardforgotpassword">Change</a></td>
+            </tr>
+        </table>
+    </div> 
 </div>
 <%- include('modal') %>
 <%- include('dashboardfooter') %>

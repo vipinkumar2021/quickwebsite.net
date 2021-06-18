@@ -2,14 +2,56 @@
 
 <div class="item item3 main ">
     <div class="container welcome getstarted" ><!--welcome css working in this-->
+        <h2>Help</h2> 
         
-        <h2>Help Dashboard</h2> 
-        <h2>FAQ</h2>  
-        <h2>Give Feedback</h2> 
-        <h2>Give Suggestion</h2>       
-    </div>     
+        <button class="accordion">Q. How to Contact www.quickwebsite.net?</button>
+        <div class="panel">
+        <p>
+            Ans. 
+            <h3><a href="#" onclick="openContactModal()">Contact Us</a></h3>            
+        </p>
+        </div>
+        <button class="accordion">Q. How to begin?</button>
+        <div class="panel">
+        <p>
+            Ans. <h3><a href="/#first-timers" target="_blank">First Timers</a></h3>
+            <h3><a href="/#old-customers" target="_blank">Old Customers</a></h3>
+        </p>
+        </div>
+        <button class="accordion">Q. How to choose Templates?</button>
+        <div class="panel">
+        <p>
+            Ans. <h3><a href="/templates" target="_blank">Templates</a></h3>            
+        </p>
+        </div>
+        <button class="accordion">Q. Other helps</button>
+        <div class="panel">
+        <p>
+            Ans. Please feel free to ask us, to help you serve conveniently
+            <h3><a href="#" onclick="openContactModal()">Click here</a></h3>            
+        </p>
+        </div>
 
+               
+    </div>
 </div>
+<script>
+    // accordin
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 <%- include('modal') %>
 <%- include('dashboardfooter') %>
 
