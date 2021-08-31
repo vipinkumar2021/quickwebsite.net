@@ -3,8 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//import session Vipin...
+//import session by Vipin... session is vulnerable
 var session = require('express-session')
+
+//Sanitize by Vipin 
+const mongoSanitize = require('express-mongo-sanitize');
+const xssClean = require('xss-clean');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,12 +21,17 @@ var templatesRouter = require('./routes/templates');
 var dashboardtemplatesRouter = require('./routes/dashboardtemplates');
 var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
 var foodandrestaurantsRouter = require('./routes/foodandrestaurants');
+var dashboardfoodandrestaurantsRouter = require('./routes/dashboardfoodandrestaurants');
 //var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
 //var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
 //var dashboardtemplatesadminRouter = require('./routes/dashboardtemplatesadmin');
 var portfoliotemplatesRouter = require('./routes/portfoliotemplates');
+var dashboardportfoliotemplatesRouter = require('./routes/dashboardportfoliotemplates');
 var smallbusinesswebsiteRouter = require('./routes/smallbusinesswebsite');
+var dashboardsmallbusinesswebsiteRouter = require('./routes/dashboardsmallbusinesswebsite');
+
 var blogtemplatesRouter = require('./routes/blogtemplates');
+var dashboardblogtemplatesRouter = require('./routes/dashboardblogtemplates');
 var weddinginvitationtemplatesRouter = require('./routes/weddinginvitationtemplates');
 var webpagetemplatesRouter = require('./routes/webpagetemplates');
 var comingsoontemplatesRouter = require('./routes/comingsoontemplates');
@@ -119,6 +128,7 @@ var getusernameRouter = require('./routes/getusername');
 var resetpasswordRouter = require('./routes/resetpassword');
 var dashboardresetpasswordRouter = require('./routes/dashboardresetpassword');
 var dashboardgivefeedbackRouter = require('./routes/dashboardgivefeedback');
+var dashboardfreelancepageRouter = require('./routes/dashboardfreelancepage');
 
 
 
@@ -131,6 +141,12 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
+
+//Data Sanitization against NoSql Query Injection by Vipin...
+app.use(mongoSanitize());
+//Data Sanitization against XSS by Vipin...
+app.use(xssClean());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -154,12 +170,19 @@ app.use('/templates', templatesRouter);
 app.use('/dashboardtemplates', dashboardtemplatesRouter);
 app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);
 app.use('/foodandrestaurants', foodandrestaurantsRouter);
+app.use('/dashboardfoodandrestaurants', dashboardfoodandrestaurantsRouter);
+
 /*app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);
 app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);
 app.use('/dashboardtemplatesadmin', dashboardtemplatesadminRouter);*/
 app.use('/portfoliotemplates', portfoliotemplatesRouter);
+app.use('/dashboardportfoliotemplates', dashboardportfoliotemplatesRouter);
+
 app.use('/smallbusinesswebsite', smallbusinesswebsiteRouter);
+app.use('/dashboardsmallbusinesswebsite', dashboardsmallbusinesswebsiteRouter);
+
 app.use('/blogtemplates', blogtemplatesRouter);
+app.use('/dashboardblogtemplates', dashboardblogtemplatesRouter);
 app.use('/weddinginvitationtemplates', weddinginvitationtemplatesRouter);
 app.use('/webpagetemplates', webpagetemplatesRouter);
 app.use('/comingsoontemplates', comingsoontemplatesRouter);
@@ -253,6 +276,7 @@ app.use('/getusername', getusernameRouter);
 app.use('/resetpassword', resetpasswordRouter);
 app.use('/dashboardresetpassword', dashboardresetpasswordRouter);
 app.use('/dashboardgivefeedback', dashboardgivefeedbackRouter);
+app.use('/dashboardfreelancepage', dashboardfreelancepageRouter);
 
 
 // catch 404 and forward to error handler

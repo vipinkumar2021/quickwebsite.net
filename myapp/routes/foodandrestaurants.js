@@ -11,12 +11,7 @@ router.get('/', function(req, res, next) {
   };
   if(loginUser.loginUserCustomer) {
     res.render('dashboardfoodandrestaurants', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
-  } else if(loginUser.loginUserEmployee) {
-    res.render('dashboardfoodandrestaurantsemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
-  } else if(loginUser.loginUserAdmin) {
-    res.render('dashboardfoodandrestaurantsadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
-
-  } else {
+  } else {    
     res.render('foodandrestaurants', { title: 'Quick Website', msg: '', loginUser: '' });
   }
   

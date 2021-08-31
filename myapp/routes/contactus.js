@@ -85,9 +85,12 @@ router.post('/', function(req, res, next) {
       Email: req.body.email,
       WriteMessage: req.body.writeusmessage
     });
+    
     contactUsMessageDetails.save((err) => {
       if(err) throw err;
+      //sanitization
       
+      //
       //Send Email
       var output = `
     <h3>Hi, You Have received a message through Contact Us</h3>
