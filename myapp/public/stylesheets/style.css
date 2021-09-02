@@ -1558,6 +1558,130 @@
   }
   /* Contact Us modal css ends here */
   
+  /* Post Freelance Job modal css starts here */
+  
+  .modal-parent-postfreelancejob {
+    margin: 0 auto 0 auto;
+    padding: 0 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: none;
+    text-align: left;
+    z-index: 1;  
+  }
+  
+  .modal-postfreelancejob {
+  position: absolute;
+  top: 10%;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+  margin: auto;
+  padding: 2em;
+  height: auto;
+  overflow: auto;
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke; 
+  position: relative;
+  animation: 1s drop;
+  display: block;
+  z-index: 1;
+  }
+  
+  @keyframes drop {
+  0% {
+   top: -13em;
+  }
+  100% {
+   top: 10%;
+  }
+  }
+  
+  .X-postfreelancejob {
+  position: absolute;
+  top: .5em;
+  right: .7em;
+  font-size: 2em;
+  
+  }
+  .X-postfreelancejob:hover {
+  cursor: pointer;
+  color: rgb(180, 175, 175);
+  
+  
+  }
+  
+  .modal-parent-postfreelancejob .modal-postfreelancejob form label {
+   text-align: left;
+   font-size: 1.25em;
+  }
+  .modal-parent-postfreelancejob .modal-postfreelancejob form input {
+  width: 100%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  }
+  
+  .modal-parent-postfreelancejob .modal-postfreelancejob form textarea {
+    max-width: 100%;
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    outline: none;
+    padding: 1em;
+    background-color: transparent;
+    color: aliceblue;
+    overflow: auto;
+    }
+  
+  .modal-parent-postfreelancejob .modal-postfreelancejob form button {
+  width: 25%;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  margin-right: 1.25em;
+  } 
+  .modal-parent-postfreelancejob .modal-postfreelancejob form button:hover {
+    color: rgb(180, 175, 175);
+  }
+  .modal-anchor-tags {
+    display: flex;
+    justify-content: space-around;  
+  }
+  .modal-anchor-tags a {
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+  
+  
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .modal-parent-postfreelancejob .modal-postfreelancejob form button {
+      width: 100%;
+      margin: auto auto 1em auto;
+    }
+  
+    .modal-anchor-tags {
+      display: block;
+      justify-content: none;  
+    }
+    .modal-anchor-tags a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.25em;
+    }
+  }
+  /* Post Freelance Job modal css ends here */
+
   /* Upload Profile Image modal css starts here */
   
   .modal-parent-upload-profile-image {
@@ -1764,6 +1888,195 @@
   }
   /* modal confirm before deleting css ends here */
 
+  /* Chat Box modal css starts here */
+  
+  .modal-parent-chatbox {
+    margin: 0 auto 0 auto;
+    padding: 0 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: none;
+    text-align: left;
+    z-index: 1;  
+  }
+  
+  .modal-chatbox {
+  position: absolute;
+  top: 10%;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+  margin: auto;
+  padding: 1em;
+  height: auto;
+  overflow: auto;
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  /*background-color: rgba(238, 135, 97, .6); */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke; 
+  position: relative;
+  animation: 1s drop;
+  display: block;
+  z-index: 1;
+  }
+  
+  @keyframes drop {
+  0% {
+   top: -13em;
+  }
+  100% {
+   top: 10%;
+  }
+  }
+  
+  .X-chatbox {
+  position: absolute;
+  top: .5em;
+  right: .7em;
+  font-size: 2em;
+  
+  }
+  .X-chatbox:hover {
+  cursor: pointer;
+  color: rgb(180, 175, 175);
+  
+  
+  }
+  .modal-parent-chatbox .modal-chatbox .row-1 {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+  }
+
+  .modal-parent-chatbox .modal-chatbox .row-1 .column-1 {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    color: rgb(245, 168, 124);
+    text-align: left;
+  }
+  
+  .modal-parent-chatbox .modal-chatbox .row-1 .column-2 {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    color: rgb(235, 212, 8);
+    text-align: right;
+  } 
+
+  .chatbox-1 {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 2%;
+    color: whitesmoke;
+    border: .5px solid whitesmoke;
+    border-radius: 10px;
+    background-color: rgba(114, 110, 110, 0.5);
+  }
+  .chatbox-2 {
+    
+    width: 100%;
+    height: auto;
+    margin: 40% auto  auto auto;
+    padding: 2%;
+    color: whitesmoke;
+    border: .5px solid whitesmoke;
+    border-radius: 10px;
+    background-color: rgba(114, 110, 110, 0.5);
+    
+  }
+  
+  
+  .modal-parent-chatbox .modal-chatbox .row-2 {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-parent-chatbox .modal-chatbox .row-2 .column-1 {
+    width: 20%;
+    height: auto;
+    margin: auto;
+    color: rgb(245, 168, 124);
+
+  }
+  .modal-parent-chatbox .modal-chatbox .row-2 .column-2 {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    color: rgb(235, 212, 8);
+    text-align: left;    
+  } 
+
+  .modal-parent-chatbox .modal-chatbox .row-2 .column-2 form{
+    width: 100%;
+    display: flex;
+    margin: auto;
+  }
+
+  .modal-parent-chatbox .modal-chatbox form input {
+  width: 80%;
+  border: 1px solid whitesmoke;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  outline: none;
+  padding: .3em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  }
+  
+  
+  .modal-parent-chatbox .modal-chatbox form button {
+  width: 20%;
+  border: 1px solid whitesmoke;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  outline: none;
+  padding: .8em;
+  background-color: rgba(238, 135, 97, .6); 
+  color: whitesmoke;
+  margin-right: 1.25em;
+  } 
+  .modal-parent-chatbox .modal-chatbox form button:hover {
+    color: rgb(180, 175, 175);
+  }
+  .modal-anchor-tags {
+    display: flex;
+    justify-content: space-around;  
+  }
+  .modal-anchor-tags a {
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+  
+  
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .modal-parent-chatbox .modal-chatbox form button {
+      width: 100%;
+      margin: auto auto 1em auto;
+    }
+  
+    .modal-anchor-tags {
+      display: block;
+      justify-content: none;  
+    }
+    .modal-anchor-tags a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.25em;
+    }
+  }
+  /* Chat Box modal css ends here */
   /* modal css ends*/
   /* signup-verification signup customer .ejs css*/
   .signup-verification form input, .signup-verification form button {
@@ -1829,3 +2142,41 @@
 .settings table tr td {
   border: none;
 }
+
+.dashboardfreelancepage .row-1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+}
+
+.dashboardfreelancepage .row-2, .dashboardinbox .row-1 {
+  width: 100%;
+  height: auto;
+  display: block;  
+  font-size: 1.5em;
+  padding-top: 2em;
+}
+.dashboardfreelancepage .row-2 table, .dashboardinbox .row-1 table{
+  width: 90%;
+  height: auto;
+  margin: auto;  
+  border: 2px solid whitesmoke;
+  border-radius: 8px;
+}
+
+.dashboardfreelancepage .row-2 table tr th, .dashboardinbox .row-1 table tr th{
+  width: 25%;
+  height: auto;
+  padding-left: 1%;
+  border: 1px solid whitesmoke;
+}
+.dashboardfreelancepage .row-2 table tr td, .dashboardinbox .row-1 table tr td{
+  width: 75%;
+  height: auto;
+  padding: auto;
+
+}
+
+

@@ -129,7 +129,8 @@ var resetpasswordRouter = require('./routes/resetpassword');
 var dashboardresetpasswordRouter = require('./routes/dashboardresetpassword');
 var dashboardgivefeedbackRouter = require('./routes/dashboardgivefeedback');
 var dashboardfreelancepageRouter = require('./routes/dashboardfreelancepage');
-
+var freelancejobsRouter = require('./routes/freelancejobs');
+var freelancejobscommentsRouter = require('./routes/freelancejobscomments');
 
 
 
@@ -277,6 +278,8 @@ app.use('/resetpassword', resetpasswordRouter);
 app.use('/dashboardresetpassword', dashboardresetpasswordRouter);
 app.use('/dashboardgivefeedback', dashboardgivefeedbackRouter);
 app.use('/dashboardfreelancepage', dashboardfreelancepageRouter);
+app.use('/freelancejobs', freelancejobsRouter);
+app.use('/freelancejobscomments', freelancejobscommentsRouter);
 
 
 // catch 404 and forward to error handler

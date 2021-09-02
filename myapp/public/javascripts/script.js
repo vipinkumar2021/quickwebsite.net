@@ -290,6 +290,40 @@ function closeContactModalforWindow(e) {
 }
 // contact modal javascript ends here
 
+//open post freelance job modal when Contact button is clicked
+function openPostFreelanceJobModal() {
+    var parentModalPostFreelanceJob = document.querySelector('.modal-parent-postfreelancejob');
+    
+    parentModalPostFreelanceJob.style.display = 'block';
+    parentModalSignin.style.display = 'none';
+    parentModalSignup.style.display = 'none';
+    parentModalContact.style.display = 'none';
+    //closing sidenav when contact is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //Scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+}
+
+//close contat modal when Cross or Cancel button is clicked
+function closePostFreelanceJobModal() {
+    var parentModalPostFreelanceJob = document.querySelector('.modal-parent-postfreelancejob');
+    parentModalPostFreelanceJob.style.display = 'none';
+}
+//close contat modal when outside window is clicked
+var parentModalPostFreelanceJob = document.querySelector('.modal-parent-postfreelancejob');
+parentModalPostFreelanceJob.addEventListener('click', closePostFreelanceJobModalforWindow);
+
+function closePostFreelanceJobModalforWindow(e) {
+    if(e.target.className == 'modal-parent-postfreelancejob') {
+        parentModalPostFreelanceJob.style.display = 'none';  
+    }
+}
+// post freelance job modal javascript ends here
+
 // Upload Profile Image modal javascript starts here
 //open Upload Profile Image modal when Contact button is clicked
 function openUloadProfileImageModal() {
@@ -889,3 +923,38 @@ function showPassword() {
                 
             */
                 
+            
+// chat box modal javascript starts here
+//open chat box modal when Contact button is clicked
+function openChatBoxModal() {
+    var parentModalChatBox = document.querySelector('.modal-parent-chatbox');
+    parentModalChatBox.style.display = 'block';
+    parentModalContact.style.display = 'none';
+    parentModalSignin.style.display = 'none';
+    parentModalSignup.style.display = 'none';
+    //closing sidenav when contact is clicked
+    sidenavParent.style.width = '0';
+    sideNav.style.width = '0';
+    iconBarButton.style.display = 'block';
+    //Scroll to top
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+}
+
+//close chat box modal when Cross or Cancel button is clicked
+function closeChatBoxModal() {
+    var parentModalChatBox = document.querySelector('.modal-parent-chatbox');
+    parentModalChatBox.style.display = 'none';
+}
+//close chat box modal when outside window is clicked
+var parentModalChatBox = document.querySelector('.modal-parent-chatbox');
+parentModalChatBox.addEventListener('click', closeChatBoxModalforWindow);
+
+function closeChatBoxModalforWindow(e) {
+    if(e.target.className == 'modal-parent-chatbox') {
+        parentModalChatBox.style.display = 'none';  
+    }
+}
+// chat Box modal javascript ends here
+

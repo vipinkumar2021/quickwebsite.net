@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var freelanceJobsCommentsModel = require('../modules/freelancejobscommentsschema');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var loginUser = {
@@ -9,13 +10,19 @@ router.get('/', function(req, res, next) {
     loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
 
   };
-  if(loginUser.loginUserCustomer) {
-    res.render('dashboardoutbox', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
-  } else if(loginUser.loginUserEmployee) {
-    res.render('dashboardoutboxemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
-  } else if(loginUser.loginUserAdmin) {
-    res.render('dashboardoutboxadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
+  var currentLoginUser = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
+  if(currentLoginUser) {
 
+    var freelanceJobsComments = freelanceJobsCommentsModel.find({CommenterUsername: currentLoginUser});
+    freelanceJobsComments.exec((err, freelanceJobsCommentsData)=> {
+      if(err) {
+        res.render('dashboardoutbox', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, freelanceJobsCommentsData: '' });
+      } else {
+        res.render('dashboardoutbox', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, freelanceJobsCommentsData: freelanceJobsCommentsData  });
+      }
+    });
+    //
+  
   } else {
     res.render('/', { title: 'Quick Website', msg: '', loginUser: '' });
   }
