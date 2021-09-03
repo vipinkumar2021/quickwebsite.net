@@ -7,7 +7,7 @@
             <h2><%= msg %> </h2>
         <% } %> 
         <h2>Freelance Page</h2>        
-            
+        
         <div class="row row-1">
             <a href="#" onclick="openPostFreelanceJobModal()">Post a Job</a>
             <a href="#jobscontent">Find Work</a>
@@ -30,6 +30,9 @@
                     <th>Job Id:</th><td class="current-freelance-job-id"><%= item._id %></td>
                 </tr>
                 <tr>
+                    <th>Date:</th><td><%= item.Date %></td>
+                </tr>
+                <tr>
                     <th>Subject:</th><td><%= item.Subject %></td>
                 </tr>
                 <tr>
@@ -41,16 +44,14 @@
                 <tr>
                     <th>Deadline:</th><td><%= item.Deadline %></td>
                 </tr>
+                <!--
                 <tr>
                     <th>Message:</th>
                     <td>
                         <button class="start-chat-button" onclick="openChatBoxModal()">Start Chat</button>
-
-                     
-
                     </td>
                 </tr>
-                <!--
+                -->
                 <tr>
                     <th>Write Comment:</th>
                     <td>
@@ -68,95 +69,115 @@
                    
                     </td>
                 </tr>
-                 -->
+                 
             </table>
             <br/>           
-                <!--Chat Box Modal starts here-->                          
-                <div class="modal-parent-chatbox">
-                    <div class="modal-chatbox">
-                        <h1 style="text-align: center;">Chat Box</h1>
-                        <div class="row row-1">                       
-                            <div class="column column-1">                             
-                                <div class="chatbox-1">
-                                    <p>
-                                        chatbox for user One
-                                        <strong><em id="other-chat-user"></em></strong>
-                                    </p>
-                                    <div style="color: rgb(202, 71, 23);">
-                                        <strong><em class="other-user" style="font-size: .5em;"></em></strong><br/>
-                                        <strong><em class="freelance-job-id" style="font-size: .5em;"></em></strong>
-                                    </div>
-                                </div>                                                        
-                                <br/>                                                             
-                            </div>
-                            
-                            <div class="column column-2">
-
-                                <div class="chatbox-2">
-                                    <p>
-                                        chatbox for me
-                                        
-                                    </p>
-                                    <div style="color: orangered;">
-                                        <strong><em style="font-size: .5em;"><%= loginUser %></em></strong><br/>
-                                        <strong><em class="freelance-job-id" style="font-size: .5em;"></em></strong>
-                                    </div>
-                                </div>                           
-                                <br/>
+               
     
-                            </div>                       
-                        </div>
-                        <div class="row row-2">
-                            <div class="column column-1">
-                                Chat
-                            </div>
-                            <div class="column column-2">
-                                <form action="freelancejobscomments" method="POST" role="form">
-                                
-                                    <input id="username-input-value" type="hidden" name="username"/>
-                                    <input id="freelancejobid-input-value" type="hidden" name="freelancejobid"/>
-                                    <input type="text" name="freelancejobcomment" placeholder="Write Message" required/>
-                                    <button type="submit">Send</button>
-                                </form>
-                            </div>                       
-                        </div>
-                
-                        
-                        <span class="X-chatbox" onclick="closeChatBoxModal()">&times;</span>
-                    </div>
-                </div>
-                <br/>
-               <script>
-                   var startChatButtons = document.getElementsByClassName('start-chat-button');
-    
-                   for(var i = 0; i < startChatButtons.length; i++) {
-                    var startChatButton = startChatButtons[i];
-                   }
-                   startChatButton.addEventListener('click', function(event) {
-                    var currentChatButton = event.target;
-                    var currentTable = currentChatButton.parentElement.parentElement.parentElement; 
-                    var currentFreelanceJobUserName = currentTable.getElementsByClassName('current-freelance-job-username')[0].innerText;
-                    var currentFreelanceJobId = currentTable.getElementsByClassName('current-freelance-job-id')[0].innerText;
-                    document.getElementsByClassName('other-user')[0].innerText = currentFreelanceJobUserName;
-                    document.getElementsByClassName('freelance-job-id')[0].innerText = currentFreelanceJobId;
-                    document.getElementsByClassName('freelance-job-id')[1].innerText = currentFreelanceJobId;
-                    document.getElementById('username-input-value').setAttribute('value', currentFreelanceJobUserName);
-                    document.getElementById('freelancejobid-input-value').setAttribute('value', currentFreelanceJobId);
-                   });
-               </script>
-    
-                <!--Chat Box Modal ends here-->
-    
-        </div>  
-        <% }) %>            
-        <% } %>  
+        </div> 
         
+         <!--Chat Box Modal starts here-->  
+         <!--                        
+ <div class="modal-parent-chatbox">
+    <div class="modal-chatbox">
+        <h1 style="text-align: center;">Chat Box</h1>
+        <div class="row row-1">                       
+            <div class="column column-1">                             
+                <div class="chatbox-1">
+                    <p>
+                        
+                        <% if(freelanceJobsMessagesData.length > 0) { %>
+                            <% freelanceJobsMessagesData.forEach((item)=> { %>
+                                <% if(item.CommenterUsername == loginUser) { %>
+                                    <%= item.CommentOnFreelanceJob %>
+                               <% } %>                                
+                          <%  }) %>            
+                        <% }  %>
+                       
+                    </p>
+                    <div style="color: rgb(202, 71, 23);">
+                        <strong><em class="other-user" style="font-size: .5em;"></em></strong><br/>
+                        <strong><em class="freelance-job-id" style="font-size: .5em;"></em></strong>
+                    </div>
+                </div>                                                        
+                <br/>                                                             
+            </div>
+            
+            <div class="column column-2">
+
+                <div class="chatbox-2">
+                    
+                        <% if(freelanceJobsMessagesData.length > 0) { %>
+                            <% freelanceJobsMessagesData.forEach((item)=> { %>
+                                <% if(item.CommenterUsername == loginUser) { %>
+                                    <p>
+                                        <%= item.CommentOnFreelanceJob %>
+                                    </p>
+                                    
+                               <% } %>                                
+                          <%  }) %>            
+                        <% }  %>
+                        
+                    
+                    <div style="color: orangered;">
+                        <strong><em style="font-size: .5em;"><%= loginUser %></em></strong><br/>
+                        <strong><em class="freelance-job-id" style="font-size: .5em;"></em></strong>
+                    </div>
+                </div>                           
+                <br/>
+
+            </div>                       
+        </div>
+        <div class="row row-2">
+            <div class="column column-1">
+                Chat
+            </div>
+            <div class="column column-2">
+                <form action="freelancejobscomments" method="POST" role="form">
+                
+                    <input id="username-input-value" type="hidden" name="username"/>
+                    <input id="freelancejobid-input-value" type="hidden" name="freelancejobid"/>
+                    <input type="text" name="freelancejobcomment" placeholder="Write Message" required/>
+                    <button type="submit">Send</button>
+                </form>
+            </div>                       
+        </div>
+
+        
+        <span class="X-chatbox" onclick="closeChatBoxModal()">&times;</span>
+    </div>
+</div>
+<br/>
+<script>
+   var startChatButtons = document.getElementsByClassName('start-chat-button');
+
+   for(var i = 0; i < startChatButtons.length; i++) {
+    var startChatButton = startChatButtons[i];
+   }
+   startChatButton.addEventListener('click', function(event) {
+    var currentChatButton = event.target;
+    var currentTable = currentChatButton.parentElement.parentElement.parentElement; 
+    var currentFreelanceJobUserName = currentTable.getElementsByClassName('current-freelance-job-username')[0].innerText;
+    var currentFreelanceJobId = currentTable.getElementsByClassName('current-freelance-job-id')[0].innerText;
+    document.getElementsByClassName('other-user')[0].innerText = currentFreelanceJobUserName;
+    document.getElementsByClassName('freelance-job-id')[0].innerText = currentFreelanceJobId;
+    document.getElementsByClassName('freelance-job-id')[1].innerText = currentFreelanceJobId;
+    document.getElementById('username-input-value').setAttribute('value', currentFreelanceJobUserName);
+    document.getElementById('freelancejobid-input-value').setAttribute('value', currentFreelanceJobId);
+   });
+</script>
+-->
+<!--Chat Box Modal ends here-->
+        <% }) %>            
+        <% } %>        
                 
            
     
     </div>     
 
 </div>
+
+
 <%- include('modal') %>
 <%- include('dashboardfooter') %>
 

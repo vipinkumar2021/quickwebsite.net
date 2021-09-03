@@ -14,17 +14,21 @@ router.get('/', function(req, res, next) {
 
   if(currentLoginUser) {
     var freelanceJobsData = freelanceJobsModel.find({});
-   // var freelanceJobsComments = freelanceJobsCommentsModel.find({CommenterUsername: currentLoginUser});
+    var freelanceJobsMessages = freelanceJobsCommentsModel.find({}); 
     freelanceJobsData.exec((err, freelanceJobsData)=> {
       if(err) throw err;
 //
-//
-      res.render('dashboardfreelancepage', { title: 'Quick Website', msg: '', loginUser: currentLoginUser, freelanceJobsData: freelanceJobsData });
+      freelanceJobsMessages.exec((err, freelanceJobsMessagesData) => {
+        if(err) throw err;
+        res.render('dashboardfreelancepage', { title: 'Quick Website', msg: '', loginUser: currentLoginUser, freelanceJobsData: freelanceJobsData, freelanceJobsMessagesData: freelanceJobsMessagesData });
+      });
+// 
+     // res.render('dashboardfreelancepage', { title: 'Quick Website', msg: '', loginUser: currentLoginUser, freelanceJobsData: freelanceJobsData });
     });    
     
 
   } else {
-    res.render('/', { title: 'Quick Website', msg: '', loginUser: '', freelanceJobsData: ''});
+    res.render('/', { title: 'Quick Website', msg: '', loginUser: '', freelanceJobsData: '', freelanceJobsMessagesData: ''});
   }
 /*
   
