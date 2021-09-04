@@ -5,7 +5,7 @@ var adminModule = require('../modules/adminschema');
 var customerModel = require('../modules/customersignupschema');
 var employeesModel = require('../modules/employeessignupschema');
 var adminMembersTeamModel = require('../modules/adminmembersteamschema');
-
+var usernamesListModel = require('../modules/usernameslistschema');
 // require dot env
 require('dotenv').config();
 //Crypto for creating randombytes key
@@ -71,7 +71,229 @@ function checkFileType(file, cb) {
 var aws = require("aws-sdk");
 const ses = new aws.SES({"accessKeyId": process.env.SES_I_AM_USER_ACCESS_KEY, "secretAccessKey": process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, "region": process.env.AWS_SES_REGION});
 
-//Exactly Correct one so far
+//Exactly Correct one
+router.post('/signupadmin', upload, function(req, res, next) {
+  var firstname = req.body.firstname;
+  var lastname = req.body.lastname;
+  var username = req.body.usrname;
+  var mobilenumber = req.body.mobilenumber;
+  var email = req.body.email; 
+  var nationalid = req.body.nationalid;
+  var nationalidimage = req.file.filename;      
+
+  var Onetimepassword = crypto.randomBytes(16).toString('hex');
+
+//below is correct one
+//Check Username in UsernameList
+//
+  usernamesListModel.findOne({Username: username}, {Username: username}).exec((err, dataUsernameInUsernameList) => {
+    if(err) throw err;
+    if(dataUsernameInUsernameList != null) {
+      return res.render('admin', {title: 'Quick Website', msg:'Username Not Available, Please Try Another One' });
+    } else {
+
+    //}
+  //});
+
+  //
+  adminModule.findOne({Username: username}, {Username: username}).exec((err, dataUsernameInAdmin) => {
+      if(err) throw err;
+      if(dataUsernameInAdmin != null) {
+  
+          return res.render('admin', {title: 'Quick Website', msg:'Username Already Exists in Admin Data' });
+            
+      } else {
+        
+        customerModel.findOne({Username: username}).exec((err, dataUsernameInCustomers) => {
+          if(err) throw err;
+          if(dataUsernameInCustomers != null) {
+            return res.render('admin', {title: 'Quick Website', msg:'Username Already Exists in Customer Data' });
+
+          } else {
+            
+           //next(); // return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Username does not Already Exists in Customer Data' });
+
+           adminModule.findOne({Mobilenumber: mobilenumber}, {Mobilenumber: mobilenumber}).exec((err, dataMobileNumberInAdmin) => {
+            if(err) throw err;
+            if(dataMobileNumberInAdmin != null) {
+              return res.render('admin', {title: 'Quick Website', msg:'Mobile Number Already Registered in Admin Data' });
+    
+            } else {
+              customerModel.findOne({Mobilenumber: mobilenumber}, {Mobilenumber: mobilenumber}).exec((err, dataMobileNumberInCustomer) => {
+                if(err) throw err;
+                if(dataMobileNumberInCustomer != null) {
+                  return res.render('admin', {title: 'Quick Website', msg:'Mobile Number Already Registered in Customer Data' });
+
+                } else {
+                  adminModule.findOne({Email: email}, {Email: email}).exec((err, dataEmailInAdminData) => {
+                    if(err) throw err;
+                    if(dataEmailInAdminData != null) {
+                      return res.render('admin', {title: 'Quick Website', msg:'Email Already Registered in Admin Data' });
+    
+                    } else {
+                      //next();
+                      //return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Email Already not Registered in Admin Data' });
+                      customerModel.findOne({Email: email}, {Email: email}).exec((err, dataEmailInCustomerData) => {
+                        if(err) throw err;
+                        if(dataEmailInCustomerData != null) {
+
+                          return res.render('admin', {title: 'Quick Website', msg:'Email Already Registered in Customer Data' });
+
+                        } else {
+                          //next();
+                          adminModule.findOne({Nationalid :nationalid}, {Nationalid :nationalid}).exec((err, dataNationalIdInAdminData) => {
+                           if(err) throw err;
+                           if(dataNationalIdInAdminData != null) {
+                            return res.render('admin', {title: 'Quick Website', msg:'National Id Already Registered in Admin Data' });
+
+                           } else {
+                              adminMembersTeamModel.findOne({Email: email}, {Email: email}).exec((err, registeredNewAdminMemberEmail) => {
+                                if(err) throw err;
+                                if(registeredNewAdminMemberEmail == null) {
+                                  return res.render('admin', {title: 'Quick Website', msg:'Please Enter Registered Email Address or Contact Admin' });
+
+                                } else {                              
+                             //
+                             //
+                            //return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'National Id Already not Registered in Admin Data' });
+                            var adminDetails = new adminModule({
+                              Firstname: firstname,
+                              Lastname: lastname,
+                              Username: username,
+                              Mobilenumber: mobilenumber,
+                              Email: email,   
+                              Nationalid: nationalid,
+                              Imagename: nationalidimage,
+                              
+                              Onetimepassword: Onetimepassword
+                              });
+                          
+                              adminDetails.save((err )=> {
+                                if(err) throw err;
+
+                                // save username in the usernames list
+                                //
+                                var userNameListDetail = new usernamesListModel({
+                                  Username: req.body.usrname
+                                });
+                                userNameListDetail.save((err) => {
+                                  if(err) throw err;
+
+                                //});
+                                //
+                          //Send OTP Email
+                                var output = `
+                              <h3>Hi, Your One Time Password for Account Activation is ${Onetimepassword}</h3>
+                              <p>Please Enter the One Time Password in the opened link and press Activate Account</p>   
+                          `;
+
+                          //
+                                // exactly correct one for production
+let params = {
+  // send to list
+  Destination: {
+      ToAddresses: [
+          email
+      ]
+  },
+  Message: {
+      Body: {
+          Html: {
+              Charset: "UTF-8",
+              Data: output//"<p>this is test body.</p>"
+          },
+          Text: {
+              Charset: "UTF-8",
+              Data: 'Hey, this is test.'
+          }
+      },
+      
+      Subject: {
+          Charset: 'UTF-8',
+          Data: "One Time Password (OTP) Email"
+      }
+  },
+  Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+  ReplyToAddresses: [
+      email,
+  ],
+};
+
+// this sends the email
+ses.sendEmail(params, (err) => {
+  if(err) {
+    res.render('signupadmin', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+  } else {
+    res.render('signupadmin', { title: 'Quick Website', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+  }
+});
+                          //
+                          /* UNCOMMENT IT LATER IF NEEDED 
+                          var transporter = nodemailer.createTransport({ 
+                            service: 'gmail',
+                            auth: {    
+                              user: process.env.NODEMAILEMAILUSER,
+                              pass: process.env.NODEMAILEMAILPASSWORD    
+                            }
+                          });
+                          var mailOption = {
+                            from: 'resetpa7@gmail.com',
+                            to: email, //or use req.body.email
+                            subject: 'One Time Password (OTP) for Account Authentication',
+                            html: output
+                          };
+                          
+                          transporter.sendMail(mailOption, function(err, info) {
+                            if(err) {
+                              res.render('signupadmin', { title: 'frontendwebdeveloper', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+                            } else {
+                              res.render('signupadmin', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+                            }
+                          }); 
+                          UNCOMMENT IT LATER IF NEEDED */
+
+                          //
+                        });
+                          //
+                              });  
+                              //
+                            }
+                          });
+                              //
+                           }                       
+                            
+                          });
+
+
+                        }
+
+                      });
+                    }
+
+
+                  });
+                  /*next();*/ // return res.render('admin', {title: 'SaReGaMa Music Academy & GMP Studio', msg:'Mobile Number does not Already Registered in Customer Data' });
+
+                }
+              });
+            }
+
+          });
+
+           //
+          }
+        });        
+      } 
+
+    });
+//
+}
+});
+
+//
+});
+//
+//Exactly Correct one
 router.post('/signupadmin', upload, function(req, res, next) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;

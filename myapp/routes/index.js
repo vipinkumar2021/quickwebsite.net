@@ -17,7 +17,7 @@ var router = express.Router();
 var adminModule = require('../modules/adminschema');
 var customerModel = require('../modules/customersignupschema');
 var employeesModel = require('../modules/employeessignupschema');
-
+var usernamesListModel = require('../modules/usernameslistschema');
 
 
 // require dot env
@@ -85,13 +85,23 @@ router.get('/',  function(req, res, next) {
 function checkUsername(req, res, next) {
   var username = req.body.usrname;
   var getCustomerData = customerModel.findOne({Username: username});
+  var chechUsernameInUserNamesList = usernamesListModel.findOne({Username: username});
+  
   getCustomerData.exec((err, customerData) => {
     if(err) throw err;
-    if(customerData) {
+    //
+     chechUsernameInUserNamesList.exec((err, userNameInUsernamesList) => {
+      if(err) throw err;
+      
+      if(customerData || userNameInUsernamesList) {
 
-      return res.render('index', {title: 'Quick Website', msg: 'Username Already Exists'});
-    
-    }     
+        return res.render('index', {title: 'Quick Website', msg: 'Username Already Exists'});
+      
+      } 
+
+     //});
+    //
+        
     if(!customerData) {
 
       var getEmployeeData = employeesModel.findOne({Username: username});
@@ -118,6 +128,8 @@ function checkUsername(req, res, next) {
       });
 
     }
+    //
+  });
     //
   });
  }
@@ -245,6 +257,14 @@ router.post('/signupcustomer', checkUsername, checkMobileNumber, checkEmail,   f
 
     customerDetails.save((err )=> {
       if(err) throw err;
+      // save username to usernames list
+      var userNameListDetail = new usernamesListModel({
+        Username: req.body.usrname
+      });
+      userNameListDetail.save((err)=> {
+        if(err) throw err;
+      
+      //
 //Send OTP Email
       var output = `
     <h3>Hi, Your One Time Password for Account Activation is ${Onetimepassword}</h3>
@@ -291,7 +311,9 @@ ses.sendEmail(params, (err) => {
   }
 });
 //
-
+//
+});
+//
 /* uncomment later if needed
 var ses = require('node-ses');
 var client = ses.createClient({key: process.env.SES_I_AM_USER_ACCESS_KEY, secret: process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, amazon: process.env.AMAZON });

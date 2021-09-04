@@ -108,6 +108,7 @@ let params = {
   // send to list
   Destination: {
       ToAddresses: [
+        //'admin@quickwebsite.net'
           'vipinkmboj211@gmail.com'
       ]
   },
@@ -128,9 +129,10 @@ let params = {
           Data: "Query Message Through Contact Us"
       }
   },
-  Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+  Source: 'vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
   ReplyToAddresses: [
-      'vipinkmboj211@gmail.com',
+    //'admin@quickwebsite.net'
+      'vipinkmboj211@gmail.com'
   ],
 };
 

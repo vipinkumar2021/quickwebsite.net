@@ -433,6 +433,9 @@
     margin-top: 5em;
     margin-bottom: 0;
   }
+  .footer #taptotopButton:hover {
+      color: rgb(180, 175, 175);
+  }
   .footer .row {
     display: flex; 
     width: 100%; 
@@ -440,7 +443,7 @@
   }
   
   .footer .row .column {
-    width: 25%;  
+    width: 33%;  
     color: whitesmoke;
     font-size: 1.1em;
     text-align: center;
@@ -449,7 +452,7 @@
     
     text-align: left;
     font-size: 1.1em;
-    padding-left: 30%;
+    padding-left: 25%;
   }
   .footer .row .column ul li {
     list-style: none;
@@ -457,6 +460,11 @@
   .footer .row .column ul li a {
     text-decoration: none;
     color: whitesmoke;
+    
+  }
+  .footer .row .column ul li a:hover {
+    
+    color: rgb(180, 175, 175);
     
   }
   .footer .row .column-4 a {
