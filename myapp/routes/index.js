@@ -203,7 +203,7 @@ function checkMobileNumber(req, res, next) {
           if(adminData) {
 
             return res.render('index', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
- 
+            
           }
           next();
         });
@@ -296,7 +296,7 @@ let params = {
           Data: "One Time Password (OTP) Email"
       }
   },
-  Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+  Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
   ReplyToAddresses: [
       email,
   ],

@@ -129,7 +129,7 @@ let params = {
           Data: "Query Message Through Contact Us"
       }
   },
-  Source: 'vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
+  Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
   ReplyToAddresses: [
     //'admin@quickwebsite.net'
       'vipinkmboj211@gmail.com'
