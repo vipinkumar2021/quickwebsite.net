@@ -7,6 +7,9 @@ var conn = mongoose.Collection;
 
 var feedbackSchema = new mongoose.Schema({
 
+    Username: {
+        type: String,    
+    },
 Feedback: {
     type: String,    
 },

@@ -1081,12 +1081,66 @@ router.post('/deletecustomeraccount', (req, res, next) => {
         `
       });
       customerAccountDetails.save((err) => {
-        if(err) throw err;
+        if(err) throw err; 
         req.session.destroy(function(err) {
           if(err) {
             res.redirect('/');
           } else {
-            res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
+                   // Send Notification Email
+        //
+        //
+      //Send Email
+      var output = `
+      <h3>Hi, You Have a new add post</h3>
+      <p>
+      Customer Username: ${loginUser.loginUserCustomer} <br/>
+      Account Status: Deactivated
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          //'admin@quickwebsite.net'
+            'vipinkmboj211@gmail.com'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Text Message goes here'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: "Account Deactivation Notification"
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
+    ReplyToAddresses: [
+      //'admin@quickwebsite.net'
+        'vipinkmboj211@gmail.com'
+    ],
+  };
+
+  // this sends the email
+  ses.sendEmail(params, (err) => {
+    if(err) {
+      res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
+    } else {
+      res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
+    }
+  });
+      //
+            //res.render('index', { title: 'Quick Website', msg:'Account Deactivated! Hope To See You Again' });
       
           } 
         });

@@ -4,6 +4,7 @@ var router = express.Router();
 var customerModel = require('../modules/customersignupschema');
 var cartItemsModel = require('../modules/cartitemsschema');
 var purchasedModel = require('../modules/purchasedschema');
+var advertisementModel = require('../modules/advertisementschema');
 /* GET home page. */
 
 router.get('/',  function(req, res, next) {
@@ -18,20 +19,28 @@ router.get('/',  function(req, res, next) {
     var customerModelData = customerModel.findOne({Username: loginUser.loginUserCustomer});
     var cartItemsModelData = cartItemsModel.find({Username: loginUser.loginUserCustomer});
     var purchasedModelData = purchasedModel.find({Username: loginUser.loginUserCustomer});
-
+    var advertisementModelData = advertisementModel.find({});
     customerModelData.exec((err, currentLoginData) => {
       if(err) {
-        res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '' });
+        res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '', allAdvertisements: ''});
       } 
       cartItemsModelData.exec((err, allCartItems) => {
         if(err) {
-          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '' });
+          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '', allAdvertisements: '' });
         }
         purchasedModelData.exec((err, allPurchasedItems) => {
           if(err) {
-            res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '' });
+            res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '', allAdvertisements: '' });
           }
-          res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: currentLoginData, allCartItems: allCartItems, allPurchasedItems: allPurchasedItems });
+          //
+          advertisementModelData.exec((err, allAdvertisements)=> {
+            if(err) {
+              res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '', allCartItems: '', allPurchasedItems: '', allAdvertisements: '' });
+            }
+            res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: currentLoginData, allCartItems: allCartItems, allPurchasedItems: allPurchasedItems, allAdvertisements: allAdvertisements });
+          });
+          //
+          //res.render('dashboardcustomerprofile', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: currentLoginData, allCartItems: allCartItems, allPurchasedItems: allPurchasedItems });
         });
       });
     });

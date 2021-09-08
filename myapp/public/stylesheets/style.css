@@ -2186,5 +2186,24 @@
   padding: auto;
 
 }
+.advertisements {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.row-advertisement {
+  display: block;
 
 
+}
+.row-advertisement table {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  border: 3px solid whitesmoke;
+  
+}
+.row-advertisement table tr th{
+  padding: 1%;
+  
+}

@@ -3,10 +3,34 @@
 <div class="item item3 main addon">
     <div class="container welcome getstarted" ><!--welcome css working in this-->
         
-        <h2>Post Advertisement Here</h2> 
+        <h2 style="margin-top: 2em;">Post Advertisement Here</h2>
+        <% if(msg !='') { %>
+            <h2 ><%= msg %> </h2>
+            <% } %>
+        <form action="/dashboardpostadd" method="POST" role="form">
+            <label>Individual/Company Name</label><br/>
+            <input type="text" name="individualorcompanyname" placeholder="Your Company Name....."/><br/>
+            <label>Contact Number</label><br/>
+            <input type="text" name="contactnumber" placeholder="Your Company Contact....."/><br/>
+            <label>Email</label><br/>
+            <input type="email" name="email" placeholder="Your Company Email...."/><br/>
+            <label>Address</label><br/>
+            <textarea name="address">
                 
-    </div>     
+            </textarea><br/>
+            <label>Services</label><br/>
+            <textarea name="services">
 
+            </textarea><br/>
+            <label>Advertisement</label><br/>
+            <textarea name="advertisement">
+
+            </textarea>
+            <br/><br/>
+            <button type="submit">Post Add</button>>
+        </form> 
+                
+    </div>  
 </div>
 <%- include('modal') %>
 <%- include('dashboardfooter') %>

@@ -12,7 +12,7 @@
             <a href="#" onclick="openPostFreelanceJobModal()">Post a Job</a>
             <a href="#jobscontent">Find Work</a>
         </div> 
-        <h2 style="padding: 2em;">Jobs List</h2>
+        <h2 style="padding: 2.2em;" id="jobscontent">Jobs List</h2>
         
         
         <% if(freelanceJobsData.length > 0) { %>
@@ -20,9 +20,9 @@
 
                
 
-        <div class="row row-2">
+        <div class="row row-2" >
                                 
-            <table>
+            <table >
                 <tr>
                     <th>Username</th><td class="current-freelance-job-username"><%= item.Username %></td>
                 </tr>
