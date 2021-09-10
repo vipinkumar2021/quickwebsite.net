@@ -75,7 +75,7 @@ const upload = multer({
   storage: storage,
   //limits: {fileSize: 1000000000},    
   fileFilter: function(req, file, cb) {
-    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif' || file.mimetype === 'application/pdf') {
       cb(null, true)
     } else {
       cb(null, false)
@@ -83,10 +83,11 @@ const upload = multer({
   }
 });
 
-var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery', maxCount: 1}, {name: 'uploadcontentfortemplates', maxCount: 1}, {name: 'uploadcontentformenu', maxCount: 1}, {name: 'backgroundimage', maxCount: 1}, {name: 'uploadedfilesnames', maxCount: 1}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
+var multipleUploads = upload.fields([{name: 'uploadcontentforlogo', maxCount: 1}, { name: 'uploadcontentforgallery', maxCount: 20}, {name: 'uploadcontentfortemplates', maxCount: 20}, {name: 'uploadcontentformenu', maxCount: 6}, {name: 'backgroundimage', maxCount: 1}, {name: 'uploadedfilesnames', maxCount: 10}]);//.single('uploadcontentforgallery');//fields([{name: "uploadcontentforgallery", maxCount: 1}, {name: "uploadcontentfortemplates", maxCount: 1}]);
 
 //
 var aws = require("aws-sdk");
+const { listeners, listenerCount } = require('process');
   const ses = new aws.SES({"accessKeyId": process.env.SES_I_AM_USER_ACCESS_KEY, "secretAccessKey": process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, "region": process.env.AWS_SES_REGION});
 
 router.post('/', multipleUploads, function(req, res, next) {
@@ -165,13 +166,69 @@ if(req.files.uploadcontentforlogo) {
 } else {
   uploadContentForLogo = 'No Logo Image Provided'
 }
-//
+
+if(req.files.uploadcontentforgallery != undefined){
+  var uploadContentForThisGallery = "";
+  for(var i = 0; i < req.files.uploadcontentforgallery.length; i++) {
+    
+    uploadContentForThisGallery += req.files.uploadcontentforgallery[i].filename + "<br>";
+  }
+} else {
+  uploadContentForThisGallery = 'No Image Uploaded'
+}
+
+if(req.files.uploadcontentfortemplates != undefined) {
+  var uploadContentForThisTemplate = "";
+for(var i = 0; i < req.files.uploadcontentfortemplates.length; i++) {
+  uploadContentForThisTemplate += req.files.uploadcontentfortemplates[i].filename + "<br>";
+}
+} else {
+  uploadContentForThisTemplate = 'No Image Uploaded'
+}
+
+if(req.files.uploadcontentformenu != undefined) {
+  var uploadContentForThisMenu = "";
+for(var i = 0; i < req.files.uploadcontentformenu.length; i++) {
+  uploadContentForThisMenu += req.files.uploadcontentformenu[i].filename + "<br>";
+}
+} else {
+  uploadContentForThisMenu = 'No Image Uploaded'
+}
+/*
+if(req.files.uploadcontentformenu != undefined) {
+  let uploadContentForThisMenu = "";
+for(var i = 0; i < req.files.uploadcontentformenu.length; i++) {
+  uploadContentForThisMenu += req.files.uploadcontentformenu[i].filename + "<br>";
+}
+} else {
+  uploadContentForThisMenu = 'No Image Uploaded'
+}
+
+
+
+let uploadContentForThisTemplate = "";
+for(var i = 0; i < req.files.uploadcontentfortemplates.length; i++) {
+  uploadContentForThisTemplate += req.files.uploadcontentfortemplates[i].filename + "<br>";
+}
+
+let uploadContentForThisMenu = "";
+for(var i = 0; i < req.files.uploadcontentformenu.length; i++) {
+  uploadContentForThisMenu += req.files.uploadcontentformenu[i].filename + "<br>";
+}
+*/
+
+/*
+if(req.files.uploadcontentforgallery) {
+  var uploadContentForThisGallery = uploadContentForGallery.filename;
+} else {
+  uploadContentForThisGallery = 'No Gallery Image Selected'
+}
+/*
 if(req.files.uploadcontentforgallery) {
   var uploadContentForGalleryOne = req.files.uploadcontentforgallery[0].filename;
 } else {
   uploadContentForGalleryOne = 'No Gallery Image Selected'
 }
-/* uncomment later if corrected
 if(req.files.uploadcontentforgallery) {
   var uploadContentForGalleryTwo = req.files.uploadcontentforgallery[1].filename;
 } else {
@@ -183,7 +240,7 @@ if(req.files.uploadcontentforgallery) {
 } else {
   uploadContentForGalleryThree = 'No Gallery Image Selected'
 }
-
+ uncomment later if corrected
 if(req.files.uploadcontentforgallery) {
   var uploadContentForGalleryFour = req.files.uploadcontentforgallery[3].filename;
 } else {
@@ -229,6 +286,7 @@ if(req.files.uploadcontentforgallery) {
 uncomment later if corrected */
 
 //
+/*
 if(req.files.uploadcontentfortemplates) {
   var uploadContentForTemplates = req.files.uploadcontentfortemplates[0].filename;
 } else {
@@ -240,18 +298,23 @@ if(req.files.uploadcontentformenu) {
 } else {
   uploadContentForMenu = 'No Menu Image Selected'
 }
-
+*/
 if(req.files.backgroundimage) {
   var backgroundImage = req.files.backgroundimage[0].filename;
 } else {
   backgroundImage = 'No Background Image Selected'
 }
-//
-if(req.files.uploadedfilesnames) {
-  var extraUploadedFileNameOne = req.files.uploadedfilesnames[0].filename;
-} else {
-  extraUploadedFileNameOne = 'No Extra File Uploaded'
+
+if(req.files.uploadedfilesnames != undefined) { 
+  var uploadFilesForThisOrder = "";
+for(var i = 0; i < req.files.uploadedfilesnames.length; i++) {
+  uploadFilesForThisOrder += req.files.uploadedfilesnames[i].filename + "<br>";
 }
+} else {
+  uploadFilesForThisOrder = 'No File Uploaded'
+}
+//uploadfilenames
+
 /* uncomment later if corrected
 if(req.files.uploadedfilesnames) {
   var extraUploadedFileNameTwo = req.files.uploadedfilesnames[1].filename;
@@ -413,10 +476,11 @@ Gallery: req.body.gallery ,
 GalleryEstimatedTime: req.body.galleryestimatedtime,
 GalleryPrice: req.body.galleryprice,
 TextContentForGallery: req.body.textcontentforgallery,
-UploadContentForGalleryOne: uploadContentForGalleryOne,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
+UploadContentForGalleryOne: uploadContentForThisGallery,//req.files.filename,//req.body.uploadcontentforgallery,//uploadContentForGallery,//req.files.filename,//filenameUpload,//uploadContentForGallery,//req.files.filename,//uploadContentForGallery,//req.file.uploadcontentforgallery,
 /* uncomment later if corrected
 UploadContentForGalleryTwo: uploadContentForGalleryTwo,
 UploadContentForGalleryThree: uploadContentForGalleryThree,
+
 UploadContentForGalleryFour: uploadContentForGalleryFour,
 UploadContentForGalleryFive: uploadContentForGalleryFive,
 UploadContentForGallerySix: uploadContentForGallerySix,
@@ -430,13 +494,13 @@ Templates: req.body.templatesfeature ,
 TemplatesFeatureEstimatedTime: req.body.templatesfeatureestimatedtime,
 TemplatesFeaturePrice: req.body.templatesfeatureprice,
 TextContentForTemplates: req.body.textcontentfortemplates,
-UploadContentForTemplates: uploadContentForTemplates,//req.files.filename,//req.body.uploadcontentfortemplates, //uploadContentForTemplates,//req.files.filename, /*filenameUpload,*///req.files.filename,//uploadContentForGallery,//req.file.uploadcontentfortemplates,
+UploadContentForTemplates: uploadContentForThisTemplate,//uploadContentForTemplates,//req.files.filename,//req.body.uploadcontentfortemplates, //uploadContentForTemplates,//req.files.filename, /*filenameUpload,*///req.files.filename,//uploadContentForGallery,//req.file.uploadcontentfortemplates,
 
 Menu: req.body.menu ,
 MenuEstimatedTime: req.body.menuestimatedtime,
 MenuPrice: req.body.menuprice,
 TextContentForMenu: req.body.textcontentformenu,
-UploadContentForMenu: uploadContentForMenu, 
+UploadContentForMenu: uploadContentForThisMenu,//uploadContentForMenu, 
 
 // Advanced Features
 RegisterLogin: req.body.registerlogin,
@@ -472,7 +536,7 @@ DataBase: req.body.database ,
 DataBaseEstimatedTime: req.body.databaseestimatedtime ,
 DataBasePrice: req.body.databaseprice ,
 // Uploads
-ExtraUploadedFilesNameOne: extraUploadedFileNameOne,//uploadedFilesNames,//req.body.uploadedfilesnames,
+ExtraUploadedFilesNameOne: uploadFilesForThisOrder,//extraUploadedFileNameOne,//uploadedFilesNames,//req.body.uploadedfilesnames,
 /* uncomment later if corrected
 ExtraUploadedFilesNameTwo: extraUploadedFileNameTwo,//uploadedFilesNames
 ExtraUploadedFilesNameThree: extraUploadedFileNameThree,
@@ -523,7 +587,7 @@ PaymentMethod: req.body.paymentmethod ,
 cartItemsList.save((err) => {
   if(err) throw err;
 
-  //Send Email
+  //Send Notification Email
   var output = `
   <h3>Hi, You Have received a new Order</h3>
   <p>
@@ -536,7 +600,8 @@ let params = {
 // send to list
 Destination: {
     ToAddresses: [
-        'vipinkmboj211@gmail.com'
+        'vipinkmboj211@gmail.com',
+        'admin@quickwebsite.net'
     ]
 },
 Message: {
@@ -556,9 +621,10 @@ Message: {
         Data: "New Order Through Quick Website"
     }
 },
-Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
 ReplyToAddresses: [
     'vipinkmboj211@gmail.com',
+    'admin@quickwebsite.net'
 ],
 };
 

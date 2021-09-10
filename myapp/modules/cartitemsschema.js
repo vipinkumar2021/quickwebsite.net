@@ -218,6 +218,12 @@ TextContentForGallery: {
     type: String,
     //required: true
 },
+/*
+UploadContentForGalleryOne: {
+    type: String,
+    //required: true
+},
+*/
 UploadContentForGalleryOne: {
     type: String,
     //required: true

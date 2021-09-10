@@ -34,7 +34,7 @@
                     <tr>
                         <th colspan="3">Cart Items</th>
                     </tr>
-                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
+                    <tr><th>Name</th><th>Estimated Time (Days)</th><th>Service Cost</th></tr>
                     <tr>
                         <td class="template-option"><%= element.TemplateOption %></td>
                         <td class="template-completing-estimated-time">
@@ -53,7 +53,7 @@
                         <th colspan="3">Basic Features Selected</th>                    
                     </tr>
                     
-                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
+                    <tr><th>Name</th><th>Estimated Time (Days)</th><th>Service Cost</th></tr>
                     <tr>                    
                         <td class="homepage"><%= element.Home %></td>                    
                         <td class="homepage-content-estimated-time">
@@ -389,74 +389,466 @@
                     </tr>
                     
                     <tr>
-                        <th>Name</th><th colspan="2">Content</th>
-                    </tr>
-                    <tr>
-                        <th rowspan="2">Photo Gallery Content: </th>
-                        <td class="photogallery-content" colspan="2">
+                        <th colspan="3">
+                            Photo Gallery Text Content
+                        </th>                      
+                    </tr>                    
+                    <tr>                        
+                        <td class="photogallery-content" colspan="3">
                             <strong>Text Content:</strong><br/>
                             <p>
                                 <%= element.TextContentForGallery %>
-                            </p>
-                             
+                            </p>                             
                         </td>                                       
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <strong>Uploaded Files Content:</strong><br/>
-                            <div>
-                                <img src="./uploads/<%= element.UploadContentForGalleryOne %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                        <th colspan="3">
+                            Photo Gallery Upload Content
+                        </th>                        
+                    </tr>   
+
+                    <tr>
+                        <td colspan="3">
+                            <strong>Uploaded Files Content:</strong><br/><br/>
+                            <% var strGalleryUpload = element.UploadContentForGalleryOne %>
+                            <% var splittedGalleryUpload = strGalleryUpload.split('<br>'); %>                           
+                        <div class="cart-uploaded-content-div">
+                            <div class="row row-1">
+                                <div class="column col-1">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[0] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[0] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                
+                                <div class="column col-2">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[1] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[1] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-3">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[2] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[2] %></figcaption>
+                                      </figure>                                
+                                </div>                        
+                                
+    
+                            </div >
+                            <div class="row row-2">
+                                <div class="column col-4">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[3] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[3] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-5">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[4] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[4] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-6">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[5] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[5] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                               
+                            </div>
+                            <div class="row row-3">
+                                <div class="column col-7">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[6] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[6] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-8">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[7] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[7] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-9">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[8] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[8] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                               
+                            </div>
+                            <div class="row row-4">
+                                <div class="column col-10">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[9] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[9] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-11">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[10] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[10] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-12">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[11] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[11] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                                
+                            </div>
+                            <div class="row row-5">
+                                <div class="column col-13">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[12] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[12] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-14">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[13] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[13] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-15"> 
+                                    <figure> 
+                                        <img src="./uploads/<%= splittedGalleryUpload[14] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[14] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                              
+                            </div>
+                            <div class="row row-6">
+                                
+    
+                                <div class="column col-16">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[15] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[15] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-17">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[16] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[16] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-18">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[17] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[17] %></figcaption>
+                                      </figure>                                
+                                </div>
+                            </div><!--row-6 ends-->
+
+                            <div class="row row-7">                                
+    
+                                <div class="column col-19">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedGalleryUpload[18] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[18] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-20">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedGalleryUpload[19] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedGalleryUpload[19] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
                             </div>
                             
+                            
+                            
+                            
+                                                        
+                        </div>    
                         </td>
                     </tr>
     
                     <tr>
-                        <th rowspan="2">Templates Feature Content: </th>
-                        <td class="template-content" colspan="2">
+                        <th colspan="3">
+                            Templates Text Content
+                        </th>                      
+                    </tr>                    
+                    <tr>                        
+                        <td class="template-content" colspan="3">
                             <strong>Text Content:</strong><br/>
                             <p>
-                                <%= element.TextContentForTemplates %> 
-                            </p>
-                            
+                                <%= element.TextContentForTemplates %>
+                            </p>                             
                         </td>                                       
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <strong>Uploaded Files Content:</strong><br/>
-                            <div>
-                                <img src="./uploads/<%= element.UploadContentForTemplates %>" width="150px" height="150px" alt="Templates Content Image"/>
+                        <th colspan="3">
+                            Templates Upload Content
+                        </th>                        
+                    </tr>   
+
+                    <tr>
+                        <td colspan="3">
+                            <strong>Uploaded Files Content:</strong><br/><br/>
+                            <% var strTemplatesUpload = element.UploadContentForTemplates %>
+                            <% var splittedTemplatesUpload = strTemplatesUpload.split('<br>'); %>                           
+                        <div class="cart-uploaded-content-div">
+                            <div class="row row-1">
+                                <div class="column col-1">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[0] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[0] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                
+                                <div class="column col-2">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[1] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[1] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-3">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[2] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[2] %></figcaption>
+                                      </figure>                                
+                                </div>                        
+                                
+    
+                            </div >
+                            <div class="row row-2">
+                                <div class="column col-4">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[3] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[3] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-5">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[4] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[4] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-6">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[5] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[5] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                               
                             </div>
-                            
+                            <div class="row row-3">
+                                <div class="column col-7">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[6] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[6] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-8">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[7] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[7] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-9">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[8] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[8] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                               
+                            </div>
+                            <div class="row row-4">
+                                <div class="column col-10">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[9] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[9] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-11">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[10] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[10] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-12">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[11] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[11] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                                
+                            </div>
+                            <div class="row row-5">
+                                <div class="column col-13">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[12] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[12] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-14">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[13] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[13] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-15"> 
+                                    <figure> 
+                                        <img src="./uploads/<%= splittedTemplatesUpload[14] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[14] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                              
+                            </div>
+                            <div class="row row-6">
+                                
+    
+                                <div class="column col-16">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[15] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[15] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-17">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[16] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[16] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-18">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[17] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[17] %></figcaption>
+                                      </figure>                                
+                                </div>
+                            </div><!--row-6 ends-->
+
+                            <div class="row row-7">                                
+    
+                                <div class="column col-19">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedTemplatesUpload[18] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[18] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-20">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedTemplatesUpload[19] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedTemplatesUpload[19] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                            </div>                                                    
+                        </div>    
                         </td>
                     </tr>
-    
+
+                   <!---->
                     <tr>
-                        <th rowspan="2">Menu Content: </th>
-                        <td class="menu-content" colspan="2">
+                        <th colspan="3">
+                            Menu Text Content
+                        </th>                      
+                    </tr>                    
+                    <tr>                        
+                        <td class="menu-content" colspan="3">
                             <strong>Text Content:</strong><br/>
                             <p>
-                                <%= element.TextContentForMenu %> 
-                            </p>
-                            
+                                <%= element.TextContentForMenu %>
+                            </p>                             
                         </td>                                       
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <strong>Uploaded Files Content:</strong><br/>
-                            <div>
-                                <img src="./uploads/<%= element.UploadContentForMenu %> " width="150px" height="150px" alt="Menu Content Image"/>
+                        <th colspan="3">
+                            Menu Upload Content
+                        </th>                        
+                    </tr>   
+
+                    <tr>
+                        <td colspan="3">
+                            <strong>Uploaded Files Content:</strong><br/><br/>
+                            <% var strMenuUpload = element.UploadContentForMenu %>
+                            <% var splittedMenuUpload = strMenuUpload.split('<br>'); %>                           
+                        <div class="cart-uploaded-content-div">
+                            <div class="row row-1">
+                                <div class="column col-1">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedMenuUpload[0] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedMenuUpload[0] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                
+                                <div class="column col-2">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedMenuUpload[1] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedMenuUpload[1] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-3">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedMenuUpload[2] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedMenuUpload[2] %></figcaption>
+                                      </figure>                                
+                                </div>                        
+                                
+    
+                            </div >
+                            <div class="row row-2">
+                                <div class="column col-4">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedMenuUpload[3] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedMenuUpload[3] %></figcaption>
+                                        
+                                      </figure>                                
+                                </div>
+                                <div class="column col-5">
+                                    <figure>
+                                        <img src="/uploads/<%= splittedMenuUpload[4] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedMenuUpload[4] %></figcaption>
+                                      </figure>                                
+                                </div>
+                                <div class="column col-6">
+                                    <figure>
+                                        <img src="./uploads/<%= splittedMenuUpload[5] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                        <figcaption><%= splittedMenuUpload[5] %></figcaption>
+                                      </figure>                                
+                                </div>
+    
+                               
                             </div>
-                            
+                                                                                
+                        </div>    
                         </td>
                     </tr>
-    
-    
+
+                    <!---->
                     <tr>
                         <th colspan="3">Advanced Features Selected</th>                    
                     </tr>
                     
-                    <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                    <tr><th>Name</th><th>Estimated Time (Days)</th><th>Cost</th></tr>
                     <tr>                    
                         <td class="registerloginpage"><%= element.RegisterLogin %></td>                    
                         <td class="registerloginpage-content-estimated-time">
@@ -530,7 +922,7 @@
                             <th colspan="3">Designing Features Selected</th>                    
                         </tr>
                         
-                        <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
+                        <tr><th>Name</th><th>Estimated Time (Days)</th><th>Cost</th></tr>
                         <tr>                    
                             <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
                             <td class="websitebackground-content-estimated-time">
@@ -610,7 +1002,7 @@
                         <tr>
                             <th colspan="3">Other Features & Services</th>
                         </tr>
-                        <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
+                        <tr><th>Name</th><th>Estimated Time (Days)</th><th>Service Cost</th></tr>
                     <tr>                    
                         <td class="emailservice"><%= element.EmailService %></td>                    
                         <td class="email-service-estimated-time">
@@ -658,6 +1050,28 @@
                         <th colspan="3">Uploads</th>
                     </tr>
                     <tr>
+                        <th >
+                           Uploaded Files:
+                        </th>
+                        <td colspan="2">
+                            <% var strExtraUploads = element.ExtraUploadedFilesNameOne %>
+                            <% var splittedExtraUploads = strExtraUploads.split('<br>'); %>                           
+
+                           
+                            <%= splittedExtraUploads[0] %><br/>
+                            <%= splittedExtraUploads[1] %><br/>
+                            <%= splittedExtraUploads[2] %><br/>
+                            <%= splittedExtraUploads[3] %><br/>
+                            <%= splittedExtraUploads[4] %><br/>
+                            <%= splittedExtraUploads[5] %><br/>
+                            <%= splittedExtraUploads[6] %><br/>
+                            <%= splittedExtraUploads[7] %><br/>
+                            <%= splittedExtraUploads[8] %><br/>
+                            <%= splittedExtraUploads[9] %><br/>
+                        </td>
+                    </tr>
+                    <!--
+                    <tr>
                         <td colspan="3">
                             <div class="container image-container">
                                 <div class="column col-1">
@@ -682,7 +1096,9 @@
                             <img src="#" width="150px" height="150px" alt="Uploaded Image 2"/> 
                             <img src="#" width="150px" height="150px" alt="Uploaded Image 3"/> 
                         </td>
+
                     </tr>
+                    -->
                     <tr>
                         <th colspan="3">Additional</th>
                     </tr>
@@ -752,8 +1168,161 @@
                             Total: 
                         </td>
                         <td>
-                            ...Days (Estimated)
-                        </td>
+                            <span class="project-estimated-days">
+                                <% var totalEstimatedTime = 0; %> 
+                                <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
+                                    <% var templateEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% templateEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Home) { %>
+                                    <% var homePageEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% homePageEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.About) { %>
+                                    <% var aboutEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% aboutEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Services) { %>
+                                    <% var servicesEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% servicesEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.WhyUs) { %>
+                                    <% var whyUsEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% whyUsEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUs) { %>
+                                    <% var contactUsEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.SocialMedia) { %>
+                                    <% var socialMediaEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% socialMediaEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Policy) { %>
+                                    <% var policyEstimatedTime = 2; %> 
+                                                           
+                                <% } else { %>
+                                        <% policyEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.TermsAndConditions) { %>
+                                    <% var termsAndConditionsEstimatedTime = 2; %> 
+                                                           
+                                <% } else { %>
+                                        <% termsAndConditionsEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.CopyRight) { %>
+                                    <% var copyRightEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% copyRightEstimatedTime = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I want to buy Logo') { %>
+                                    <% var logoPurchasingEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% logoPurchasingEstimatedTime = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I have my own Logo') { %>
+                                    <% var logoByCustomerEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% logoByCustomerEstimatedTime = 0; %> 
+                                 <% } %>
+                                <!--External Features check-->
+                                 <% if(element.Gallery) { %>
+                                    <% var galleryEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% galleryEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Templates) { %>
+                                    <% var templatesFeatureEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% templatesFeatureEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Menu) { %>
+                                    <% var menuEstimatedTime = 2; %> 
+                                                           
+                                <% } else { %>
+                                        <% menuEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <!--Advanced Features Check-->
+                                 <% if(element.RegisterLogin) { %>
+                                    <% var registerLogInEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% registerLogInEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUsForm) { %>
+                                    <% var contactUsWithFormEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsWithFormEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.PaymentMethod) { %>
+                                    <% var paymentMethodEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% paymentMethodEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <!--Designing-->
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
+                                    <% var websiteBackgroundColorEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundColorEstimatedTime = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website') { %>
+                                    <% var websiteBackgroundImageEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundImageEstimatedTime = 0; %> 
+                                 <% } %>
+                                <!--Other Features or Services-->
+                                <% if(element.EmailService) { %>
+                                    <% var emailServiceEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% emailServiceEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.MessageService) { %>
+                                    <% var messageServiceEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% messageServiceEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.DataBase) { %>
+                                    <% var dataBaseEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% dataBaseEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <!--Extra Estimated Time-->
+                                                      
+                                
+                                        <% var extraEstimatedTime = 1; %> 
+                                 
+                                
+
+                                <!-- Total: --><%= (totalEstimatedTime + templateEstimatedTime + homePageEstimatedTime + aboutEstimatedTime+ servicesEstimatedTime + whyUsEstimatedTime + contactUsEstimatedTime + socialMediaEstimatedTime + policyEstimatedTime + termsAndConditionsEstimatedTime + copyRightEstimatedTime + logoPurchasingEstimatedTime + logoByCustomerEstimatedTime + galleryEstimatedTime + templatesFeatureEstimatedTime + menuEstimatedTime + registerLogInEstimatedTime + contactUsWithFormEstimatedTime + paymentMethodEstimatedTime + websiteBackgroundColorEstimatedTime + websiteBackgroundImageEstimatedTime + emailServiceEstimatedTime + messageServiceEstimatedTime + dataBaseEstimatedTime + extraEstimatedTime) + ' Days Approximately';%>
+
+                            </span>
+                            
+                        </td><!--estimated days end here-->
                         <td>
                             <span class="cart-total-price ">
                                 <% var total = 0; %> 
@@ -911,22 +1480,28 @@
                                 
                             </span>
                         </td>                 
-                    </tr>                    
-                    <caption>
-                        
-                    </caption>
+                    </tr> 
+                    <tr>
+                        <th colspan="3">Terms & Conditions: </th>                                                            
+                    </tr> 
+                    <tr>
+                        <td colspan="3" style="text-align: center; font-size: 1.5em;">By clicking <strong><em>Proceed To Checkout</em></strong>  Button, you agree with the <a href="https://portal.termshub.io/quickwebsite.net/" target="_blank">terms & conditions</a> of our website and services.</td>                                                            
+                    </tr>                   
+                    
                     
                     
                 </table> 
       
 
     </div><!--cart-row ends here-->
+    <!--
             <a class="table-caption-anchor" href="#">Add-More</a>
             <a class="table-caption-anchor" href="#">Edit-Order</a>
-            <a class="table-caption-anchor confirm-before-delete-anchor" style="cursor: pointer;" >Remove</a>
-
-                <!--<button type="button" id="checkout-button" class="checkout-btn proceed-to-checkout purchase" >Proceed To Checkout</button> -->
-                <button type="button" class="checkout-button proceed-to-checkout purchase" >Proceed To Checkout</button> 
+    -->
+            <a class="table-caption-anchor confirm-before-delete-anchor" style="cursor: pointer; justify-content: center; padding: 1em; font-size: 1.5em;" >Remove From Cart</a>
+    
+            <!--<button type="button" id="checkout-button" class="checkout-btn proceed-to-checkout purchase" >Proceed To Checkout</button> -->
+            <button type="button" class="checkout-button proceed-to-checkout purchase" >Proceed To Checkout</button> 
                 
     <!-- Delete Confirmation Modal starts here-->          
     <div class="modal-parent-confirmation-before-delete">

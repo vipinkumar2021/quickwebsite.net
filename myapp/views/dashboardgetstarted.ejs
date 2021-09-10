@@ -286,16 +286,16 @@
 
             </textarea><br/>
             
-           <label id="photo-gallery-upload-content-label">Upload content to show in Photo Gallery</label><br/>
-            <input id="photo-gallery-upload-content-input" type="file" name="uploadcontentforgallery"/><br/>
+           <label id="photo-gallery-upload-content-label">Upload content to show in Photo Gallery (Max. 20 images)</label><br/>
+            <input id="photo-gallery-upload-content-input" type="file" name="uploadcontentforgallery" multiple/><br/>
 
             <input id="templates-feature-checkbox" type="checkbox" name="templatesfeature" value="Templates Feature &#9989; (Note: Database Required, So Included Database Charges )" onclick="showHideTemplatesFeatureContentForm()"/><input type="hidden" name="templatesfeatureestimatedtime" value="3 Day"/><input type="hidden" name="templatesfeatureprice" value="$ 150.00"/><label>I want to show my work "Templates"</label><br/>
             <label id="templates-feature-content-label">"Text Content" for "Templates"</label><br/>
             <textarea id="templates-feature-content-textarea" name="textcontentfortemplates">
 
             </textarea><br/>
-            <label id="templates-feature-upload-content-label">"Upload Content" to show in "Templates" </label><br/>
-            <input id="templates-feature-upload-content-input" type="file" name="uploadcontentfortemplates"/><br/>  
+            <label id="templates-feature-upload-content-label">"Upload Content" to show in "Templates (Max. 20 images)" </label><br/>
+            <input id="templates-feature-upload-content-input" type="file" name="uploadcontentfortemplates" multiple/><br/>  
 
             
             <input id="menu-checkbox" type="checkbox" name="menu" value="Menu &#9989; (Note: Database Required, So Included Database Charges )" onclick="showHideMenuContentForm()"/><input type="hidden" name="menuestimatedtime" value="2 Day"/><input type="hidden" name="menuprice" value="$ 100.00"/><label>I want to show my "Menu" to my website</label><br/>
@@ -304,8 +304,8 @@
 
             </textarea><br/>
             <label id="menu-or-label">OR</label>
-            <label id="menu-upload-content-label">"Upload Menu Image" to show in Menu Section of your Food Services website (word or pdf)</label><br/>
-            <input id="menu-upload-content-input" type="file" name="uploadcontentformenu"/><br/>
+            <label id="menu-upload-content-label">"Upload Menu Image" to show in Menu Section of your Food Services website (Max. 6 images/pdf)</label><br/>
+            <input id="menu-upload-content-input" type="file" name="uploadcontentformenu" multiple/><br/>
         <br/>
 
 
@@ -326,7 +326,7 @@
             <label class="background-color-select-input" >Choose Website's Background color:- </label><input type="color" name="backgroundcolor" class="background-color-select-input" /><br/>
             
             <input type="radio" name="websitebackground" value="I want Background-Image in my Website &#9989;" onclick="showBackgroundImageInput()"/><input type="hidden" name="websitebackgroundimageprice" value="$ 30.00"/><label>I want Background-Image in my Website</label></span><br/>     
-            <label class="background-image-select-label">Upload Website's Background Image</label><input type="file" name="backgroundimage" style="display: none;" class="background-image-select-input"/>
+            <label class="background-image-select-label">Upload Website's Background Image (max. 1 image)</label><input type="file" name="backgroundimage" style="display: none;" class="background-image-select-input"/>
             <br/>
 
             <label>Choose Website's Text Color:- </label><br/>
@@ -340,12 +340,12 @@
             <input type="checkbox" name="messageservice" value="Message Services &#9989;"/><input type="hidden" name="messageserviceestimatedtime" value="3 Day"/><input type="hidden" name="messageserviceprice" value="$ 150.00"/><label>I want to send Text Messages from my website</label><br/>
             <input type="checkbox" name="database" value="Data Base &#9989;"/><input type="hidden" name="databaseestimatedtime" value="3 Day"/><input type="hidden" name="databaseprice" value="$ 150.00"/><label>Data Base</label><br/>
 <br/>
-            <label>STEP 7. Uploads</label><br/>            
-            <label>Upload Images and word Files </label><br/>
-            <input type="file" name="uploadedfilesnames"/><br/>
+            <label>STEP 6. Uploads (Images or pdf only)</label><br/>            
+            <label>Upload Images and Files (Max. 10 images/pdf) </label><br/>
+            <input type="file" name="uploadedfilesnames" multiple/><br/>
                     
                 
-            <label>STEP 8.</label><br/>
+            <label>STEP 7.</label><br/>
             <label>Additional</label><br/>
             
             <label>Describe your website briefly to get the idea of website you would like</label><br/>
