@@ -11,11 +11,19 @@ Username : {
     type: String,
     required: true
 },
+Type: {
+    type: String,
+    required: true
+},
 Subject: {
     type: String,
     required: true
 },
 Description: {
+    type: String,
+    required: true
+},
+ServiceCharges: {
     type: String,
     required: true
 },

@@ -2241,3 +2241,13 @@
   padding: 1%;
   
 }
+
+.submit-button {
+  width: 15%;
+  height: auto;
+  background-color: transparent;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  padding: 1em;
+}

@@ -1,0 +1,44 @@
+<%- include('dashboardheaderemployees') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted dashboardinbox" ><!--welcome css working in this-->
+        
+        <h2>Outbox</h2> 
+         
+        <% if(freelanceJobsCommentsData.length > 0) { %>
+            <% freelanceJobsCommentsData.forEach((item) => { %>
+        <div class="row row-1">                                
+            <table>
+                <tr>
+                    <th>To: </th><td><%= item.Username %></td>
+                </tr>
+                <tr>
+                    <th>Freelance Job Id:</th><td><%= item.FreelanceJobId %></td>
+                </tr>
+                <tr>
+                    <th>Date:</th><td><%= item.Date %></td>
+                </tr>
+                <tr>
+                    <th>Comment:</th><td><%= item.CommentOnFreelanceJob %></td>
+                </tr>
+                <tr>
+                    <th>Requested Payment:</th><td>$ <%= item.RequestPayment %></td>
+                </tr>
+                
+                
+            </table>
+            <br/>                  
+        </div> 
+        <% }) %>            
+    <% } %>
+    
+    
+    </div> 
+</div>
+<%- include('modal') %>
+<%- include('modalemployees') %> 
+<%- include('dashboardfooteremployees') %>
+
+
+
+

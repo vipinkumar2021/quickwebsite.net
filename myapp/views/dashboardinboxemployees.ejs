@@ -1,0 +1,59 @@
+<%- include('dashboardheaderemployees')  %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted dashboardinbox" ><!--welcome css working in this-->
+        
+        <h2>Inbox</h2>
+          
+
+        <% if(freelanceJobsCommentsData.length > 0) { %>
+            <% freelanceJobsCommentsData.forEach((item) => { %>
+        <div class="row row-1">                                
+            <table>
+                <tr>
+                    <th>From: </th><td><%= item.CommenterUsername %></td>
+                </tr>
+                <tr>
+                    <th>Freelance Job Id:</th><td><%= item.FreelanceJobId %></td>
+                </tr>
+                <tr>
+                    <th>Date:</th><td><%= item.Date %></td>
+                </tr>
+                <tr>
+                    <th>Comment:</th><td><%= item.CommentOnFreelanceJob %></td>
+                </tr>
+                
+                <tr>
+                    <th>Reply Comment:</th>
+                    <td>
+                        <form action="dashboardfreelancejobscommentsemployees" method="POST" role="form">
+                            
+                            <input type="hidden" name="username" value= <%= item.CommenterUsername %> />
+                            <input type="hidden" name="freelancejobid" value= <%= item.FreelanceJobId %> />
+                            <textarea name="freelancejobcomment">
+
+                            </textarea><br/>
+                            <label>Request Payment ($)</label><br/>
+                            $ <input type="number" name="requestpayment" placeholder="Please Pay me $..."/>                            
+
+                            <br/><br/>
+                            <input type="submit" value="Submit Comment"/>
+                        </form>
+                        
+                    </td>
+                </tr>
+            </table>
+            <br/>                  
+        </div> 
+        <% }) %>            
+    <% } %>     
+        
+                
+    </div>
+</div>
+<%- include('modal') %>
+<%- include('modalemployees') %> 
+<%- include('dashboardfooteremployees') %>
+
+
+

@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
   if(loginUser.loginUserCustomer) {
     res.render('dashboardgivefeedback', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee) {
-    res.render('dashboardgivefeedback', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
+    res.render('dashboardgivefeedbackemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
   } else if(loginUser.loginUserAdmin) {
-    res.render('dashboardgivefeedback', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
+    res.render('dashboardgivefeedbackadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
 
   } else {
     res.render('givefeedback', { title: 'Quick Website', msg: '', loginUser: '' });
@@ -87,7 +87,7 @@ router.post('/', function(req, res, next) {
     },
     Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
     ReplyToAddresses: [
-      //'admin@quickwebsite.net'
+      'admin@quickwebsite.net',
         'vipinkmboj211@gmail.com'
     ],
   };

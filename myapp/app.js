@@ -33,9 +33,13 @@ var dashboardsmallbusinesswebsiteRouter = require('./routes/dashboardsmallbusine
 var blogtemplatesRouter = require('./routes/blogtemplates');
 var dashboardblogtemplatesRouter = require('./routes/dashboardblogtemplates');
 var weddinginvitationtemplatesRouter = require('./routes/weddinginvitationtemplates');
+var dashboardweddinginvitationtemplatesRouter = require('./routes/dashboardweddinginvitationtemplates');
+
 var webpagetemplatesRouter = require('./routes/webpagetemplates');
 var comingsoontemplatesRouter = require('./routes/comingsoontemplates');
+var dashboardcomingsoontemplatesRouter = require('./routes/dashboardcomingsoontemplates');
 var othertemplatesRouter = require('./routes/othertemplates');
+var dashboardothertemplatesRouter = require('./routes/dashboardothertemplates');
 
 var careerRouter = require('./routes/career');
 var dashboardcareerRouter = require('./routes/dashboardcareer');
@@ -49,7 +53,7 @@ var dashboardfaqRouter = require('./routes/dashboardfaq');
 var dashboardwebsiteadminRouter = require('./routes/dashboardwebsiteadmin');
 var termsandconditionsRouter = require('./routes/termsandconditions');
 var dashboardtermsandconditionsRouter = require('./routes/dashboardtermsandconditions');
-//var termsandconditionsRouter = require('./routes/termsandconditions');
+var dashboardtermsandconditionsemployeesRouter = require('./routes/dashboardtermsandconditionsemployees');
 //var termsandconditionsRouter = require('./routes/termsandconditions');
 
 var helpRouter = require('./routes/help');
@@ -57,6 +61,7 @@ var dashboardhelpRouter = require('./routes/dashboardhelp');
 
 var employeesRouter = require('./routes/employees');
 var dashboardemployeesRouter = require('./routes/dashboardemployees');
+var dashboardemployeesprofileRouter = require('./routes/dashboardemployeesprofile');
 /*
 var dashboardhelpadminRouter = require('./routes/dashboardhelpadmin');
 var dashboardhelpemployeeRouter = require('./routes/dashboardhelpemployee');
@@ -65,6 +70,7 @@ var dashboardhelpemployeeRouter = require('./routes/dashboardhelpemployee');
 var dashboarddecidebyfeaturesRouter = require('./routes/dashboarddecidebyfeatures');
 var contactusRouter = require('./routes/contactus');
 var dashboardpostaddRouter = require('./routes/dashboardpostadd');
+var dashboardpostaddemployeesRouter = require('./routes/dashboardpostaddemployees');
 var dashboardcartRouter = require('./routes/dashboardcart');
 var dashboardcart1Router = require('./routes/dashboardcart1');
 
@@ -74,7 +80,10 @@ var dashboardcustomerprofileRouter = require('./routes/dashboardcustomerprofile'
 var dashboardadminRouter = require('./routes/dashboardadmin');
 var signoutRouter = require('./routes/signout');
 var dashboardinboxRouter = require('./routes/dashboardinbox');
+var dashboardinboxemployeesRouter = require('./routes/dashboardinboxemployees');
+
 var dashboardoutboxRouter = require('./routes/dashboardoutbox');
+var dashboardoutboxemployeesRouter = require('./routes/dashboardoutboxemployees');
 var dashboardrecyclebinRouter = require('./routes/dashboardrecyclebin');
 var dashboardsettingsRouter = require('./routes/dashboardsettings');
 
@@ -82,39 +91,60 @@ var pizzarestaurantdemoRouter = require('./routes/pizzarestaurantdemo');
 var dashboardpizzarestaurantdemoRouter = require('./routes/dashboardpizzarestaurantdemo');
 
 var cateringtemplatedemoRouter = require('./routes/cateringtemplatedemo');
+var dashboardcateringtemplatedemoRouter = require('./routes/dashboardcateringtemplatedemo');
+//var dashboardcateringtemplatedemoemployeeRouter = require('./routes/dashboardcateringtemplatedemoemployee');
+//var dashboardcateringtemplatedemoadminRouter = require('./routes/dashboardcateringtemplatedemoadmin');
+
 
 var modalrestauranttemplatedemoRouter = require('./routes/modalrestauranttemplatedemo');
+var dashboardmodalrestauranttemplatedemoRouter = require('./routes/dashboardmodalrestauranttemplatedemo');
 
 var cafetemplatedemoRouter = require('./routes/cafetemplatedemo');
+var dashboardcafetemplatedemoRouter = require('./routes/cafetemplatedemo');
 
 var portfoliotemplatedemoRouter = require('./routes/portfoliotemplatedemo');
+var dashboardportfoliotemplatedemoRouter = require('./routes/dashboardportfoliotemplatedemo');
+
 
 var resumetemplatedemoRouter = require('./routes/resumetemplatedemo');
+var dashboardresumetemplatedemoRouter = require('./routes/dashboardresumetemplatedemo');
 
 var photoportfoliotemplatedemoRouter = require('./routes/photoportfoliotemplatedemo');
+var dashboardphotoportfoliotemplatedemoRouter = require('./routes/dashboardphotoportfoliotemplatedemo');
 
 var natureportfoliotemplatedemoRouter = require('./routes/natureportfoliotemplatedemo');
+var dashboardnatureportfoliotemplatedemoRouter = require('./routes/dashboardnatureportfoliotemplatedemo');
 
 var bandtemplatedemoRouter = require('./routes/bandtemplatedemo');
+var dashboardbandtemplatedemoRouter = require('./routes/dashboardbandtemplatedemo');
 
 var blogtemplatedemoRouter = require('./routes/blogtemplatedemo');
+var dashboardblogtemplatedemoRouter = require('./routes/dashboardblogtemplatedemo');
 
 var foodblogtemplatedemoRouter = require('./routes/foodblogtemplatedemo');
+var dashboardfoodblogtemplatedemoRouter = require('./routes/dashboardfoodblogtemplatedemo');
 
 var fashionblogtemplatedemoRouter = require('./routes/fashionblogtemplatedemo');
+var dashboardfashionblogtemplatedemoRouter = require('./routes/dashboardfashionblogtemplatedemo');
 
 
 var cafeblogtemplatedemoRouter = require('./routes/cafeblogtemplatedemo');
+var dashboardcafeblogtemplatedemoRouter = require('./routes/dashboardcafeblogtemplatedemo');
 
 var travelblogtemplatedemoRouter = require('./routes/travelblogtemplatedemo');
+var dashboardtravelblogtemplatedemoRouter = require('./routes/dashboardtravelblogtemplatedemo');
 
 var clothingstoretemplatedemoRouter = require('./routes/clothingstoretemplatedemo');
+var dashboardclothingstoretemplatedemoRouter = require('./routes/dashboardclothingstoretemplatedemo');
 
 var comingsoontemplatedemoRouter = require('./routes/comingsoontemplatedemo');
+var dashboardcomingsoontemplatedemoRouter = require('./routes/dashboardcomingsoontemplatedemo');
 
 var weddinginvitationtemplatedemoRouter = require('./routes/weddinginvitationtemplatedemo');
+var dashboardweddinginvitationtemplatedemoRouter = require('./routes/dashboardweddinginvitationtemplatedemo');
 
 var photoalbumtemplatedemoRouter = require('./routes/photoalbumtemplatedemo');
+var dashboardphotoalbumtemplatedemoRouter = require('./routes/dashboardphotoalbumtemplatedemo');
 var dashboarduploadadminRouter = require('./routes/dashboarduploadadmin');
 //var createcheckoutsessionRouter = require('./routes/createcheckoutsession');
 //var checkoutRouter = require('./routes/checkout');
@@ -128,10 +158,13 @@ var getusernameRouter = require('./routes/getusername');
 var resetpasswordRouter = require('./routes/resetpassword');
 var dashboardresetpasswordRouter = require('./routes/dashboardresetpassword');
 var dashboardgivefeedbackRouter = require('./routes/dashboardgivefeedback');
+var dashboardgivefeedbackemployeesRouter = require('./routes/dashboardgivefeedbackemployees');
 var dashboardfreelancepageRouter = require('./routes/dashboardfreelancepage');
+var dashboardfreelancepageemployeesRouter = require('./routes/dashboardfreelancepageemployees');
 var freelancejobsRouter = require('./routes/freelancejobs');
+var dashboardfreelancejobsemployeesRouter = require('./routes/dashboardfreelancejobsemployees');
 var freelancejobscommentsRouter = require('./routes/freelancejobscomments');
-
+var dashboardfreelancejobscommentsemployeesRouter = require('./routes/dashboardfreelancejobscommentsemployees');
 
 
 var app = express();
@@ -185,9 +218,14 @@ app.use('/dashboardsmallbusinesswebsite', dashboardsmallbusinesswebsiteRouter);
 app.use('/blogtemplates', blogtemplatesRouter);
 app.use('/dashboardblogtemplates', dashboardblogtemplatesRouter);
 app.use('/weddinginvitationtemplates', weddinginvitationtemplatesRouter);
+app.use('/dashboardweddinginvitationtemplates', dashboardweddinginvitationtemplatesRouter);
+
 app.use('/webpagetemplates', webpagetemplatesRouter);
+
 app.use('/comingsoontemplates', comingsoontemplatesRouter);
+app.use('/dashboardcomingsoontemplates', dashboardcomingsoontemplatesRouter);
 app.use('/othertemplates', othertemplatesRouter);
+app.use('/dashboardothertemplates', dashboardothertemplatesRouter);
 
 app.use('/career', careerRouter);
 app.use('/dashboardcareer', dashboardcareerRouter);
@@ -202,7 +240,7 @@ app.use('/dashboardwebsiteadmin', dashboardwebsiteadminRouter);
 
 app.use('/termsandconditions', termsandconditionsRouter);
 app.use('/dashboardtermsandconditions', dashboardtermsandconditionsRouter);
-//app.use('/termsandconditions', termsandconditionsRouter);
+app.use('/dashboardtermsandconditionsemployees', dashboardtermsandconditionsemployeesRouter);
 //app.use('/termsandconditions', termsandconditionsRouter);
 
 app.use('/help', helpRouter);
@@ -210,6 +248,7 @@ app.use('/dashboardhelp', dashboardhelpRouter);
 
 app.use('/employees', employeesRouter);
 app.use('/dashboardemployees', dashboardemployeesRouter);
+app.use('/dashboardemployeesprofile', dashboardemployeesprofileRouter);
 /*
 app.use('/dashboardhelpadmin', dashboardhelpadminRouter);
 app.use('/dashboardhelpemployee', dashboardhelpemployeeRouter);
@@ -217,6 +256,7 @@ app.use('/dashboardhelpemployee', dashboardhelpemployeeRouter);
 app.use('/dashboarddecidebyfeatures', dashboarddecidebyfeaturesRouter);
 app.use('/contactus', contactusRouter);
 app.use('/dashboardpostadd', dashboardpostaddRouter);
+app.use('/dashboardpostaddemployees', dashboardpostaddemployeesRouter);
 app.use('/dashboardcart', dashboardcartRouter);
 app.use('/dashboardcart1', dashboardcart1Router);
 
@@ -226,7 +266,10 @@ app.use('/dashboardcustomerprofile', dashboardcustomerprofileRouter);
 app.use('/dashboardadmin', dashboardadminRouter);
 app.use('/signout', signoutRouter);
 app.use('/dashboardinbox', dashboardinboxRouter);
+app.use('/dashboardinboxemployees', dashboardinboxemployeesRouter);
+
 app.use('/dashboardoutbox', dashboardoutboxRouter);
+app.use('/dashboardoutboxemployees', dashboardoutboxemployeesRouter);
 //app.use('/dashboardrecyclebin', dashboardrecyclebinRouter);
 app.use('/dashboardsettings', dashboardsettingsRouter);
 
@@ -234,36 +277,56 @@ app.use('/pizzarestaurantdemo', pizzarestaurantdemoRouter);
 app.use('/dashboardpizzarestaurantdemo', dashboardpizzarestaurantdemoRouter);
 
 app.use('/cateringtemplatedemo', cateringtemplatedemoRouter);
+app.use('/dashboardcateringtemplatedemo', dashboardcateringtemplatedemoRouter);
 
 app.use('/modalrestauranttemplatedemo', modalrestauranttemplatedemoRouter);
+app.use('/dashboardmodalrestauranttemplatedemo', dashboardmodalrestauranttemplatedemoRouter);
 
 app.use('/cafetemplatedemo', cafetemplatedemoRouter);
+app.use('/dashboardcafetemplatedemo', dashboardcafetemplatedemoRouter);
 
 app.use('/portfoliotemplatedemo', portfoliotemplatedemoRouter);
+app.use('/dashboardportfoliotemplatedemo', dashboardportfoliotemplatedemoRouter);
 
 app.use('/resumetemplatedemo', resumetemplatedemoRouter);
+app.use('/dashboardresumetemplatedemo', dashboardresumetemplatedemoRouter);
 
 app.use('/photoportfoliotemplatedemo', photoportfoliotemplatedemoRouter);
+app.use('/dashboardphotoportfoliotemplatedemo', dashboardphotoportfoliotemplatedemoRouter);
 
 app.use('/natureportfoliotemplatedemo', natureportfoliotemplatedemoRouter);
+app.use('/dashboardnatureportfoliotemplatedemo', dashboardnatureportfoliotemplatedemoRouter);
 
 app.use('/bandtemplatedemo', bandtemplatedemoRouter);
+app.use('/dashboardbandtemplatedemo', dashboardbandtemplatedemoRouter);
 
 app.use('/blogtemplatedemo', blogtemplatedemoRouter);
+app.use('/dashboardblogtemplatedemo', dashboardblogtemplatedemoRouter);
+
 app.use('/foodblogtemplatedemo', foodblogtemplatedemoRouter);
+app.use('/dashboardfoodblogtemplatedemo', dashboardfoodblogtemplatedemoRouter);
+
 app.use('/fashionblogtemplatedemo', fashionblogtemplatedemoRouter);
+app.use('/dashboardfashionblogtemplatedemo', dashboardfashionblogtemplatedemoRouter);
 
 app.use('/cafeblogtemplatedemo', cafeblogtemplatedemoRouter);
+app.use('/dashboardcafeblogtemplatedemo', dashboardcafeblogtemplatedemoRouter);
 
 app.use('/travelblogtemplatedemo', travelblogtemplatedemoRouter);
+app.use('/dashboardtravelblogtemplatedemo', dashboardtravelblogtemplatedemoRouter);
 
 app.use('/clothingstoretemplatedemo', clothingstoretemplatedemoRouter);
+app.use('/dashboardclothingstoretemplatedemo', dashboardclothingstoretemplatedemoRouter);
 
 app.use('/comingsoontemplatedemo', comingsoontemplatedemoRouter);
+app.use('/dashboardcomingsoontemplatedemo', dashboardcomingsoontemplatedemoRouter);
 
 app.use('/weddinginvitationtemplatedemo', weddinginvitationtemplatedemoRouter);
+app.use('/dashboardweddinginvitationtemplatedemo', dashboardweddinginvitationtemplatedemoRouter);
 
 app.use('/photoalbumtemplatedemo', photoalbumtemplatedemoRouter);
+app.use('/dashboardphotoalbumtemplatedemo', dashboardphotoalbumtemplatedemoRouter);
+
 app.use('/dashboarduploadadmin', dashboarduploadadminRouter);
 //app.use('/createcheckoutsession', createcheckoutsessionRouter);
 //app.use('/checkout', checkoutRouter);
@@ -277,9 +340,13 @@ app.use('/getusername', getusernameRouter);
 app.use('/resetpassword', resetpasswordRouter);
 app.use('/dashboardresetpassword', dashboardresetpasswordRouter);
 app.use('/dashboardgivefeedback', dashboardgivefeedbackRouter);
+app.use('/dashboardgivefeedbackemployees', dashboardgivefeedbackemployeesRouter);
 app.use('/dashboardfreelancepage', dashboardfreelancepageRouter);
+app.use('/dashboardfreelancepageemployees', dashboardfreelancepageemployeesRouter);
 app.use('/freelancejobs', freelancejobsRouter);
+app.use('/dashboardfreelancejobsemployees', dashboardfreelancejobsemployeesRouter);
 app.use('/freelancejobscomments', freelancejobscommentsRouter);
+app.use('/dashboardfreelancejobscommentsemployees', dashboardfreelancejobscommentsemployeesRouter);
 
 
 // catch 404 and forward to error handler

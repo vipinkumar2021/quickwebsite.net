@@ -71,7 +71,7 @@ router.post('/', function(req, res, next) {
     // send to list
     Destination: {
         ToAddresses: [
-          //'admin@quickwebsite.net'
+          'admin@quickwebsite.net',
             'vipinkmboj211@gmail.com'
         ]
     },
@@ -94,7 +94,7 @@ router.post('/', function(req, res, next) {
     },
     Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
     ReplyToAddresses: [
-      //'admin@quickwebsite.net'
+      'admin@quickwebsite.net',
         'vipinkmboj211@gmail.com'
     ],
   };

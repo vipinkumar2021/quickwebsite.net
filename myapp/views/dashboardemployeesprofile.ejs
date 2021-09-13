@@ -1,0 +1,147 @@
+<%- include('dashboardheaderemployees')  %>
+
+<div class="item item3 main ">
+    <div class="container welcome dashboardcustomerprofile" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        
+        <img id="profile-image-id" class="profile-image" src="<%= currentLogInData.ProfileImage %> " alt="Profile Image" width="100px" height="100px" onclick="openUloadProfileImageModal()" /><br/>
+          
+        
+        <h2>
+            Logged in As: <% if(loginUser){ %>  
+                <a href="/dashboardcustomerprofile"><%= loginUser %></a> 
+              <% } %>
+        </h2>
+        <br/> 
+        
+        <div class="row">
+            <div class="column col-1">
+                 
+                <h3>Profile</h3>                
+                <span>Name: <%= currentLogInData.Firstname %> <%= currentLogInData.Lastname %></span> <br/>                
+                <span>Username: <%= currentLogInData.Username %> </span> <br/>
+                <span>Mobile: <%= currentLogInData.Mobilenumber %></span> <br/>
+                <span>Email: <%= currentLogInData.Email %> </span> <br/>
+                <!--
+                <span><a href="/dashboardforgotpassword">Change Password</a></span><br/>
+                <span><a href="#" onclick="alert('Contact us with editing details!')">Edit Account</a></span>
+                -->
+               <!-- <span><a href="/dashboardeditaccountcustomer">Edit Account</a></span>--> <br/>
+                <!--
+                <span><a style="cursor: pointer;" onclick="openConfirmBeforeDeleteModalForCustomerAccount()" id="delete-customer-account-anchor">Delete Account</a></span> <br/><br/>
+                -->
+                <!--<span>Settings</span> <br/>-->
+                <span>
+                    <form action="/signout" method="post" role="form">
+                    <input class="signoutBtn" type="submit" value="Sign Out" style="color: rgb(71, 157, 255); text-align: left;">
+                    </form>
+                </span>
+
+            </div>
+            <div class="column col-2">
+                <!--
+                <h3>Orders by Ids</h3>
+                
+                <% if(allCartItems.length > 0) { %>
+                    <% allCartItems.forEach(function(element) { %>                      
+                    
+                <span>Unpurchased: </span><span><a href="/dashboardcart/#<%= element._id%>"><%= element._id%></a>  </span> <br/>                
+                
+                <% }) %>  
+               <% } %> 
+
+               <% if(allPurchasedItems.length > 0) { %>
+                <% allPurchasedItems.forEach(function(element) { %>                      
+                
+                <span>purchased: </span><span><a href="/dashboardpurchased/#<%= element._id %>"><%= element._id %> </a></span> <br/>
+            
+            <% }) %>  
+           <% } %> 
+              --> 
+            </div>
+            
+        </div>
+        
+        <div class="row">            
+            <h2>Advertisement increases Your Business</h2><br/>           
+        </div>
+        <div class="row">
+            <h2><a href="/dashboardpostaddemployees">Advertise here for free</a></h2>
+        </div>
+        
+    </div>
+    <div class="advertisements">
+        <div class="row row-advertisement">            
+            <h2>All Advertisements</h2><br/>
+            <div class="column">
+                <% if(allAdvertisements.length > 0) { %>
+                    <% allAdvertisements.forEach(function(element) { %>                      
+                    
+                    <table>
+                        <tr>
+                            <th>Date</th><td><%= element.Date %></td>            
+                        </tr>
+                        <tr>
+                            <th>Advertised by</th><td><%= element.Username %></td>            
+                        </tr>
+                        <tr>                                                
+                            <th>Individual/Company</th><td><%= element.IndividualOrCompanyName %></td>                        
+                        </tr>
+                        <tr>                       
+                            <th>Contact Number</th><td><a href= tel: <%= element.ContactNumber %>><%= element.ContactNumber %></a></td>                        
+                        </tr>
+                        <tr>                  
+                            <th>Email</th><td><a href= mailto: <%= element.Email %>><%= element.Email %></a></td>                        
+                        </tr>
+                        <tr>                  
+                            <th>Address</th><td><%= element.Address %></td>                        
+                        </tr>
+                        <tr>                       
+                            <th>Services</th><td><%= element.Services %></td>                        
+                        </tr>
+                        <tr>                       
+                            <th>Advertisements</th><td><%= element.Advertisement %></td>                        
+                        </tr>
+                       
+                    </table>
+                    <br/><br/>
+                    
+                  
+                <% }) %>  
+               <% } %>           
+    
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /*
+    var profileImage = document.getElementById('profile-image-id');
+    profileImage.addEventListener('click', profileImageClicked);
+
+    function profileImageClicked(event) {
+        var button = even.target;
+
+        fetch('/profileimageupload', {
+        method: "POST",
+        // sending order id and order price to index.js for further process
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify({orderId: itemId, orderPrice: cartTotalPrice})
+        //
+        });
+    }
+    */
+</script>
+<%- include('modal') %>
+<%- include('modalemployees') %> 
+<%- include('dashboardfooteremployees') %>
+
+
+
+
+

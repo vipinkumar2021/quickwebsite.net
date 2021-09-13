@@ -23,6 +23,10 @@ CommentOnFreelanceJob: {
     type: String,
     required: true
 },
+RequestPayment: {
+    type: String,
+    
+},
 
 Date: {
     type: Date,

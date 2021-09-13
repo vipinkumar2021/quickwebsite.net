@@ -34,14 +34,17 @@ var express = require('express');
       loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
   
     };
-    if(loginUser.loginUserCustomer) {
+    var currentLoginUser = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
+    if(currentLoginUser) {
       //res.render('dashboardcustomer', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
     
       var freelanceJobsDetails = new freelanceJobsModel({
         Username: loginUser.loginUserCustomer,
+        Type: 'Customer',
         Subject: req.body.subject,
         Description: req.body.description,
         Budget: req.body.budget,
+        ServiceCharges: '-',
         Deadline: req.body.deadline            
       });
       freelanceJobsDetails.save((err)=> {
@@ -87,18 +90,19 @@ var express = require('express');
             Data: "New Freelance Job Post Email"
         }
     },
-    Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
     ReplyToAddresses: [
         email,
+        'admin@quickwebsite.net'
     ],
   };
   
   // this sends the email
   ses.sendEmail(params, (err) => {
     if(err) {
-      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', loginUser: loginUser.loginUserCustomer}); 
+      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', loginUser: currentLoginUser}); 
     } else {
-      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Job Posted Successfully! Please wait for Freelancers to respond you', loginUser: loginUser.loginUserCustomer}); 
+      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Job Posted Successfully! Please wait for Freelancers to respond you', loginUser: currentLoginUser}); 
     }
   });
   //

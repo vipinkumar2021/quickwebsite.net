@@ -85,12 +85,13 @@ var express = require('express');
         
         Subject: {
             Charset: 'UTF-8',
-            Data: "New Comment on Freelance Job Email"
+            Data: "New Comment on Freelance Job"
         }
     },
-    Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
     ReplyToAddresses: [
         email,
+        'admin@quickwebsite.net'
     ],
   };
   

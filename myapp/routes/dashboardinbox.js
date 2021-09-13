@@ -16,9 +16,9 @@ router.get('/', function(req, res, next) {
     var freelanceJobsComments = freelanceJobsCommentsModel.find({Username: currentLoginUser});
     freelanceJobsComments.exec((err, freelanceJobsCommentsData)=> {
       if(err) {
-        res.render('dashboardinbox', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, freelanceJobsCommentsData: '' });
+        res.render('dashboardinbox', { title: 'Quick Website', msg: '', loginUser: currentLoginUser, freelanceJobsCommentsData: '' });
       } else {
-        res.render('dashboardinbox', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, freelanceJobsCommentsData: freelanceJobsCommentsData  });
+        res.render('dashboardinbox', { title: 'Quick Website', msg: '', loginUser: currentLoginUser, freelanceJobsCommentsData: freelanceJobsCommentsData  });
       }
     });
     //

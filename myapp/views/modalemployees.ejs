@@ -87,3 +87,37 @@
     </div>
   </div>
   <!--Contact Modal ends here-->
+
+  <!--Post freelance Job Modal starts here-->
+                  
+<div class="modal-parent-postfreelancejob">
+  <div class="modal-postfreelancejob">
+      <h1 style="text-align: center;">Post Freelance Job</h1>
+      <form action="/dashboardfreelancejobsemployees" method="post" role="form">
+        <label>Subject:</label><br/>
+        <input type="text" name="subject" placeholder="Write Subject here..." required/>                   
+            
+        <br/><br/>                              
+        <label>Description:</label><br/>
+        <textarea name="description" required>
+    
+        </textarea><br/>   
+               
+        <label>Service Charges ($):</label><br/>
+        <input type="number" name="servicecharges" min="300" required/><br/>
+        
+        <label>Describe Deadline:</label><br/>
+        <input type="date" name="deadline" required/>
+        <br/><br/>          
+        <div class="modal-button">
+          <button type="submit">Post Job</button>
+          <br/>
+          <button type="button" onclick="closePostFreelanceJobModal()">Cancel</button><br/><br/>
+        </div>      
+                        
+      </form>
+      <span class="X-postfreelancejob" onclick="closePostFreelanceJobModal()">&times;</span>
+  </div>
+</div>
+<!--post freelance Modal ends here-->
+
