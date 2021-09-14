@@ -415,7 +415,73 @@ router.post('/accountactivatedcustomer', function(req, res, next) {
         
         customerModel.findByIdAndUpdate(getCustomerId, {Onetimepassword: null, Password: password}, {upsert: true}, function(err, updatedCustomerDetails){
           if(err) throw err;           
-          res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+          //
+
+                                          //
+      //Send Successfully Sign Up Email notification
+      var output = `
+      <h3>Hi, You have successfully Registered to your account</h3>
+      <p>
+        Welcome ${updatedCustomerDetails.Firstname} <br/>
+        You have successfully registered for Quick Website with <br/>
+
+        Username: ${updatedCustomerDetails.Username}, <br/>
+
+        <br/><br/>
+        Regards,<br/>
+        Team (Quick Website)
+        
+              
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          updatedCustomerDetails.Email,
+          //'vipinkmboj211@gmail.com',
+          'admin@quickwebsite.net'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Hey, this is test.'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: `${updatedCustomerDetails.Username} just registered to www.quickwebsite.net`
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
+    ReplyToAddresses: [
+      updatedCustomerDetails.Email,
+      //'vipinkmboj211@gmail.com',
+      'admin@quickwebsite.net'
+    ],
+  };
+  
+  // this sends the email
+  ses.sendEmail(params, (err) => {
+    if(err) {
+      res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+    } else {
+      res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
+    }
+  });
+  //
+
+          //
+          //res.render('index', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', adminDetails: ''});
         })
       }      
     });        
@@ -581,89 +647,248 @@ router.post('/signin', function(req, res, next) {
   checkUserNameInCustomerData.exec((err, customerData) => {
     if(err) throw err;
 
-    if(customerData != null) {
-      
+    if(customerData != null) {      
       //Get Password from database
       var getPasswordFromCustomersData = customerData.Password; 
       //Get User Id from database to use in jwt
-      var getUserIDFromCustomersData = customerData._id;
+      //var getUserIDFromCustomersData = customerData._id;
       if(bcrypt.compareSync(password, getPasswordFromCustomersData)) {
         if(customerData.Onetimepassword != null) {
           res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
         } else { 
-          var customerToken = jwt.sign({userID: getUserIDFromCustomersData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/            
-
-            );
-        
-          
+          /*var customerToken = jwt.sign({userID: getUserIDFromCustomersData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/            
+          //  );         
           // localStorage.setItem('customerLoginTokenName', customerToken);
           // localStorage.setItem('customerLoginUserName', username);
           //using session
-          req.session.customerLoginUserName = username;
+         // req.session.customerLoginUserName = username;
           //res.render('dashboardcustomer', {title: 'frontendwebdeveloper', msg: '',customerToken: customerToken} )
-          res.redirect('/dashboardcustomer');
+             
+          //
+//Send Successfully Sign in Email notification
+      var output = `
+      <h3>Hi, You have successfully signed in to your account</h3>
+      <p>
+        Username: ${username}, <br/>
+        If you didn't sign in, then please reset your password immediately for security reasons.<br/>
+        If you have signed in by yourself, then you are safe.
+              
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          customerData.Email,
+          //'vipinkmboj211@gmail.com',
+          'admin@quickwebsite.net'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Hey, this is test.'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: `${username} just signed in to www.quickwebsite.net`
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
+    ReplyToAddresses: [
+      customerData.Email,
+      //'vipinkmboj211@gmail.com',
+      'admin@quickwebsite.net'
+    ],
+  };
+  
+  // this sends the email
+  ses.sendEmail(params, (err) => {
+    if(err) {
+      req.session.customerLoginUserName = username;
+      res.redirect('/dashboardcustomer');
+    } else {
+      req.session.customerLoginUserName = username;
+      res.redirect('/dashboardcustomer');
+    }
+  });
+  //
+        //  res.redirect('/dashboardcustomer');
         }
       } else {
         res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
-      }  
-      
+      }        
     } else if(customerData == null) {
-
       checkUserNameInEmployeesData.exec((err, employeeData ) => {
         if(err) throw err;
         if(employeeData != null) {
-
           //Get Password from database
         var getPasswordFromEmployeeData = employeeData.Password; 
         //Get User Id from database to use in jwt
-        var getUserIDFromEmployeeData = employeeData._id;
-        
+        //var getUserIDFromEmployeeData = employeeData._id;        
         if(bcrypt.compareSync(password, getPasswordFromEmployeeData)) {
           if(employeeData.Onetimepassword != null) {
             res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
           } else { 
-            var employeeToken = jwt.sign({userID: getUserIDFromEmployeeData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
-              
-              );
-           
-            
-           
+            //var employeeToken = jwt.sign({userID: getUserIDFromEmployeeData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
+                     // );          
             // localStorage.setItem('employeeLoginTokenName', employeeToken);
             // localStorage.setItem('employeeLoginUserName', username);
-            req.session.employeeLoginUserName = username;
-            res.redirect('/dashboardemployees');
+           // req.session.employeeLoginUserName = username;
+          
+                    //
+//Send Successfully Sign in Email notification
+      var output = `
+      <h3>Hi, You have successfully signed in to your account</h3>
+      <p>
+        Username: ${username}, <br/>
+        If you didn't sign in, then please reset your password immediately for security reasons.<br/>
+        If you have signed in by yourself, then you are safe.
+              
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          employeeData.Email,
+         // 'vipinkmboj211@gmail.com',
+          'admin@quickwebsite.net'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Hey, this is test.'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: `${username} just signed in to www.quickwebsite.net`
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
+    ReplyToAddresses: [
+      employeeData.Email,
+      //'vipinkmboj211@gmail.com',
+      'admin@quickwebsite.net'
+    ],
+  };
+  
+  // this sends the email
+  ses.sendEmail(params, (err) => {
+    if(err) {
+      req.session.employeeLoginUserName = username;
+      res.redirect('/dashboardemployees');
+    } else {
+      req.session.employeeLoginUserName = username;
+      res.redirect('/dashboardemployees');
+    }
+  });
+  //
+
+          //  res.redirect('/dashboardemployees');
           }
         } else {
           res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
-        }  
-     
-
-        } /*if(employeeData != null) { enda*/
-          
+        } 
+        } /*if(employeeData != null) { enda*/          
           else if(employeeData == null) {
           checkUserNameInAdminData.exec((err, adminData) => {
             if(err) throw err;
-
             if(adminData != null) {
               //Get Password from database
         var getPasswordFromAdminData = adminData.Password; 
         //Get User Id from database to use in jwt
-        var getUserIDFromAdminData = adminData._id;
-
+       // var getUserIDFromAdminData = adminData._id;
         if(bcrypt.compareSync(password, getPasswordFromAdminData)) {
           if(adminData.Onetimepassword != null) {
             res.render('forgotpassword', { title: 'Quick Website', msg:'Please reset your password for seurity purposes, otherwise you will not be able to sign in' });
           } else { 
-            var adminToken = jwt.sign({userID: getUserIDFromAdminData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
-              
-              );
-            
-            
-
+           // var adminToken = jwt.sign({userID: getUserIDFromAdminData}, process.env.CUSTOMER_LOGIN_TOKEN_ACCESS_KEY /*, {expiresIn: 600 /*86400 = 24 hours}*/
+         
+            //  );
             // localStorage.setItem('adminLoginTokenName', adminToken);
             // localStorage.setItem('adminLoginUserName', username);
-            req.session.adminLoginUserName = username;
-            res.redirect('/dashboardadmin');
+            //req.session.adminLoginUserName = username;
+
+                             //
+//Send Successfully Sign in Email notification
+      var output = `
+      <h3>Hi, You have successfully signed in to your account</h3>
+      <p>
+        Username: ${username}, <br/>
+        If you didn't sign in, then please reset your password immediately for security reasons.<br/>
+        If you have signed in by yourself, then you are safe.
+              
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          adminData.Email,
+          //'vipinkmboj211@gmail.com',
+          'admin@quickwebsite.net'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Hey, this is test.'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: `${username} just signed in to www.quickwebsite.net`
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
+    ReplyToAddresses: [
+      adminData.Email,
+     // 'vipinkmboj211@gmail.com',
+      'admin@quickwebsite.net'
+    ],
+  };
+  
+  // this sends the email
+  ses.sendEmail(params, (err) => {
+    if(err) {
+      req.session.adminLoginUserName = username;
+      res.redirect('/dashboardadmin');
+    } else {
+      req.session.adminLoginUserName = username;
+      res.redirect('/dashboardadmin');
+    }
+  });
+  //
+
+            //res.redirect('/dashboardadmin');
           }
         } else {
           res.render('index', { title: 'Quick Website', msg:'Invalid Password' });
@@ -1103,8 +1328,8 @@ router.post('/deletecustomeraccount', (req, res, next) => {
     // send to list
     Destination: {
         ToAddresses: [
-          //'admin@quickwebsite.net'
-            'vipinkmboj211@gmail.com'
+          'admin@quickwebsite.net'
+            //'vipinkmboj211@gmail.com'
         ]
     },
     Message: {
@@ -1126,8 +1351,8 @@ router.post('/deletecustomeraccount', (req, res, next) => {
     },
     Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
     ReplyToAddresses: [
-      //'admin@quickwebsite.net'
-        'vipinkmboj211@gmail.com'
+      'admin@quickwebsite.net'
+        //'vipinkmboj211@gmail.com'
     ],
   };
 
@@ -1154,6 +1379,75 @@ router.post('/deletecustomeraccount', (req, res, next) => {
 
 
 //Delete Customer Account ends here
+
+//get signupadmin on this particular
+router.get('/admin/signupadmin',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('signupadmin', { title: 'Quick Website', msg:'', adminDetails: ''});
+  } 
+});
+
+//get accountactivated on this particular
+router.get('/admin/accountactivatedadmin',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+  } 
+});
+
+//get signupemployees on this particular
+router.get('/employees/signupemployees',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('signupemployees', { title: 'Quick Website', msg:''});
+  } 
+}); 
+
+//get accountactivated on this particular
+router.get('/employees/accountactivatedemployees',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('index', { title: 'Quick Website', msg:''});
+  } 
+});
+
 
 module.exports = router;
 

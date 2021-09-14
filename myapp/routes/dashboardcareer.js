@@ -86,6 +86,9 @@ router.get('/', function(req, res, next) {
   
 });
 
+var aws = require("aws-sdk");
+const ses = new aws.SES({"accessKeyId": process.env.SES_I_AM_USER_ACCESS_KEY, "secretAccessKey": process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, "region": process.env.AWS_SES_REGION});
+
 router.post('/', multipleUploads, function(req, res, next) {
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -106,14 +109,7 @@ router.post('/', multipleUploads, function(req, res, next) {
     } else {
       cvFile = 'No CV Provided'
     }
-    console.log(nationIdImageFile);
-    console.log(req.files.nationIdImageFile);
-    console.log(req.files);
-    console.log('Vipin');
-    console.log(cvFile);
-    console.log(req.files.cv);
-    console.log(req.files);
-    console.log(req.body.cv);
+    
     var careerApplicaionDetail = new careerModel({
       Firstname: req.body.firstname,
       Lastname: req.body.lastname,    
@@ -130,9 +126,87 @@ router.post('/', multipleUploads, function(req, res, next) {
       if(err) {
         res.render('dashboardcareer', { title: 'Quick Website', msg: 'Application Not Submitted, Please Try Again Later', loginUser: currentAccountUser });
       }
-    });
+      //
+       //
+      //Send Notification Email
+      var output = `
+      <h3>Hi, Job Application</h3>
+      <p>
+      Hi, <br/><br/>
+
+      Thank for applying for job with us. We will get back to you soon.<br/>
+      Please keep patience.<br/><br/>
+
+
+      Your Datails:<br/>
+
+      Firstname: ${req.body.firstname},<br/>
+      Lastname: ${req.body.lastname},<br/>   
+      Email: ${req.body.email},<br/>
+      Mobile Number: ${req.body.mobilenumber},<br/>
+      Gender: ${req.body.gender},<br/>
+      Address: ${req.body.address},<br/>
+      National Id Number: ${req.body.nationalidnumber},<br/>
+      Nation Id Image Name: ${nationIdImageFile},<br/>
+      CV File Name: ${cvFile},<br/>
+      Brief Description: ${req.body.briefdescription}
+
+      <br/><br/><br/>
+      Regards,<br/>
+      HR Team (Quick Website)<br/>
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          req.body.email,
+          'admin@quickwebsite.net'
+            //'vipinkmboj211@gmail.com'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Text Message goes here'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: "Job Application"
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
+    ReplyToAddresses: [
+      req.body.email,
+      'admin@quickwebsite.net',
+        //'vipinkmboj211@gmail.com'
+    ],
+  };
+
+  // this sends the email
+ses.sendEmail(params, (err) => {
+  if(err) {
     res.render('dashboardcareer', { title: 'Quick Website', msg: 'Application Submitted Successfully, We will contact, once there is any vacancy! Thanks :)', loginUser: currentAccountUser });
   } else {
+    res.render('dashboardcareer', { title: 'Quick Website', msg: 'Application Submitted Successfully, We will contact, once there is any vacancy! Thanks :)', loginUser: currentAccountUser });
+  }
+});
+        //
+
+      //
+      //res.render('dashboardcareer', { title: 'Quick Website', msg: 'Application Submitted Successfully, We will contact, once there is any vacancy! Thanks :)', loginUser: currentAccountUser });
+
+    });
+      } else {
     res.redirect('/');
   }  
 });

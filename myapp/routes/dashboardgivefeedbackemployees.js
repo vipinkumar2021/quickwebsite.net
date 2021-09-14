@@ -65,7 +65,7 @@ router.post('/', function(req, res, next) {
     Destination: {
         ToAddresses: [
           'admin@quickwebsite.net',
-            'vipinkmboj211@gmail.com'
+            //'vipinkmboj211@gmail.com'
         ]
     },
     Message: {
@@ -88,7 +88,7 @@ router.post('/', function(req, res, next) {
     Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
     ReplyToAddresses: [
       'admin@quickwebsite.net',
-        'vipinkmboj211@gmail.com'
+        //'vipinkmboj211@gmail.com'
     ],
   };
 

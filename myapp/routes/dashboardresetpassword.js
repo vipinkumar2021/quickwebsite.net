@@ -116,7 +116,7 @@ let params = {
             Data: "One Time Password (OTP) Email"
         }
     },
-    Source: 'vipinkmboj21@gmail.com', // must relate to verified SES account
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
     ReplyToAddresses: [
         messageto
     ],

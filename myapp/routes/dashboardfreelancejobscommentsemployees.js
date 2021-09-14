@@ -50,7 +50,7 @@ var express = require('express');
 
         //
         //Send Notification Email
-      var email = 'vipinkmboj211@gmail.com'
+      //var email = 'vipinkmboj211@gmail.com'
       var output = `
       <h3>Hi, You got a new freelance job Comment</h3>
       <p>
@@ -68,7 +68,9 @@ var express = require('express');
     // send to list
     Destination: {
         ToAddresses: [
-            email
+           // email,
+            'admin@quickwebsite.net'
+
         ]
     },
     Message: {
@@ -90,7 +92,7 @@ var express = require('express');
     },
     Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
     ReplyToAddresses: [
-        email,
+        //email,
         'admin@quickwebsite.net'
     ],
   };

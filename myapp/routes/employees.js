@@ -413,8 +413,73 @@ router.post('/accountactivatedemployees', function(req, res, next) {
         var getEmployeesId = ExistingEmployeesDetails._id;
         
         employeesModel.findByIdAndUpdate(getEmployeesId, {Onetimepassword: null, Password: password}, {upsert: true}, function(err, updatedEmployeesDetails){
-          if(err) throw err;           
-          res.render('employees', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', employeesDetails: ''});
+          if(err) throw err;  
+          //
+                                               //
+      //Send Successfully Sign Up Email notification
+      var output = `
+      <h3>Hi, You have successfully Registered to your account</h3>
+      <p>
+        Welcome ${updatedEmployeesDetails.Firstname} <br/>
+        You have successfully registered for Quick Website with <br/>
+
+        Username: ${updatedEmployeesDetails.Username}, <br/>
+
+        <br/><br/>
+        Regards,<br/>
+        Team (Quick Website)
+        
+              
+      </p>   
+  `;
+  
+  // exactly correct one for production
+  let params = {
+    // send to list
+    Destination: {
+        ToAddresses: [
+          updatedEmployeesDetails.Email,
+          //'vipinkmboj211@gmail.com',
+          'admin@quickwebsite.net'
+        ]
+    },
+    Message: {
+        Body: {
+            Html: {
+                Charset: "UTF-8",
+                Data: output//"<p>this is test body.</p>"
+            },
+            Text: {
+                Charset: "UTF-8",
+                Data: 'Hey, this is test.'
+            }
+        },
+        
+        Subject: {
+            Charset: 'UTF-8',
+            Data: `${updatedEmployeesDetails.Username} just registered to www.quickwebsite.net`
+        }
+    },
+    Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
+    ReplyToAddresses: [
+      updatedEmployeesDetails.Email,
+      //'vipinkmboj211@gmail.com',
+      'admin@quickwebsite.net'
+    ],
+  };
+  
+  // this sends the email
+  ses.sendEmail(params, (err) => {
+    if(err) {
+      res.render('employees', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', employeesDetails: ''});
+    } else {
+      res.render('employees', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', employeesDetails: ''});
+    }
+  });
+  //
+
+          //
+          //res.render('employees', { title: 'Quick Website', msg:'Account Activated Successfully, You may log in now', employeesDetails: ''});
         })
       }      
     });        

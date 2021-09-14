@@ -73,6 +73,24 @@ router.post('/', function(req, res, next) {
   var contactusModel = require("../modules/contactusschema");
   
 
+  /* GET home page. */
+router.get('/', function(req, res, next) {
+  var loginUser = {
+    loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+    loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+    loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+
+  };
+  var currentLoginUser = loginUser.loginUserCustomer || loginUser.loginUserEmployee || loginUser.loginUserAdmin;
+  if(currentLoginUser) {
+     res.render('index', { title: 'Quick Website', msg: '', loginUser: currentLoginUser });
+  } else {
+    res.render('index', { title: 'Quick Website', msg: '', loginUser: '' });
+  }
+  
+});
+
+
   var aws = require("aws-sdk");
   const ses = new aws.SES({"accessKeyId": process.env.SES_I_AM_USER_ACCESS_KEY, "secretAccessKey": process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, "region": process.env.AWS_SES_REGION});
 
@@ -107,9 +125,10 @@ router.post('/', function(req, res, next) {
 let params = {
   // send to list
   Destination: {
-      ToAddresses: [
-        //'admin@quickwebsite.net'
-          'vipinkmboj211@gmail.com'
+      ToAddresses: [        
+        'admin@quickwebsite.net',
+          //'vipinkmboj211@gmail.com',
+          'contact@quickwebsite.net'
       ]
   },
   Message: {
@@ -131,8 +150,9 @@ let params = {
   },
   Source: 'contact@quickwebsite.net',//'admin@quickwebsite.net',//vipinkmboj21@gmail.com',// 'contact@quickwebsite.net',//  // must relate to verified SES account
   ReplyToAddresses: [
-    //'admin@quickwebsite.net'
-      'vipinkmboj211@gmail.com'
+    'admin@quickwebsite.net',
+      //'vipinkmboj211@gmail.com',
+      'contact@quickwebsite.net'
   ],
 };
 

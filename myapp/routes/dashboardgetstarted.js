@@ -586,8 +586,9 @@ PaymentMethod: req.body.paymentmethod ,
 });
 cartItemsList.save((err) => {
   if(err) throw err;
-
+//
   //Send Notification Email
+  /*
   var output = `
   <h3>Hi, You Have received a new Order</h3>
   <p>
@@ -600,7 +601,7 @@ let params = {
 // send to list
 Destination: {
     ToAddresses: [
-        'vipinkmboj211@gmail.com',
+        //'vipinkmboj211@gmail.com',
         'admin@quickwebsite.net'
     ]
 },
@@ -623,12 +624,13 @@ Message: {
 },
 Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
 ReplyToAddresses: [
-    'vipinkmboj211@gmail.com',
+    //'vipinkmboj211@gmail.com',
     'admin@quickwebsite.net'
 ],
 };
 
 // this sends the email
+/*
 ses.sendEmail(params, (err) => {
 var loginUser = {
   loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -652,8 +654,9 @@ if(loginUser.loginUserCustomer) {
 
 }  
 
-} else {    
-
+} else {  
+*/
+//
   if(loginUser.loginUserCustomer) {
     res.render('dashboardgetstarted', { title: 'Quick Website', msg: 'Item Added To Cart', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee) {
@@ -666,8 +669,8 @@ if(loginUser.loginUserCustomer) {
     //res.render('getstarted', { title: 'Quick Website', msg: '', loginUser: '' });
   }
   //res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
-}
-});
+// }
+// });
 //
 
   
