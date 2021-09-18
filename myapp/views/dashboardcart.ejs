@@ -3,7 +3,7 @@
 <div class="item item3 main cart">
     <div class="container dashboardcart" >
         <br/><br/>
-        <h1>Welcome to Cart</h1>
+        <h1>Cart</h1>
         
         <p style="color: whitesmoke;" id="number-of-orders"></p>
         <h1><a href="/dashboardgetstarted">Order Here</a></h1><br/>
@@ -17,11 +17,17 @@
             
             <% currentCustomerAccountUserCartItems.forEach(element => { %>
             <div class="cart-items" id="<%= element._id %>"><!--cart-items start here-->
-                <div class="cart-row" ><!--cart-row starts here-->                
-                <table class="table-class" >
+                <div class="cart-row"><!--cart-row starts here--> 
+                
+             
+                
+                <table class="table-class">          
+                
+               
                     <caption style="color: whitesmoke; justify-content: left;">
                         <span><strong>Order Id: </strong></span><span class="item-id" style="padding-left: .7em;"> <%= element._id %></span>
                     </caption>
+                
                     <caption style="color: whitesmoke; justify-content: left;">
                         <span><strong>Dated: </strong></span><span style="padding-left: .7em;"> <%= element.Date %></span>
                     </caption>
@@ -31,9 +37,11 @@
                     <caption style="color: whitesmoke; justify-content: left;">
                         <span><strong>Payment Status: </strong></span><span class="session-id" style="padding-left: .7em;"><%= element.PaymentStatus %></span>
                     </caption>
+               
                     <tr>
                         <th colspan="3">Cart Items</th>
                     </tr>
+                
                     <tr><th>Name</th><th>Estimated Time (Days)</th><th>Service Cost</th></tr>
                     <tr>
                         <td class="template-option"><%= element.TemplateOption %></td>
@@ -48,7 +56,7 @@
                             <% } %>
                         </td>
                     </tr>
-                    
+               
                     <tr>
                         <th colspan="3">Basic Features Selected</th>                    
                     </tr>
@@ -214,21 +222,7 @@
                              
                         </td>                                       
                     </tr> 
-                    <!--
-                    <tr>
-                        <th rowspan="2">Home Page Content: </th>
-                        <td class="home-content" colspan="2">
-                            <strong>Text Content:</strong><br/>
-                            <%= element.HomePageContent %> 
-                        </td>                                       
-                    </tr>                    
-                    <tr>
-                        <td colspan="2">
-                            <strong>Uploaded Files Content:</strong><br/>
-                            <img src="#" alt="Home Content Image"/>
-                        </td>
-                    </tr>
-                    -->
+                    
                     <tr>
                         <th>About Content: </th>
                         <td class="about-content" colspan="2"> 
@@ -332,6 +326,7 @@
                         </td>                                       
                     </tr>
                     
+                
 
                     <tr>
                         <th colspan="3">External Features Selected</th>
@@ -383,7 +378,7 @@
                        
                     </tr>   
     
-    
+               
                     <tr>
                         <th colspan="3">External Features Content</th>
                     </tr>
@@ -406,7 +401,7 @@
                             Photo Gallery Upload Content
                         </th>                        
                     </tr>   
-
+                
                     <tr>
                         <td colspan="3">
                             <strong>Uploaded Files Content:</strong><br/><br/>
@@ -551,7 +546,7 @@
                                         <figcaption><%= splittedGalleryUpload[17] %></figcaption>
                                       </figure>                                
                                 </div>
-                            </div><!--row-6 ends-->
+                            </div>
 
                             <div class="row row-7">                                
     
@@ -578,7 +573,7 @@
                         </div>    
                         </td>
                     </tr>
-    
+                
                     <tr>
                         <th colspan="3">
                             Templates Text Content
@@ -742,7 +737,7 @@
                                         <figcaption><%= splittedTemplatesUpload[17] %></figcaption>
                                       </figure>                                
                                 </div>
-                            </div><!--row-6 ends-->
+                            </div>
 
                             <div class="row row-7">                                
     
@@ -765,7 +760,7 @@
                         </td>
                     </tr>
 
-                   <!---->
+                   
                     <tr>
                         <th colspan="3">
                             Menu Text Content
@@ -841,9 +836,8 @@
                                                                                 
                         </div>    
                         </td>
-                    </tr>
-
-                    <!---->
+                    </tr>                
+                
                     <tr>
                         <th colspan="3">Advanced Features Selected</th>                    
                     </tr>
@@ -982,23 +976,7 @@
                             </td>
                         </tr>
         
-    <!--
-                        <tr>
-                            <th rowspan="2">Text-Color Details: </th>
-                            <td class="textcolor-content" colspan="2">
-                                <strong>Color Code:</strong><br/>
-                                <%= element.TextColor %> 
-                            </td>                                       
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <strong>Text Color Demo:</strong><br/>
-                                <div style="width: 100%; height: 50px; color: red;">
-                                    Color of this text is selected text color
-                                </div>
-                            </td>
-                        </tr>  
-                  -->  
+     
                         <tr>
                             <th colspan="3">Other Features & Services</th>
                         </tr>
@@ -1070,35 +1048,7 @@
                             <%= splittedExtraUploads[9] %><br/>
                         </td>
                     </tr>
-                    <!--
-                    <tr>
-                        <td colspan="3">
-                            <div class="container image-container">
-                                <div class="column col-1">
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 1"/>
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 2"/>
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 3"/>
-
-                                </div>
-                                <div class="column col-2">
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 4"/>
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 5"/>
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 6"/>
-                                </div>
-                                <div class="column col-3">
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 7"/>
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 8"/>
-                                    <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 9"/>
-                                </div>
-                            </div>
-                                                        
-                            
-                            <img src="#" width="150px" height="150px" alt="Uploaded Image 2"/> 
-                            <img src="#" width="150px" height="150px" alt="Uploaded Image 3"/> 
-                        </td>
-
-                    </tr>
-                    -->
+                   
                     <tr>
                         <th colspan="3">Additional</th>
                     </tr>
@@ -1162,7 +1112,7 @@
                     <tr>
                         <th colspan="3">Total</th>
                     </tr>
-                    
+               
                     <tr>
                         <td class="total-price">
                             Total: 
@@ -1242,7 +1192,9 @@
                                   <% } else { %>
                                     <% logoByCustomerEstimatedTime = 0; %> 
                                  <% } %>
+                                 
                                 <!--External Features check-->
+                                
                                  <% if(element.Gallery) { %>
                                     <% var galleryEstimatedTime = 3; %> 
                                                            
@@ -1261,7 +1213,9 @@
                                 <% } else { %>
                                         <% menuEstimatedTime = 0; %> 
                                  <% } %>
+                                 
                                  <!--Advanced Features Check-->
+                                 
                                  <% if(element.RegisterLogin) { %>
                                     <% var registerLogInEstimatedTime = 3; %> 
                                                            
@@ -1280,7 +1234,9 @@
                                 <% } else { %>
                                         <% paymentMethodEstimatedTime = 0; %> 
                                  <% } %>
+                                 
                                  <!--Designing-->
+                                 
                                  <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
                                     <% var websiteBackgroundColorEstimatedTime = 1; %> 
                                   <% } else { %>
@@ -1292,7 +1248,9 @@
                                   <% } else { %>
                                     <% websiteBackgroundImageEstimatedTime = 0; %> 
                                  <% } %>
+                                 
                                 <!--Other Features or Services-->
+                                
                                 <% if(element.EmailService) { %>
                                     <% var emailServiceEstimatedTime = 3; %> 
                                                            
@@ -1311,8 +1269,9 @@
                                 <% } else { %>
                                         <% dataBaseEstimatedTime = 0; %> 
                                  <% } %>
+                                 
                                  <!--Extra Estimated Time-->
-                                                      
+                                                    
                                 
                                         <% var extraEstimatedTime = 1; %> 
                                  
@@ -1322,7 +1281,8 @@
 
                             </span>
                             
-                        </td><!--estimated days end here-->
+                        </td> <!--estimated days end here-->
+                        
                         <td>
                             <span class="cart-total-price ">
                                 <% var total = 0; %> 
@@ -1398,7 +1358,9 @@
                                   <% } else { %>
                                     <% logoByCustomerPrice = 0; %> 
                                  <% } %>
+                                 
                                 <!--External Features check-->
+                                
                                  <% if(element.Gallery) { %>
                                     <% var galleryPrice = parseFloat(element.GalleryPrice.replace('$', '')); %> 
                                                            
@@ -1417,7 +1379,9 @@
                                 <% } else { %>
                                         <% menuPrice = 0; %> 
                                  <% } %>
+                                 
                                  <!--Advanced Features Check-->
+                                 
                                  <% if(element.RegisterLogin) { %>
                                     <% var registerLogInPrice = parseFloat(element.RegisterLoginPrice.replace('$', '')); %> 
                                                            
@@ -1436,7 +1400,9 @@
                                 <% } else { %>
                                         <% paymentMethodPrice = 0; %> 
                                  <% } %>
+                                 
                                  <!--Designing-->
+                                 
                                  <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
                                     <% var websiteBackgroundColorPrice = parseFloat(element.WebsiteBackgroundColorPrice.replace('$', '')); %> 
                                   <% } else { %>
@@ -1448,7 +1414,9 @@
                                   <% } else { %>
                                     <% websiteBackgroundImagePrice = 0; %> 
                                  <% } %>
+                                 
                                 <!--Other Features or Services-->
+                                
                                 <% if(element.EmailService) { %>
                                     <% var emailServicePrice = parseFloat(element.EmailServicePrice.replace('$', '')); %> 
                                                            
@@ -1467,7 +1435,9 @@
                                 <% } else { %>
                                         <% dataBasePrice = 0; %> 
                                  <% } %>
+                                 
                                  <!--Other Charges check-->
+                                 
                                  <% if(element.OtherCharges) { %>
                                     <% var otherChargesPrice = parseFloat(element.OtherCharges/*.replace('$', '')*/); %> 
                                                            
@@ -1475,7 +1445,7 @@
                                         <% otherChargesPrice = 0; %> 
                                  <% } %>
                                 <% var discount = 0; %> 
-
+                                    
                                 <!-- Total: --><%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice - discount);%>
                                 
                             </span>
@@ -1491,8 +1461,9 @@
                     
                     
                 </table> 
-      
-
+            
+            <!--        
+-->
     </div><!--cart-row ends here-->
     <!--
             <a class="table-caption-anchor" href="#">Add-More</a>
@@ -1942,7 +1913,6 @@ commented for now*/
     </div>
 </div>
 <%- include('modal') %>
-
 <%- include('dashboardfooter') %>
 
 

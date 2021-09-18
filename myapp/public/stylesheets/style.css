@@ -1,19 +1,18 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     
   }
   
   
-  body {
-    
+  body {    
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: rgb(238, 135, 97);
-    
+    background-color: rgb(238, 135, 97);    
     background-image: url(../images/pexels-cristian-rojas-7260637.jpg);
-    background-position: center center;
-    
+    background-position: center center;    
     background-repeat: repeat;
     background-size: cover;
     /*background-size: cover;*/
@@ -22,22 +21,19 @@
     
   }
   @media only screen and (min-width: 280px) {
-    body {
-      
+    body {      
       font-size: 1.5em;
       /*max-width: 480px;*/
     }
   }
   @media only screen and (min-width: 480px) {
-    body {
-      
+    body {      
       font-size: 2em;
       /*max-width: 480px;*/
     }
   }
   @media only screen and (min-width: 768px) {
-    body {
-      
+    body {      
       font-size: 2em;
       
     }
@@ -219,18 +215,30 @@
     color: whitesmoke;
   }
   */
-  @media only screen and (min-width: 280px) and (max-width: 768px) { 
+  @media only screen and (min-width: 280px) and (max-width: 480px) { 
     .header .headernav ul {
       display: none;
     }
   }
   
-  @media only screen and (min-width: 768px) and (max-width: 1024px) { 
+  @media only screen and (min-width: 480px) and (max-width: 1024px) { 
     .header .headernav ul:not(:last-child) {
       display: none;
     }
+    
+    .header .headernav {
+      display: flex; 
+      position: absolute;
+      top: 1.6em;
+      right: 1.2em;
+      font-size: 1.25em;
+    }
   }
-  
+  @media screen and (min-width: 480px) and (max-width: 768px)  {
+    .header .headernav .cart {
+      display: none;
+    }
+  }
   
   /*
   @media screen and (max-width: 800px) {
@@ -411,8 +419,7 @@
   /* sidenav css ends */
   
   /* footer css starts*/
-  .footer {
-    
+  .footer {  
   
     /* 
     width: 100%;
@@ -420,6 +427,7 @@
     */
     background-color: rgba(238, 135, 97, .6);  
     /*margin-top: 3.8em;*/
+    
     margin-bottom: 0;  
     padding: 1.9em;  
   }
@@ -442,19 +450,23 @@
     display: flex; 
     width: 100%; 
     height: auto;
+    
   }
   
   .footer .row .column {
     width: 33%;  
+    height: auto;
+    margin: auto;
     color: whitesmoke;
     font-size: 1.1em;
     text-align: center;
   }
+  
   .footer .row .column ul {
     
     text-align: left;
     font-size: 1.1em;
-    padding-left: 25%;
+    padding-left: 20%;
   }
   .footer .row .column ul li {
     list-style: none;
@@ -475,6 +487,20 @@
     font-size: 1.1em;
   }
   
+  @media screen and (min-width: 280px) and (max-width: 380px){
+    .footer .row .column-3 ul {    
+      text-align: left;
+      font-size: 1em;
+      padding-left: 10%;
+    }
+  }
+  @media screen and (min-width: 768px){
+    .footer .row .column-3 ul {    
+      text-align: left;
+      font-size: 1.1em;
+      padding: 5% 5% 0 0;
+    }
+  }
   @media screen and (max-width: 768px) {
     .footer .row {
       display: block;
@@ -494,7 +520,7 @@
     max-width: 100%;
     height: auto;
     padding-top: 3.2em;
-    margin-top: 0;
+    margin-top: auto;
     border-bottom: 1px solid whitesmoke;
     
   }
@@ -502,8 +528,7 @@
   .main .welcome h1 {
     text-align: center;
     padding-bottom: 1.6em;  
-    color: whitesmoke;
-    
+    color: whitesmoke;    
     margin: 2.5em auto auto auto;
   }
   .main .welcome h2 {
@@ -532,7 +557,13 @@
     color: whitesmoke;  
     
   }
+  @media screen and (min-width: 280px) and (max-width: 480px) {
+    .main .welcome .homepage-slogan {
+      display: none;
+    }
+  }
   @media screen and (min-width: 280px) and (max-width: 768px){
+    
     .main .welcome .row {
       display: block;
     }
@@ -560,6 +591,7 @@
     text-align: left;
     
     margin: 3em;
+    padding-left: 1.5em;
   }
   .how-it-works ol li {
     font-size: 1.25em;
@@ -581,7 +613,7 @@
   .about p {
     text-align: left;
     font-size: 1.25em; 
-    padding: 3em 3em 0 3em; 
+    padding: 3em 1.5em 0 1.5em; 
   }
   /* Servicess css starts now*/
   .services {
@@ -638,6 +670,7 @@
     font-size: 1.25em;
   }
   @media screen and (min-width: 280px) and (max-width: 480px) {
+
     .services .row {
       display: block;
       width: 100%;
@@ -674,7 +707,7 @@
   .whyus p {
     text-align: left;
     font-size: 1.25em; 
-    padding: 3em 3em 0 3em; 
+    padding: 3em 1.5em 0 1.5em; 
   }
   /* Why Us css ends*/
   /* specialoffers css* starts*/
@@ -733,25 +766,51 @@
   /* career css ends here*/
 
   /* dashboardcart css* starts*/
+  
   .dashboardcart {    
     padding-bottom: 5em;
+  }
+  .dashboardcart .cart-items {
+    width: 100%;
+    /*max-width: 100%; */
+    height: auto;
+    
+    margin-bottom: 3em;
+  }
+  .dashboardcart .cart-items .cart-row {
+    width: 100%;
+    /*max-width: 100%; */   
+        
   }
   .dashboardcart .cart-items, .dashboardpurchased .purchased-items {
     padding-top: 3.8em;
   }
-  .dashboardcart table {
+  
+  .dashboardcart .cart-items, .dashboardpurchased .purchased-items table {
     width: 100%;
-    margin: 1em auto 1em auto;    
-    /*border: 2px solid whitesmoke;*/
+    max-width: 100%;
+    height: auto;
+    padding: 2%;    
+  }
+  
+  .dashboardcart .cart-items .cart-row table {
+    width: 100%;    
+    height: auto;
+    max-width: 100%;    
+    margin: 1em auto 1em auto;     
     text-align: left;
     border-collapse: collapse;
     /*padding: 1%;*/
     /*padding-top: 2em;*/
+   
+    
   }
+  
   .dashboardcart table tr {
     width: 100%;
     margin: auto;
   }
+  
   .dashboardcart table tr th {
     width: 50%;
     border: 2px solid whitesmoke; 
@@ -763,25 +822,30 @@
     text-overflow: clip;
     /*padding: 1%;*/
     /*overflow: auto;*/
+    
   }
+  
   .dashboardcart table tr td {
     width: 50%;
     border: 2px solid whitesmoke; 
-    text-overflow: clip;
+    overflow: auto;
+    /*text-overflow: clip; */
     padding: 1%;
-    /*overflow: auto;*/
+    /*overflow: auto;*/ 
     color: rgb(155, 155, 207);
   }
   
   table caption {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;
+    justify-content: space-around; */
   }
+  
   .table-caption-anchor {
     display: flex;
     
   }
+  
   .dashboardcart .image-container {
     width: 100%;
     height: auto;
@@ -843,14 +907,14 @@
       height: auto;
       margin: 0;
       padding: 0;
-      text-align: center;
-      
+      text-align: center;      
     }
-    .cart-uploaded-content-div .row .column {
-    
+    .cart-uploaded-content-div .row .column {    
       width: 50%;
     }
   }
+  /*
+  */
   /*
   .template-selected-icon, .homepage-selected-icon, .aboutpage-selected-icon, .servicespage-selected-icon, .whyuspage-selected-icon, .social-media-feature-selected-icon, .contactuspage-selected-icon, .contactuspluscontactformpage-selected-icon, .policypage-selected-icon, .terms-and-conditions-selected-icon, .logo-by-customer-selected-icon, .logo-purchasing-selected-icon, .copy-right-selected-icon, .logo-by-customer-selected-icon, .gallery-page-selected-icon, .templates-feature-selected-icon .menu-page-selected-icon{
     background-color: transparent;
@@ -1025,7 +1089,7 @@
     padding: .5em;
     font-size: 1.25em;
   }
-  .getstarted form input {
+  .getstarted form input {    
     background-color: transparent;
     color: whitesmoke;
     outline: none;
@@ -2165,7 +2229,7 @@
 }
 
 .settings table{
-  width: 100%;
+  width: 90%;
   height: auto;
   border: none;
   text-align: center;
@@ -2201,6 +2265,7 @@
   display: block;  
   font-size: 1.5em;
   padding-top: 2em;
+  
 }
 .dashboardfreelancepage .row-2 table, .dashboardinbox .row-1 table{
   width: 90%;
@@ -2216,7 +2281,7 @@
   padding-left: 1%;
   border: 1px solid whitesmoke;
 }
-.dashboardfreelancepage .row-2 table tr td, .dashboardinbox .row-1 table tr td{
+.dashboardfreelancepage .row-2 table tr td, .dashboardinbox .row-2 table tr td{
   width: 75%;
   height: auto;
   padding: auto;
@@ -2233,6 +2298,7 @@
 
 }
 .row-advertisement table {
+  
   width: 80%;
   height: auto;
   margin: auto;
