@@ -770,18 +770,19 @@
   .dashboardcart {    
     padding-bottom: 5em;
   }
-  .dashboardcart .cart-items {
+  .dashboardcart .cart-items, .dashboardpurchased .purchased-items {
     width: 100%;
     /*max-width: 100%; */
     height: auto;
     
     margin-bottom: 3em;
   }
-  .dashboardcart .cart-items .cart-row {
+  .dashboardcart .cart-items .cart-row, .dashboardpurchased .purchased-items .purchased-row {
     width: 100%;
     /*max-width: 100%; */   
         
   }
+  /*
   .dashboardcart .cart-items, .dashboardpurchased .purchased-items {
     padding-top: 3.8em;
   }
@@ -792,8 +793,8 @@
     height: auto;
     padding: 2%;    
   }
-  
-  .dashboardcart .cart-items .cart-row table {
+  */
+  .dashboardcart .cart-items .cart-row table, .dashboardpurchased .purchased-items .purchased-row table  {
     width: 100%;    
     height: auto;
     max-width: 100%;    
@@ -806,12 +807,12 @@
     
   }
   
-  .dashboardcart table tr {
+  .dashboardcart table tr, .dashboardpurchased .purchased-items .purchased-row table tr {
     width: 100%;
     margin: auto;
   }
   
-  .dashboardcart table tr th {
+  .dashboardcart table tr th, .dashboardpurchased .purchased-items .purchased-row table tr th {
     width: 50%;
     border: 2px solid whitesmoke; 
     padding: 1.5%;  
@@ -825,7 +826,7 @@
     
   }
   
-  .dashboardcart table tr td {
+  .dashboardcart table tr td, .dashboardpurchased .purchased-items .purchased-row table tr td {
     width: 50%;
     border: 2px solid whitesmoke; 
     overflow: auto;
