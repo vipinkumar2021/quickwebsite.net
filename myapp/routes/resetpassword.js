@@ -383,9 +383,9 @@ router.post('/', function(req, res, next) {
           var output = `
     <h3>Contact Details</h3>
     <ul>
-      <li>Company: Freelanceforall.com/demo account</li>
-      <li>Email: companyemail@email.com....demo for now</li>
-      <li>Toll Free: 00800 ...demo for now...</li>    
+    <li>Company: Quick Website</li>
+    <li>Website: https://www.quickwebsite.net</li>
+  <li>Email: contact@quickwebsite.net</li>  
     </ul>
       <h3>Message</h3>
       <p>Your One Time Password (OTP) for Password Reset is</p>
@@ -468,9 +468,9 @@ let params = {
                 var output = `
           <h3>Contact Details</h3>
           <ul>
-            <li>Company: Freelanceforall.com/demo account</li>
-            <li>Email: companyemail@email.com....demo for now</li>
-            <li>Toll Free: 00800 ...demo for now...</li>    
+          <li>Company: Quick Website</li>
+          <li>Website: https://www.quickwebsite.net</li>
+        <li>Email: contact@quickwebsite.net</li>   
           </ul>
             <h3>Message</h3>
             <p>Your One Time Password (OTP) for Password Reset is</p>
@@ -556,9 +556,9 @@ let params = {
             var output = `
       <h3>Contact Details</h3>
       <ul>
-        <li>Company: Freelanceforall.com/demo account</li>
-        <li>Email: companyemail@email.com....demo for now</li>
-        <li>Toll Free: 00800 ...demo for now...</li>    
+      <li>Company: Quick Website</li>
+      <li>Website: https://www.quickwebsite.net</li>
+    <li>Email: contact@quickwebsite.net</li>
       </ul>
         <h3>Message</h3>
         <p>Your One Time Password (OTP) for Password Reset is</p>
@@ -731,9 +731,10 @@ router.post('/updatepassword', function(req, res, next) {
           var output = `
           <h3>Contact Details</h3>
           <ul>
-            <li>Company: Freelanceforall.com/demo account</li>
-            <li>Email: companyemail@email.com....demo for now</li>
-            <li>Toll Free: 00800 ...demo for now...</li>    
+            <li>Company: Quick Website</li>
+            <li>Website: https://www.quickwebsite.net</li>
+          <li>Email: contact@quickwebsite.net</li>
+               
           </ul>
             <h3>Message</h3>
             <p>Your Password has been reset successfully</p>
@@ -820,9 +821,9 @@ let params = {
           var output = `
           <h3>Contact Details</h3>
           <ul>
-            <li>Company: Freelanceforall.com/demo account</li>
-            <li>Email: companyemail@email.com....demo for now</li>
-            <li>Toll Free: 00800 ...demo for now...</li>    
+          <li>Company: Quick Website</li>
+          <li>Website: https://www.quickwebsite.net</li>
+        <li>Email: contact@quickwebsite.net</li>   
           </ul>
             <h3>Message</h3>
             <p>Your Password has been reset successfully</p>
@@ -909,9 +910,9 @@ let params = {
           var output = `
           <h3>Contact Details</h3>
           <ul>
-            <li>Company: Freelanceforall.com/demo account</li>
-            <li>Email: companyemail@email.com....demo for now</li>
-            <li>Toll Free: 00800 ...demo for now...</li>    
+          <li>Company: Quick Website</li>
+          <li>Website: https://www.quickwebsite.net</li>
+        <li>Email: contact@quickwebsite.net</li>  
           </ul>
             <h3>Message</h3>
             <p>Your Password has been reset successfully</p>

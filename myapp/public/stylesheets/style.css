@@ -1093,6 +1093,7 @@
     margin: auto;
     background-color: rgba(238, 135, 97, .6);
     padding: 1.5%;
+    overflow: auto;
     z-index: 1;
     
   }
@@ -1363,21 +1364,23 @@
   background-color: rgba(238, 135, 97, .6); 
   color: whitesmoke;
   }
-  
-  
-  .show-password-input { 
+  /*
+  .show-password-label {
     
-    /*border: 3px solid whitesmoke;
-  border-radius: 10px;
-  outline: none;
-  padding: .8em;
-  background-color: rgba(238, 135, 97, .6); 
-  color: whitesmoke;*/
-  position: absolute;
-  left: 0;
+    padding-right: 1em;
+  }
+  */
+  .show-password-input { 
+  position: absolute;  
+  right: -30%;
   padding-left: 0;
   margin-left: 0;
     
+  }
+  
+  .show-password {
+    display: flex;
+    justify-content: space-evenly;
   }
   .modal-parent-signin .modal-signin form button {
   width: 20%;
@@ -2102,8 +2105,9 @@
   }
   
   @media screen and (min-width: 280px) and (max-width: 768px) {
-    .modal-parent-contact .modal-contact button {
-      width: 100%;
+    .modal-parent-confirmation-before-delete .modal-confirmation-before-delete button {
+      width: 50%;
+      max-width: 100%;
       margin: auto auto 1em auto;
     }
   
@@ -2310,16 +2314,29 @@
   /* Chat Box modal css ends here */
   /* modal css ends*/
   /* signup-verification signup customer .ejs css*/
-  .signup-verification form input, .signup-verification form button {
+  .signup-verification form {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: left;
+  }
+  .signup-verification form input {
+    width: 80%;
+    height: auto;
     background-color: transparent;
     border: 2px solid whitesmoke;
     border-radius: 5px;
+    outline: none;
+    padding: .5em;
   }
-  .forgot-username form input, .forgot-username form button {
+  .signup-verification form button {
     background-color: transparent;
     border: 2px solid whitesmoke;
     border-radius: 5px;
+    outline: none;
+    padding: .5em;
   }
+   
   .forgot-password form input, .forgot-password form button {
     background-color: transparent;
     border: 2px solid whitesmoke;
@@ -2443,21 +2460,35 @@
   margin: auto;
 }
 .row-advertisement {
+  width: 100%;
+  height: auto;
+  
+
+
+}
+.row-advertisement .column {
+  width: 100%;
+  height: auto;
+  margin: auto;
   display: block;
-
-
+  padding-left: 7%;
 }
 .row-advertisement table {
   
-  width: 80%;
+  width: 100%;
   height: auto;
   margin: auto;
   border: 3px solid whitesmoke;
-  
+  table-layout: fixed;
 }
 .row-advertisement table tr th{
   padding: 1%;
-  
+  overflow: auto;
+}
+
+.row-advertisement table tr td{
+  padding: 1%;
+  overflow: auto;
 }
 
 .submit-button {

@@ -2,21 +2,22 @@
 
 <div class="item item3 main">
     <div class="container admin signup-verification">
-        <h2>Sign up Verification Page</h2>
+       
         <br/> 
         <h2 style="color: whitesmoke;">
           <% if(msg != ''){ %>
             <%= msg %>
           <% } %> 
         </h2>
+        <h2>Sign up Verification</h2>
         <h2>
           <% if(adminDetails != ''){ %>
             <%= adminDetails %>
           <% } %> 
         </h2>
         
-        <br/>
-        <form action="/accountactivatedcustomer" method="post" role="form">
+        
+        <form  action="/accountactivatedcustomer" method="post" role="form">
           <label for="otp">Please Enter One Time Password (OTP) sent to your Email</label><br/>
           <input name="otp" type="otp" placeholder="Enter OTP....."/><br/><br/>
           <label for="password">Password</label><br/>
@@ -24,7 +25,7 @@
           <label for="cnfpassword">Confirm Password</label><br/>
           <input name="cnfpassword" type="password" placeholder="Confirm Your Password..." /><br/><br/>              
 
-          <button id="send-message" type="submit">Click here to activate your account</button> 
+          <button id="send-message" type="submit">Activate Account</button> 
         </form>
 
         

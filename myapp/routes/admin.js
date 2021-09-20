@@ -50,7 +50,7 @@ const storage = multer.diskStorage({
 //init upload
 const upload = multer({
   storage: storage,
-  limits: {fileSize: 1000000},
+  //limits: {fileSize: 1000000},
   fileFilter: function(req, file, cb) {
     checkFileType(file, cb);
   }
@@ -210,7 +210,7 @@ router.post('/signupadmin', upload, function(req, res, next) {
 
                               adminMembersTeamModel.findOne({Email: email}, {Email: email}).exec((err, registeredNewAdminMemberEmail) => {
                                 if(err) throw err;
-                                if(registeredNewAdminMemberEmail == null) {
+                                if(registeredNewAdminMemberEmail == null || registeredNewAdminMemberEmail != 'vipinkmboj211gmail.com') {
                                   return res.render('admin', {title: 'Quick Website', msg:'Please Enter Registered Email Address or Contact Admin' });
 
                                 } else {                              

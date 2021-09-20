@@ -1,7 +1,7 @@
 <%- include('header') %>
 
 <div class="item item3 main">
-    <div class="container admin forgot-username">
+    <div class="container admin forgot-username signup-verification">
         <h1 style="margin: 3.5em auto 1em auto;">Forgot Username</h1>
         <br/> 
         <h3 style="color: whitesmoke">
@@ -14,7 +14,7 @@
         <br/>
         <form action="/getusername" method="post" role="form">
           <label for="email">Please Enter your registered Email</label><br/>
-          <input name="email" type="email" placeholder="Enter Email here....."/><br/><br/>
+          <input style="background-color: transparent;" name="email" type="email" placeholder="Enter Email here....."/><br/><br/>
          <button id="send-message" type="submit">Send OTP to Registered Email</button><br/>
          <br/><br/>
          <label>Didn't get an OTP</label> <br/>

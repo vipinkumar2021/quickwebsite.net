@@ -80,6 +80,77 @@ router.get('/',  function(req, res, next) {
 */
 });
 
+router.get('/signupcustomer',  function(req, res, next) {
+  /*
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName;//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName;//localStorage.getItem('adminLoginUserName');
+*/
+/* uncomment from here...*/
+  if(req.session.customerLoginUserName){
+    res.redirect('/dashboardcustomer');
+  } else if(req.session.employeeLoginUserName) {
+    res.redirect('/dashboardemployees');
+  } else if(req.session.adminLoginUserName) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('signupcustomer', { title: 'Quick Website', msg:'', adminDetails: ''});
+  }  
+  /*
+  res.render('index', { title: 'SaReGaMa Music Academy & GMP Studio', msg:''});
+*/
+});
+
+//get accountactivated on this particular
+router.get('/accountactivatedcustomer',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+  } 
+});
+
+//get index page on this particular
+router.get('/getusername/getusernamebyemail',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+  } 
+});
+
+//get index page on this particular
+router.get('/resetpassword/updatepassword',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('index', { title: 'Quick Website', msg:'', adminDetails: ''});
+  } 
+});
 
 //Middleware Check username Exactly Correct One
 function checkUsername(req, res, next) {
