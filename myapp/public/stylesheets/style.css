@@ -742,12 +742,22 @@
     padding-bottom: 5em;
   }
 
+  .career-submit {
+    padding: .5em;
+  }
+  @media screen and (min-width: 280px) and (max-width: 768px) {
+    .career-upload-input {
+      width: 100%;
+    }
+  }
+  
+  
   .career table {
 
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    
+    height: auto;
     border: 1px solid whitesmoke;
     margin-top: 4em;   
 
@@ -1600,7 +1610,11 @@
   
   
   }
-  
+  .modal-parent-contact .modal-contact form {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
   .modal-parent-contact .modal-contact form label {
    text-align: left;
    font-size: 1.25em;
