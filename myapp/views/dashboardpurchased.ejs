@@ -385,524 +385,1074 @@
                             <th>Name</th><th colspan="2">Content</th>
                         </tr>
                         <tr>
-                            <th rowspan="2">Photo Gallery Content: </th>
-                            <td class="photogallery-content" colspan="2">
+                            <th colspan="3">
+                                Photo Gallery Upload Content
+                            </th>                        
+                        </tr>   
+                    
+                        <tr>
+                            <td colspan="3">
+                                <strong>Uploaded Files Content:</strong><br/><br/>
+                                <% var strGalleryUpload = element.UploadContentForGalleryOne %>
+                                <% var splittedGalleryUpload = strGalleryUpload.split('<br>'); %>                           
+                            <div class="cart-uploaded-content-div">
+                                <div class="row row-1">
+                                    <div class="column col-1">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[0] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[0] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    
+                                    <div class="column col-2">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[1] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[1] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-3">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[2] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[2] %></figcaption>
+                                          </figure>                                
+                                    </div>                        
+                                    
+        
+                                </div >
+                                <div class="row row-2">
+                                    <div class="column col-4">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[3] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[3] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-5">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[4] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[4] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-6">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[5] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[5] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                   
+                                </div>
+                                <div class="row row-3">
+                                    <div class="column col-7">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[6] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[6] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-8">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[7] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[7] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-9">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[8] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[8] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                   
+                                </div>
+                                <div class="row row-4">
+                                    <div class="column col-10">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[9] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[9] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-11">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[10] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[10] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-12">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[11] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[11] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                    
+                                </div>
+                                <div class="row row-5">
+                                    <div class="column col-13">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[12] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[12] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-14">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[13] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[13] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-15"> 
+                                        <figure> 
+                                            <img src="./uploads/<%= splittedGalleryUpload[14] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[14] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                  
+                                </div>
+                                <div class="row row-6">
+                                    
+        
+                                    <div class="column col-16">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[15] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[15] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-17">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[16] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[16] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-18">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[17] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[17] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                </div>
+    
+                                <div class="row row-7">                                
+        
+                                    <div class="column col-19">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedGalleryUpload[18] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[18] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-20">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedGalleryUpload[19] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedGalleryUpload[19] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                </div>
+                                
+                                
+                                
+                                
+                                                            
+                            </div>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">
+                                Templates Text Content
+                            </th>                      
+                        </tr>                    
+                        <tr>                        
+                            <td class="template-content" colspan="3">
                                 <strong>Text Content:</strong><br/>
                                 <p>
-                                    <%= element.TextContentForGallery %>
-                                </p>
-                                 
+                                    <%= element.TextContentForTemplates %>
+                                </p>                             
                             </td>                                       
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                <strong>Uploaded Files Content:</strong><br/>
-                                <div>
-                                    <img src="./uploads/<%= element.UploadContentForGalleryOne %> " width="150px" height="150px" alt="Photo Gallery Content Image"/>
+                            <th colspan="3">
+                                Templates Upload Content
+                            </th>                        
+                        </tr>   
+    
+                        <tr>
+                            <td colspan="3">
+                                <strong>Uploaded Files Content:</strong><br/><br/>
+                                <% var strTemplatesUpload = element.UploadContentForTemplates %>
+                                <% var splittedTemplatesUpload = strTemplatesUpload.split('<br>'); %>                           
+                            <div class="cart-uploaded-content-div">
+                                <div class="row row-1">
+                                    <div class="column col-1">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[0] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[0] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    
+                                    <div class="column col-2">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[1] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[1] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-3">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[2] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[2] %></figcaption>
+                                          </figure>                                
+                                    </div>                        
+                                    
+        
+                                </div >
+                                <div class="row row-2">
+                                    <div class="column col-4">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[3] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[3] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-5">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[4] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[4] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-6">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[5] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[5] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                   
                                 </div>
-                                
+                                <div class="row row-3">
+                                    <div class="column col-7">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[6] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[6] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-8">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[7] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[7] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-9">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[8] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[8] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                   
+                                </div>
+                                <div class="row row-4">
+                                    <div class="column col-10">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[9] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[9] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-11">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[10] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[10] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-12">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[11] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[11] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                    
+                                </div>
+                                <div class="row row-5">
+                                    <div class="column col-13">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[12] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[12] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-14">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[13] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[13] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-15"> 
+                                        <figure> 
+                                            <img src="./uploads/<%= splittedTemplatesUpload[14] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[14] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                  
+                                </div>
+                                <div class="row row-6">
+                                    
+        
+                                    <div class="column col-16">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[15] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[15] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-17">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[16] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[16] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-18">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[17] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[17] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                </div>
+    
+                                <div class="row row-7">                                
+        
+                                    <div class="column col-19">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedTemplatesUpload[18] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[18] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-20">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedTemplatesUpload[19] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedTemplatesUpload[19] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                </div>                                                    
+                            </div>    
                             </td>
                         </tr>
-        
+    
+                       
                         <tr>
-                            <th rowspan="2">Templates Feature Content: </th>
-                            <td class="template-content" colspan="2">
+                            <th colspan="3">
+                                Menu Text Content
+                            </th>                      
+                        </tr>                    
+                        <tr>                        
+                            <td class="menu-content" colspan="3">
                                 <strong>Text Content:</strong><br/>
                                 <p>
-                                    <%= element.TextContentForTemplates %> 
-                                </p>
-                                
+                                    <%= element.TextContentForMenu %>
+                                </p>                             
                             </td>                                       
                         </tr>
                         <tr>
-                            <td colspan="2">
-                                <strong>Uploaded Files Content:</strong><br/>
-                                <div>
-                                    <img src="./uploads/<%= element.UploadContentForTemplates %>" width="150px" height="150px" alt="Templates Content Image"/>
-                                </div>
-                                
-                            </td>
-                        </tr>
-        
+                            <th colspan="3">
+                                Menu Upload Content
+                            </th>                        
+                        </tr>   
+    
                         <tr>
-                            <th rowspan="2">Menu Content: </th>
-                            <td class="menu-content" colspan="2">
-                                <strong>Text Content:</strong><br/>
-                                <p>
-                                    <%= element.TextContentForMenu %> 
-                                </p>
-                                
-                            </td>                                       
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <strong>Uploaded Files Content:</strong><br/>
-                                <div>
-                                    <img src="./uploads/<%= element.UploadContentForMenu %> " width="150px" height="150px" alt="Menu Content Image"/>
+                            <td colspan="3">
+                                <strong>Uploaded Files Content:</strong><br/><br/>
+                                <% var strMenuUpload = element.UploadContentForMenu %>
+                                <% var splittedMenuUpload = strMenuUpload.split('<br>'); %>                           
+                            <div class="cart-uploaded-content-div">
+                                <div class="row row-1">
+                                    <div class="column col-1">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedMenuUpload[0] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedMenuUpload[0] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    
+                                    <div class="column col-2">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedMenuUpload[1] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedMenuUpload[1] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-3">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedMenuUpload[2] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedMenuUpload[2] %></figcaption>
+                                          </figure>                                
+                                    </div>                        
+                                    
+        
+                                </div >
+                                <div class="row row-2">
+                                    <div class="column col-4">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedMenuUpload[3] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedMenuUpload[3] %></figcaption>
+                                            
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-5">
+                                        <figure>
+                                            <img src="/uploads/<%= splittedMenuUpload[4] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedMenuUpload[4] %></figcaption>
+                                          </figure>                                
+                                    </div>
+                                    <div class="column col-6">
+                                        <figure>
+                                            <img src="./uploads/<%= splittedMenuUpload[5] %> " width="200px" height="150px" alt="Photo Gallery Content Image"/>
+                                            <figcaption><%= splittedMenuUpload[5] %></figcaption>
+                                          </figure>                                
+                                    </div>
+        
+                                   
                                 </div>
-                                
+                                                                                    
+                            </div>    
                             </td>
-                        </tr>
-        
-        
+                        </tr>                
+                    
                         <tr>
                             <th colspan="3">Advanced Features Selected</th>                    
                         </tr>
+                    
                         
-                        <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
-                        <tr>                    
-                            <td class="registerloginpage"><%= element.RegisterLogin %></td>                    
-                            <td class="registerloginpage-content-estimated-time">
-                                <% if(element.RegisterLogin) {%>
-                                    <%= element.RegisterLoginEstimatedTime %> 
-                                <% } %>  
-                            </td>
-                            <td class="registerloginpage-price">
-                                <% if(element.RegisterLogin) {%>
-                                    <%= element.RegisterLoginPrice %> 
-                                <% } %>  
-                            </td>                    
-                           
-                        </tr> 
-                        <tr>                    
-                            <td class="contactuswithform"><%= element.ContactUsForm %></td>                    
-                            <td class="contactuswithform-content-estimated-time">
-                                <% if(element.ContactUsForm) {%>
-                                    <%= element.ContactUsWithFormEstimatedTime %> 
-                                <% } %>
-                            </td>
-                            <td class="contactuswithform-price">
-                                <% if(element.ContactUsForm) {%>
-                                    <%= element.ContactUsWithFormPrice %> 
-                                <% } %>
-                            </td>                   
-                           
-                        </tr> 
-                        <tr>                    
-                            <td class="paymentmethod"><%= element.PaymentMethod %></td>                    
-                            <td class="paymentmethod-content-estimated-time">
-                                <% if(element.PaymentMethod) {%>
-                                    <%= element.PaymentMethodEstimatedTime %> 
-                                <% } %>
-                            </td>
-                            <td class="paymentmethod-price">
-                                <% if(element.PaymentMethod) {%>
-                                    <%= element.PaymentMethodPrice %> 
-                                <% } %>
-                            </td>                   
-                           
-                        </tr> 
-                        
+                    <tr><th>Name</th><th>Estimated Time (Days)</th><th>Cost</th></tr>
+                    <tr>                    
+                        <td class="registerloginpage"><%= element.RegisterLogin %></td>                    
+                        <td class="registerloginpage-content-estimated-time">
+                            <% if(element.RegisterLogin) {%>
+                                <%= element.RegisterLoginEstimatedTime %> 
+                            <% } %>  
+                        </td>
+                        <td class="registerloginpage-price">
+                            <% if(element.RegisterLogin) {%>
+                                <%= element.RegisterLoginPrice %> 
+                            <% } %>  
+                        </td>                    
+                       
+                    </tr> 
+                    <tr>                    
+                        <td class="contactuswithform"><%= element.ContactUsForm %></td>                    
+                        <td class="contactuswithform-content-estimated-time">
+                            <% if(element.ContactUsForm) {%>
+                                <%= element.ContactUsWithFormEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="contactuswithform-price">
+                            <% if(element.ContactUsForm) {%>
+                                <%= element.ContactUsWithFormPrice %> 
+                            <% } %>
+                        </td>                   
+                       
+                    </tr> 
+                    <tr>                    
+                        <td class="paymentmethod"><%= element.PaymentMethod %></td>                    
+                        <td class="paymentmethod-content-estimated-time">
+                            <% if(element.PaymentMethod) {%>
+                                <%= element.PaymentMethodEstimatedTime %> 
+                            <% } %>
+                        </td>
+                        <td class="paymentmethod-price">
+                            <% if(element.PaymentMethod) {%>
+                                <%= element.PaymentMethodPrice %> 
+                            <% } %>
+                        </td>                   
+                       
+                    </tr> 
+                    
+                    <tr>
+                        <th colspan="3">Advanced Features Content</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>Name</th><th colspan="2">Content</th>
+                    </tr>
+                    <tr>
+                        <th>Bank Account, IFSC & GST/PAN: </th>
+                        <td class="bankaccount-ifsc-content" colspan="2">
+                            <strong>Bank Account, IFSC & GST/PAN:</strong><br/>
+                            <%= element.BankAccountAndIfsc %> 
+                        </td>                                       
+                    </tr>
+                    
+                    <tr>
+                        <th>Email Id: </th>
+                        <td class="emailid-content" colspan="2">                            
+                            <p>
+                                <%= element.EmailId %>
+                            </p>
+                             
+                        </td>                                       
+                    </tr>
+                    <tr>
+    
                         <tr>
-                            <th colspan="3">Advanced Features Content</th>
+                            <th colspan="3">Designing Features Selected</th>                    
                         </tr>
                         
+                        <tr><th>Name</th><th>Estimated Time (Days)</th><th>Cost</th></tr>
+                        <tr>                    
+                            <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
+                            <td class="websitebackground-content-estimated-time">
+                                <% if(element.WebsiteBackground) { %>
+                                    <%= element.WebsiteBackgroundEstimatedTime %> 
+                                <% } %> 
+                            </td>
+                            <td class="websitebackground-price">
+                                <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
+                                    <%= element.WebsiteBackgroundColorPrice %> 
+                                <% } %>
+                                <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website'){ %>
+                                    <%= element.WebsiteBackgroundImagePrice %>
+                                <% } %>
+                            </td>                    
+                           
+                        </tr>
+                    
+                        <tr>
+                            <th colspan="3">Designing Features Content</th>
+                        </tr>
                         <tr>
                             <th>Name</th><th colspan="2">Content</th>
                         </tr>
-                        <tr>
-                            <th>Bank Account, IFSC & GST/PAN: </th>
-                            <td class="bankaccount-ifsc-content" colspan="2">
-                                <strong>Bank Account, IFSC & GST/PAN:</strong><br/>
-                                <%= element.BankAccountAndIfsc %> 
-                            </td>                                       
-                        </tr>
                         
                         <tr>
-                            <th>Email Id: </th>
-                            <td class="emailid-content" colspan="2">                            
-                                <p>
-                                    <%= element.EmailId %>
-                                </p>
-                                 
+                            <th rowspan="2">Website Background-Color & Text  Color: </th>
+                            <td class="websitebackgroundcolor-content"  colspan="2">
+                                <strong>Background Color Code Selected:</strong><span class="background-color-code"><%= element.WebsiteBackgroundColor %></span><br/>
+                                <strong>Text Color Code Selected:</strong><span class="text-color-code"><%= element.TextColor %> </span><br/>                                
+                                
                             </td>                                       
                         </tr>
                         <tr>
-        
-                            <tr>
-                                <th colspan="3">Designing Features Selected</th>                    
-                            </tr>
-                            
-                            <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Cost</th></tr>
-                            <tr>                    
-                                <td class="websitebackground"><%= element.WebsiteBackground %></td>                    
-                                <td class="websitebackground-content-estimated-time">
-                                    <% if(element.WebsiteBackground) { %>
-                                        <%= element.WebsiteBackgroundEstimatedTime %> 
-                                    <% } %> 
-                                </td>
-                                <td class="websitebackground-price">
-                                    <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
-                                        <%= element.WebsiteBackgroundColorPrice %> 
-                                    <% } %>
-                                    <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website'){ %>
-                                        <%= element.WebsiteBackgroundImagePrice %>
-                                    <% } %>
-                                </td>                    
-                               
-                            </tr>
-                        
-                            <tr>
-                                <th colspan="3">Designing Features Content</th>
-                            </tr>
-                            <tr>
-                                <th>Name</th><th colspan="2">Content</th>
-                            </tr>
-                            
-                            <tr>
-                                <th rowspan="2">Website Background-Color & Text  Color: </th>
-                                <td class="websitebackgroundcolor-content"  colspan="2">
-                                    <strong>Background Color Code Selected:</strong><span class="background-color-code"><%= element.WebsiteBackgroundColor %></span><br/>
-                                    <strong>Text Color Code Selected:</strong><span class="text-color-code"><%= element.TextColor %> </span><br/>                                
-                                    
-                                </td>                                       
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <strong>Website Color Demo:</strong><br/>
-                                    
-                                    <div class="background-color" style= " width: 80%; height: auto; margin: .8em auto .8em auto; border: none; border-radius: 5px;">
-                                        <p style="text-align: center; padding: .8em; font-size: 1em;">
-                                            This is how your website will look like
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th rowspan="2">Website Background-Image Details: </th>
-                                <td class="websitebackgroundimage-content" colspan="2">
-                                    <strong>Background Image Name: </strong><br/>
-                                    <%= element.WebsiteBackgroundImage %> 
-                                </td>                                       
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <strong>Background Image Demo:</strong><br/>
-                                    <img src="./uploads/<%= element.WebsiteBackgroundImage %>" width="100px" height="100px" alt="Selected Website Background Image"/>
-                                </td>
-                            </tr>
-            
-       
-                            <tr>
-                                <th colspan="3">Other Features & Services</th>
-                            </tr>
-                            <tr><th>Name</th><th>Estimated Time (hrs.)</th><th>Service Cost</th></tr>
-                        <tr>                    
-                            <td class="emailservice"><%= element.EmailService %></td>                    
-                            <td class="email-service-estimated-time">
-                                <% if(element.EmailService ) { %>
-                                    <%= element.EmailServiceEstimatedTime %> 
-                                <% } %> 
-                            </td>
-                            <td class="email-service-price">
-                                <% if(element.EmailService ) { %>
-                                    <%= element.EmailServicePrice %> 
-                                <% } %> 
-                            </td>                    
-                           
-                        </tr>   
-                        <tr>                    
-                            <td class="messageservice"><%= element.MessageService %></td>                    
-                            <td class="message-service-estimated-time">
-                                <% if(element.MessageService ) { %>
-                                    <%= element.MessageServiceEstimatedTime %> 
-                                <% } %> 
-                            </td>
-                            <td class="message-service-price">
-                                <% if(element.MessageService ) { %>
-                                    <%= element.MessageServicePrice %> 
-                                <% } %> 
-                            </td>                    
-                           
-                        </tr>   
-                        <tr>                    
-                            <td class="databaseservice"><%= element.DataBase %></td>                    
-                            <td class="database-service-estimated-time">
-                                <% if(element.DataBase ) { %>
-                                    <%= element.DataBaseEstimatedTime %> 
-                                <% } %> 
-                            </td>
-                            <td class="database-service-price">
-                                <% if(element.DataBase ) { %>
-                                    <%= element.DataBasePrice %> 
-                                <% } %> 
-                            </td>                    
-                           
-                        </tr>                    
-                            
-                        <tr>
-                            <th colspan="3">Uploads</th>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <div class="container image-container">
-                                    <div class="column col-1">
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 1"/>
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 2"/>
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 3"/>
-    
-                                    </div>
-                                    <div class="column col-2">
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 4"/>
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 5"/>
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 6"/>
-                                    </div>
-                                    <div class="column col-3">
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 7"/>
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 8"/>
-                                        <img src="./uploads/<%= element.ExtraUploadedFilesNameOne %> " width="200px" height="180px" alt="Uploaded Image 9"/>
-                                    </div>
+                            <td colspan="2">
+                                <strong>Website Color Demo:</strong><br/>
+                                
+                                <div class="background-color" style= " width: 80%; height: auto; margin: .8em auto .8em auto; border: none; border-radius: 5px;">
+                                    <p style="text-align: center; padding: .8em; font-size: 1em;">
+                                        This is how your website will look like
+                                    </p>
                                 </div>
-                                                            
-                                
-                                <img src="#" width="150px" height="150px" alt="Uploaded Image 2"/> 
-                                <img src="#" width="150px" height="150px" alt="Uploaded Image 3"/> 
                             </td>
-                        </tr>
-                        <tr>
-                            <th colspan="3">Additional</th>
-                        </tr>
-                        <tr>
-                            <th>Name</th><th colspan="2">Content</th>
-                        </tr>
-                        <tr>
-                            <th>Website's Brief Description: </th>
-                            <td class="website-brief-description" colspan="2">
-                                <p>
-                                    <%= element.WebsiteBriefDescription %> 
-                                </p>                            
-                            </td>                                       
-                        </tr>
-                        <tr>
-                            <th>Include: </th>
-                            <td class="include" colspan="2">
-                                <p>
-                                    <%= element.Include %> 
-                                </p>                            
-                            </td>                                       
-                        </tr>
-                        <tr>
-                            <th>Do Not Include: </th>
-                            <td class="do-not-include" colspan="2">
-                                <p>
-                                    <%= element.DoNotInclude %> 
-                                </p>                            
-                            </td>                                       
-                        </tr>
-    
-                        <tr>
-                            <th colspan="3">Other Charges</th>
-                        </tr>
-                        <tr>
-                            <th>Other Charges: </th>
-                            <td>
-                                
-                            </td>
-                            <td class="other-charges" colspan="2">
-                                <% if(element.OtherCharges) { %>
-                                    <%= element.OtherCharges %> 
-                                <% } else { %>
-                                    <%= 0  %> 
-                                <% } %>                            
-                            </td>                                       
-                        </tr>
-    
-                        <tr>
-                            <th colspan="3">Discount</th>
-                        </tr>
-                        <tr>
-                            <th>Discount: </th>
-                            <td>                            
-                            </td>
-                            <td class="discount" colspan="2">
-                                <span>$0.00</span>                         
-                            </td>                                       
-                        </tr>
-    
-                        <tr>
-                            <th colspan="3">Total</th>
                         </tr>
                         
                         <tr>
-                            <td class="total-price">
-                                Total Cost (USD): 
+                            <th rowspan="2">Website Background-Image Details: </th>
+                            <td class="websitebackgroundimage-content" colspan="2">
+                                <strong>Background Image Name: </strong><br/>
+                                <%= element.WebsiteBackgroundImage %> 
+                            </td>                                       
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <strong>Background Image Demo:</strong><br/>
+                                <img src="./uploads/<%= element.WebsiteBackgroundImage %>" width="100px" height="100px" alt="Selected Website Background Image"/>
                             </td>
-                            <td>
-                                ...Days (Estimated)
-                            </td>
+                        </tr>
+        
+     
+                        <tr>
+                            <th colspan="3">Other Features & Services</th>
+                        </tr>
+                        <tr><th>Name</th><th>Estimated Time (Days)</th><th>Service Cost</th></tr>
+                    <tr>                    
+                        <td class="emailservice"><%= element.EmailService %></td>                    
+                        <td class="email-service-estimated-time">
+                            <% if(element.EmailService ) { %>
+                                <%= element.EmailServiceEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="email-service-price">
+                            <% if(element.EmailService ) { %>
+                                <%= element.EmailServicePrice %> 
+                            <% } %> 
+                        </td>                    
+                       
+                    </tr>   
+                    <tr>                    
+                        <td class="messageservice"><%= element.MessageService %></td>                    
+                        <td class="message-service-estimated-time">
+                            <% if(element.MessageService ) { %>
+                                <%= element.MessageServiceEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="message-service-price">
+                            <% if(element.MessageService ) { %>
+                                <%= element.MessageServicePrice %> 
+                            <% } %> 
+                        </td>                    
+                       
+                    </tr>   
+                    <tr>                    
+                        <td class="databaseservice"><%= element.DataBase %></td>                    
+                        <td class="database-service-estimated-time">
+                            <% if(element.DataBase ) { %>
+                                <%= element.DataBaseEstimatedTime %> 
+                            <% } %> 
+                        </td>
+                        <td class="database-service-price">
+                            <% if(element.DataBase ) { %>
+                                <%= element.DataBasePrice %> 
+                            <% } %> 
+                        </td>                    
+                       
+                    </tr>                    
+                        
+                    <tr>
+                        <th colspan="3">Uploads</th>
+                    </tr>
+
+                    
+                    <tr>
+                        <th >
+                           Uploaded Files:
+                        </th>
+                        <td colspan="2">
+                            <% var strExtraUploads = element.ExtraUploadedFilesNameOne %>
+                            <% var splittedExtraUploads = strExtraUploads.split('<br>'); %>                           
+
+                           
+                            <%= splittedExtraUploads[0] %><br/>
+                            <%= splittedExtraUploads[1] %><br/>
+                            <%= splittedExtraUploads[2] %><br/>
+                            <%= splittedExtraUploads[3] %><br/>
+                            <%= splittedExtraUploads[4] %><br/>
+                            <%= splittedExtraUploads[5] %><br/>
+                            <%= splittedExtraUploads[6] %><br/>
+                            <%= splittedExtraUploads[7] %><br/>
+                            <%= splittedExtraUploads[8] %><br/>
+                            <%= splittedExtraUploads[9] %><br/>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <th colspan="3">Additional</th>
+                    </tr>
+                    <tr>
+                        <th>Name</th><th colspan="2">Content</th>
+                    </tr>
+                    <tr>
+                        <th>Website's Brief Description: </th>
+                        <td class="website-brief-description" colspan="2">
+                            <p>
+                                <%= element.WebsiteBriefDescription %> 
+                            </p>                            
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <th>Include: </th>
+                        <td class="include" colspan="2">
+                            <p>
+                                <%= element.Include %> 
+                            </p>                            
+                        </td>                                       
+                    </tr>
+                    <tr>
+                        <th>Do Not Include: </th>
+                        <td class="do-not-include" colspan="2">
+                            <p>
+                                <%= element.DoNotInclude %> 
+                            </p>                            
+                        </td>                                       
+                    </tr>
+
+                    <tr>
+                        <th colspan="3">Other Charges</th>
+                    </tr>
+                    <tr>
+                        <th>Other Charges: </th>
+                        <td>
                             
-                            <td>
-                                <span class="cart-total-price ">
-                                    <% var total = 0; %> 
-                                    <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
-                                        <% var templatePrice = parseFloat(element.TemplateOptionPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% templatePrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.Home) { %>
-                                        <% var homePagePrice = parseFloat(element.HomePagePrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% homePagePrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.About) { %>
-                                        <% var aboutPrice = 30;//parseFloat(element.AboutPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% aboutPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.Services) { %>
-                                        <% var servicesPrice = parseFloat(element.ServicesPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% servicesPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.WhyUs) { %>
-                                        <% var whyUsPrice = parseFloat(element.WhyUsPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% whyUsPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.ContactUs) { %>
-                                        <% var contactUsPrice = parseFloat(element.ContactUsPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% contactUsPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.SocialMedia) { %>
-                                        <% var socialMediaPrice = parseFloat(element.SocialMediaPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% socialMediaPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.Policy) { %>
-                                        <% var policyPrice = parseFloat(element.PolicyPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% policyPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.TermsAndConditions) { %>
-                                        <% var termsAndConditionsPrice = parseFloat(element.TermsAndConditionsPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% termsAndConditionsPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.CopyRight) { %>
-                                        <% var copyRightPrice = parseFloat(element.CopyRightPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% copyRightPrice = 0; %> 
-                                     <% } %>
-    
-                                     <% if(element.Logo && element.Logo.substring(0, 18) == 'I want to buy Logo') { %>
-                                        <% var logoPurchasingPrice = parseFloat(element.LogoPurchasingPrice.replace('$', '')); %> 
-                                      <% } else { %>
-                                        <% logoPurchasingPrice = 0; %> 
-                                     <% } %>
-    
-                                     <% if(element.Logo && element.Logo.substring(0, 18) == 'I have my own Logo') { %>
-                                        <% var logoByCustomerPrice = parseFloat(element.LogoByCustomerPrice.replace('$', '')); %> 
-                                      <% } else { %>
-                                        <% logoByCustomerPrice = 0; %> 
-                                     <% } %>
-                                    <!--External Features check-->
-                                     <% if(element.Gallery) { %>
-                                        <% var galleryPrice = parseFloat(element.GalleryPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% galleryPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.Templates) { %>
-                                        <% var templatesFeaturePrice = parseFloat(element.TemplatesFeaturePrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% templatesFeaturePrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.Menu) { %>
-                                        <% var menuPrice = parseFloat(element.MenuPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% menuPrice = 0; %> 
-                                     <% } %>
-                                     <!--Advanced Features Check-->
-                                     <% if(element.RegisterLogin) { %>
-                                        <% var registerLogInPrice = parseFloat(element.RegisterLoginPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% registerLogInPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.ContactUsForm) { %>
-                                        <% var contactUsWithFormPrice = parseFloat(element.ContactUsWithFormPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% contactUsWithFormPrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.PaymentMethod) { %>
-                                        <% var paymentMethodPrice = parseFloat(element.PaymentMethodPrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% paymentMethodPrice = 0; %> 
-                                     <% } %>
-                                     <!--Designing-->
-                                     <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
-                                        <% var websiteBackgroundColorPrice = parseFloat(element.WebsiteBackgroundColorPrice.replace('$', '')); %> 
-                                      <% } else { %>
-                                        <% websiteBackgroundColorPrice = 0; %> 
-                                     <% } %>
-    
-                                     <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website') { %>
-                                        <% var websiteBackgroundImagePrice = parseFloat(element.WebsiteBackgroundImagePrice.replace('$', '')); %> 
-                                      <% } else { %>
-                                        <% websiteBackgroundImagePrice = 0; %> 
-                                     <% } %>
-                                    <!--Other Features or Services-->
-                                    <% if(element.EmailService) { %>
-                                        <% var emailServicePrice = parseFloat(element.EmailServicePrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% emailServicePrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.MessageService) { %>
-                                        <% var messageServicePrice = parseFloat(element.MessageServicePrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% messageServicePrice = 0; %> 
-                                     <% } %>
-                                     <% if(element.DataBase) { %>
-                                        <% var dataBasePrice = parseFloat(element.DataBasePrice.replace('$', '')); %> 
-                                                               
-                                    <% } else { %>
-                                            <% dataBasePrice = 0; %> 
-                                     <% } %>
-                                     <!--Other Charges check-->
-                                     <% if(element.OtherCharges) { %>
-                                        <% var otherChargesPrice = parseFloat(element.OtherCharges/*.replace('$', '')*/); %> 
-                                                               
-                                    <% } else { %>
-                                            <% otherChargesPrice = 0; %> 
-                                     <% } %>
-                                    <% var discount = 0; %> 
-    
-                                    <!-- Total: --><%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice - discount);%>
-                                    
-                                </span>
-                            </td>                 
-                        </tr> 
-                        <tr>
-                            <td>
-                                Total Paid (INR): 
-                            </td>
-                            <td>
-    
-                            </td>
-                            <td>
-                                <%= element.TotalCost %> 
-                            </td>
-                        </tr>              
+                        </td>
+                        <td class="other-charges">
+                            <% if(element.OtherCharges) { %>
+                                <%= element.OtherCharges %> 
+                            <% } else { %>
+                                <%= 0  %> 
+                            <% } %>                            
+                        </td>                                       
+                    </tr>
+
+                    <tr>
+                        <th colspan="3">Discount</th>
+                    </tr>
+                    <tr>
+                        <th>Discount: </th>
+                        <td>                            
+                        </td>
+                        <td class="discount">
+                            <span>$0.00</span>                         
+                        </td>                                       
+                    </tr>
+
+                    <tr>
+                        <th colspan="3">Total</th>
+                    </tr>
+               
+                    
+                    <tr>
+                        <td class="total-price">
+                            Total: 
+                        </td>
+                        <td>
+                            <span class="project-estimated-days">
+                                <% var totalEstimatedTime = 0; %> 
+                                <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
+                                    <% var templateEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% templateEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Home) { %>
+                                    <% var homePageEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% homePageEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.About) { %>
+                                    <% var aboutEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% aboutEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Services) { %>
+                                    <% var servicesEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% servicesEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.WhyUs) { %>
+                                    <% var whyUsEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% whyUsEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUs) { %>
+                                    <% var contactUsEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.SocialMedia) { %>
+                                    <% var socialMediaEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% socialMediaEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Policy) { %>
+                                    <% var policyEstimatedTime = 2; %> 
+                                                           
+                                <% } else { %>
+                                        <% policyEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.TermsAndConditions) { %>
+                                    <% var termsAndConditionsEstimatedTime = 2; %> 
+                                                           
+                                <% } else { %>
+                                        <% termsAndConditionsEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.CopyRight) { %>
+                                    <% var copyRightEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% copyRightEstimatedTime = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I want to buy Logo') { %>
+                                    <% var logoPurchasingEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% logoPurchasingEstimatedTime = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I have my own Logo') { %>
+                                    <% var logoByCustomerEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% logoByCustomerEstimatedTime = 0; %> 
+                                 <% } %>
+                                 
+                                <!--External Features check-->
+                                
+                                 <% if(element.Gallery) { %>
+                                    <% var galleryEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% galleryEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Templates) { %>
+                                    <% var templatesFeatureEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% templatesFeatureEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.Menu) { %>
+                                    <% var menuEstimatedTime = 2; %> 
+                                                           
+                                <% } else { %>
+                                        <% menuEstimatedTime = 0; %> 
+                                 <% } %>
+                                 
+                                 <!--Advanced Features Check-->
+                                 
+                                 <% if(element.RegisterLogin) { %>
+                                    <% var registerLogInEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% registerLogInEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUsForm) { %>
+                                    <% var contactUsWithFormEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsWithFormEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.PaymentMethod) { %>
+                                    <% var paymentMethodEstimatedTime = 1; %> 
+                                                           
+                                <% } else { %>
+                                        <% paymentMethodEstimatedTime = 0; %> 
+                                 <% } %>
+                                 
+                                 <!--Designing-->
+                                 
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
+                                    <% var websiteBackgroundColorEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundColorEstimatedTime = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website') { %>
+                                    <% var websiteBackgroundImageEstimatedTime = 1; %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundImageEstimatedTime = 0; %> 
+                                 <% } %>
+                                 
+                                <!--Other Features or Services-->
+                                
+                                <% if(element.EmailService) { %>
+                                    <% var emailServiceEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% emailServiceEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.MessageService) { %>
+                                    <% var messageServiceEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% messageServiceEstimatedTime = 0; %> 
+                                 <% } %>
+                                 <% if(element.DataBase) { %>
+                                    <% var dataBaseEstimatedTime = 3; %> 
+                                                           
+                                <% } else { %>
+                                        <% dataBaseEstimatedTime = 0; %> 
+                                 <% } %>
+                                 
+                                 <!--Extra Estimated Time-->
+                                                    
+                                
+                                        <% var extraEstimatedTime = 1; %> 
+                                 
+                                
+
+                                <!-- Total: --><%= (totalEstimatedTime + templateEstimatedTime + homePageEstimatedTime + aboutEstimatedTime+ servicesEstimatedTime + whyUsEstimatedTime + contactUsEstimatedTime + socialMediaEstimatedTime + policyEstimatedTime + termsAndConditionsEstimatedTime + copyRightEstimatedTime + logoPurchasingEstimatedTime + logoByCustomerEstimatedTime + galleryEstimatedTime + templatesFeatureEstimatedTime + menuEstimatedTime + registerLogInEstimatedTime + contactUsWithFormEstimatedTime + paymentMethodEstimatedTime + websiteBackgroundColorEstimatedTime + websiteBackgroundImageEstimatedTime + emailServiceEstimatedTime + messageServiceEstimatedTime + dataBaseEstimatedTime + extraEstimatedTime) + ' Days Approximately';%>
+
+                            </span>
+                            
+                        </td> <!--estimated days end here-->
                         
-                    </table>    
+                        <td>
+                            <span class="cart-total-price ">
+                                <% var total = 0; %> 
+                                <% if(element.TemplateOption && element.TemplateOption != 'Select Template') { %>
+                                    <% var templatePrice = parseFloat(element.TemplateOptionPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% templatePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Home) { %>
+                                    <% var homePagePrice = parseFloat(element.HomePagePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% homePagePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.About) { %>
+                                    <% var aboutPrice = parseFloat(element.AboutPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% aboutPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Services) { %>
+                                    <% var servicesPrice = parseFloat(element.ServicesPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% servicesPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.WhyUs) { %>
+                                    <% var whyUsPrice = parseFloat(element.WhyUsPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% whyUsPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUs) { %>
+                                    <% var contactUsPrice = parseFloat(element.ContactUsPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.SocialMedia) { %>
+                                    <% var socialMediaPrice = parseFloat(element.SocialMediaPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% socialMediaPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Policy) { %>
+                                    <% var policyPrice = parseFloat(element.PolicyPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% policyPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.TermsAndConditions) { %>
+                                    <% var termsAndConditionsPrice = parseFloat(element.TermsAndConditionsPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% termsAndConditionsPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.CopyRight) { %>
+                                    <% var copyRightPrice = parseFloat(element.CopyRightPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% copyRightPrice = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I want to buy Logo') { %>
+                                    <% var logoPurchasingPrice = parseFloat(element.LogoPurchasingPrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% logoPurchasingPrice = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.Logo && element.Logo.substring(0, 18) == 'I have my own Logo') { %>
+                                    <% var logoByCustomerPrice = parseFloat(element.LogoByCustomerPrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% logoByCustomerPrice = 0; %> 
+                                 <% } %>
+                                 
+                                <!--External Features check-->
+                                
+                                 <% if(element.Gallery) { %>
+                                    <% var galleryPrice = parseFloat(element.GalleryPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% galleryPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Templates) { %>
+                                    <% var templatesFeaturePrice = parseFloat(element.TemplatesFeaturePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% templatesFeaturePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.Menu) { %>
+                                    <% var menuPrice = parseFloat(element.MenuPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% menuPrice = 0; %> 
+                                 <% } %>
+                                 
+                                 <!--Advanced Features Check-->
+                                 
+                                 <% if(element.RegisterLogin) { %>
+                                    <% var registerLogInPrice = parseFloat(element.RegisterLoginPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% registerLogInPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.ContactUsForm) { %>
+                                    <% var contactUsWithFormPrice = parseFloat(element.ContactUsWithFormPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% contactUsWithFormPrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.PaymentMethod) { %>
+                                    <% var paymentMethodPrice = parseFloat(element.PaymentMethodPrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% paymentMethodPrice = 0; %> 
+                                 <% } %>
+                                 
+                                 <!--Designing-->
+                                 
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Color in my Website') { %>
+                                    <% var websiteBackgroundColorPrice = parseFloat(element.WebsiteBackgroundColorPrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundColorPrice = 0; %> 
+                                 <% } %>
+
+                                 <% if(element.WebsiteBackground && element.WebsiteBackground.substring(0, 37) == 'I want Background-Image in my Website') { %>
+                                    <% var websiteBackgroundImagePrice = parseFloat(element.WebsiteBackgroundImagePrice.replace('$', '')); %> 
+                                  <% } else { %>
+                                    <% websiteBackgroundImagePrice = 0; %> 
+                                 <% } %>
+                                 
+                                <!--Other Features or Services-->
+                                
+                                <% if(element.EmailService) { %>
+                                    <% var emailServicePrice = parseFloat(element.EmailServicePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% emailServicePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.MessageService) { %>
+                                    <% var messageServicePrice = parseFloat(element.MessageServicePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% messageServicePrice = 0; %> 
+                                 <% } %>
+                                 <% if(element.DataBase) { %>
+                                    <% var dataBasePrice = parseFloat(element.DataBasePrice.replace('$', '')); %> 
+                                                           
+                                <% } else { %>
+                                        <% dataBasePrice = 0; %> 
+                                 <% } %>
+                                 
+                                 <!--Other Charges check-->
+                                 
+                                 <% if(element.OtherCharges) { %>
+                                    <% var otherChargesPrice = parseFloat(element.OtherCharges/*.replace('$', '')*/); %> 
+                                                           
+                                <% } else { %>
+                                        <% otherChargesPrice = 0; %> 
+                                 <% } %>
+                                <% var discount = 0; %> 
+                                    
+                                <!-- Total: --><%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice - discount);%>
+                                
+                            </span>
+                        </td>                 
+                    </tr> 
+                    <tr>
+                        <th colspan="3">Terms & Conditions: </th>                                                            
+                    </tr> 
+                    <tr>
+                        <td colspan="3" style="text-align: left; padding-left: 5%; font-size: 1.5em;"><span><a href="https://portal.termshub.io/quickwebsite.net/" target="_blank">terms & conditions</a> of our website and services.</span></td>                                                            
+                    </tr>                   
+                    
+                    
+                    
+                </table> 
+
     
     </div><!--cart-row ends here-->            
                                 
