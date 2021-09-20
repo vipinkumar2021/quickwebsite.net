@@ -7,12 +7,13 @@
             <h2><%= msg %> </h2>
         <% } %> 
         <h2>Freelance Page</h2>        
-        <h5>Please Note: Issues related to Freelance Services are between customers and Freelance workers only. Quick Website is only responsible if you pay through us, which are chargable. Freelancers on this page are Third Party. Yes they registered with us, but they are not our employees. They are free from us. So we recommend you to pay using <a href="dashboardgetstarted/#step7">Get Started (Step 7)</a>. We charge 5% to hold your payment and pay to Freelancers once our customer confirms to pay via <a href="mailto: admin@quickwebsite.net">Email</a>  </h5>
+        <p class="freelance-page-note">Please Note: Issues related to Freelance Services are between customers and Freelance workers only. Quick Website is only responsible if you pay through us, which are chargable. Freelancers on this page are Third Party. Yes they registered with us, but they are not our employees. They are free from us. So we recommend you to pay using <a href="dashboardgetstarted/#step7">Get Started (Step 7)</a>. We charge 5% to hold your payment and pay to Freelancers once our customer confirms to pay via <a href="mailto: admin@quickwebsite.net">Email</a>  </p>
 
         <div class="row row-1">
-            <a href="#" onclick="openPostFreelanceJobModal()" style="font-size: 1.5;">Post a Job</a>
-            <!--<a href="#jobscontent">Find Work</a>-->
+            <h2><a href="#" onclick="openPostFreelanceJobModal()" style="font-size: 1.5;">Post a Job</a></h2>
+            
         </div> 
+        
         <h2 style="padding: 2.2em;" id="jobscontent">Jobs List</h2>
         
         
@@ -20,9 +21,9 @@
             <% freelanceJobsData.forEach((item) => { %>
 
                
-
+            
         <div class="row row-2" >
-                                
+                        
             <table >
                 <tr>
                     <th>Username</th><td class="current-freelance-job-username"><%= item.Username %></td>
@@ -51,14 +52,7 @@
                 <tr>
                     <th>Deadline:</th><td><%= item.Deadline %></td>
                 </tr>
-                <!--
-                <tr>
-                    <th>Message:</th>
-                    <td>
-                        <button class="start-chat-button" onclick="openChatBoxModal()">Start Chat</button>
-                    </td>
-                </tr>
-                -->
+                
                 <tr>
                     <th>Write Comment:</th>
                     <td>
@@ -71,18 +65,18 @@
 
                             </textarea>
                             <br/><br/>
-                            <input type="submit" value="Submit Comment"/>
+                            <input class="submit-comment" type="submit" value="Submit Comment"/>
                         </form>
                    
                     </td>
                 </tr>
                  
             </table>
-            <br/>           
+            <br/>         
                
     
         </div> 
-        
+       
          <!--Chat Box Modal starts here-->  
          <!--                        
  <div class="modal-parent-chatbox">
@@ -175,10 +169,11 @@
 </script>
 -->
 <!--Chat Box Modal ends here-->
+
         <% }) %>            
         <% } %>        
                 
-           
+       
     
     </div>     
 

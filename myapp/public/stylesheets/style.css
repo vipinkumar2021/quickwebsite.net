@@ -789,9 +789,59 @@
   }
   .dashboardcart .cart-items .cart-row, .dashboardpurchased .purchased-items .purchased-row {
     width: 100%;
-    /*max-width: 100%; */   
+    height: auto;
+    /*max-width: 100%; */
+    
+    
         
   }
+
+  
+  .dashboardpurchased .purchased-items .purchased-row table{
+    width: 98%;
+    height: auto;
+    margin: auto;  
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    table-layout: auto;
+    
+  }
+  
+  .dashboardpurchased .purchased-items .purchased-row table tr {
+    width: 100%;
+    height: auto;
+    
+  }
+  .dashboardpurchased .purchased-items .purchased-rowtable tr th {
+    width: 40%;
+    height: auto;
+    padding-left: 1%;
+    border: 1px solid whitesmoke;
+    font-size: 1em;
+    overflow: auto;
+  }
+  .dashboardpurchased .purchased-items .purchased-row table tr td {
+    width: 60%;
+    height: auto;
+    padding: auto;
+    font-size: 1em;
+    overflow: auto;
+  
+  }
+  
+  .dashboardpurchased .purchased-items .purchased-row table tr td form {
+    width: 100%;
+    height: auto;
+    float: left;
+  }
+  
+  .dashboardpurchased .purchased-items .purchased-row table tr td form .submin-comment-button {
+    width: 100%;
+    height: auto;
+    padding: .5em;
+    overflow-x: scroll;
+  }
+
   /*
   .dashboardcart .cart-items, .dashboardpurchased .purchased-items {
     padding-top: 3.8em;
@@ -804,7 +854,7 @@
     padding: 2%;    
   }
   */
-  .dashboardcart .cart-items .cart-row table, .dashboardpurchased .purchased-items .purchased-row table  {
+  .dashboardcart .cart-items .cart-row table  {
     width: 100%;    
     height: auto;
     max-width: 100%;    
@@ -813,30 +863,31 @@
     border-collapse: collapse;
     /*padding: 1%;*/
     /*padding-top: 2em;*/
-   
+    table-layout: auto;
     
   }
   
-  .dashboardcart table tr, .dashboardpurchased .purchased-items .purchased-row table tr {
+  .dashboardcart table tr {
     width: 100%;
+    height: auto;
     margin: auto;
   }
   
-  .dashboardcart table tr th, .dashboardpurchased .purchased-items .purchased-row table tr th {
+  .dashboardcart table tr th {
     width: 50%;
     border: 2px solid whitesmoke; 
     padding: 1.5%;  
     text-align: center;  
     font-size: 1.2em;
     font-weight: bold; 
-    overflow: hidden;
+    overflow: auto;
     text-overflow: clip;
     /*padding: 1%;*/
     /*overflow: auto;*/
     
   }
   
-  .dashboardcart table tr td, .dashboardpurchased .purchased-items .purchased-row table tr td {
+  .dashboardcart table tr td {
     width: 50%;
     border: 2px solid whitesmoke; 
     overflow: auto;
@@ -844,10 +895,13 @@
     padding: 1%;
     /*overflow: auto;*/ 
     color: rgb(155, 155, 207);
+    overflow: auto;
   }
   
   table caption {
     width: 100%;
+    height: auto;
+    overflow: auto;
     /*display: flex;
     justify-content: space-around; */
   }
@@ -2266,41 +2320,64 @@
   border: none;
 }
 
+.dashboardfreelancepage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.dashboardfreelancepage .freelance-page-note {
+  padding: 1em;
+}
 .dashboardfreelancepage .row-1 {
   width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-evenly;
+  height: auto;  
+  
   font-size: 1.5em;
 }
 
-.dashboardfreelancepage .row-2, .dashboardinbox .row-1 {
+.dashboardfreelancepage .row-2 {
   width: 100%;
   height: auto;
+  margin: auto;
   display: block;  
   font-size: 1.5em;
   padding-top: 2em;
   
 }
-.dashboardfreelancepage .row-2 table, .dashboardinbox .row-1 table{
-  width: 90%;
+.dashboardfreelancepage .row-2 table{
+  width: 95%;
   height: auto;
   margin: auto;  
   border: 2px solid whitesmoke;
   border-radius: 8px;
+  table-layout: fixed;
+  
 }
 
-.dashboardfreelancepage .row-2 table tr th, .dashboardinbox .row-1 table tr th{
+.dashboardfreelancepage .row-2 table tr {
+  width: 100%;
+  height: auto;
+  
+}
+.dashboardfreelancepage .row-2 table tr th {
   width: 25%;
   height: auto;
   padding-left: 1%;
   border: 1px solid whitesmoke;
+  overflow: auto;
 }
-.dashboardfreelancepage .row-2 table tr td, .dashboardinbox .row-2 table tr td{
-  width: 75%;
+.dashboardfreelancepage .row-2 table tr td {
+  width: 70%;
   height: auto;
   padding: auto;
+  overflow: auto;
 
+}
+.submit-comment {
+  padding: .5em;
 }
 .advertisements {
   width: 100%;
@@ -2333,4 +2410,58 @@
   border: 2px solid whitesmoke;
   border-radius: 5px;
   padding: 1em;
+}
+
+.dashboardinbox .row-1 {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;  
+  font-size: 1.5em;
+  padding-top: 2em;
+  
+}
+.dashboardinbox .row-1 table{
+  width: 98%;
+  height: auto;
+  margin: auto;  
+  border: 2px solid whitesmoke;
+  border-radius: 8px;
+  table-layout: fixed;
+  
+}
+
+.dashboardinbox .row-1 table tr {
+  width: 100%;
+  height: auto;
+  
+}
+.dashboardinbox .row-1 table tr th {
+  width: 40%;
+  height: auto;
+  padding-left: 1%;
+  border: 1px solid whitesmoke;
+  font-size: 1em;
+  overflow: auto;
+}
+.dashboardinbox .row-1 table tr td {
+  width: 60%;
+  height: auto;
+  padding: auto;
+  font-size: 1em;
+  overflow: auto;
+
+}
+
+.dashboardinbox .row-1 table tr td form {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.dashboardinbox .row-1 table tr td form .submin-comment-button {
+  width: 100%;
+  height: auto;
+  padding: .5em;
+  overflow-x: scroll;
 }
