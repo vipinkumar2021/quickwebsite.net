@@ -796,79 +796,7 @@
         
   }
 
-  .dashboardpurchased {
-    width: 100%;
-    height: auto;
-    margin: auto;
-  }
-  .dashboardpurchased .purchased-items {
-    width: 100%;
-    /*max-width: 100%; */
-    height: auto;
-    
-    margin-bottom: 3em;
-  }
   
-  .dashboardpurchased .purchased-items .purchased-row {
-    width: 100%;
-    height: auto;
-    /*max-width: 100%; */
-     
-        
-  }
-
-  .dashboardpurchased .purchased-items .purchased-row table{
-    width: 100%;    
-    height: auto;
-    max-width: 100%;    
-    margin: 1em auto 1em auto;     
-    text-align: left;
-    border-collapse: collapse;
-    /*padding: 1%;*/
-    /*padding-top: 2em;*/
-    table-layout: fixed;
-    
-  }
-  
-  .dashboardpurchased table tr {
-    width: 100%;
-    height: auto;
-    margin: auto;
-  }
-  
-  .dashboardpurchased table tr th {
-    width: 50%;
-    border: 2px solid whitesmoke; 
-    padding: 1.5%;  
-    text-align: center;  
-    font-size: 1.2em;
-    font-weight: bold; 
-    
-    text-overflow: clip;
-    /*padding: 1%;*/
-    /*overflow: auto;*/
-    overflow: auto;
-    
-  }
-  
-  .dashboardpurchased table tr td {
-    width: 50%;
-    border: 2px solid whitesmoke; 
-    overflow: auto;
-    /*text-overflow: clip; */
-    padding: 1%;
-    /*overflow: auto;*/ 
-    color: rgb(155, 155, 207);
-    overflow: auto;
-  }
-  
-  .dashboardpurchased table caption {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    /*display: flex;
-    justify-content: space-around; */
-  }
   /*
   .dashboardpurchased .table-caption-anchor {
     display: flex;
@@ -2554,4 +2482,84 @@
   height: auto;
   padding: .5em;
   overflow-x: scroll;
+}
+
+/* dashboardpurchased css here */
+.dashboardpurchased {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboardpurchased .purchased-items {
+  width: 100%;
+  /*max-width: 100%; */
+  height: auto;
+  
+  margin-bottom: 3em;
+}
+
+.dashboardpurchased .purchased-items .purchased-row {
+  width: 100%;
+  height: auto;
+  /*max-width: 100%; */
+  overflow-x: auto;
+      
+}
+
+.dashboardpurchased .purchased-items .purchased-row table {
+  width: 100%;    
+  height: auto;
+  /*max-width: 100%;   */ 
+  margin: 1em auto 1em auto;     
+  text-align: left;
+  border-collapse: collapse;
+  /*padding: 1%;*/
+  /*padding-top: 2em;*/
+  table-layout: fixed;
+  
+}
+.dashboardpurchased .purchased-items .purchased-row table caption {
+  width: 100%;
+  height: auto;
+}
+.dashboardpurchased .purchased-items .purchased-row table tr {
+  width: 100%;
+  height: auto;
+  
+}
+
+.dashboardpurchased .purchased-items .purchased-row table tr th {
+  width: 33%;
+  border: 2px solid whitesmoke; 
+  padding: 1.5%;  
+  text-align: center;  
+  font-size: 1.2em;
+  font-weight: bold; 
+  
+  text-overflow: clip;
+  /*padding: 1%;*/
+  /*overflow: auto;*/
+  overflow: auto;
+  
+}
+
+.dashboardpurchased .purchased-items .purchased-row table tr td {
+  width: 33%;
+  border: 2px solid whitesmoke; 
+  overflow: auto;
+  /*text-overflow: clip; */
+  padding: 1%;
+  /*overflow: auto;*/ 
+  color: rgb(155, 155, 207);
+  overflow: auto;
+}
+
+.dashboardpurchased .purchased-items .purchased-row table caption {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  /*display: flex;
+  justify-content: space-around; */
 }
