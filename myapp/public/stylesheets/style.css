@@ -1298,14 +1298,15 @@
     padding-right: 1em;
   }
   */
+  /*
   .show-password-input { 
   position: absolute;  
-  right: -30%;
+  right: -10%;
   padding-left: 0;
   margin-left: 0;
     
   }
-  
+  */
   .show-password {
     display: flex;
     justify-content: space-evenly;

@@ -1033,7 +1033,7 @@ router.post('/create-checkout-session', async (req, res) => {
   
   //var date = Date();
 
-  const YOUR_DOMAIN = 'http://localhost:5000/'///'http://www.quickwebsite.net/';//'http://localhost:5000/'// 'http://www.quickwebsite.net/'; // 'http://localhost:5000'
+  const YOUR_DOMAIN = 'https://www.quickwebsite.net';//'http://localhost:5000';//'https://www.quickwebsite.net';// 'http://localhost:5000/'///'http://www.quickwebsite.net/';//'http://localhost:5000/'// 'http://www.quickwebsite.net/'; // 'http://localhost:5000'
   
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -1079,7 +1079,7 @@ router.post('/create-checkout-session', async (req, res) => {
     mode: 'payment',
     
    
-    success_url: YOUR_DOMAIN + 'success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
+    success_url: YOUR_DOMAIN + '/success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
     cancel_url: `${YOUR_DOMAIN}/cancel`,
     
   });
