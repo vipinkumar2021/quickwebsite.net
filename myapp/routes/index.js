@@ -992,8 +992,8 @@ var cartItemsModel = require('../modules/cartitemsschema');
 var purchasedModel = require('../modules/purchasedschema');
 const { error } = require('console');
 //
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
-//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
+//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
 
 //const stripePublicKey = process.env.STRIPE_PUBLIC_KEY_Test//process.env.STRIPE_PUBLIC_KEY_Live;
 //const stripePublicKey = process.env.STRIPE_PUBLIC_KEY_Live;
