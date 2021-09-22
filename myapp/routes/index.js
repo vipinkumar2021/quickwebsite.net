@@ -1079,7 +1079,7 @@ router.post('/create-checkout-session', async (req, res) => {
     mode: 'payment',
     
    
-    success_url: YOUR_DOMAIN + 'success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
+    success_url: /*YOUR_DOMAIN +*/ '/' + 'success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
     cancel_url: `${YOUR_DOMAIN}/cancel`,
     
   });
