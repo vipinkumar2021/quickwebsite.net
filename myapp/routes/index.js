@@ -1034,7 +1034,7 @@ router.post('/create-checkout-session', async (req, res) => {
   
   //var date = Date();
 
-  const YOUR_DOMAIN = 'https://www.quickwebsite.net/' // 'http://localhost:5000/';//'https://www.quickwebsite.net/';//'http://localhost:5000/'///'http://www.quickwebsite.net/';//'http://localhost:5000/'// 'http://www.quickwebsite.net/'; // 'http://localhost:5000'
+  const YOUR_DOMAIN = 'http://localhost:5000';//'https://www.quickwebsite.net';//'http://localhost:5000/';//'https://www.quickwebsite.net' // 'http://localhost:5000/';//'https://www.quickwebsite.net/';//'http://localhost:5000/'///'http://www.quickwebsite.net/';//'http://localhost:5000/'// 'http://www.quickwebsite.net/'; // 'http://localhost:5000'
   
   var loginUser = {
     loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
@@ -1079,9 +1079,13 @@ router.post('/create-checkout-session', async (req, res) => {
     client_reference_id: itemId,//.replace(' ', ''), 
     mode: 'payment',
     
+    //success_url: `${req.headers.origin}/?success=true&session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `${req.headers.origin}/success?id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${req.headers.origin}/?canceled=true`,
+
    
-    success_url: YOUR_DOMAIN + 'success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
-    cancel_url: `${YOUR_DOMAIN}/cancel`,
+    //success_url: YOUR_DOMAIN + '/success?id={CHECKOUT_SESSION_ID}',//`${YOUR_DOMAIN}/success`,
+    //cancel_url: `${YOUR_DOMAIN}/cancel`,
     
   });
   
