@@ -1029,7 +1029,8 @@ router.post('/create-checkout-session', async (req, res) => {
    
   var getitemPrice = req.body.orderPrice;   
   //var itemPrice = parseFloat(getitemPrice)*100;  
-  var itemPrice = getitemPrice*70*100;   
+  //var itemPrice = getitemPrice*70*100;   
+  var itemPrice = getitemPrice*1*100;   
   var itemId = req.body.orderId;
   
   //var date = Date();
