@@ -10,8 +10,8 @@ const { error } = require('console');
 const { findByIdAndRemove, findOne } = require('../modules/cartitemsschema');
 var itemId = require('./index');
 //
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
-//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
+//const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Test
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY_Live 
 
 //const stripePublicKey = process.env.STRIPE_PUBLIC_KEY_Test//process.env.STRIPE_PUBLIC_KEY_Live;
 const stripe = require('stripe')(stripeSecretKey);
