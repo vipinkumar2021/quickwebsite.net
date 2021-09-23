@@ -524,7 +524,28 @@
     border-bottom: 1px solid whitesmoke;
     
   }
-  
+  .main .welcome figure {
+    margin: 1.2em auto 0 auto;
+  }
+  .main .welcome .user-name {
+    margin: 0 auto 0 auto;
+    padding: 0;
+    display: none;
+  }
+  .main .welcome .user-name a {
+    margin: 0 auto 0 auto;
+    padding: 0;
+  }
+  .main .welcome .user-name a em {
+    margin: 0 auto 0 auto;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 480px) {
+    .main .welcome .user-name {
+      display: block;
+    }
+  }
   .main .welcome h1 {
     text-align: center;
     padding-bottom: 1.6em;  
@@ -1902,7 +1923,10 @@
   
   
   }
-  
+  .modal-parent-upload-profile-image .modal-upload-profile-image form {
+    width: 100%;
+    height: auto;
+  }
   .modal-parent-upload-profile-image .modal-upload-profile-image form label {
    text-align: left;
    font-size: 1.25em;

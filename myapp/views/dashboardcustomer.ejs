@@ -6,7 +6,20 @@
     <div class="container welcome" id="homecontent"> <!--welcome div-->
               <% if(msg != '') {%> 
                 <h1 style="color: whitesmoke"> <%= msg %> </h1>  
-              <% } %>               
+              <% } %> 
+              <figure>
+                <img id="profile-image-id" class="profile-image" src="<%= currentLogInData.ProfileImage %> " alt="Profile Image" width="100px" height="100px" onclick="openUloadProfileImageModal()" /><br/>
+               <figcaption class="user-name" style="padding-bottom: 0;">
+                 <a href="/dashboardcustomerprofile" class="loggedinas">                                   
+                  <em style="color: rgb(71, 157, 255);">
+                  <% if(loginUser){ %>  
+                  <%= loginUser %> 
+                  <% } %>
+                  </em>   
+                </a>
+               </figcaption>
+              </figure>
+              
                <h1><a href="/dashboardgetstarted">Get Started</a></h1>
                <h2 class="homepage-slogan">Take your Small Business to the Next Level</h2> 
                <div class="row">           

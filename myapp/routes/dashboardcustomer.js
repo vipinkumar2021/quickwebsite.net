@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-
+var customerModel = require('../modules/customersignupschema');
 //jwt for creating a token
 //var jwt = require('jsonwebtoken');
 // require local storage 
@@ -33,7 +33,15 @@ router.get('/',  function(req, res, next) {
 
   };
   if(loginUser.loginUserCustomer) {
-    res.render('dashboardcustomer', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer });
+    var customerModelData = customerModel.findOne({Username: loginUser.loginUserCustomer});
+    customerModelData.exec((err, currentLogInData) => {
+      if(err) {
+        res.render('dashboardcustomer', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: '' });
+      } else {
+        res.render('dashboardcustomer', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer, currentLogInData: currentLogInData });
+      }
+    });
+    //res.render('dashboardcustomer', { title: 'Quick Website', msg:'', loginUser: loginUser.loginUserCustomer });
   } else if(loginUser.loginUserEmployee){
     res.redirect('dashboardemployees');
     //res.render('dashboardemployees', { title: 'Front End Web Developer', msg:'', loginUser: loginUser.loginUserEmployee, savedData:'', staffdata: '', staffid: '' });
