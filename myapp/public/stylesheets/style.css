@@ -10,7 +10,8 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: rgb(238, 135, 97);    
+    background-color: rgb(238, 135, 97);
+    /*background-image: url(../images/coverbackgrounddd.jpg);   */ 
     background-image: url(../images/pexels-cristian-rojas-7260637.jpg);
     background-position: center center;    
     background-repeat: repeat;
@@ -50,7 +51,7 @@
   @media only screen and (min-width: 1200px) {
     body {
       
-      font-size: 1.2em;
+      font-size: 1.5em;
       
     }
   }
@@ -100,6 +101,7 @@
   .item5 { 
     grid-area: footer;
     width: 100%;
+    max-width: 100%;
     height: auto;
   }
   
@@ -240,7 +242,7 @@
       display: none;
     }
   }
-  
+ 
   /*
   @media screen and (max-width: 800px) {
     .header .headernav ul:not(:last-child) {
@@ -2466,7 +2468,7 @@
 .dashboardinbox .row-1 {
   width: 100%;
   height: auto;
-  margin: auto;
+  margin: 0 auto 0 auto;
   display: block;  
   font-size: 1.5em;
   padding-top: 2em;
