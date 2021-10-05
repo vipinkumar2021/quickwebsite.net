@@ -2455,6 +2455,14 @@
   padding: 1em;
 }
 
+.dashboardinbox {
+  width: 100%;
+  height: auto;
+      
+  font-size: 1.5em;
+  padding-top: 2em;
+  
+}
 .dashboardinbox .row-1 {
   width: 100%;
   height: auto;

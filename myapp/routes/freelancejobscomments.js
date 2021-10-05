@@ -15,11 +15,11 @@ var express = require('express');
   
     };
     if(loginUser.loginUserCustomer) {
-      res.render('dashboardcustomer', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer });
+      res.render('dashboardcustomer', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserCustomer, currentLogInData: '' });
     } else if(loginUser.loginUserEmployee) {
-      res.render('dashboardemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee });
+      res.render('dashboardemployees', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserEmployee, currentLogInData: ''});
     } else if(loginUser.loginUserAdmin) {
-      res.render('dashboardadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin });
+      res.render('dashboardadmin', { title: 'Quick Website', msg: '', loginUser: loginUser.loginUserAdmin, currentLogInData: '' });
   
     } else {
       res.render('index', { title: 'Quick Website', msg: '', loginUser: '' });
@@ -99,9 +99,9 @@ var express = require('express');
   // this sends the email
   ses.sendEmail(params, (err) => {
     if(err) {
-      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', loginUser: loginUser.loginUserCustomer}); 
+      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', loginUser: loginUser.loginUserCustomer, currentLogInData: ''}); 
     } else {
-      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Commented Successfully! Please wait for Reply', loginUser: loginUser.loginUserCustomer}); 
+      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Commented Successfully! Please wait for Reply', loginUser: loginUser.loginUserCustomer, currentLogInData: ''}); 
     }
   });
   //
@@ -110,7 +110,7 @@ var express = require('express');
       })
 
     }  else {
-      res.render('/', { title: 'Quick Website', msg: '', loginUser: '' });
+      res.render('/', { title: 'Quick Website', msg: '', loginUser: '', currentLogInData: '' });
     }
     
   });

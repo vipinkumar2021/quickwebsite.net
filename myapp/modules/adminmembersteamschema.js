@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 require('dotenv').config();
 var uri = process.env.DATABASEADMIN
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false,
-useCreateIndex: true});
+useCreateIndex: true
+});
 var conn = mongoose.Collection;
 
 var adminMembersTeamSchema = new mongoose.Schema({
