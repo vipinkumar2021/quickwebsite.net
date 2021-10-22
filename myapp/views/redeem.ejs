@@ -1,0 +1,39 @@
+<%- include('dashboardheader') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <h2>Redeem Process</h2> 
+               
+              
+            <form action="/redeem" method="post" role="form" >
+                <label>Enter Your Referral Code</label><br/>
+                <input name="referralcode" type="text" placeholder="Referral Code..." required/><br/>
+                <label>Enter Bank Account Number</label><br/>
+                <input name="bankaccountnumber" type="text" placeholder="Bank Account..." required/><br/>                
+                <label>Enter IFSC</label><br/>
+                <input name="ifsc" type="text" placeholder="IFSC..." required/><br/>
+                <label>Enter Bank Name</label><br/>
+                <input name="bankname" type="text" placeholder="Bankname..." required/><br/>
+
+                <label>Bank Branch</label><br/>
+                <input name="bankbranch" type="text" placeholder="Bankbranch..." required/><br/><br/>
+
+    
+                <input type="submit" value="Submit Request" style="padding: .5em;"/>
+                              
+            </form> 
+            <br/>  
+       
+    </div>     
+
+</div>
+<%- include('modal') %>
+<%- include('dashboardfooter') %>
+
+
+
+

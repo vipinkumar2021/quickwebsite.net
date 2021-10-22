@@ -549,7 +549,8 @@ ExtraUploadedFilesNameSix: extraUploadedFileNameSix,
 WebsiteBriefDescription: req.body.websitebriefdescription ,
 Include: req.body.include ,
 DoNotInclude: req.body.donotinclude,
-
+//Referral Code
+ReferralCode: req.body.referralcode,
 //Other Charges
 OtherCharges: req.body.othercharges
 

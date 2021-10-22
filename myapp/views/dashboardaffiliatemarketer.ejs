@@ -1,0 +1,66 @@
+<%- include('dashboardheader') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <h2>Start Earning</h2> 
+        <p style="padding: 1em; margin: auto;"><strong><em>How it works: </em></strong>Convince people to buy website from <em>www.quickwebsite.net</em> using <a href="/dashboardaffiliatemarketer">your referral code</a> and earn 10% commission on their order completion. Use this <a href="/dashboardaffiliatemarketer">referral code</a> as many times as you want to. </p>
+        
+        <Strong>Step 1. </Strong>       
+            <form action="/dashboardaffiliatemarketer" method="post" role="form" >
+                
+                <input name="referralcode" type="hidden"/><br/>
+                <input type="submit" value="Create a Referral Code" style="padding: .5em;"/>
+                              
+            </form> 
+            <br/>  
+        <Strong>Step 2. </Strong>        
+            <a href="/dashboardaffiliatemarketer">See Your Referral Code</a>
+            
+               <% if(referralCodeData.length > 0) { %>               
+                <% referralCodeData.forEach((item) => { %>
+                    <ul>
+                        <li style="list-style: none;">
+                            <strong>Referral Code: </strong><span><%= item.ReferralCode %></span><br/>
+                            <strong>Code Used By: </strong>
+                            <span>
+                              
+                                 
+                                <% purchasedOrderData.forEach((element) => { %>
+                                    <% if(element.ReferralCode == item.ReferralCode && element.Username != loginUser) { %>
+
+                                   
+                                <ul>
+                                    <li style="list-style: none;"><%= element.Username %></li>
+                                    
+                                    
+                                </ul>
+                                <% } %>
+                                <% }) %> 
+                                             
+                            
+                            </span><br/>
+                           
+    
+                    </li>
+                    </ul>
+                    
+                <% }) %>                
+                <% } %>
+            <br/>
+        <Strong>Step 3. </Strong>
+        <span>Use the above Referral Code to convince people to use www.quickwebsite.net</span>
+        <br/><br/>
+        <strong><a href="/redeem">Redeem</a></strong>
+    </div>     
+
+</div>
+<%- include('modal') %>
+<%- include('dashboardfooter') %>
+
+
+
+

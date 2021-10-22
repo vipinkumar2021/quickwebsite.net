@@ -436,6 +436,9 @@ Include: {
 DoNotInclude: {
     type: String
 },
+ReferralCode: {
+    type: String
+},
 //Other Charges
 OtherCharges: {
     type: String

@@ -190,6 +190,7 @@ router.get('/', async function(req, res, next) {
         WebsiteBriefDescription: itemToBeMovedToPurchased.WebsiteBriefDescription,
         Include: itemToBeMovedToPurchased.Include,
         DoNotInclude: itemToBeMovedToPurchased.DoNotInclude,
+        ReferralCode: itemToBeMovedToPurchased.ReferralCode,
 
         //Other Charges
         OtherCharges: itemToBeMovedToPurchased.OtherCharges,

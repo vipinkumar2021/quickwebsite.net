@@ -165,6 +165,8 @@ var freelancejobsRouter = require('./routes/freelancejobs');
 var dashboardfreelancejobsemployeesRouter = require('./routes/dashboardfreelancejobsemployees');
 var freelancejobscommentsRouter = require('./routes/freelancejobscomments');
 var dashboardfreelancejobscommentsemployeesRouter = require('./routes/dashboardfreelancejobscommentsemployees');
+var dashboardaffiliatemarketerRouter = require('./routes/dashboardaffiliatemarketer');
+var redeemRouter = require('./routes/redeem');
 
 
 var app = express();
@@ -347,6 +349,8 @@ app.use('/freelancejobs', freelancejobsRouter);
 app.use('/dashboardfreelancejobsemployees', dashboardfreelancejobsemployeesRouter);
 app.use('/freelancejobscomments', freelancejobscommentsRouter);
 app.use('/dashboardfreelancejobscommentsemployees', dashboardfreelancejobscommentsemployeesRouter);
+app.use('/dashboardaffiliatemarketer', dashboardaffiliatemarketerRouter);
+app.use('/redeem', redeemRouter);
 
 
 // catch 404 and forward to error handler
