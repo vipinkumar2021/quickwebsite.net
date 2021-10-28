@@ -313,7 +313,7 @@ router.post('/signupcustomer', checkUsername, checkMobileNumber, checkEmail,   f
   var email = req.body.email;  
 
   
-  var Onetimepassword = crypto.randomBytes(16).toString('hex');
+  var Onetimepassword = require('otp-generator').generate(8, { /*upperCase: false,*/ specialChars: false });//crypto.randomBytes(16).toString('hex');
 
   var customerDetails = new customerModel({
     Firstname: firstname,
