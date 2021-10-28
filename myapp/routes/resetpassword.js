@@ -375,7 +375,7 @@ router.post('/', function(req, res, next) {
       if(err) throw err;
 
       if(dataWithRegisteredEmail != null) {
-        var otpForCustomerAccount =  crypto.randomBytes(16).toString('hex');
+        var otpForCustomerAccount =  require('otp-generator').generate(8, { /*upperCase: false,*/ specialChars: false });//crypto.randomBytes(16).toString('hex');
         var getCustomerAccountId = dataWithRegisteredEmail._id;
         
         customerModel.findByIdAndUpdate(getCustomerAccountId, {Onetimepassword: otpForCustomerAccount}, function(err) {
@@ -461,7 +461,7 @@ let params = {
         checkRegisteredEmailInEmployeesDetails.exec((err, dataWithRegisteredEmail1) => {
           if(err) throw err;         
             if(dataWithRegisteredEmail1 != null) {
-              var otpForEmployeeAccount =  crypto.randomBytes(16).toString('hex');
+              var otpForEmployeeAccount =  require('otp-generator').generate(8, { /*upperCase: false,*/ specialChars: false });//crypto.randomBytes(16).toString('hex');
               var getEmployeeAccountId = dataWithRegisteredEmail1._id;
               employeesModel.findByIdAndUpdate(getEmployeeAccountId, {Onetimepassword: otpForEmployeeAccount}, function(err) {
                 if(err) throw err;
@@ -548,7 +548,7 @@ let params = {
 
                 if(dataWithRegisteredEmail2 != null) {
 
-                  var otpForAdminAccount =  crypto.randomBytes(16).toString('hex');
+                  var otpForAdminAccount =  require('otp-generator').generate(8, { /*upperCase: false,*/ specialChars: false });//crypto.randomBytes(16).toString('hex');
                   var getAdminAccountId = dataWithRegisteredEmail2._id;
 
                   adminModule.findByIdAndUpdate(getAdminAccountId, {Onetimepassword: otpForAdminAccount}, function(err) {
