@@ -35,15 +35,15 @@
                 <h2 style="text-align: center;">Customer Registration</h2>        
                 <form action="/signupcustomer" method="post" role="form" >
                   <label for="firstname">First Name</label><br/>
-                  <input name="firstname" type="text" placeholder="Enter Your First Name..." required /><br/><br/>
+                  <input name="firstname" type="text" placeholder="Enter Your First Name..." onkeydown="spaceKeyValidation(event);" required /><br/><br/>
                   <label for="lastname">Last Name</label><br/>
-                  <input name="lastname" type="text" placeholder="Enter Your Last Name..." required /><br/><br/>
+                  <input name="lastname" type="text" placeholder="Enter Your Last Name..." onkeydown="spaceKeyValidation(event);" required /><br/><br/>
                   <label for="usrname">Username</label><br/>
-                  <input name="usrname" type="username" placeholder="Create a Username..." required /><br/><br/>
+                  <input name="usrname" type="username" placeholder="Create a Username..." onkeydown="spaceKeyValidation(event);" required /><br/><br/>
                   <label for="mobilenumber">Mobile Number</label><br/>
-                  <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required /><br/><br/>
+                  <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." onkeydown="spaceKeyValidation(event);" required /><br/><br/>
                   <label for="email">Email</label><br/>
-                  <input name="email" type="email" placeholder="Enter Your Email id..." required /><br/><br/>
+                  <input name="email" type="email" placeholder="Enter Your Email id..." onkeydown="spaceKeyValidation(event);" required /><br/><br/>
                   <div class="modal-button">
                     <button type="submit">Proceed to Sign up</button><button type="reset">Reset</button><button onclick="closeSignupModal()">Cancel</button><br/><br/>
                   </div>
@@ -58,6 +58,16 @@
           </div>
           <!--Sign up Customer Modal ends here-->
 
+          <script>
+            function spaceKeyValidation(event) {
+              if(event.code == 'Space') {
+                alert('Space is not allowed');
+                
+              }
+              //alert(event.code);
+            }
+            
+          </script>
           <!--Contact Us Modal starts here-->
                   
           <div class="modal-parent-contact">
