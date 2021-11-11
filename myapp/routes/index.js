@@ -18,7 +18,7 @@ var adminModule = require('../modules/adminschema');
 var customerModel = require('../modules/customersignupschema');
 var employeesModel = require('../modules/employeessignupschema');
 var usernamesListModel = require('../modules/usernameslistschema');
-
+var referralCodeModel = require('../modules/referralcodesschema');
 
 // require dot env
 require('dotenv').config();
@@ -1522,6 +1522,320 @@ router.get('/employees/accountactivatedemployees',  function(req, res, next) {
     res.redirect('/dashboardadmin');
   } else {
     res.render('index', { title: 'Quick Website', msg:''});
+  } 
+});
+
+
+
+// Create a referral code
+
+//Middleware Check username while creating referral code Exactly Correct One
+function checkUsernameWhileCreatingReferralCode(req, res, next) {
+  var username = req.body.usrname;
+  var getCustomerData = customerModel.findOne({Username: username});
+  var chechUsernameInUserNamesList = usernamesListModel.findOne({Username: username});
+  
+  getCustomerData.exec((err, customerData) => {
+    if(err) throw err;
+    //
+     chechUsernameInUserNamesList.exec((err, userNameInUsernamesList) => {
+      if(err) throw err;
+      
+      if(customerData || userNameInUsernamesList) {
+
+        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'Username Already Exists'});
+      
+      } 
+
+     //});
+    //
+        
+    if(!customerData) {
+
+      var getEmployeeData = employeesModel.findOne({Username: username});
+      getEmployeeData.exec((err, employeeData) => {
+        if(err) throw err;
+        if(employeeData) {
+
+        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'Username Already Exists'});
+ 
+      }
+      if(!employeeData) {
+
+        var getAdminData = adminModule.findOne({Username: username});
+        getAdminData.exec((err, adminData) => {
+          if(err) throw err;
+          if(adminData) {
+
+            return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'Username Already Exists'});
+ 
+          }
+          next();
+        });
+      }
+      });
+
+    }
+    //
+  });
+    //
+  });
+ }
+//Middleware Check Mobile Number Exactally Correct One
+function checkMobileNumberWhileCreatingReferralCode(req, res, next) {
+  var mobilenumber = req.body.mobilenumber;
+  var getCustomerData = customerModel.findOne({Mobilenumber: mobilenumber});
+  getCustomerData.exec((err, customerData) => {
+    if(err) throw err;
+    if(customerData) {
+
+      return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
+    
+    }     
+    if(!customerData) {
+
+      var getEmployeeData = employeesModel.findOne({Mobilenumber: mobilenumber});
+      getEmployeeData.exec((err, employeeData) => {
+        if(err) throw err;
+        if(employeeData) {
+
+        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
+ 
+      }
+      if(!employeeData) {
+
+        var getAdminData = adminModule.findOne({Mobilenumber: mobilenumber});
+        getAdminData.exec((err, adminData) => {
+          if(err) throw err;
+          if(adminData) {
+
+            return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Mobile Number is Already Registered with us'});
+ 
+          }
+          next();
+        });
+      }
+      });
+
+    }
+    
+  });
+ }
+
+ //Middleware Check Email Exactally Correct One
+ function checkEmailWhileCreatingReferralCode(req, res, next) {
+  var email = req.body.email;
+  var getCustomerData = customerModel.findOne({Email: email});
+  getCustomerData.exec((err, customerData) => {
+    if(err) throw err;
+    if(customerData) {
+
+      return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
+    
+    }     
+    if(!customerData) {
+
+      var getEmployeeData = employeesModel.findOne({Email: email});
+      getEmployeeData.exec((err, employeeData) => {
+        if(err) throw err;
+        if(employeeData) {
+
+        return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
+ 
+      }
+      if(!employeeData) {
+
+        var getAdminData = adminModule.findOne({Email: email});
+        getAdminData.exec((err, adminData) => {
+          if(err) throw err;
+          if(adminData) {
+
+            return res.render('affiliatemarketerfirsttimers', {title: 'Quick Website', msg: 'This Email is Already Registered with us'});
+            
+          }
+          next();
+        });
+      }
+      });
+
+    }
+    
+  });
+ }
+//Create referral Code and Sign up Send Sign Up Sending OTP Exactly Correct One
+
+router.post('/createreferralcodefirsttimers', checkUsernameWhileCreatingReferralCode, checkMobileNumberWhileCreatingReferralCode, checkEmailWhileCreatingReferralCode,   function(req, res, next) {
+  
+  var firstname = req.body.firstname;
+  var lastname = req.body.lastname;
+  var username = req.body.usrname;
+  var mobilenumber = req.body.mobilenumber;
+  var email = req.body.email;  
+  var referralCode = crypto.randomBytes(16).toString('hex');
+  
+  var Onetimepassword = require('otp-generator').generate(8, { /*upperCase: false,*/ specialChars: false });//crypto.randomBytes(16).toString('hex');
+
+  var customerDetails = new customerModel({
+    Firstname: firstname,
+    Lastname: lastname,
+    Username: username,
+    Mobilenumber: mobilenumber,
+    Email: email,    
+   // Password: password,
+    Onetimepassword: Onetimepassword,
+    ProfileImage: '/images/avatar2.png'
+    });
+
+    customerDetails.save((err )=> {
+      if(err) throw err;
+      // save username to usernames list
+      var userNameListDetail = new usernamesListModel({
+        Username: req.body.usrname
+      });
+      userNameListDetail.save((err)=> {
+        if(err) throw err;
+      // Create referral Code
+
+      //
+        var referralCodeDetails = new referralCodeModel({
+          Username: req.body.usrname,
+          ReferralCode: referralCode
+        });
+
+        referralCodeDetails.save((err) => {
+          if(err) throw err;
+        
+      //
+
+
+      //
+//Send OTP Email
+      var output = `
+    <h3>Hi, Your One Time Password for Account Activation is ${Onetimepassword}</h3>
+    <p>Please Enter the One Time Password in the opened link and press Activate Account</p>   
+`;
+
+// exactly correct one for production
+let params = {
+  // send to list
+  Destination: {
+      ToAddresses: [
+          email
+      ]
+  },
+  Message: {
+      Body: {
+          Html: {
+              Charset: "UTF-8",
+              Data: output//"<p>this is test body.</p>"
+          },
+          Text: {
+              Charset: "UTF-8",
+              Data: 'Hey, this is test.'
+          }
+      },
+      
+      Subject: {
+          Charset: 'UTF-8',
+          Data: "One Time Password (OTP) Email"
+      }
+  },
+  Source: 'contact@quickwebsite.net',//'vipinkmboj21@gmail.com', // must relate to verified SES account
+  ReplyToAddresses: [
+      email,
+  ],
+};
+
+// this sends the email
+ses.sendEmail(params, (err) => {
+  if(err) {
+    res.render('signupcustomer', { title: 'Quick Website', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+  } else {
+    res.render('signupcustomer', { title: 'Quick Website', msg:'Referral Code Created Successfully, Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+  }
+});
+//
+});
+
+//
+});
+//
+/* uncomment later if needed
+var ses = require('node-ses');
+var client = ses.createClient({key: process.env.SES_I_AM_USER_ACCESS_KEY, secret: process.env.SES_I_AM_USER_SECRET_ACCESS_KEY, amazon: process.env.AMAZON });
+  
+  client.sendEmail({
+    to: email, 
+    from: 'vipinkmboj21@gmail.com',//'emailfrom.vipin.website', 
+   // cc: 'theWickedWitch@nerds.net',
+    //bcc: ['canAlsoBe@nArray.com', 'forrealz@.org'],
+    subject: 'One Time Password (OTP) Email',
+    //html: output,
+    message: output,//'your <p>message</p> goes here',
+    altText: 'plain text'
+ }, function (err) {
+  if(err) {
+    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+  } else {
+    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+  }
+
+ });
+//
+/* uncomment it later if needed
+var transporter = nodemailer.createTransport({ 
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {    
+    user: process.env.NODEMAILEMAILUSER,
+    pass: process.env.NODEMAILEMAILPASSWORD    
+  },
+  tls: {    
+    rejectUnauthorized: false
+
+  }
+});
+
+
+var mailOption = {
+  from: 'resetpa7@gmail.com',
+  to: email, //or use req.body.email
+  subject: 'One Time Password (OTP) for Account Authentication',
+  text: 'Hi,',
+  html: output
+};
+
+transporter.sendMail(mailOption, function(err, info) {
+  if(err) {
+    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Error Occured, Email Sending failed', adminDetails: ''}); 
+  } else {
+    res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+  }
+}); 
+
+  uncomment it later if needed*/
+
+    });     
+  });
+
+  //Create Referral Code and Customer Sign up sending OTP starts here Exactally Correct
+
+  //get affiliatemarketerfirsttimers if createreferralcodefirsttimers is clicked
+router.get('/createreferralcodefirsttimers',  function(req, res, next) {  
+  var loginUserCustomer = req.session.customerLoginUserName;//localStorage.getItem('customerLoginUserName');
+  var loginUserEmployee = req.session.employeeLoginUserName//localStorage.getItem('employeeLoginUserName');
+  var loginUserAdmin = req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName');
+  
+  if(loginUserCustomer){
+    res.redirect('/dashboardcustomer');
+  } else if(loginUserEmployee) {
+    res.redirect('/dashboardemployees');
+  } else if(loginUserAdmin) {
+    res.redirect('/dashboardadmin');
+  } else {
+    res.render('affiliatemarketerfirsttimers', { title: 'Quick Website', msg:'', adminDetails: ''});
   } 
 });
 

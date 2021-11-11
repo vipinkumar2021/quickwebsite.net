@@ -165,6 +165,9 @@ var freelancejobsRouter = require('./routes/freelancejobs');
 var dashboardfreelancejobsemployeesRouter = require('./routes/dashboardfreelancejobsemployees');
 var freelancejobscommentsRouter = require('./routes/freelancejobscomments');
 var dashboardfreelancejobscommentsemployeesRouter = require('./routes/dashboardfreelancejobscommentsemployees');
+var startearningRouter = require('./routes/startearning');
+//var affiliatemarketerfirsttimersRouter = require('./routes/dashboardaffiliatemarketer');
+var affiliatemarketerfirsttimersRouter = require('./routes/affiliatemarketerfirsttimers');
 var dashboardaffiliatemarketerRouter = require('./routes/dashboardaffiliatemarketer');
 var redeemRouter = require('./routes/redeem');
 
@@ -349,6 +352,8 @@ app.use('/freelancejobs', freelancejobsRouter);
 app.use('/dashboardfreelancejobsemployees', dashboardfreelancejobsemployeesRouter);
 app.use('/freelancejobscomments', freelancejobscommentsRouter);
 app.use('/dashboardfreelancejobscommentsemployees', dashboardfreelancejobscommentsemployeesRouter);
+app.use('/startearning', startearningRouter);
+app.use('/affiliatemarketerfirsttimers', affiliatemarketerfirsttimersRouter);
 app.use('/dashboardaffiliatemarketer', dashboardaffiliatemarketerRouter);
 app.use('/redeem', redeemRouter);
 

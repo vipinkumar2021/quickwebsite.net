@@ -1,0 +1,40 @@
+<%- include('header') %>
+
+<div class="item item3 main ">
+    <div class="container welcome getstarted" ><!--welcome css working in this-->
+        <br/><br/><br/><br/>
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+        <% } %>
+        <h2>Start Earning</h2>
+        <h2>First Timers</h2> 
+        <h2>Create Your "Referral Code" and use that code to refer to your Friends</h2>       
+            <strong><em>Create Your Referral Code</em></strong> <br/>
+            <form action="/createreferralcodefirsttimers" method="post" role="form" >
+                <label for="firstname">First Name</label><br/>
+                <input name="firstname" type="text" placeholder="Enter Your First Name..." required /><br/><br/>
+                <label for="lastname">Last Name</label><br/>
+                <input name="lastname" type="text" placeholder="Enter Your Last Name..." required /><br/><br/>
+                <label for="usrname">Create Username</label><br/>
+                <input name="usrname" type="username" placeholder="Create a Username..." required /><br/><br/>
+                <label for="mobilenumber">Mobile Number</label><br/>
+                <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required /><br/><br/>
+                <label for="email">Email</label><br/>
+                <input name="email" type="email" placeholder="Enter Your Email id..." required /><br/><br/>
+                
+                <button class="each-button" type="submit">Create a Referral Code</button><br/><br/>
+                <button class="each-button" type="reset">Reset</button><br/><br/>
+                
+            </form>
+        
+            
+            
+        </div>     
+
+</div>
+<%- include('modal') %>
+<%- include('footer') %>
+
+
+
+
