@@ -1450,7 +1450,8 @@
   overflow: auto;
   border: 5px solid whitesmoke;
   border-radius: 10px;
-  background-color: rgba(238, 135, 97, .6); 
+  background-color: rgba(238, 135, 97, .9); 
+  
   color: whitesmoke; 
   position: relative;
   animation: 1s drop;
@@ -1581,7 +1582,7 @@
   overflow: auto;
   border: 5px solid whitesmoke;
   border-radius: 10px;
-  background-color: rgba(238, 135, 97, .6); 
+  background-color: rgba(238, 135, 97, .9); 
   color: whitesmoke; 
   position: relative;
   animation: 1s drop;
@@ -1701,7 +1702,7 @@
   overflow: auto;
   border: 5px solid whitesmoke;
   border-radius: 10px;
-  background-color: rgba(238, 135, 97, .6); 
+  background-color: rgba(238, 135, 97, .9); 
   color: whitesmoke; 
   position: relative;
   animation: 1s drop;
@@ -1821,7 +1822,7 @@
   overflow: auto;
   border: 5px solid whitesmoke;
   border-radius: 10px;
-  background-color: rgba(238, 135, 97, .6); 
+  background-color: rgba(238, 135, 97, .9); 
   color: whitesmoke; 
   position: relative;
   animation: 1s drop;
@@ -1990,7 +1991,7 @@
   border-radius: 10px;
   outline: none;
   padding: .8em;
-  background-color: rgba(238, 135, 97, .6); 
+  background-color: rgba(238, 135, 97, .9); 
   color: whitesmoke;
   }
   
@@ -2200,7 +2201,7 @@
   overflow: auto;
   border: 5px solid whitesmoke;
   border-radius: 10px;
-  background-color: rgba(238, 135, 97, .6); 
+  background-color: rgba(238, 135, 97, .9); 
   color: whitesmoke; 
   position: relative;
   animation: 1s drop;
