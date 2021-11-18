@@ -161,7 +161,7 @@
     left: 0;  
     padding: 0;
     width: max-content;
-    background-color: rgba(238, 135, 97, .6);  
+    background-color: rgba(238, 135, 97, .9);  
     border-radius: 5px;
     overflow: auto;
     display: none;
@@ -322,7 +322,7 @@
     width: 0;
     height: 100vh;
     display: block;
-    background-color: rgba(238, 135, 97, .6);  
+    background-color: rgba(238, 135, 97, .9);  
     color: whitesmoke;
     position: fixed;
     z-index: 1;
