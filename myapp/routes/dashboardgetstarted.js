@@ -552,6 +552,7 @@ DoNotInclude: req.body.donotinclude,
 //Referral Code
 ReferralCode: req.body.referralcode,
 //Other Charges
+
 OtherCharges: req.body.othercharges,
 
 // Do you want the followings
