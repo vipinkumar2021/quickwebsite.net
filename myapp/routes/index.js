@@ -20,6 +20,8 @@ var employeesModel = require('../modules/employeessignupschema');
 var usernamesListModel = require('../modules/usernameslistschema');
 var referralCodeModel = require('../modules/referralcodesschema');
 
+// Conver Currency 
+var convertCurrency = require('nodejs-currency-converter');
 // require dot env
 require('dotenv').config();
 //Crypto for creating randombytes key
@@ -1029,9 +1031,12 @@ router.post('/create-checkout-session', async (req, res) => {
    
   var getitemPrice = req.body.orderPrice;   
   //var itemPrice = parseFloat(getitemPrice)*100;  
-  //var itemPrice = getitemPrice*70*100;   
-  var itemPrice = getitemPrice*70*100;   
+  //var itemPrice = getitemPrice*70*100; 
+  //var currentConversionRate =  convertCurrency(1, 'USD', 'INR'); 
+  var itemPrice = getitemPrice*70*100;  
+  //var itemPrice = getitemPrice*currentConversionRate*100; 
   var itemId = req.body.orderId;
+  //console.log(currentConversionRate);
   
   //var date = Date();
 

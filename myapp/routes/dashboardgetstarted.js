@@ -552,8 +552,11 @@ DoNotInclude: req.body.donotinclude,
 //Referral Code
 ReferralCode: req.body.referralcode,
 //Other Charges
-OtherCharges: req.body.othercharges
+OtherCharges: req.body.othercharges,
 
+// Do you want the followings
+PleaseMaintainMyWebsite: req.body.maintainmywebsite,
+MaintainanceChargesPerMonth: req.body.maintainancecharges
 
 //
 /*

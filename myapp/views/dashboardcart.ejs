@@ -1107,6 +1107,27 @@
                     </tr>
 
                     <tr>
+                        <th colspan="3">Website Maintainance Authority</th>
+                    </tr>
+                    <tr>
+                        <th>Website Maintaince Authority </th>
+                        <td>
+                            <% if(element.PleaseMaintainMyWebsite) { %>
+                                <%= element.PleaseMaintainMyWebsite %> 
+                            <% } else { %>
+                                <%= 'No'  %> 
+                            <% } %>
+                        </td>
+                        <td class="other-charges">
+                            <% if(element.PleaseMaintainMyWebsite) { %>
+                                <%= element.MaintainanceChargesPerMonth %> 
+                            <% } else { %>
+                                <%= 0  %> 
+                            <% } %>                            
+                        </td>                                       
+                    </tr>
+
+                    <tr>
                         <th colspan="3">Discount</th>
                     </tr>
                     <tr>
@@ -1466,9 +1487,16 @@
                                 <% } else { %>
                                         <% otherChargesPrice = 0; %> 
                                  <% } %>
+                                 <!--Maintainance Charges Check-->
+                                 <% if(element.PleaseMaintainMyWebsite) { %>
+                                    <% var maintainanceCharges = 30; /*parseFloat(element.PleaseMaintainMyWebsite.replace('$', ''));*/ %> 
+                                                           
+                                <% } else { %>
+                                        <% maintainanceCharges = 0; %> 
+                                 <% } %>
                                 <% var discount = 0; %> 
                                     
-                                <!-- Total: --><%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice - discount);%>
+                                <!-- Total: --><%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice + maintainanceCharges - discount);%>
                                 
                             </span>
                         </td>                 

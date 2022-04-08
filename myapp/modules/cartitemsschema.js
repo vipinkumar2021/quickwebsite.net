@@ -455,6 +455,13 @@ ReferralCode: {
 OtherCharges: {
     type: String
 },
+//Do you want the followings
+PleaseMaintainMyWebsite: {
+    type: String
+},
+MaintainanceChargesPerMonth: {
+    type: String
+},
 //Discount Coupon
 /*DiscountCoupon: {
     type: String
