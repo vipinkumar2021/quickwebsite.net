@@ -10,7 +10,118 @@
                 <h1 style="color: whitesmoke"> <%= msg %> </h1>  
               <% } %> 
               
-               <!---->
+              <!---->
+                <!---->
+              <div class="slideshow-container1" ><!--Slideshow-container1 starts-->
+
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">1 / 4</div>
+                  
+                  <a href="/dashboardfreelancepageemployees"><img src="/images/mountains-1761292.jpg" style="width:100%; height: 330px;" class="responsive"></a>
+
+                  <div class="text1 text1-getstarted">                    
+                   
+                    <h2><a href="/dashboardfreelancepageemployees" style="margin: 0; padding: 0;">Get<br/><br/> Started</a></h2>
+                    <!--<h2 class="homepage-slogan" style="margin: 0; padding: 0; padding-top: 2em;"><a href="/getstarted" style="text-decoration: none; color: whitesmoke;">Take your Small Business to the Next Level</a></h2>-->
+                     
+
+                  </div>
+                </div><!--myslides1 ends-->
+                
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">2 / 4</div>
+                  
+                  <a href="/dashboardemployees/#howitworkscontent"><img src="/images/hills-2836301.jpg" style="width:100%; height: 330px;"></a>
+
+                  <div class="text1">  
+                    <!--<h2 class="howitworks" style="margin: 0; padding: 0; padding-top: 2em;"><a href="/getstarted" style="text-decoration: none; color: whitesmoke;">Let's Make it Easy</a></h2>-->
+                  
+                    <h2 class="how-itworks" style="margin: 0; padding: 0;"><a href="/dashboardemployees/#howitworkscontent" style="margin: 0; padding: 0;">How<br/><br/> It Works</a></h2>
+                    
+                  </div>
+                </div><!--myslides1 ends-->
+
+                
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">3 / 4</div>
+                  
+                  <a href="/dashboardfreelancepageemployees"><img src="/images/mountains-1761292.jpg" style="width:100%; height: 330px;"></a>
+
+                  <div class="text1">                    
+                    <h2 style="margin: 0; padding: 0;"><a href="/dashboardfreelancepageemployees" style="margin: 0; padding: 0;">Find<br/><br/>Work</a></h2>
+                 
+                  </div>
+                </div><!--myslides1 ends-->
+
+                <div class="myslides1 fade1"><!--myslides1 starts-->
+                  <div class="numbertext1">4 / 4</div>
+                  
+                  <a href="/dashboardgivefeedbackemployees"><img src="/images/nature-3082832 (1).jpg" style="width:100%; height: 330px;"></a>
+
+                  <div class="text1">                    
+                    <h2 style="margin: 0; padding: 0;"><a href="/dashboardgivefeedbackemployees" style="margin: 0; padding: 0;">Give<br/><br/> Feedback</a></h2>
+                     
+                  </div>
+                </div><!--myslides1 ends-->
+
+                
+
+
+                <a class="prev1" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next1" onclick="plusSlides(1)">&#10095;</a>
+                
+              </div><!--Slideshow-container1 ends-->
+       
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot1" onclick="currentSlide(1)"></span> 
+                  <span class="dot1" onclick="currentSlide(2)"></span> 
+                  <span class="dot1" onclick="currentSlide(3)"></span>
+                  <span class="dot1" onclick="currentSlide(4)"></span>
+                  
+
+                </div>
+
+                <script>
+                  var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("myslides1");
+            var dots = document.getElementsByClassName("dot1");
+            if (n > slides.length) {
+              slideIndex = 1
+            }
+            if (n < 1) {
+              slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active1", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active1";
+          }
+                          </script>
+
+
+
+                 <!---->
+
+              <!---->
+               <!-- Correct One uncomment it later if needed
 
                <div class="slideshow-container">
 
@@ -54,6 +165,7 @@
                    
                   </div>
                 </div>
+              -->
                 <!--
                 <div class="mySlides fade">
                   <div class="numbertext">5 / 9</div>
@@ -104,6 +216,7 @@
                   </div>
                 </div>
                 -->
+                <!--
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 
@@ -115,6 +228,7 @@
                   <span class="dot" onclick="currentSlide(2)"></span> 
                   <span class="dot" onclick="currentSlide(3)"></span> 
                   <span class="dot" onclick="currentSlide(4)"></span> 
+                  -->
                   <!--
                   <span class="dot" onclick="currentSlide(5)"></span> 
                   <span class="dot" onclick="currentSlide(6)"></span> 
@@ -122,6 +236,7 @@
                   <span class="dot" onclick="currentSlide(8)"></span> 
                   <span class="dot" onclick="currentSlide(9)"></span> 
                   -->
+                  <!--
                 </div>
                 <script>
                   
@@ -173,7 +288,7 @@
                     
                   }
                   </script>
-                  
+                  -->
 
                <!---->
 
