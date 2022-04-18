@@ -1522,7 +1522,9 @@
             <a class="table-caption-anchor confirm-before-delete-anchor" style="cursor: pointer; justify-content: center; padding: 1em; font-size: 1.5em;" >Remove From Cart</a>
     
             <!--<button type="button" id="checkout-button" class="checkout-btn proceed-to-checkout purchase" >Proceed To Checkout</button> -->
-            <button type="button" class="checkout-button proceed-to-checkout purchase" >Proceed To Checkout</button> 
+            <button type="button" class="checkout-button proceed-to-checkout purchase" >Proceed To Checkout (Total: <%= '$ ' + (total + templatePrice + homePagePrice + aboutPrice + servicesPrice + whyUsPrice + contactUsPrice + socialMediaPrice + policyPrice + termsAndConditionsPrice + copyRightPrice + logoPurchasingPrice + logoByCustomerPrice + galleryPrice + templatesFeaturePrice + menuPrice + registerLogInPrice + contactUsWithFormPrice + paymentMethodPrice + websiteBackgroundColorPrice + websiteBackgroundImagePrice + emailServicePrice + messageServicePrice + dataBasePrice + otherChargesPrice + maintainanceCharges - discount);%>)</button> 
+
+        <!--<button type="button" class="checkout-button proceed-to-checkout purchase" >Proceed To Checkout</button> -->
                 
     <!-- Delete Confirmation Modal starts here-->          
     <div class="modal-parent-confirmation-before-delete">
