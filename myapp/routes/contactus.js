@@ -71,7 +71,10 @@ router.post('/', function(req, res, next) {
   var express = require('express');
   var router = express.Router();
   var contactusModel = require("../modules/contactusschema");
-  
+  var env = require('dotenv')
+  var nodemailer = require("nodemailer");
+
+  env.config();
 
   /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -110,6 +113,82 @@ router.get('/', function(req, res, next) {
       
       //
       //Send Email
+      //
+      const transporter = nodemailer.createTransport({
+        /* host: 'smtp.ethereal.email',
+        port: 587,
+        auth: {
+            user: 'mariana.stokes@ethereal.email',
+            pass: 'gUpp5c7kpbnpsmY2U4'
+        } */
+        host: 'mail.privateemail.com',
+        port: 465,
+        auth: {
+          user: process.env.USER,
+          pass: process.env.PASS
+        }
+    });
+
+    let mailOptions = {
+      from: 'contact@quickwebsite.net',
+      to: ['vipinkmboj20@gmail.com', 'quickwebsite22@gmail.com', 'contact@quickwebsite.net', 'admin@quickwebsite.net'],
+      subject: 'New Contact Message',
+      texting: 'New Contact Message',
+      html: `
+      <h3>Hi, You Have received a message through Contact Us</h3>
+      <p>
+      Firstname: ${req.body.firstname},<br/>
+      Lastname: ${req.body.lastname},<br/>
+      Mobilenumber: ${req.body.mobilenumber},<br/>
+      Email: ${req.body.email},<br/>
+      Message: ${req.body.writeusmessage} 
+      </p>   
+  `
+  };
+
+  // this sends the email
+  transporter.sendMail(mailOptions, (err) => {
+    var loginUser = {
+      loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
+      loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
+      loginUserAdmin: req.session.adminLoginUserName//localStorage.getItem('adminLoginUserName')
+  
+    };
+    if(err) {
+      //res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Contact Error, Try Again', adminDetails: ''}); 
+    //throw err;
+  
+    if(loginUser.loginUserCustomer) {
+      res.render('dashboardcustomer', { title: 'Quick Website', msg:'Contact Error, Try Again!', loginUser: loginUser.loginUserCustomer });
+    } else if(loginUser.loginUserEmployee){
+      res.render('dashboardemployees', { title: 'Quick Website', msg:'Contact Error, Try Again!', loginUser: loginUser.loginUserEmployee });
+    } else if(loginUser.loginUserAdmin) {
+      res.render('dashboardadmin', { title: 'Quick Website', msg:'Contact Error, Try Again!', loginUser: loginUser.loginUserAdmin});
+    } else {
+      //res.redirect('index');    
+      res.render('index', {title: 'Quick Website', msg: 'Contact Error, Try Again!' });
+    
+    }  
+  
+    } else {    
+  
+      if(loginUser.loginUserCustomer) {
+        res.render('dashboardcustomer', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserCustomer });
+      } else if(loginUser.loginUserEmployee){
+        res.render('dashboardemployees', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserEmployee });
+      } else if(loginUser.loginUserAdmin) {
+        res.render('dashboardadmin', { title: 'Quick Website', msg:'Message Submitted Successfully, You will be contacted soon. Thanks!', loginUser: loginUser.loginUserAdmin});
+      } else {
+        //res.redirect('index');    
+        res.render('index', {title: 'Quick Website', msg: 'Message Submitted Successfully, You will be contacted soon. Thanks!' });
+      
+      }     
+      //res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
+    }
+  });
+      //
+      //
+      /* uncomment later
       var output = `
     <h3>Hi, You Have received a message through Contact Us</h3>
     <p>
@@ -196,6 +275,8 @@ ses.sendEmail(params, (err) => {
     //res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
   }
 });
+
+uncomment leter*/
 //
 
       
