@@ -123,6 +123,7 @@ router.get('/', function(req, res, next) {
         } */
         host: 'mail.privateemail.com',
         port: 465,
+        secure: true,
         auth: {
           user: process.env.USER,
           pass: process.env.PASS
@@ -131,7 +132,7 @@ router.get('/', function(req, res, next) {
 
     let mailOptions = {
       from: 'contact@quickwebsite.net',
-      to: ['vipinkmboj20@gmail.com', 'quickwebsite22@gmail.com', 'contact@quickwebsite.net', 'admin@quickwebsite.net'],
+      to: [/*'vipinkmboj20@gmail.com', 'quickwebsite22@gmail.com', */'contact@quickwebsite.net', 'admin@quickwebsite.net'],
       subject: 'New Contact Message',
       texting: 'New Contact Message',
       html: `
