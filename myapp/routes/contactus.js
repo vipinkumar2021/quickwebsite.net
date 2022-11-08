@@ -123,11 +123,11 @@ router.get('/', function(req, res, next) {
         } */
         //host: 'mail.privateemail.com',
         host : 'smtp.privateemail.com',
-        port: 465,
-        secure: true,
-        //port: 25,
+        //port: 465,
+        //secure: true,
+        port: 25,
         //port: 587,
-        proxy: 'http://localhost:5000',
+        //proxy: 'http://localhost:5000',
         auth: {
           user: process.env.USER,
           pass: process.env.PASS
