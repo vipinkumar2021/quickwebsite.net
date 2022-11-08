@@ -121,10 +121,12 @@ router.get('/', function(req, res, next) {
             user: 'mariana.stokes@ethereal.email',
             pass: 'gUpp5c7kpbnpsmY2U4'
         } */
-        host: 'mail.privateemail.com',
+        //host: 'mail.privateemail.com',
+        host : 'smtp.privateemail.com',
         port: 465,
         secure: true,
         //port: 25,
+        //port: 587,
         auth: {
           user: process.env.USER,
           pass: process.env.PASS
