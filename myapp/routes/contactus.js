@@ -114,7 +114,7 @@ router.get('/', function(req, res, next) {
       //
       //Send Email
       //
-      const transporter = nodemailer.createTransport({
+      // const transporter = nodemailer.createTransport({
         /* host: 'smtp.ethereal.email',
         port: 587,
         auth: {
@@ -122,17 +122,17 @@ router.get('/', function(req, res, next) {
             pass: 'gUpp5c7kpbnpsmY2U4'
         } */
         //host: 'mail.privateemail.com',
-        host : 'smtp.privateemail.com',
-        //port: 465,
-        //secure: true,
-        port: 25,
+        /* host : 'smtp.privateemail.com',
+        port: 465,
+        secure: true, */
+        //port: 25,
         //port: 587,
         //proxy: 'http://localhost:5000',
-        auth: {
+       /*  auth: {
           user: process.env.USER,
           pass: process.env.PASS
         }
-    });
+    }); */
 
     let mailOptions = {
       from: 'contact@quickwebsite.net',
@@ -152,7 +152,7 @@ router.get('/', function(req, res, next) {
   };
 
   // this sends the email
-  transporter.sendMail(mailOptions, (err) => {
+  /* transporter.sendMail(mailOptions, (err) => {
     var loginUser = {
       loginUserCustomer: req.session.customerLoginUserName,//localStorage.getItem('customerLoginUserName'),
       loginUserEmployee: req.session.employeeLoginUserName,//localStorage.getItem('employeeLoginUserName'),
@@ -170,7 +170,8 @@ router.get('/', function(req, res, next) {
     } else if(loginUser.loginUserAdmin) {
       res.render('dashboardadmin', { title: 'Quick Website', msg:'Contact Error, Try Again!', loginUser: loginUser.loginUserAdmin});
     } else {
-      //res.redirect('index');    
+      //res.redirect('index');   
+      console.log(err) 
       res.render('index', {title: 'Quick Website', msg: 'Contact Error, Try Again!' });
     
     }  
@@ -190,10 +191,10 @@ router.get('/', function(req, res, next) {
       }     
       //res.render('signupcustomer', { title: 'frontendwebdeveloper', msg:'Please check the One Time Password (OTP) sent to your Email and enter it here', adminDetails: ''}); 
     }
-  });
+  }); */
       //
       //
-      /* uncomment later
+      // uncomment later
       var output = `
     <h3>Hi, You Have received a message through Contact Us</h3>
     <p>
@@ -281,7 +282,7 @@ ses.sendEmail(params, (err) => {
   }
 });
 
-uncomment leter*/
+//uncomment leter*/
 //
 
       
