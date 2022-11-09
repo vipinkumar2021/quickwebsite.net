@@ -1586,6 +1586,7 @@ z-index: 1;
     border: 2px solid whitesmoke;
     border-radius: 5px;
     font-size: 1.25em;
+    padding: .5em;
   }
   .getstarted form textarea {
     background-color: transparent;
@@ -1595,6 +1596,7 @@ z-index: 1;
     height: auto;
     color: whitesmoke;
     outline: none;
+    padding: .5em;
   }
   #home-page-content-label, #home-page-content-textarea, #about-content-label, #about-content-textarea, #services-content-label, #services-content-textarea, #why-us-content-label, #why-us-content-textarea, #social-media-content-label, #social-media-content-textarea, #policy-content-label, #policy-content-textarea, #terms-and-conditions-content-label, #terms-and-conditions-content-textarea, #copy-right-content-label, #copy-right-content-textarea, #photo-gallery-content-label, #photo-gallery-content-textarea, #photo-gallery-upload-content-label, #photo-gallery-upload-content-input, #templates-feature-content-label, #templates-feature-content-textarea, #menu-or-label, #templates-feature-upload-content-label, #templates-feature-upload-content-input, #menu-content-label, #menu-content-textarea, #menu-upload-content-label, #menu-upload-content-input, #payment-method-content-label, #payment-method-content-textarea {
     display: none;
