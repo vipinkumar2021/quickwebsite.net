@@ -241,6 +241,9 @@
     .header .headernav .cart {
       display: none;
     }
+    .header .headernav ul {
+      display: none;
+    }
   }
  
   /*

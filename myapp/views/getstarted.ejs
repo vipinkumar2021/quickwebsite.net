@@ -3,8 +3,38 @@
 <div class="item item3 main ">
     <div class="container welcome getstarted" ><!--welcome css working in this-->
         <br/><br/><br/><br/>
-        <h2>Start Building Your Website</h2>        
-            <strong><em>Step 1. (Required For First Time Users) OR <a href="#" onclick="openSignInModal()">Sign in</a></em></strong> <br/>
+        <% if(msg != '') {%> 
+            <h1 style="color: whitesmoke"> <%= msg %> </h1>  
+          <% } %>
+        <h2>Start Building Your Website</h2>  
+        <form action="/getstarted" method="post" role="form">
+            <label for="firstname">First Name</label><br/>
+                <input name="firstname" type="text" placeholder="Enter Your First Name..." required /><br/><br/>
+                <label for="lastname">Last Name</label><br/>
+                <input name="lastname" type="text" placeholder="Enter Your Last Name..." required /><br/><br/>               
+                <label for="mobilenumber">Mobile Number</label><br/>
+                <input name="mobilenumber" type="tel" placeholder="Enter Your Mobile Number..." required /><br/><br/>
+                <label for="email">Email</label><br/>
+                <input name="email" type="email" placeholder="Enter Your Email id..." required /><br/><br/>
+                <label>How can we help you?</label><br/>
+                <textarea name="howcanwehelpyou" placeholder="How can we help you?" required>
+
+                </textarea><br/><br/>
+                <label>Please describe your requirements in detail</label><br/>
+                <textarea name="websitedescription" placeholder="Requirements in Detail">
+
+                </textarea><br/><br/>
+                <label>Please write the features you would like in your website</label><br/>
+                <textarea name="websitefeatures">
+
+                </textarea><br/><br/>
+
+                <button class="each-button" type="submit">Submit</button><br/><br/>
+                <button class="each-button" type="reset">Reset</button><br/><br/>
+
+                
+        </form>      
+            <!-- <strong><em>Step 1. (Required For First Time Users) OR <a href="#" onclick="openSignInModal()">Sign in</a></em></strong> <br/>
             <form action="/signupcustomer" method="post" role="form" >
                 <label for="firstname">First Name</label><br/>
                 <input name="firstname" type="text" placeholder="Enter Your First Name..." required /><br/><br/>
@@ -24,7 +54,7 @@
         
             <strong><em>Step 2. </em></strong> <br/>
                 <a href="#" onclick="openSignInModal()">Sign in</a>
-            
+ -->            
         </div>     
 
 </div>
